@@ -33,6 +33,9 @@
                                 <state key="normal" title="New Debate">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="NewDebate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WWj-42-BXt"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JNf-ka-7Jg">
                                 <frame key="frameInset" minX="52" minY="322" width="271" height="74"/>
@@ -42,6 +45,9 @@
                                 <state key="normal" title="Continue Debate">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="ContinueDebate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cEe-rm-gqG"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QsZ-mF-tXg">
                                 <frame key="frameInset" minX="40" minY="488" width="295" height="68"/>
@@ -51,10 +57,16 @@
                                 <state key="normal" title="Previous Debates">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="PreviousDebates:" destination="BYZ-38-t0r" eventType="touchUpInside" id="n9Q-s0-4KX"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="AppTitle" destination="MeW-ZR-rEV" id="ZL9-OX-NRt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
