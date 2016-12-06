@@ -9,5 +9,11 @@
 import UIKit
 
 class roundScore: NSObject {
-
+    var roundName: String
+    var roundPoints: Int
+    var roundPointsPossible: Int
+    
+    
+    
 }
+
