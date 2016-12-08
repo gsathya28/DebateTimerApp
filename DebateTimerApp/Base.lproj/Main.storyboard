@@ -35,6 +35,7 @@
                                 </state>
                                 <connections>
                                     <action selector="NewDebate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WWj-42-BXt"/>
+                                    <segue destination="pK3-pF-ZOO" kind="show" id="CZP-aZ-neF"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JNf-ka-7Jg">
@@ -71,6 +72,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="117.59999999999999" y="123.68815592203899"/>
+        </scene>
+        <!--New Debate Input Page-->
+        <scene sceneID="pQh-0E-oNd">
+            <objects>
+                <viewController id="pK3-pF-ZOO" customClass="NewDebateInputPage" customModule="DebateTimerApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Cau-xF-qJL"/>
+                        <viewControllerLayoutGuide type="bottom" id="Rj6-7M-3MF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="b8T-uj-Dbc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FTT-Oi-TEI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="743" y="124"/>
         </scene>
     </scenes>
 </document>
