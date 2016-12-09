@@ -9,5 +9,19 @@
 import UIKit
 
 class roundTime: NSObject {
-
+    var roundName: String?
+    var roundrawTime: Int?
+    var displayTimes: [String: Int]?
+    
+    init(inName: String, inRawTime: Int)
+    {
+        self.roundName = inName
+        self.roundrawTime = inRawTime
+    }
+    
+    func displaySelfTime(rawTime: Int)
+    {
+        
+    }
+    
 }
