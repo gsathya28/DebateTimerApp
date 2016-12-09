@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet var AppTitle: UILabel!
     
+    @IBOutlet weak var PickerView: UIPickerView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
