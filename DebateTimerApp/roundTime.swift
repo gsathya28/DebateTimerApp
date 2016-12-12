@@ -19,9 +19,30 @@ class roundTime: NSObject {
         self.roundrawTime = inRawTime
     }
     
-    func displaySelfTime(rawTime: Int)
+    
+    
+    func setDisplayTime(rawTime: Int)
     {
-        
+        if (self.roundrawTime) != nil
+        {
+            displayTimes?["minutes"] = self.roundrawTime! / 6000
+            var remainder = self.roundrawTime! % 6000
+            displayTimes?["ten-seconds"] = remainder / 1000
+            remainder = remainder % 1000
+            displayTimes?["seconds"] = remainder / 100
+            remainder = remainder % 100
+            displayTimes?["deciseconds"] = remainder / 10
+            displayTimes?["centiseconds"] = remainder % 10
+
+        }
+        else
+        {
+            displayTimes?["minutes"] = 0
+            displayTimes?["ten-seconds"] = 0
+            displayTimes?["seconds"] = 0
+            displayTimes?["deciseconds"] = 0
+            displayTimes?["centiseconds"] = 0
+        }
     }
     
 }
