@@ -9,5 +9,18 @@
 import UIKit
 
 class debater: NSObject {
-
+    
+    // MARK: Properties
+    var name: String?
+    var stance: String?
+    var debateTimes: [String: roundTime]?
+    var debateScores: [String: roundScore]?
+    
+    // MARK: Initializer
+    init(inName: String, inStance: String)
+    {
+        self.name? = inName
+        self.stance? = inStance
+    }
+    
 }
