@@ -9,15 +9,18 @@
 import UIKit
 
 class roundScore: NSObject {
+    // MARK: Properties
     var roundName: String?
     var roundPoints: Int?
     var roundPointsPossible: Int?
     
+    // MARK: Initializer
     init(inName: String, inPointsPossible: Int ) {
         self.roundName = inName
         self.roundPointsPossible = inPointsPossible
     }
     
+    // MARK: Functions
     func calculatePercent(pointsScored: Int, pointsPossible: Int) -> Double
     {
         let rawPercent: Double = Double(pointsScored) / Double(pointsPossible)
