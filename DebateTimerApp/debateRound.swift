@@ -9,5 +9,14 @@
 import UIKit
 
 class debateRound: NSObject {
-
+    var roundName: String?
+    var roundType: String?
+    var speakersActive: [String: debater]?
+    
+    init(inName: String, inType: String)
+    {
+        self.roundName = inName
+        self.roundType = inType
+    }
+    
 }
