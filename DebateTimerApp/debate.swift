@@ -24,12 +24,12 @@ class debate: NSObject {
         "CloseNeg": debateRound(inName: "CloseNeg", inType: "Closing")
     ]
     
-    
-    
-    
-    init()
+    init(Affspeaker1: debater, Affspeaker2: debater, Negspeaker1: debater, Negspeaker2: debater)
     {
-        
+        self.speakers["Affirmative"] = [Affspeaker1, Affspeaker2]
+        self.speakers["Negative"] = [Negspeaker1, Negspeaker2]
     }
+    
+    
     
 }
