@@ -15,6 +15,11 @@
 		35ADAB601DF5D17F00ED8479 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35ADAB5E1DF5D17F00ED8479 /* LaunchScreen.storyboard */; };
 		35ADAB6B1DF5D17F00ED8479 /* DebateTimerAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35ADAB6A1DF5D17F00ED8479 /* DebateTimerAppTests.swift */; };
 		35ADAB761DF5D17F00ED8479 /* DebateTimerAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35ADAB751DF5D17F00ED8479 /* DebateTimerAppUITests.swift */; };
+		35ADAB8A1DF5D48400ED8479 /* debate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35ADAB891DF5D48400ED8479 /* debate.swift */; };
+		35ADAB8C1DF5D4A000ED8479 /* debateRound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35ADAB8B1DF5D4A000ED8479 /* debateRound.swift */; };
+		35ADAB8E1DF5D4B800ED8479 /* debater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35ADAB8D1DF5D4B800ED8479 /* debater.swift */; };
+		35ADAB921DF5D51B00ED8479 /* roundScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35ADAB911DF5D51B00ED8479 /* roundScore.swift */; };
+		35ADAB941DF5D57700ED8479 /* roundTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35ADAB931DF5D57700ED8479 /* roundTime.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +54,11 @@
 		35ADAB711DF5D17F00ED8479 /* DebateTimerAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DebateTimerAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		35ADAB751DF5D17F00ED8479 /* DebateTimerAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebateTimerAppUITests.swift; sourceTree = "<group>"; };
 		35ADAB771DF5D17F00ED8479 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		35ADAB891DF5D48400ED8479 /* debate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = debate.swift; sourceTree = "<group>"; };
+		35ADAB8B1DF5D4A000ED8479 /* debateRound.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = debateRound.swift; sourceTree = "<group>"; };
+		35ADAB8D1DF5D4B800ED8479 /* debater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = debater.swift; sourceTree = "<group>"; };
+		35ADAB911DF5D51B00ED8479 /* roundScore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = roundScore.swift; sourceTree = "<group>"; };
+		35ADAB931DF5D57700ED8479 /* roundTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = roundTime.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +109,11 @@
 		35ADAB541DF5D17F00ED8479 /* DebateTimerApp */ = {
 			isa = PBXGroup;
 			children = (
+				35ADAB891DF5D48400ED8479 /* debate.swift */,
+				35ADAB8B1DF5D4A000ED8479 /* debateRound.swift */,
+				35ADAB8D1DF5D4B800ED8479 /* debater.swift */,
+				35ADAB931DF5D57700ED8479 /* roundTime.swift */,
+				35ADAB911DF5D51B00ED8479 /* roundScore.swift */,
 				35ADAB551DF5D17F00ED8479 /* AppDelegate.swift */,
 				35ADAB571DF5D17F00ED8479 /* ViewController.swift */,
 				35ADAB591DF5D17F00ED8479 /* Main.storyboard */,
@@ -263,8 +278,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				35ADAB581DF5D17F00ED8479 /* ViewController.swift in Sources */,
+				35ADAB921DF5D51B00ED8479 /* roundScore.swift in Sources */,
+				35ADAB8C1DF5D4A000ED8479 /* debateRound.swift in Sources */,
 				319F0A1B1DF9C6DE00C65073 /* NewDebateInputPage.swift in Sources */,
 				35ADAB561DF5D17F00ED8479 /* AppDelegate.swift in Sources */,
+				35ADAB8A1DF5D48400ED8479 /* debate.swift in Sources */,
+				35ADAB8E1DF5D4B800ED8479 /* debater.swift in Sources */,
+				35ADAB941DF5D57700ED8479 /* roundTime.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
