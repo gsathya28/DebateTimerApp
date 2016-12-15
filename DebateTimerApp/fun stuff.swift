@@ -1,18 +1,14 @@
 //
-//  ViewController.swift
+//  fun stuff.swift
 //  DebateTimerApp
 //
-//  Created by GOVINDARAJAN, SATHYANARAYANAN on 12/5/16.
+//  Created by FLAUM, JACOB on 12/7/16.
 //  Copyright © 2016 GOVINDARAJAN, SATHYANARAYANAN. All rights reserved.
 //
 
 import UIKit
 
-
-
-class ViewController: UIViewController {
-    
-    @IBOutlet var AppTitle: UILabel!
+class FunStuff: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,15 +19,7 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    @IBAction func NewDebate(_ sender: AnyObject) {
-    }
     
-    @IBAction func ContinueDebate(_ sender: AnyObject) {
-    }
-    
-    @IBAction func PreviousDebates(_ sender: AnyObject) {
-    }
     
 }
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		319F0A1B1DF9C6DE00C65073 /* NewDebateInputPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319F0A1A1DF9C6DE00C65073 /* NewDebateInputPage.swift */; };
 		35ADAB561DF5D17F00ED8479 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35ADAB551DF5D17F00ED8479 /* AppDelegate.swift */; };
 		35ADAB581DF5D17F00ED8479 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35ADAB571DF5D17F00ED8479 /* ViewController.swift */; };
 		35ADAB5B1DF5D17F00ED8479 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35ADAB591DF5D17F00ED8479 /* Main.storyboard */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		319F0A1A1DF9C6DE00C65073 /* NewDebateInputPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewDebateInputPage.swift; sourceTree = "<group>"; };
 		35ADAB521DF5D17F00ED8479 /* DebateTimerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DebateTimerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35ADAB551DF5D17F00ED8479 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		35ADAB571DF5D17F00ED8479 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				35ADAB551DF5D17F00ED8479 /* AppDelegate.swift */,
 				35ADAB571DF5D17F00ED8479 /* ViewController.swift */,
 				35ADAB591DF5D17F00ED8479 /* Main.storyboard */,
+				319F0A1A1DF9C6DE00C65073 /* NewDebateInputPage.swift */,
 				35ADAB5C1DF5D17F00ED8479 /* Assets.xcassets */,
 				35ADAB5E1DF5D17F00ED8479 /* LaunchScreen.storyboard */,
 				35ADAB611DF5D17F00ED8479 /* Info.plist */,
@@ -277,6 +280,7 @@
 				35ADAB581DF5D17F00ED8479 /* ViewController.swift in Sources */,
 				35ADAB921DF5D51B00ED8479 /* roundScore.swift in Sources */,
 				35ADAB8C1DF5D4A000ED8479 /* debateRound.swift in Sources */,
+				319F0A1B1DF9C6DE00C65073 /* NewDebateInputPage.swift in Sources */,
 				35ADAB561DF5D17F00ED8479 /* AppDelegate.swift in Sources */,
 				35ADAB8A1DF5D48400ED8479 /* debate.swift in Sources */,
 				35ADAB8E1DF5D4B800ED8479 /* debater.swift in Sources */,
@@ -525,6 +529,7 @@
 				35ADAB7C1DF5D17F00ED8479 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		35ADAB7D1DF5D17F00ED8479 /* Build configuration list for PBXNativeTarget "DebateTimerAppTests" */ = {
 			isa = XCConfigurationList;
@@ -533,6 +538,7 @@
 				35ADAB7F1DF5D17F00ED8479 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		35ADAB801DF5D17F00ED8479 /* Build configuration list for PBXNativeTarget "DebateTimerAppUITests" */ = {
 			isa = XCConfigurationList;
@@ -541,6 +547,7 @@
 				35ADAB821DF5D17F00ED8479 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
