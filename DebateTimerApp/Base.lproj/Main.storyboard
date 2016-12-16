@@ -145,7 +145,7 @@
                                 </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1GA-Ij-r0d">
-                                <frame key="frameInset" minX="442" minY="292" height="162" maxX="289"/>
+                                <frame key="frameInset" minX="442" minY="292" height="162" maxX="-67"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <outlet property="dataSource" destination="zpc-qf-6wa" id="WfA-3L-wbc"/>
