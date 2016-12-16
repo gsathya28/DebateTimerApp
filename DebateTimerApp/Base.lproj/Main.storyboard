@@ -139,6 +139,10 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="BackButton:" destination="DZA-JW-AHI" eventType="touchUpInside" id="6Oj-xA-XyB"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="LhM-sY-bSb"/>
+                                </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1GA-Ij-r0d">
                                 <frame key="frameInset" minX="442" minY="292" height="162" maxX="289"/>
