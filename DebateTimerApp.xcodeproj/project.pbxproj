@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		10D9241B1E044E1B004D8AD5 /* TimerPageGUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D9241A1E044E1B004D8AD5 /* TimerPageGUI.swift */; };
 		319F0A1B1DF9C6DE00C65073 /* NewDebateInputPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319F0A1A1DF9C6DE00C65073 /* NewDebateInputPage.swift */; };
 		35ADAB561DF5D17F00ED8479 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35ADAB551DF5D17F00ED8479 /* AppDelegate.swift */; };
 		35ADAB581DF5D17F00ED8479 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35ADAB571DF5D17F00ED8479 /* ViewController.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		10D9241A1E044E1B004D8AD5 /* TimerPageGUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerPageGUI.swift; sourceTree = "<group>"; };
 		319F0A1A1DF9C6DE00C65073 /* NewDebateInputPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewDebateInputPage.swift; sourceTree = "<group>"; };
 		35ADAB521DF5D17F00ED8479 /* DebateTimerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DebateTimerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35ADAB551DF5D17F00ED8479 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 		35ADAB491DF5D17F00ED8479 = {
 			isa = PBXGroup;
 			children = (
+				10D9241A1E044E1B004D8AD5 /* TimerPageGUI.swift */,
 				35ADAB541DF5D17F00ED8479 /* DebateTimerApp */,
 				35ADAB691DF5D17F00ED8479 /* DebateTimerAppTests */,
 				35ADAB741DF5D17F00ED8479 /* DebateTimerAppUITests */,
@@ -278,6 +281,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				35ADAB581DF5D17F00ED8479 /* ViewController.swift in Sources */,
+				10D9241B1E044E1B004D8AD5 /* TimerPageGUI.swift in Sources */,
 				35ADAB921DF5D51B00ED8479 /* roundScore.swift in Sources */,
 				35ADAB8C1DF5D4A000ED8479 /* debateRound.swift in Sources */,
 				319F0A1B1DF9C6DE00C65073 /* NewDebateInputPage.swift in Sources */,
