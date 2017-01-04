@@ -141,7 +141,11 @@
                                 <state key="normal" title="Back"/>
                             </button>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1GA-Ij-r0d">
+<<<<<<< Updated upstream
                                 <frame key="frameInset" minX="442" minY="292" height="162" maxX="-67"/>
+=======
+                                <frame key="frameInset" minX="440" minY="292" height="162" maxX="-69"/>
+>>>>>>> Stashed changes
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <outlet property="dataSource" destination="zpc-qf-6wa" id="WfA-3L-wbc"/>
@@ -175,7 +179,11 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <state key="normal" title="Continue"/>
                                 <connections>
+<<<<<<< Updated upstream
                                     <segue destination="gti-Af-EDU" kind="show" id="bun-GC-Vrl"/>
+=======
+                                    <segue destination="FHI-WD-tWU" kind="show" id="Zhp-CP-gBJ"/>
+>>>>>>> Stashed changes
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hour:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4kJ-o0-JM5">
@@ -203,6 +211,7 @@
             </objects>
             <point key="canvasLocation" x="809.07759882869686" y="123.04687499999999"/>
         </scene>
+<<<<<<< Updated upstream
         <!--View Controller-->
         <scene sceneID="5mE-Eb-tp1">
             <objects>
@@ -260,5 +269,75 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="Zbr-rn-7LY"/>
+=======
+        <!--Timer PageGUI-->
+        <scene sceneID="owY-dj-wqn">
+            <objects>
+                <viewController id="FHI-WD-tWU" customClass="TimerPageGUI" customModule="DebateTimerApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="txG-UT-Rdh"/>
+                        <viewControllerLayoutGuide type="bottom" id="jXU-Wc-TZq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CdU-fn-2rn">
+                        <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AFL-zg-wOf">
+                                <frame key="frameInset" minX="586" minY="177" width="274" height="246"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="auW-kP-Z7x">
+                                <frame key="frameInset" minX="550" minY="497" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="DZA-JW-AHI" kind="show" id="zby-cK-bMO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ud7-ME-vtv">
+                                <frame key="frameInset" minX="890" minY="497" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Start"/>
+                                <connections>
+                                    <action selector="startTimer:" destination="FHI-WD-tWU" eventType="touchUpInside" id="6Ki-YE-ep2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hYi-mI-gsN">
+                                <frame key="frameInset" minX="550" minY="625" width="39" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Reset"/>
+                                <connections>
+                                    <action selector="resetTimer:" destination="FHI-WD-tWU" eventType="touchUpInside" id="mMd-my-Ayk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vzz-ic-SAh">
+                                <frame key="frameInset" minX="880" minY="625" width="42" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="pause"/>
+                                <connections>
+                                    <action selector="pauseTimer:" destination="FHI-WD-tWU" eventType="touchUpInside" id="U9f-gI-WLZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="counterlabel" destination="AFL-zg-wOf" id="oOL-ND-Mg4"/>
+                        <outlet property="pause" destination="Vzz-ic-SAh" id="mcX-KI-3xq"/>
+                        <outlet property="reset" destination="hYi-mI-gsN" id="d1j-ap-fOA"/>
+                        <outlet property="start" destination="Ud7-ME-vtv" id="Zn3-2K-MNw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y8M-eA-h8V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1440.7027818448023" y="122.46093749999999"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="zby-cK-bMO"/>
+>>>>>>> Stashed changes
     </inferredMetricsTieBreakers>
 </document>
