@@ -9,14 +9,12 @@
 import UIKit
 
 
-class TimerPageGUI: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+
+class TimerPageGUI: UIViewController {
     
     
     // Properties- Set the variables here
     
-    @IBOutlet weak var pickerView1: UIPickerView!
-    var pickerData1 = ["Hour 1", "Hour 2", "Hour 3", "Hour 4", "Hour 5", "Hour 6", "Hour 7"]
-
     @IBOutlet var counterlabel: UILabel!
     var timer = Timer()
     // This is to keep track of each digit in the timer
@@ -36,8 +34,6 @@ class TimerPageGUI: UIViewController, UIPickerViewDataSource, UIPickerViewDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        pickerView1.delegate = self
-        pickerView1.dataSource = self
         
     }
     
@@ -45,18 +41,6 @@ class TimerPageGUI: UIViewController, UIPickerViewDataSource, UIPickerViewDelega
         super.didReceiveMemoryWarning()
         
     }
-    func numberOfComponents(in pickerView1: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView1: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return pickerData1.count
-    }
-    
-    func pickerView(_ pickerView1: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return pickerData1[row]
-    }
-
     
     // This is the method that will run when the play button is activated. This is what I meant when you have to drag the button into the code as a button. I’ll go through each line one by one.
     
