@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1073190E1E2547440003E331 /* OSNegGUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1073190D1E2547440003E331 /* OSNegGUI.swift */; };
 		10D9241B1E044E1B004D8AD5 /* TimerPageGUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D9241A1E044E1B004D8AD5 /* TimerPageGUI.swift */; };
 		319F0A1B1DF9C6DE00C65073 /* NewDebateInputPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319F0A1A1DF9C6DE00C65073 /* NewDebateInputPage.swift */; };
 		35ADAB561DF5D17F00ED8479 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35ADAB551DF5D17F00ED8479 /* AppDelegate.swift */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1073190D1E2547440003E331 /* OSNegGUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSNegGUI.swift; sourceTree = "<group>"; };
 		10D9241A1E044E1B004D8AD5 /* TimerPageGUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimerPageGUI.swift; path = ../TimerPageGUI.swift; sourceTree = "<group>"; };
 		319F0A1A1DF9C6DE00C65073 /* NewDebateInputPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewDebateInputPage.swift; sourceTree = "<group>"; };
 		35ADAB521DF5D17F00ED8479 /* DebateTimerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DebateTimerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -119,6 +121,7 @@
 				35ADAB551DF5D17F00ED8479 /* AppDelegate.swift */,
 				35ADAB571DF5D17F00ED8479 /* ViewController.swift */,
 				35ADAB591DF5D17F00ED8479 /* Main.storyboard */,
+				1073190D1E2547440003E331 /* OSNegGUI.swift */,
 				319F0A1A1DF9C6DE00C65073 /* NewDebateInputPage.swift */,
 				10D9241A1E044E1B004D8AD5 /* TimerPageGUI.swift */,
 				35ADAB5C1DF5D17F00ED8479 /* Assets.xcassets */,
@@ -286,6 +289,7 @@
 				35ADAB8C1DF5D4A000ED8479 /* debateRound.swift in Sources */,
 				319F0A1B1DF9C6DE00C65073 /* NewDebateInputPage.swift in Sources */,
 				35ADAB561DF5D17F00ED8479 /* AppDelegate.swift in Sources */,
+				1073190E1E2547440003E331 /* OSNegGUI.swift in Sources */,
 				35ADAB8A1DF5D48400ED8479 /* debate.swift in Sources */,
 				35ADAB8E1DF5D4B800ED8479 /* debater.swift in Sources */,
 				35ADAB941DF5D57700ED8479 /* roundTime.swift in Sources */,
