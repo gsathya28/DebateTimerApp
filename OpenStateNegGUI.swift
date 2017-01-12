@@ -1,24 +1,21 @@
 //
-//  OSNegGUI.swift
+//  OpenStateNegGUI.swift
 //  DebateTimerApp
 //
-//  Created by FLAUM, JACOB on 1/10/17.
+//  Created by FLAUM, JACOB on 1/11/17.
 //  Copyright © 2017 GOVINDARAJAN, SATHYANARAYANAN. All rights reserved.
 //
 
 import UIKit
 
-
-
-class OSNegGUI: UIViewController , UIPickerViewDataSource, UIPickerViewDelegate {
+class OpenStateNegGUI: UIViewController , UIPickerViewDataSource, UIPickerViewDelegate {
     
     
     // Properties- Set the variables here
     
     @IBOutlet weak var pickerView2: UIPickerView!
-    var pickerData2 = ["0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15"]
-   
-    //@IBOutlet var counterlabel: UILabel!
+    var pickerData1 = ["0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15"]
+    
     @IBOutlet var counterlabel: UILabel!
     var timer = Timer()
     // This is to keep track of each digit in the timer
@@ -31,7 +28,6 @@ class OSNegGUI: UIViewController , UIPickerViewDataSource, UIPickerViewDelegate 
     var savedcentisecond = 0
     
     // These are the buttons Pause, Play and Reset: HOWEVER: THESE ARE OUTLETS. When you make this code. You’re going to have to drag the button twice. Once to make it into an outlet, another time to make it into a method (down below).
-    
     
     @IBOutlet var pause: UIButton!
     @IBOutlet var start: UIButton!
@@ -53,9 +49,8 @@ class OSNegGUI: UIViewController , UIPickerViewDataSource, UIPickerViewDelegate 
     // This is the method that will run when the play button is activated. This is what I meant when you have to drag the button into the code as a button. I’ll go through each line one by one.
     
     @IBAction func startTimer(_ sender: UIButton) {
-    
         centisecond = savedcentisecond
-        timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(OSNegGUI.action), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(OpenStateNegGUI.action), userInfo: nil, repeats: true)
         start.isEnabled = false;
         pause.isEnabled = true;
         reset.isEnabled = false;
@@ -64,7 +59,6 @@ class OSNegGUI: UIViewController , UIPickerViewDataSource, UIPickerViewDelegate 
     // This is the method that will run when the pause button is pressed
     
     @IBAction func pauseTimer(_ sender: UIButton) {
-    
         timer.invalidate()
         savedcentisecond = centisecond
         centisecond = 0;
@@ -75,7 +69,6 @@ class OSNegGUI: UIViewController , UIPickerViewDataSource, UIPickerViewDelegate 
     
     
     @IBAction func resetTimer(_ sender: UIButton) {
-    
         timer.invalidate()
         centisecond = 0
         decisecond = 0
@@ -123,11 +116,11 @@ class OSNegGUI: UIViewController , UIPickerViewDataSource, UIPickerViewDelegate 
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return pickerData2.count
+        return pickerData1.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return pickerData2[row]
+        return pickerData1[row]
     }
     
 }
