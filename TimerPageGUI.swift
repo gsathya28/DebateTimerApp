@@ -15,6 +15,7 @@ class TimerPageGUI: UIViewController , UIPickerViewDataSource, UIPickerViewDeleg
     
     // Properties- Set the variables here
     
+    @IBOutlet weak var CommentsBox: UITextView!
     @IBOutlet weak var pickerView1: UIPickerView!
     var pickerData1 = ["0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15"]
 
@@ -39,7 +40,14 @@ class TimerPageGUI: UIViewController , UIPickerViewDataSource, UIPickerViewDeleg
         super.viewDidLoad()
         pickerView1.delegate = self
         pickerView1.dataSource = self
-
+        
+        //create rectangle
+        let frame1 = CGRect(x: 300, y: 50, width: 148, height: 351)
+        let dataBorder = UIView(frame: frame1) //Largest Border
+        dataBorder.backgroundColor = UIColor.clear
+        dataBorder.layer.borderWidth = 1.0
+        view.addSubview(dataBorder)
+        
     }
     
     override func didReceiveMemoryWarning() {

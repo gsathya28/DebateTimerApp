@@ -342,6 +342,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="CommentsBox" destination="WEC-pW-H4B" id="Kzw-1H-Zbj"/>
                         <outlet property="counterlabel" destination="5Rw-NW-ian" id="rVr-B7-pUb"/>
                         <outlet property="pause" destination="pY3-XG-lE0" id="4PF-LB-zAb"/>
                         <outlet property="pickerView1" destination="djN-3Y-GT9" id="Itc-3P-8XP"/>
