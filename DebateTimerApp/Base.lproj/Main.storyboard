@@ -464,6 +464,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="CommentBoxNeg" destination="hJq-y9-SnE" id="vD8-NA-hu1"/>
                         <outlet property="pickerView2" destination="eyp-HN-nKm" id="BA9-uP-aNA"/>
                     </connections>
                 </viewController>

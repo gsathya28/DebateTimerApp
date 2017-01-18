@@ -13,6 +13,7 @@ class OpenStateNegGUI: UIViewController , UIPickerViewDataSource, UIPickerViewDe
     
     // Properties- Set the variables here
     
+    @IBOutlet weak var CommentBoxNeg: UITextView!
     @IBOutlet weak var pickerView2: UIPickerView!
     var pickerData1 = ["0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15"]
     
@@ -37,6 +38,13 @@ class OpenStateNegGUI: UIViewController , UIPickerViewDataSource, UIPickerViewDe
         super.viewDidLoad()
         pickerView2.delegate = self
         pickerView2.dataSource = self
+        
+        //create rectangle
+        let frame1 = CGRect(x: 541, y: 570, width: 460, height: 128)
+        let dataBorder = UIView(frame: frame1) //Largest Border
+        dataBorder.backgroundColor = UIColor.clear
+        dataBorder.layer.borderWidth = 1.0
+        view.addSubview(dataBorder)
         
     }
     
