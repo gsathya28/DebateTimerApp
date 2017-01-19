@@ -332,7 +332,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Comments: " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="WEC-pW-H4B">
-                                <frame key="frameInset" minX="567" minY="570" width="447" height="128"/>
+                                <frame key="frameInset" minX="541" minY="570" width="460" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>

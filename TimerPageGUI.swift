@@ -47,6 +47,7 @@ class TimerPageGUI: UIViewController , UIPickerViewDataSource, UIPickerViewDeleg
         dataBorder.backgroundColor = UIColor.clear
         dataBorder.layer.borderWidth = 1.0
         view.addSubview(dataBorder)
+        dataBorder.addSubview(CommentsBox)
         
     }
     
