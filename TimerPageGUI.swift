@@ -41,14 +41,6 @@ class TimerPageGUI: UIViewController , UIPickerViewDataSource, UIPickerViewDeleg
         pickerView1.delegate = self
         pickerView1.dataSource = self
         
-        //create rectangle
-        let frame1 = CGRect(x: 567, y: 570, width: 447, height: 128)
-        let dataBorder = UIView(frame: frame1) //Largest Border
-        dataBorder.backgroundColor = UIColor.clear
-        dataBorder.layer.borderWidth = 1.0
-        view.addSubview(dataBorder)
-        dataBorder.addSubview(CommentsBox)
-        
     }
     
     override func didReceiveMemoryWarning() {

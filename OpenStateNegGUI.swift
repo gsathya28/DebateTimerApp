@@ -38,15 +38,7 @@ class OpenStateNegGUI: UIViewController , UIPickerViewDataSource, UIPickerViewDe
         super.viewDidLoad()
         pickerView2.delegate = self
         pickerView2.dataSource = self
-        
-        //create rectangle
-        let frame1 = CGRect(x: 567, y: 570, width: 447, height: 128)
-        let dataBorder = UIView(frame: frame1) //Largest Border
-        dataBorder.backgroundColor = UIColor.clear
-        dataBorder.layer.borderWidth = 1.0
-        view.addSubview(dataBorder)
-        dataBorder.addSubview(CommentBoxNeg)
-        
+
     }
     
     override func didReceiveMemoryWarning() {
