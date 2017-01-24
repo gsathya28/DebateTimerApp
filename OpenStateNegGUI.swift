@@ -15,8 +15,9 @@ class OpenStateNegGUI: UIViewController ,UITextViewDelegate, UIPickerViewDataSou
     
     @IBOutlet weak var CommentBoxNeg: UITextView!
     @IBOutlet weak var pickerView2: UIPickerView!
-    var pickerData1 = ["0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15"]
+    
     var keyboardHeight: Int = 0
+    var pickerData1 = ["0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15"]
     
     @IBOutlet var counterlabel: UILabel!
     var timer = Timer()
@@ -51,6 +52,9 @@ class OpenStateNegGUI: UIViewController ,UITextViewDelegate, UIPickerViewDataSou
         */
         CommentBoxNeg!.delegate = self
         NotificationCenter.default.addObserver(self, selector: #selector(OpenStateNegGUI.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        
+        CommentBoxNeg!.delegate = self
+        NotificationCenter.default.addObserver(self, selector: #selector(TimerPageGUI.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         
     }
     

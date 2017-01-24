@@ -207,6 +207,8 @@
                     </view>
                     <connections>
                         <outlet property="pickerView" destination="1GA-Ij-r0d" id="Prh-Zi-QTy"/>
+                        <outlet property="speak1Neg" destination="Io2-Kd-tiV" id="w62-5m-xyh"/>
+                        <outlet property="speak2Neg" destination="oMc-SZ-XOY" id="0pD-fy-EkY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="17m-NT-2Xw" sceneMemberID="firstResponder"/>
