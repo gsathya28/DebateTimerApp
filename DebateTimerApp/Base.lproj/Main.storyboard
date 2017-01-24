@@ -378,6 +378,9 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                 <state key="normal" title="Start">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="startTimer:" destination="Sem-sA-q1X" eventType="touchUpInside" id="60I-Zv-qvA"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LbV-AV-acP">
                                 <frame key="frameInset" minX="772" minY="217" width="230" height="167"/>
@@ -387,6 +390,9 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                 <state key="normal" title="Pause">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="pauseTimer:" destination="Sem-sA-q1X" eventType="touchUpInside" id="3y9-xG-3Xz"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Sk-qB-r8V">
                                 <frame key="frameInset" minX="541" minY="385" width="230" height="167"/>
@@ -396,6 +402,9 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                 <state key="normal" title="Reset">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="resetTimer:" destination="Sem-sA-q1X" eventType="touchUpInside" id="eHA-oK-He4"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M97-lG-UP5">
                                 <frame key="frameInset" minX="772" minY="385" width="230" height="167"/>
@@ -437,7 +446,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Opening Statement for Affermative" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ghP-lw-t03">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Opening Statement for Negative" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ghP-lw-t03">
                                 <frame key="frameInset" width="1024" height="122"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
@@ -465,7 +474,11 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                     </view>
                     <connections>
                         <outlet property="CommentBoxNeg" destination="hJq-y9-SnE" id="vD8-NA-hu1"/>
+                        <outlet property="counterlabel" destination="yRs-sy-EZ9" id="3AD-J1-VCS"/>
+                        <outlet property="pause" destination="LbV-AV-acP" id="XBB-Tg-IYe"/>
                         <outlet property="pickerView2" destination="eyp-HN-nKm" id="BA9-uP-aNA"/>
+                        <outlet property="reset" destination="0Sk-qB-r8V" id="VP0-hL-MPh"/>
+                        <outlet property="start" destination="JAo-Fn-RfZ" id="Awo-JC-jkN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z7c-ue-Gau" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -474,7 +487,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="m6D-CF-gQk"/>
+        <segue reference="bun-GC-Vrl"/>
         <segue reference="Zbr-rn-7LY"/>
     </inferredMetricsTieBreakers>
 </document>

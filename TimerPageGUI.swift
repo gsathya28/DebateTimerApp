@@ -8,8 +8,6 @@
 
 import UIKit
 
-
-
 class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
     
     
@@ -42,6 +40,7 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
         pickerView1.delegate = self
         pickerView1.dataSource = self
         
+        /*
         //create rectangle
         let frame1 = CGRect(x: 567, y: 570, width: 447, height: 128)
         let dataBorder = UIView(frame: frame1) //Largest Border
@@ -49,7 +48,7 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
         dataBorder.layer.borderWidth = 1.0
         view.addSubview(dataBorder)
         dataBorder.addSubview(CommentsBox)
-        
+        */
         CommentsBox!.delegate = self
         NotificationCenter.default.addObserver(self, selector: #selector(TimerPageGUI.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         
