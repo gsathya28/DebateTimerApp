@@ -9,7 +9,7 @@
 import UIKit
 
 
-class NewDebateInputPage: UIViewController, UITextViewDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
+class NewDebateInputPage: UIViewController, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
     
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var speak1Neg: UITextField!
@@ -37,13 +37,13 @@ class NewDebateInputPage: UIViewController, UITextViewDelegate, UIPickerViewData
         self.keyboardHeight = Int(keyboardRectangle.height)
     }
     
-    func textViewDidBeginEditing(_ textView: UITextView)
+    private func textFieldDidBeginEditing(_ textView: UITextView)
     {
         self.view.frame = self.view.frame.offsetBy(dx: 0, dy: -(CGFloat(keyboardHeight)))
         textView.text = ""
     }
     
-    func textViewDidEndEditing(_ textView: UITextView)
+    private func textFieldDidEndEditing(_ textView: UITextView)
     {
         self.view.frame = self.view.frame.offsetBy(dx: 0, dy: CGFloat(keyboardHeight))
     }

@@ -76,6 +76,7 @@
         <!--New Debate Input Page-->
         <scene sceneID="Olo-Ap-NMm">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="17m-NT-2Xw" sceneMemberID="firstResponder"/>
                 <viewController id="DZA-JW-AHI" customClass="NewDebateInputPage" customModule="DebateTimerApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nrJ-7L-0FE"/>
@@ -126,6 +127,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="DZA-JW-AHI" id="pJq-L9-RWV"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New Debate Topic" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CIa-5h-8s1">
                                 <frame key="frameInset" minX="375" minY="52" width="318" height="30"/>
@@ -211,7 +215,6 @@
                         <outlet property="speak2Neg" destination="oMc-SZ-XOY" id="0pD-fy-EkY"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="17m-NT-2Xw" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="808.59375" y="122.65625"/>
         </scene>
@@ -489,7 +492,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="bun-GC-Vrl"/>
         <segue reference="Zbr-rn-7LY"/>
+        <segue reference="bun-GC-Vrl"/>
     </inferredMetricsTieBreakers>
 </document>
