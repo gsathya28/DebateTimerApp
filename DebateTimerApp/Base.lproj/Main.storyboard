@@ -549,15 +549,34 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="startTimer:" destination="erh-ok-Coz" eventType="touchUpInside" id="eGp-Gv-I0A"/>
                                     <action selector="startTimer:" destination="gti-Af-EDU" eventType="touchUpInside" id="yj0-HJ-Bou"/>
+                                </connections>
+                            </button>
+                            <button contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mPG-GT-cbV">
+                                <frame key="frameInset" minX="418" minY="566" width="230" height="167"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.59889272893800582" green="0.0054381912109481593" blue="0.99835759401321411" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Reset">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="resetTimer:" destination="erh-ok-Coz" eventType="touchUpInside" id="KDu-4W-iSL"/>
+                                    <action selector="startTimer:" destination="erh-ok-Coz" eventType="touchUpInside" id="cE4-4F-gcz"/>
+                                    <action selector="startTimer:" destination="gti-Af-EDU" eventType="touchUpInside" id="ngy-op-xEL"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="AffLabel" destination="1CN-jD-Fvh" id="fGJ-xe-xhU"/>
+                        <outlet property="AffStart" destination="WGj-bX-g6o" id="RCr-cM-iLY"/>
                         <outlet property="Affirmative" destination="6IT-sI-0v8" id="peD-y6-aOa"/>
+                        <outlet property="NegStart" destination="pe2-xd-uuP" id="Lku-UU-aC2"/>
                         <outlet property="Negative" destination="Vyo-Ja-o7o" id="6Fs-qS-pp1"/>
+                        <outlet property="reset" destination="mPG-GT-cbV" id="emF-Sl-koi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OPr-aZ-IjK" userLabel="First Responder" sceneMemberID="firstResponder"/>
