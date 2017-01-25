@@ -12,13 +12,15 @@ class QOC: UIViewController {
 
     //Initialize objects
     @IBOutlet weak var Affirmative: UILabel!
+    @IBOutlet weak var Negative: UILabel!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        Affirmative.transform = CGAffineTransform(rotationAngle: CGFloat.pi / 2)
-        // Do any additional setup after loading the view.
+        //Rotate labels
+        Affirmative.transform = CGAffineTransform(rotationAngle: -(CGFloat.pi / 2))
+        Negative.transform = CGAffineTransform(rotationAngle: CGFloat.pi / 2)
     }
 
     override func didReceiveMemoryWarning() {
