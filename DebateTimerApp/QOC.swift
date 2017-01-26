@@ -27,7 +27,7 @@ class QOC: UIViewController {
     
     // These are the buttons Pause, Play and Reset: HOWEVER: THESE ARE OUTLETS. When you make this code. You’re going to have to drag the button twice. Once to make it into an outlet, another time to make it into a method (down below).
     
-    
+    //initialize buttons/labels for timers
     @IBOutlet weak var AffStart: UIButton!
     @IBOutlet weak var NegStart: UIButton!
     @IBOutlet weak var AffLabel: UILabel!
@@ -49,14 +49,13 @@ class QOC: UIViewController {
     
     // This is the method that will run when the play button is activated. This is what I meant when you have to drag the button into the code as a button. I’ll go through each line one by one.
     
-
-
-        
     @IBAction func startTimer(_ sender: UIButton) {
         
         centisecond = savedcentisecond
         timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(QOC.action), userInfo: nil, repeats: true)
-        AffStart.isEnabled = false;
+        AffStart.isEnabled = false
+        reset.isEnabled = true
+        AffLabel.text = String(minute) + ":" + String(tensecond) + String(second) +  ":" + String(decisecond) + String(centisecond)
 
     }
     
@@ -64,8 +63,9 @@ class QOC: UIViewController {
         
         centisecond = savedcentisecond
         timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(QOC.action), userInfo: nil, repeats: true)
-        NegStart.isEnabled = false;
-        
+        NegStart.isEnabled = false
+        reset.isEnabled = true
+        NegLabel.text = String(minute) + ":" + String(tensecond) + String(second) +  ":" + String(decisecond) + String(centisecond)
     }
     
     @IBAction func resetTimer(_ sender: UIButton) {
@@ -110,8 +110,6 @@ class QOC: UIViewController {
             tensecond = 0
             minute += 1
         }
-        
-        AffLabel.text = String(minute) + ":" + String(tensecond) + String(second) +  ":" + String(decisecond) + String(centisecond)
         
     }
     

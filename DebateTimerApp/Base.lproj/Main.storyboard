@@ -540,7 +540,6 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="StartNeg:" destination="erh-ok-Coz" eventType="touchUpInside" id="3oK-7z-tLs"/>
                                     <action selector="StartTimerNeg:" destination="erh-ok-Coz" eventType="touchUpInside" id="IJN-ro-auS"/>
                                 </connections>
                             </button>
