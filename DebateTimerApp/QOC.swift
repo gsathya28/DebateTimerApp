@@ -15,16 +15,23 @@ class QOC: UIViewController {
     @IBOutlet weak var Negative: UILabel!
    
     
-    var timer = Timer()
+    var Afftimer = Timer()
+    var Negtimer = Timer()
     // This is to keep track of each digit in the timer
-    var centisecond = 0
-    var decisecond = 0
-    var second = 0
-    var tensecond = 0
-    var minute = 0
-    // This is different, I’m not exactly sure what this is for, looking back. I’ll look into this.
-    var savedcentisecond = 0
+    var Affcentisecond = 0
+    var Affdecisecond = 0
+    var Affsecond = 0
+    var Afftensecond = 0
+    var Affminute = 0
     
+    var Negcentisecond = 0
+    var Negdecisecond = 0
+    var Negsecond = 0
+    var Negtensecond = 0
+    var Negminute = 0
+    // This is different, I’m not exactly sure what this is for, looking back. I’ll look into this.
+    var Affsavedcentisecond = 0
+    var Negsavedcentisecond = 0
     // These are the buttons Pause, Play and Reset: HOWEVER: THESE ARE OUTLETS. When you make this code. You’re going to have to drag the button twice. Once to make it into an outlet, another time to make it into a method (down below).
     
     //initialize buttons/labels for timers
@@ -51,66 +58,98 @@ class QOC: UIViewController {
     
     @IBAction func startTimer(_ sender: UIButton) {
         
-        centisecond = savedcentisecond
-        timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(QOC.action), userInfo: nil, repeats: true)
+        Affcentisecond = Affsavedcentisecond
+        Afftimer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(QOC.Affaction), userInfo: nil, repeats: true)
         AffStart.isEnabled = false
         reset.isEnabled = true
-        AffLabel.text = String(minute) + ":" + String(tensecond) + String(second) +  ":" + String(decisecond) + String(centisecond)
 
     }
     
     @IBAction func StartTimerNeg(_ sender: UIButton) {
         
-        centisecond = savedcentisecond
-        timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(QOC.action), userInfo: nil, repeats: true)
+        Negcentisecond = Negsavedcentisecond
+        Negtimer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(QOC.Negaction), userInfo: nil, repeats: true)
         NegStart.isEnabled = false
         reset.isEnabled = true
-        NegLabel.text = String(minute) + ":" + String(tensecond) + String(second) +  ":" + String(decisecond) + String(centisecond)
+        
     }
     
     @IBAction func resetTimer(_ sender: UIButton) {
         
-        timer.invalidate()
-        savedcentisecond = centisecond
-        centisecond = 0
-        decisecond = 0
-        second = 0
-        tensecond = 0
-        minute = 0
+        Afftimer.invalidate()
+        Negtimer.invalidate()
+        Affsavedcentisecond = Affcentisecond
+        Affcentisecond = 0
+        Affdecisecond = 0
+        Affsecond = 0
+        Afftensecond = 0
+        Affminute = 0
         AffLabel.text = ("00:00:00")
         NegLabel.text = ("00:00:00")
         AffStart.isEnabled = true
         NegStart.isEnabled = true
     }
     
-    func action()
+    func Affaction()
     {
-        centisecond += 1
+        Affcentisecond += 1
         
-        if (centisecond == 10)
+        if (Affcentisecond == 10)
         {
-            centisecond = 0
-            decisecond += 1
+            Affcentisecond = 0
+            Affdecisecond += 1
         }
         
-        if (decisecond == 10)
+        if (Affdecisecond == 10)
         {
-            decisecond = 0
-            second += 1
+            Affdecisecond = 0
+            Affsecond += 1
         }
         
-        if (second == 10)
+        if (Affsecond == 10)
         {
-            second = 0
-            tensecond += 1
+            Affsecond = 0
+            Afftensecond += 1
         }
         
-        if (tensecond == 6)
+        if (Afftensecond == 6)
         {
-            tensecond = 0
-            minute += 1
+            Afftensecond = 0
+            Affminute += 1
+        }
+        AffLabel.text = String(Affminute) + ":" + String(Afftensecond) + String(Affsecond) +  ":" + String(Affdecisecond) + String(Affcentisecond)
+        
+    }
+    
+    func Negaction()
+    {
+        Negcentisecond += 1
+        
+        if (Negcentisecond == 10)
+        {
+            Negcentisecond = 0
+            Negdecisecond += 1
         }
         
+        if (Negdecisecond == 10)
+        {
+            Negdecisecond = 0
+            Negsecond += 1
+        }
+        
+        if (Negsecond == 10)
+        {
+            Negsecond = 0
+            Negtensecond += 1
+        }
+        
+        if (Negtensecond == 6)
+        {
+            Negtensecond = 0
+            Negminute += 1
+        }
+        NegLabel.text = String(Negminute) + ":" + String(Negtensecond) + String(Negsecond) +  ":" + String(Negdecisecond) + String(Negcentisecond)
+
     }
     
 }
