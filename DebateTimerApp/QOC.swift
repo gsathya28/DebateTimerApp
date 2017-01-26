@@ -62,7 +62,8 @@ class QOC: UIViewController {
         Afftimer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(QOC.Affaction), userInfo: nil, repeats: true)
         AffStart.isEnabled = false
         reset.isEnabled = true
-
+        NegStart.isEnabled = true
+        Negtimer.invalidate()
     }
     
     @IBAction func StartTimerNeg(_ sender: UIButton) {
@@ -71,7 +72,8 @@ class QOC: UIViewController {
         Negtimer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(QOC.Negaction), userInfo: nil, repeats: true)
         NegStart.isEnabled = false
         reset.isEnabled = true
-        
+        AffStart.isEnabled = true
+        Afftimer.invalidate()
     }
     
     @IBAction func resetTimer(_ sender: UIButton) {
