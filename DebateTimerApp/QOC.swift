@@ -31,6 +31,7 @@ class QOC: UIViewController {
     @IBOutlet weak var AffStart: UIButton!
     @IBOutlet weak var NegStart: UIButton!
     @IBOutlet weak var AffLabel: UILabel!
+    @IBOutlet weak var NegLabel: UILabel!
     @IBOutlet weak var reset: UIButton!
     
     override func viewDidLoad() {
@@ -49,7 +50,9 @@ class QOC: UIViewController {
     // This is the method that will run when the play button is activated. This is what I meant when you have to drag the button into the code as a button. I’ll go through each line one by one.
     
 
-    @IBAction func startTimer(_ sender: AnyObject) {
+
+        
+    @IBAction func startTimer(_ sender: UIButton) {
         
         centisecond = savedcentisecond
         timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(QOC.action), userInfo: nil, repeats: true)
@@ -57,19 +60,27 @@ class QOC: UIViewController {
 
     }
     
-    // This is the method that will run when the pause button is pressed
-
+    @IBAction func StartTimerNeg(_ sender: UIButton) {
+        
+        centisecond = savedcentisecond
+        timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(QOC.action), userInfo: nil, repeats: true)
+        NegStart.isEnabled = false;
+        
+    }
     
-    @IBAction func resetTimer(_ sender: AnyObject) {
+    @IBAction func resetTimer(_ sender: UIButton) {
+        
         timer.invalidate()
+        savedcentisecond = centisecond
         centisecond = 0
         decisecond = 0
         second = 0
         tensecond = 0
         minute = 0
         AffLabel.text = ("00:00:00")
-        AffStart.isEnabled = true;
-        
+        NegLabel.text = ("00:00:00")
+        AffStart.isEnabled = true
+        NegStart.isEnabled = true
     }
     
     func action()

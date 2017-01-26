@@ -539,6 +539,10 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                 <state key="normal" title="Start">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="StartNeg:" destination="erh-ok-Coz" eventType="touchUpInside" id="3oK-7z-tLs"/>
+                                    <action selector="StartTimerNeg:" destination="erh-ok-Coz" eventType="touchUpInside" id="IJN-ro-auS"/>
+                                </connections>
                             </button>
                             <button contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WGj-bX-g6o">
                                 <frame key="frameInset" minX="217" minY="343" width="230" height="167"/>
@@ -549,8 +553,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="startTimer:" destination="erh-ok-Coz" eventType="touchUpInside" id="eGp-Gv-I0A"/>
-                                    <action selector="startTimer:" destination="gti-Af-EDU" eventType="touchUpInside" id="yj0-HJ-Bou"/>
+                                    <action selector="startTimer:" destination="erh-ok-Coz" eventType="touchUpInside" id="KmE-mv-P3B"/>
                                 </connections>
                             </button>
                             <button contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mPG-GT-cbV">
@@ -562,9 +565,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="resetTimer:" destination="erh-ok-Coz" eventType="touchUpInside" id="KDu-4W-iSL"/>
-                                    <action selector="startTimer:" destination="erh-ok-Coz" eventType="touchUpInside" id="cE4-4F-gcz"/>
-                                    <action selector="startTimer:" destination="gti-Af-EDU" eventType="touchUpInside" id="ngy-op-xEL"/>
+                                    <action selector="resetTimer:" destination="erh-ok-Coz" eventType="touchUpInside" id="giI-5M-dTB"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -574,9 +575,10 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                         <outlet property="AffLabel" destination="1CN-jD-Fvh" id="fGJ-xe-xhU"/>
                         <outlet property="AffStart" destination="WGj-bX-g6o" id="RCr-cM-iLY"/>
                         <outlet property="Affirmative" destination="6IT-sI-0v8" id="peD-y6-aOa"/>
+                        <outlet property="NegLabel" destination="7SM-MU-BZ4" id="VUd-R8-WVs"/>
                         <outlet property="NegStart" destination="pe2-xd-uuP" id="Lku-UU-aC2"/>
                         <outlet property="Negative" destination="Vyo-Ja-o7o" id="6Fs-qS-pp1"/>
-                        <outlet property="reset" destination="mPG-GT-cbV" id="emF-Sl-koi"/>
+                        <outlet property="reset" destination="mPG-GT-cbV" id="I7k-sP-I0P"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OPr-aZ-IjK" userLabel="First Responder" sceneMemberID="firstResponder"/>
