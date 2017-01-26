@@ -40,6 +40,7 @@ class QOC: UIViewController {
     @IBOutlet weak var AffLabel: UILabel!
     @IBOutlet weak var NegLabel: UILabel!
     @IBOutlet weak var reset: UIButton!
+    @IBOutlet weak var Pause: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,9 +62,10 @@ class QOC: UIViewController {
         Affcentisecond = Affsavedcentisecond
         Afftimer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(QOC.Affaction), userInfo: nil, repeats: true)
         AffStart.isEnabled = false
-        reset.isEnabled = true
+        reset.isEnabled = false
         NegStart.isEnabled = true
         Negtimer.invalidate()
+        Pause.isEnabled = true
     }
     
     @IBAction func StartTimerNeg(_ sender: UIButton) {
@@ -71,9 +73,10 @@ class QOC: UIViewController {
         Negcentisecond = Negsavedcentisecond
         Negtimer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(QOC.Negaction), userInfo: nil, repeats: true)
         NegStart.isEnabled = false
-        reset.isEnabled = true
+        reset.isEnabled = false
         AffStart.isEnabled = true
         Afftimer.invalidate()
+        Pause.isEnabled = true
     }
     
     @IBAction func resetTimer(_ sender: UIButton) {
@@ -152,6 +155,19 @@ class QOC: UIViewController {
         }
         NegLabel.text = String(Negminute) + ":" + String(Negtensecond) + String(Negsecond) +  ":" + String(Negdecisecond) + String(Negcentisecond)
 
+    }
+    
+    @IBAction func pauseTimer(_ sender: UIButton) {
+        Afftimer.invalidate()
+        Negtimer.invalidate()
+        Affsavedcentisecond = Affcentisecond
+        Affcentisecond = 0
+        Negsavedcentisecond = Negcentisecond
+        Negcentisecond = 0
+        AffStart.isEnabled = true
+        NegStart.isEnabled = true
+        Pause.isEnabled = false
+        reset.isEnabled = true
     }
     
 }
