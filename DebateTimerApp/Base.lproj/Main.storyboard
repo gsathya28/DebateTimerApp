@@ -144,7 +144,7 @@
                                 </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1GA-Ij-r0d">
-                                <frame key="frameInset" minX="432" minY="292" height="160" maxX="-57"/>
+                                <frame key="frameInset" minX="431" minY="292" height="160" maxX="-56"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <outlet property="dataSource" destination="zpc-qf-6wa" id="WfA-3L-wbc"/>
@@ -207,6 +207,8 @@
                     </view>
                     <connections>
                         <outlet property="pickerView" destination="1GA-Ij-r0d" id="Prh-Zi-QTy"/>
+                        <outlet property="speak1Neg" destination="Io2-Kd-tiV" id="tGb-92-4Aq"/>
+                        <outlet property="speak2Neg" destination="oMc-SZ-XOY" id="8Mo-Ob-PJn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="17m-NT-2Xw" sceneMemberID="firstResponder"/>
@@ -600,7 +602,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="Zbr-rn-7LY"/>
-        <segue reference="m6D-CF-gQk"/>
+        <segue reference="bun-GC-Vrl"/>
         <segue reference="SRF-xn-LXD"/>
     </inferredMetricsTieBreakers>
 </document>
