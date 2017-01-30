@@ -40,6 +40,7 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
         pickerView1.delegate = self
         pickerView1.dataSource = self
         
+
         /*
         //create rectangle
         let frame1 = CGRect(x: 567, y: 570, width: 447, height: 128)
@@ -52,6 +53,7 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
         CommentsBox!.delegate = self
         NotificationCenter.default.addObserver(self, selector: #selector(TimerPageGUI.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         
+
     }
     
     func keyboardWillShow(notification:NSNotification)

@@ -40,6 +40,7 @@ class OpenStateNegGUI: UIViewController ,UITextViewDelegate, UIPickerViewDataSou
         super.viewDidLoad()
         pickerView2.delegate = self
         pickerView2.dataSource = self
+
         
         /*
         //create rectangle
@@ -56,6 +57,7 @@ class OpenStateNegGUI: UIViewController ,UITextViewDelegate, UIPickerViewDataSou
         CommentBoxNeg!.delegate = self
         NotificationCenter.default.addObserver(self, selector: #selector(TimerPageGUI.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         
+
     }
     
     func keyboardWillShow(notification:NSNotification)
