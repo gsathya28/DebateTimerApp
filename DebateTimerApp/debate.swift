@@ -29,7 +29,4 @@ class debate: NSObject {
         self.speakers["Affirmative"] = [Affspeaker1, Affspeaker2]
         self.speakers["Negative"] = [Negspeaker1, Negspeaker2]
     }
-    
-    
-    
 }
