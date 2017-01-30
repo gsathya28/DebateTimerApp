@@ -9,17 +9,45 @@
 import UIKit
 
 
-class NewDebateInputPage: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class NewDebateInputPage: UIViewController, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
     
     @IBOutlet weak var pickerView: UIPickerView!
+    @IBOutlet weak var speak1Neg: UITextField!
+    @IBOutlet weak var speak2Neg: UITextField!
     
+    var keyboardHeight: Int = 0
     var pickerData = ["Hour 1", "Hour 2", "Hour 3", "Hour 4", "Hour 5", "Hour 6", "Hour 7"]
     override func viewDidLoad() {
         super.viewDidLoad()
         pickerView.delegate = self
         pickerView.dataSource = self
         // Do any additional setup after loading the view, typically from a nib.
+        
+        speak1Neg!.delegate = self
+        speak2Neg!.delegate = self
+        NotificationCenter.default.addObserver(self, selector: #selector(NewDebateInputPage.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        
     }
+    
+    func keyboardWillShow(notification:NSNotification)
+    {
+        let userInfo:NSDictionary = notification.userInfo! as NSDictionary
+        let keyboardFrame:NSValue = userInfo.value(forKey: UIKeyboardFrameEndUserInfoKey) as! NSValue
+        let keyboardRectangle = keyboardFrame.cgRectValue
+        self.keyboardHeight = Int(keyboardRectangle.height)
+    }
+    
+    private func textFieldDidBeginEditing(_ textView: UITextView)
+    {
+        self.view.frame = self.view.frame.offsetBy(dx: 0, dy: -(CGFloat(keyboardHeight)))
+        textView.text = ""
+    }
+    
+    private func textFieldDidEndEditing(_ textView: UITextView)
+    {
+        self.view.frame = self.view.frame.offsetBy(dx: 0, dy: CGFloat(keyboardHeight))
+    }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

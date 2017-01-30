@@ -8,9 +8,7 @@
 
 import UIKit
 
-
-
-class TimerPageGUI: UIViewController , UIPickerViewDataSource, UIPickerViewDelegate {
+class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
     
     
     // Properties- Set the variables here
@@ -18,7 +16,8 @@ class TimerPageGUI: UIViewController , UIPickerViewDataSource, UIPickerViewDeleg
     @IBOutlet weak var CommentsBox: UITextView!
     @IBOutlet weak var pickerView1: UIPickerView!
     var pickerData1 = ["0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15"]
-
+    var keyboardHeight: Int = 0
+    
     @IBOutlet var counterlabel: UILabel!
     var timer = Timer()
     // This is to keep track of each digit in the timer
@@ -41,6 +40,39 @@ class TimerPageGUI: UIViewController , UIPickerViewDataSource, UIPickerViewDeleg
         pickerView1.delegate = self
         pickerView1.dataSource = self
         
+
+        /*
+        //create rectangle
+        let frame1 = CGRect(x: 567, y: 570, width: 447, height: 128)
+        let dataBorder = UIView(frame: frame1) //Largest Border
+        dataBorder.backgroundColor = UIColor.clear
+        dataBorder.layer.borderWidth = 1.0
+        view.addSubview(dataBorder)
+        dataBorder.addSubview(CommentsBox)
+        */
+        CommentsBox!.delegate = self
+        NotificationCenter.default.addObserver(self, selector: #selector(TimerPageGUI.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        
+
+    }
+    
+    func keyboardWillShow(notification:NSNotification)
+    {
+        let userInfo:NSDictionary = notification.userInfo! as NSDictionary
+        let keyboardFrame:NSValue = userInfo.value(forKey: UIKeyboardFrameEndUserInfoKey) as! NSValue
+        let keyboardRectangle = keyboardFrame.cgRectValue
+        self.keyboardHeight = Int(keyboardRectangle.height)
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView)
+    {
+        self.view.frame = self.view.frame.offsetBy(dx: 0, dy: -(CGFloat(keyboardHeight)))
+        textView.text = ""
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView)
+    {
+        self.view.frame = self.view.frame.offsetBy(dx: 0, dy: CGFloat(keyboardHeight))
     }
     
     override func didReceiveMemoryWarning() {
