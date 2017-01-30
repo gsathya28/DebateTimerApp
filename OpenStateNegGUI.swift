@@ -15,12 +15,13 @@ class OpenStateNegGUI: UIViewController ,UITextViewDelegate, UIPickerViewDataSou
     
     @IBOutlet weak var CommentBoxNeg: UITextView!
     @IBOutlet weak var pickerView2: UIPickerView!
-    
+   
+    @IBOutlet weak var counterLabel: UILabel!
     var keyboardHeight: Int = 0
     var pickerData1 = ["0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15"]
     
-    @IBOutlet var counterlabel: UILabel!
     var timer = Timer()
+    
     // This is to keep track of each digit in the timer
     var centisecond = 0
     var decisecond = 0
@@ -114,7 +115,7 @@ class OpenStateNegGUI: UIViewController ,UITextViewDelegate, UIPickerViewDataSou
         second = 0
         tensecond = 0
         minute = 0
-        counterlabel.text = ("00:00:00")
+        counterLabel.text = ("00:00:00")
         start.isEnabled = true;
         pause.isEnabled = true;
     }
@@ -147,7 +148,7 @@ class OpenStateNegGUI: UIViewController ,UITextViewDelegate, UIPickerViewDataSou
             minute += 1
         }
         
-        counterlabel.text = String(minute) + ":" + String(tensecond) + String(second) +  ":" + String(decisecond) + String(centisecond)
+        counterLabel.text = String(minute) + ":" + String(tensecond) + String(second) +  ":" + String(decisecond) + String(centisecond)
         
     }
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

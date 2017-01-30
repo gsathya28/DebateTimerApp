@@ -380,6 +380,9 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                 <state key="normal" title="Start">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="startTimer:" destination="Sem-sA-q1X" eventType="touchUpInside" id="waS-vN-Y3w"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LbV-AV-acP">
                                 <frame key="frameInset" minX="772" minY="217" width="230" height="167"/>
@@ -389,6 +392,9 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                 <state key="normal" title="Pause">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="pauseTimer:" destination="Sem-sA-q1X" eventType="touchUpInside" id="dKY-bu-s05"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Sk-qB-r8V">
                                 <frame key="frameInset" minX="541" minY="385" width="230" height="167"/>
@@ -398,6 +404,9 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                 <state key="normal" title="Reset">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="resetTimer:" destination="Sem-sA-q1X" eventType="touchUpInside" id="TPL-XQ-gvO"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M97-lG-UP5">
                                 <frame key="frameInset" minX="772" minY="385" width="230" height="167"/>
@@ -470,7 +479,11 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                     </view>
                     <connections>
                         <outlet property="CommentBoxNeg" destination="hJq-y9-SnE" id="vD8-NA-hu1"/>
+                        <outlet property="counterLabel" destination="yRs-sy-EZ9" id="5Mb-C4-9pu"/>
+                        <outlet property="pause" destination="LbV-AV-acP" id="54u-MX-DwI"/>
                         <outlet property="pickerView2" destination="eyp-HN-nKm" id="BA9-uP-aNA"/>
+                        <outlet property="reset" destination="0Sk-qB-r8V" id="mb3-ME-XsZ"/>
+                        <outlet property="start" destination="JAo-Fn-RfZ" id="eul-FS-FSD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z7c-ue-Gau" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -601,10 +614,8 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Zbr-rn-7LY"/>
-        <segue reference="bun-GC-Vrl"/>
-        <segue reference="m6D-CF-gQk"/>
         <segue reference="SRF-xn-LXD"/>
+        <segue reference="m6D-CF-gQk"/>
         <segue reference="TQC-FY-qUc"/>
     </inferredMetricsTieBreakers>
 </document>
