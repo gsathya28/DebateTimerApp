@@ -601,8 +601,6 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Zbr-rn-7LY"/>
-        <segue reference="bun-GC-Vrl"/>
         <segue reference="m6D-CF-gQk"/>
         <segue reference="SRF-xn-LXD"/>
         <segue reference="TQC-FY-qUc"/>
