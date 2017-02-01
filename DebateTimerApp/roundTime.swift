@@ -7,28 +7,56 @@
 //
 
 import UIKit
+import os.log
 
-class roundTime: NSObject {
+class roundTime: NSObject, NSCoding {
     // MARK: Properties
     var roundName: String?
-    var roundrawTime: Int?
+    var roundRawTime: Int?
     var displayTimes: [String: Int]?
+    
+    struct PropertyKey {
+        static let roundName = "roundName"
+        static let roundRawTime = "roundRawTime"
+        static let displayTimes = "displayTimes"
+    }
     
     // MARK: Initializer
     init(inName: String, inRawTime: Int)
     {
         self.roundName = inName
-        self.roundrawTime = inRawTime
+        self.roundRawTime = inRawTime
+    }
+    
+    required convenience init?(coder: NSCoder)
+    {
+        guard let name = coder.decodeObject(forKey: PropertyKey.roundName) as? String else {
+            if #available(iOS 10.0, *) {
+                os_log("Unable to decode the name for a Meal object.", log: OSLog.default, type: .debug)
+            } else {
+                // Fallback on earlier versions
+            }
+            return nil
+        }
+        
+        let rawTime = 1
+        self.init(inName: name, inRawTime: rawTime)
+    }
+    
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(roundName, forKey: PropertyKey.roundName)
+        aCoder.encode(roundRawTime, forKey: PropertyKey.roundRawTime)
+        aCoder.encode(displayTimes, forKey: PropertyKey.displayTimes)
     }
     
     
     // MARK: Functions
     func setDisplayTime(rawTime: Int)
     {
-        if (self.roundrawTime) != nil
+        if (self.roundRawTime) != nil
         {
-            displayTimes?["minutes"] = self.roundrawTime! / 6000
-            var remainder = self.roundrawTime! % 6000
+            displayTimes?["minutes"] = self.roundRawTime! / 6000
+            var remainder = self.roundRawTime! % 6000
             displayTimes?["ten-seconds"] = remainder / 1000
             remainder = remainder % 1000
             displayTimes?["seconds"] = remainder / 100
