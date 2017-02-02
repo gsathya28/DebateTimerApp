@@ -124,11 +124,11 @@
 				35ADAB5E1DF5D17F00ED8479 /* LaunchScreen.storyboard */,
 				35ADAB591DF5D17F00ED8479 /* Main.storyboard */,
 				319F0A1A1DF9C6DE00C65073 /* NewDebateInputPage.swift */,
-				101285981E269D6500F6DEE3 /* OpenStateNegGUI.swift */,
-				35ADAB911DF5D51B00ED8479 /* roundScore.swift */,
-				35ADAB931DF5D57700ED8479 /* roundTime.swift */,
 				10D9241A1E044E1B004D8AD5 /* TimerPageGUI.swift */,
+				101285981E269D6500F6DEE3 /* OpenStateNegGUI.swift */,
 				31A31BB91E312875008B21E9 /* QOC.swift */,
+				35ADAB931DF5D57700ED8479 /* roundTime.swift */,
+				35ADAB911DF5D51B00ED8479 /* roundScore.swift */,
 				35ADAB571DF5D17F00ED8479 /* ViewController.swift */,
 			);
 			path = DebateTimerApp;
