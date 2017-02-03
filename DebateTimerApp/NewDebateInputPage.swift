@@ -12,6 +12,11 @@ import UIKit
 class NewDebateInputPage: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
     @IBOutlet weak var pickerView: UIPickerView!
+
+    @IBOutlet weak var debateName: UITextField!
+    
+    @IBOutlet weak var speak1Aff: UITextField!
+    @IBOutlet weak var speak2Aff: UITextField!
     @IBOutlet weak var speak1Neg: UITextField!
     @IBOutlet weak var speak2Neg: UITextField!
     
@@ -22,10 +27,7 @@ class NewDebateInputPage: UIViewController, UIPickerViewDataSource, UIPickerView
         pickerView.delegate = self
         pickerView.dataSource = self
         // Do any additional setup after loading the view, typically from a nib.
-        
     }
-    
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -42,6 +44,36 @@ class NewDebateInputPage: UIViewController, UIPickerViewDataSource, UIPickerView
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return pickerData[row]
+    }
+    
+    
+    @IBAction func createDebate(_ sender: UIButton) {
+        // Enters in an arry whether the textboxes are entered
+        let enteredText =
+            [speak1Aff.text,
+             speak2Aff.text,
+             speak1Neg.text,
+             speak2Neg.text,
+             debateName.text]
+        
+        //
+        for x in enteredText
+        {
+            if (!(x?.isEmpty)!)
+            {
+                fatalError("didn't enter your goddamn names!")
+            }
+        }
+        
+        let debateList = UserDefaults.standard
+        let debateDetails = UserDefaults.standard
+        
+        
+        
+        
+        
+        
+        
     }
     
 }
