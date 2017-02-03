@@ -65,12 +65,19 @@ class NewDebateInputPage: UIViewController, UIPickerViewDataSource, UIPickerView
             }
         }
         
+        let Aff1 = debater(inName: enteredText[0]!, inStance: "Aff")
+        let Aff2 = debater(inName: enteredText[1]!, inStance: "Aff")
+        let Neg1 = debater(inName: enteredText[2]!, inStance: "Neg")
+        let Neg2 = debater(inName: enteredText[3]!, inStance: "Neg")
+        
+        let currentDebate = debate(inName: debateName.text!, Affspeaker1: Aff1, Affspeaker2: Aff2, Negspeaker1: Neg1, Negspeaker2: Neg2)
+        
+        
         let debateList = UserDefaults.standard
-        let debateDetails = UserDefaults.standard
+        debateList.setValue(debateName.text, forKey: debateName.text!)
         
-        
-        
-        
+        let debateCurrent = UserDefaults.standard
+        debateCurrent.setValue(currentDebate, forKey: debateName.text!)
         
         
         

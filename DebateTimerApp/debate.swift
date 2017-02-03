@@ -8,7 +8,7 @@
 
 import UIKit
 
-class debate: NSObject {
+class debate: NSObject, NSCoding {
     // MARK: Properties
     var speakers = [
         "Affirmative": [debater](),
@@ -24,9 +24,25 @@ class debate: NSObject {
         "CloseNeg": debateRound(inName: "CloseNeg", inType: "Closing")
     ]
     
-    init(Affspeaker1: debater, Affspeaker2: debater, Negspeaker1: debater, Negspeaker2: debater)
+    var name: String?
+    
+    init(inName: String, Affspeaker1: debater, Affspeaker2: debater, Negspeaker1: debater, Negspeaker2: debater)
     {
         self.speakers["Affirmative"] = [Affspeaker1, Affspeaker2]
         self.speakers["Negative"] = [Negspeaker1, Negspeaker2]
     }
+    
+    required init(coder aDecoder: NSCoder) {
+        speakers = aDecoder.decodeObject(forKey: "speakers") as! [String : [debater]]
+        rounds = aDecoder.decodeObject(forKey: "rounds") as! [String : debateRound]
+        name = aDecoder.decodeObject(forKey: "name") as? String
+    }
+    
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(speakers, forKey: "speakers")
+        aCoder.encode(rounds, forKey: "rounds")
+        aCoder.encode(name, forKey: "name")
+    }
+    
+    
 }
