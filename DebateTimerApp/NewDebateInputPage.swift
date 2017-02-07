@@ -69,7 +69,7 @@ class NewDebateInputPage: UIViewController, UIPickerViewDataSource, UIPickerView
         let defaults = UserDefaults.standard
         defaults.set(debateName.text, forKey: "current")
         
-        let savedData = NSKeyedArchiver.archivedData(withRootObject: currentDebate )
+        let savedData = NSKeyedArchiver.archivedData(withRootObject: currentDebate)
         defaults.set(savedData, forKey: debateName.text!)
         
     }

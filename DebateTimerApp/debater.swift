@@ -8,7 +8,7 @@
 
 import UIKit
 
-class debater: NSObject {
+class debater: NSObject, NSCoding {
     
     // MARK: Properties
     var name: String?

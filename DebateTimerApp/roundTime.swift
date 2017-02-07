@@ -8,7 +8,7 @@
 
 import UIKit
 
-class roundTime: NSObject {
+class roundTime: NSObject, NSCoding {
     // MARK: Properties
     var roundName: String?
     var roundrawTime: Int?

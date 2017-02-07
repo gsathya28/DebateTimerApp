@@ -8,7 +8,7 @@
 
 import UIKit
 
-class debateRound: NSObject {
+class debateRound: NSObject, NSCoding {
     var roundName: String?
     var roundType: String?
     var speakersActive: [String: debater]?

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class roundScore: NSObject {
+class roundScore: NSObject, NSCoding {
     // MARK: Properties
     var roundName: String?
     var roundPoints: Int?
