@@ -35,7 +35,7 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
     @IBOutlet var start: UIButton!
     @IBOutlet var reset: UIButton!
     @IBOutlet weak var AffirmativeLabel: UILabel!
-    
+    var currentDebate: debate?
    
     
     override func viewDidLoad() {
@@ -45,8 +45,14 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
         
         let defaults = UserDefaults.standard
         let id = defaults.object(forKey: "current") as? String
-        AffirmativeLabel.text = id
-
+        
+        if let savedData = defaults.object(forKey: id!) as? Data
+        {
+            currentDebate = NSKeyedUnarchiver.unarchiveObject(with: savedData) as! debate?
+        }
+        
+        AffirmativeLabel.text = currentDebate?.name
+        
         /*
         //create rectangle
         let frame1 = CGRect(x: 567, y: 570, width: 447, height: 128)
