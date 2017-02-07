@@ -34,12 +34,20 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
     @IBOutlet var pause: UIButton!
     @IBOutlet var start: UIButton!
     @IBOutlet var reset: UIButton!
+    @IBOutlet weak var AffirmativeLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         pickerView1.delegate = self
         pickerView1.dataSource = self
         
+        let defaults = UserDefaults.standard
+        let id = defaults.object(forKey: "current") as? String
+        if let savedData = defaults.object(forKey: id!) as? Data
+        {
+            let debateCurrent = NSKeyedUnarchiver.unarchiveObject(with: savedData) as! debate
+            AffirmativeLabel.text = debateCurrent.name
+        }
 
         /*
         //create rectangle

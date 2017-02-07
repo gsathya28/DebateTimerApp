@@ -55,16 +55,7 @@ class NewDebateInputPage: UIViewController, UIPickerViewDataSource, UIPickerView
              speak1Neg.text,
              speak2Neg.text,
              debateName.text]
-        
-        //
-        for x in enteredText
-        {
-            if (!(x?.isEmpty)!)
-            {
-                fatalError("didn't enter your goddamn names!")
-            }
-        }
-        
+               
         let Aff1 = debater(inName: enteredText[0]!, inStance: "Aff")
         let Aff2 = debater(inName: enteredText[1]!, inStance: "Aff")
         let Neg1 = debater(inName: enteredText[2]!, inStance: "Neg")
@@ -72,15 +63,18 @@ class NewDebateInputPage: UIViewController, UIPickerViewDataSource, UIPickerView
         
         let currentDebate = debate(inName: debateName.text!, Affspeaker1: Aff1, Affspeaker2: Aff2, Negspeaker1: Neg1, Negspeaker2: Neg2)
         
-        
         let debateList = UserDefaults.standard
-        debateList.setValue(debateName.text, forKey: debateName.text!)
+        debateList.setValue(debateName.text, forKey: "0")
         
         let debateCurrent = UserDefaults.standard
-        debateCurrent.setValue(currentDebate, forKey: debateName.text!)
+        debateCurrent.setValue(currentDebate, forKey: "current")
         
-        
+        let savedData = NSKeyedArchiver.archivedData(withRootObject: currentDebate)
+        let defaults = UserDefaults.standard
+        defaults.setValue(savedData, forKey: debateName.text!)
         
     }
+    
+   
     
 }
