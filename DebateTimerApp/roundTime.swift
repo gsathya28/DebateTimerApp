@@ -21,6 +21,19 @@ class roundTime: NSObject {
         self.roundrawTime = inRawTime
     }
     
+    required init(coder aDecoder: NSCoder) {
+        roundName = aDecoder.decodeObject(forKey: "displayTime") as? String
+        roundrawTime = aDecoder.decodeObject(forKey: "rawTime") as? Int
+        displayTimes = aDecoder.decodeObject(forKey: "name") as? [String: Int]
+    }
+    
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(displayTimes, forKey: "displayTime")
+        aCoder.encode(roundrawTime, forKey: "rawTime")
+        aCoder.encode(roundName, forKey: "name")
+    }
+
+    
     
     // MARK: Functions
     func setDisplayTime(rawTime: Int)
@@ -46,5 +59,8 @@ class roundTime: NSObject {
             displayTimes?["centiseconds"] = 0
         }
     }
+    
+    
+    
     
 }

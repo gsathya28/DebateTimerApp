@@ -19,4 +19,17 @@ class debateRound: NSObject {
         self.roundType = inType
     }
     
+    required init(coder aDecoder: NSCoder) {
+        roundName = aDecoder.decodeObject(forKey: "speakersAct") as? String
+        roundType = aDecoder.decodeObject(forKey: "type") as? String
+        speakersActive = aDecoder.decodeObject(forKey: "name") as? [String: debater]
+    }
+    
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(speakersActive, forKey: "speakersAct")
+        aCoder.encode(roundType, forKey: "type")
+        aCoder.encode(roundName, forKey: "name")
+    }
+
+    
 }

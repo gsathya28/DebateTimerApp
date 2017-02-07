@@ -44,6 +44,4 @@ class debate: NSObject, NSCoding {
         aCoder.encode(name, forKey: "name")
     }
     
-       
-    
 }

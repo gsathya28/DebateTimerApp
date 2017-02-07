@@ -20,6 +20,19 @@ class roundScore: NSObject {
         self.roundPointsPossible = inPointsPossible
     }
     
+    required init(coder aDecoder: NSCoder) {
+        roundName = aDecoder.decodeObject(forKey: "name") as? String
+        roundPoints = aDecoder.decodeObject(forKey: "points") as? Int
+        roundPointsPossible = aDecoder.decodeObject(forKey: "possPoints") as? Int
+    }
+    
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(roundPointsPossible, forKey: "possPoints")
+        aCoder.encode(roundPoints, forKey: "points")
+        aCoder.encode(roundName, forKey: "name")
+    }
+
+    
     // MARK: Functions
     func calculatePercent(pointsScored: Int, pointsPossible: Int) -> Double
     {

@@ -36,6 +36,8 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
     @IBOutlet var reset: UIButton!
     @IBOutlet weak var AffirmativeLabel: UILabel!
     
+   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         pickerView1.delegate = self
@@ -43,11 +45,7 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
         
         let defaults = UserDefaults.standard
         let id = defaults.object(forKey: "current") as? String
-        if let savedData = defaults.object(forKey: id!) as? Data
-        {
-            let debateCurrent = NSKeyedUnarchiver.unarchiveObject(with: savedData) as! debate
-            AffirmativeLabel.text = debateCurrent.name
-        }
+        AffirmativeLabel.text = id
 
         /*
         //create rectangle
@@ -60,9 +58,6 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
         */
         CommentsBox!.delegate = self
         NotificationCenter.default.addObserver(self, selector: #selector(TimerPageGUI.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        
-        
-                
         
     }
     
