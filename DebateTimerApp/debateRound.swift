@@ -9,8 +9,8 @@
 import UIKit
 
 class debateRound: NSObject, NSCoding {
-    var roundName: String?
-    var roundType: String?
+    var roundName: String = "notset"
+    var roundType: String = "notset"
     var speakersActive: [String: debater]?
     
     init(inName: String, inType: String)
@@ -20,9 +20,9 @@ class debateRound: NSObject, NSCoding {
     }
     
     required init(coder aDecoder: NSCoder) {
-        roundName = aDecoder.decodeObject(forKey: "speakersAct") as? String
-        roundType = aDecoder.decodeObject(forKey: "type") as? String
-        speakersActive = aDecoder.decodeObject(forKey: "name") as? [String: debater]
+        roundName = (aDecoder.decodeObject(forKey: "name") as? String)!
+        roundType = (aDecoder.decodeObject(forKey: "type") as? String)!
+        speakersActive = aDecoder.decodeObject(forKey: "speakersAct") as? [String: debater]
     }
     
     func encode(with aCoder: NSCoder) {

@@ -51,7 +51,8 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
             currentDebate = NSKeyedUnarchiver.unarchiveObject(with: savedData) as! debate?
         }
         
-        AffirmativeLabel.text = currentDebate?.name
+        let speakerName = currentDebate?.affSpeakers[0].name
+        AffirmativeLabel.text = speakerName!
         
         /*
         //create rectangle

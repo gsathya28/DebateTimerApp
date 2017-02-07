@@ -11,7 +11,7 @@ import UIKit
 class debater: NSObject, NSCoding {
     
     // MARK: Properties
-    var name: String?
+    var name: String = "notset"
     var stance: String?
     var debateTimes: [String: roundTime]?
     var debateScores: [String: roundScore]?
@@ -19,14 +19,14 @@ class debater: NSObject, NSCoding {
     // MARK: Initializer
     init(inName: String, inStance: String)
     {
-        self.name? = inName
+        self.name = inName
         self.stance? = inStance
     }
     
     required init(coder aDecoder: NSCoder) {
         stance = aDecoder.decodeObject(forKey: "stance") as? String
         debateTimes = aDecoder.decodeObject(forKey: "times") as? [String : roundTime]
-        name = aDecoder.decodeObject(forKey: "name") as? String
+        name = (aDecoder.decodeObject(forKey: "name") as? String)!
     }
     
     func encode(with aCoder: NSCoder) {

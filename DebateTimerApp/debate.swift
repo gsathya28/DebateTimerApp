@@ -10,10 +10,9 @@ import UIKit
 
 class debate: NSObject, NSCoding {
     // MARK: Properties
-    var speakers = [
-        "Affirmative": [debater](),
-        "Negative": [debater]()
-    ]
+    var affSpeakers = [debater]()
+    var negSpeakers = [debater]()
+
     var rounds = [
         "OpenAff": debateRound(inName: "OpenAff", inType: "Opener"),
         "OpenNeg": debateRound(inName: "OpenNeg", inType: "Opener"),
@@ -29,18 +28,20 @@ class debate: NSObject, NSCoding {
     init(inName: String, Affspeaker1: debater, Affspeaker2: debater, Negspeaker1: debater, Negspeaker2: debater)
     {
         name = inName
-        self.speakers["Affirmative"] = [Affspeaker1, Affspeaker2]
-        self.speakers["Negative"] = [Negspeaker1, Negspeaker2]
+        self.affSpeakers = [Affspeaker1, Affspeaker2]
+        self.negSpeakers = [Negspeaker1, Negspeaker2]
     }
     
     required init(coder aDecoder: NSCoder) {
-        speakers = aDecoder.decodeObject(forKey: "speakers") as! [String : [debater]]
+        affSpeakers = aDecoder.decodeObject(forKey: "affSpeakers") as! [debater]
+        negSpeakers = aDecoder.decodeObject(forKey: "negSpeakers") as! [debater]
         rounds = aDecoder.decodeObject(forKey: "rounds") as! [String : debateRound]
         name = aDecoder.decodeObject(forKey: "name") as? String
     }
     
     func encode(with aCoder: NSCoder) {
-        aCoder.encode(speakers, forKey: "speakers")
+        aCoder.encode(affSpeakers, forKey: "affSpeakers")
+        aCoder.encode(negSpeakers, forKey: "negSpeakers")
         aCoder.encode(rounds, forKey: "rounds")
         aCoder.encode(name, forKey: "name")
     }
