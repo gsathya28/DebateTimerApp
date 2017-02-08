@@ -14,13 +14,13 @@ class debate: NSObject, NSCoding {
     var negSpeakers = [debater]()
 
     var rounds = [
-        "OpenAff": debateRound(inName: "OpenAff", inType: "Opener"),
-        "OpenNeg": debateRound(inName: "OpenNeg", inType: "Opener"),
-        "QOC" : debateRound(inName: "QOC", inType: "Question"),
-        "RebAff": debateRound(inName: "RebAff", inType: "Rebuttal" ),
-        "RebNeg": debateRound(inName: "RebNeg", inType: "Rebuttal"),
-        "CloseAff": debateRound(inName: "CloseAff", inType: "Closing"),
-        "CloseNeg": debateRound(inName: "CloseNeg", inType: "Closing")
+        "OpenAff": debateRound(inName: "OpenAff", inType: "Opener", possPoints: 15),
+        "OpenNeg": debateRound(inName: "OpenNeg", inType: "Opener", possPoints: 15),
+        "QOC" : debateRound(inName: "QOC", inType: "Question", possPoints: 15),
+        "RebAff": debateRound(inName: "RebAff", inType: "Rebuttal" , possPoints: 15 ),
+        "RebNeg": debateRound(inName: "RebNeg", inType: "Rebuttal" , possPoints: 15),
+        "CloseAff": debateRound(inName: "CloseAff", inType: "Closing" , possPoints: 15),
+        "CloseNeg": debateRound(inName: "CloseNeg", inType: "Closing" , possPoints: 15)
     ]
     
     var name: String?
