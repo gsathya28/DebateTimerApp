@@ -26,6 +26,7 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
     var second = 0
     var tensecond = 0
     var minute = 0
+    var rawTime = 0
     // This is different, I’m not exactly sure what this is for, looking back. I’ll look into this.
     var savedcentisecond = 0
     
@@ -34,13 +35,26 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
     @IBOutlet var pause: UIButton!
     @IBOutlet var start: UIButton!
     @IBOutlet var reset: UIButton!
+    @IBOutlet weak var AffirmativeLabel: UILabel!
+    var currentDebate: debate?
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
         pickerView1.delegate = self
         pickerView1.dataSource = self
         
-
+        let defaults = UserDefaults.standard
+        let id = defaults.object(forKey: "current") as? String
+        
+        if let savedData = defaults.object(forKey: id!) as? Data
+        {
+            currentDebate = NSKeyedUnarchiver.unarchiveObject(with: savedData) as! debate?
+        }
+        
+        let speakerName = currentDebate?.rounds["OpenAff"]?.speakersActive
+        AffirmativeLabel.text = AffirmativeLabel.text! + " (" + speakerName! + ")"
+        
         /*
         //create rectangle
         let frame1 = CGRect(x: 567, y: 570, width: 447, height: 128)
@@ -53,7 +67,6 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
         CommentsBox!.delegate = self
         NotificationCenter.default.addObserver(self, selector: #selector(TimerPageGUI.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         
-
     }
     
     func keyboardWillShow(notification:NSNotification)
@@ -118,6 +131,7 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
     func action()
     {
         centisecond += 1
+        rawTime += 1
         
         if (centisecond == 10)
         {
