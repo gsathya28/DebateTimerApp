@@ -26,6 +26,7 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
     var second = 0
     var tensecond = 0
     var minute = 0
+    var rawTime = 0
     // This is different, I’m not exactly sure what this is for, looking back. I’ll look into this.
     var savedcentisecond = 0
     
@@ -51,8 +52,8 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
             currentDebate = NSKeyedUnarchiver.unarchiveObject(with: savedData) as! debate?
         }
         
-        let speakerName = currentDebate?.affSpeakers[0].name
-        AffirmativeLabel.text = speakerName!
+        let speakerName = currentDebate?.rounds["OpenAff"]?.speakersActive
+        AffirmativeLabel.text = AffirmativeLabel.text! + " (" + speakerName! + ")"
         
         /*
         //create rectangle
@@ -130,6 +131,7 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
     func action()
     {
         centisecond += 1
+        rawTime += 1
         
         if (centisecond == 10)
         {

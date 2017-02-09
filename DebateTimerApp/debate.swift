@@ -12,17 +12,7 @@ class debate: NSObject, NSCoding {
     // MARK: Properties
     var affSpeakers = [debater]()
     var negSpeakers = [debater]()
-
-    var rounds = [
-        "OpenAff": debateRound(inName: "OpenAff", inType: "Opener", possPoints: 15),
-        "OpenNeg": debateRound(inName: "OpenNeg", inType: "Opener", possPoints: 15),
-        "QOC" : debateRound(inName: "QOC", inType: "Question", possPoints: 15),
-        "RebAff": debateRound(inName: "RebAff", inType: "Rebuttal" , possPoints: 15 ),
-        "RebNeg": debateRound(inName: "RebNeg", inType: "Rebuttal" , possPoints: 15),
-        "CloseAff": debateRound(inName: "CloseAff", inType: "Closing" , possPoints: 15),
-        "CloseNeg": debateRound(inName: "CloseNeg", inType: "Closing" , possPoints: 15)
-    ]
-    
+    var rounds = [String: debateRound]()
     var name: String?
     
     init(inName: String, Affspeaker1: debater, Affspeaker2: debater, Negspeaker1: debater, Negspeaker2: debater)
@@ -30,6 +20,16 @@ class debate: NSObject, NSCoding {
         name = inName
         self.affSpeakers = [Affspeaker1, Affspeaker2]
         self.negSpeakers = [Negspeaker1, Negspeaker2]
+        self.rounds = [
+            "OpenAff": debateRound(inName: "OpenAff", inType: "Opener", possPoints: 15, speaker: Affspeaker1.name!),
+            "OpenNeg": debateRound(inName: "OpenNeg", inType: "Opener", possPoints: 15, speaker: Negspeaker1.name!),
+            "QOC" : debateRound(inName: "QOC", inType: "Question", possPoints: 15, speaker: "All"),
+            "RebAff": debateRound(inName: "RebAff", inType: "Rebuttal", possPoints: 15, speaker: Affspeaker2.name!),
+            "RebNeg": debateRound(inName: "RebNeg", inType: "Rebuttal", possPoints: 15, speaker: Negspeaker2.name!),
+            "CloseAff": debateRound(inName: "CloseAff", inType: "Closing", possPoints: 15, speaker: Affspeaker1.name!),
+            "CloseNeg": debateRound(inName: "CloseNeg", inType: "Closing", possPoints: 15, speaker: Affspeaker2.name!)
+        ]
+
     }
     
     required init(coder aDecoder: NSCoder) {
