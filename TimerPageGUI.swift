@@ -17,6 +17,7 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
     @IBOutlet weak var pickerView1: UIPickerView!
     var pickerData1 = ["0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15"]
     var keyboardHeight: Int = 0
+    @IBOutlet weak var continueSegue: UIButton!
     
     @IBOutlet var counterlabel: UILabel!
     var timer = Timer()
@@ -99,9 +100,10 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
     @IBAction func startTimer(_ sender: UIButton) {
         centisecond = savedcentisecond
         timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(TimerPageGUI.action), userInfo: nil, repeats: true)
-        start.isEnabled = false;
-        pause.isEnabled = true;
-        reset.isEnabled = false;
+        start.isEnabled = false
+        pause.isEnabled = true
+        reset.isEnabled = false
+        continueSegue.isEnabled = false
     }
     
     // This is the method that will run when the pause button is pressed
@@ -110,9 +112,10 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
         timer.invalidate()
         savedcentisecond = centisecond
         centisecond = 0;
-        start.isEnabled = true;
-        reset.isEnabled = true;
-        pause.isEnabled = false;
+        start.isEnabled = true
+        reset.isEnabled = true
+        pause.isEnabled = false
+        continueSegue.isEnabled = true
     }
     
     
@@ -124,9 +127,14 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
         tensecond = 0
         minute = 0
         counterlabel.text = ("00:00:00")
-        start.isEnabled = true;
-        pause.isEnabled = true;
+        start.isEnabled = true
+        pause.isEnabled = true
     }
+    
+    @IBAction func saveTime(_ sender: UIButton) {
+        
+    }
+    
     
     func action()
     {

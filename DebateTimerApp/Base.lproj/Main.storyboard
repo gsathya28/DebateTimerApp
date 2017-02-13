@@ -304,6 +304,9 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                 <state key="normal" title="Save">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="saveTime:" destination="gti-Af-EDU" eventType="touchUpInside" id="0J4-g4-aA8"/>
+                                </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="djN-3Y-GT9">
                                 <frame key="frameInset" minY="581" height="187" maxX="375"/>
@@ -350,6 +353,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                     <connections>
                         <outlet property="AffirmativeLabel" destination="pP0-EG-xMW" id="lhL-sc-yzN"/>
                         <outlet property="CommentsBox" destination="WEC-pW-H4B" id="Kzw-1H-Zbj"/>
+                        <outlet property="continueSegue" destination="c3C-Op-6CA" id="ENT-hj-C26"/>
                         <outlet property="counterlabel" destination="5Rw-NW-ian" id="rVr-B7-pUb"/>
                         <outlet property="pause" destination="pY3-XG-lE0" id="4PF-LB-zAb"/>
                         <outlet property="pickerView1" destination="djN-3Y-GT9" id="Itc-3P-8XP"/>
@@ -817,7 +821,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
-                                    <segue destination="nvc-rV-ZDs" kind="show" id="Zdz-C4-6po"/>
+                                    <segue destination="l0r-Ki-8g6" kind="show" id="SCZ-R1-SHK"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dFX-j7-PBO">
@@ -1088,15 +1092,11 @@ Delivery</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="eqg-fd-OoQ"/>
-        <segue reference="m6D-CF-gQk"/>
-        <segue reference="Zbr-rn-7LY"/>
-        <segue reference="T2u-bR-ZjG"/>
+        <segue reference="SCZ-R1-SHK"/>
         <segue reference="EXE-Vb-qE5"/>
         <segue reference="4WJ-eM-2bk"/>
-        <segue reference="SRF-xn-LXD"/>
-        <segue reference="m6D-CF-gQk"/>
         <segue reference="Zbr-rn-7LY"/>
-        <segue reference="Zdz-C4-6po"/>
+        <segue reference="bun-GC-Vrl"/>
+        <segue reference="eqg-fd-OoQ"/>
     </inferredMetricsTieBreakers>
 </document>
