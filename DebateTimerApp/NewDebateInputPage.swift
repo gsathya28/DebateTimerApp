@@ -83,7 +83,7 @@ class NewDebateInputPage: UIViewController, UIPickerViewDataSource, UIPickerView
         let savedData = NSKeyedArchiver.archivedData(withRootObject: currentDebate)
         defaults.set(savedData, forKey: debateName.text!)
         
-        defaults.set("1", forKey: "roundCounter")
+        defaults.set(0, forKey: "roundCounter")
     }
     
 }

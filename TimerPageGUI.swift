@@ -38,7 +38,7 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
     @IBOutlet var reset: UIButton!
     @IBOutlet weak var AffirmativeLabel: UILabel!
     var currentDebate: debate?
-   
+    var roundCounter: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,12 +48,15 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
         let defaults = UserDefaults.standard
         let id = defaults.object(forKey: "current") as? String
         
+        roundCounter = defaults.object(forKey: "roundCounter") as? Int
+        
         if let savedData = defaults.object(forKey: id!) as? Data
         {
             currentDebate = NSKeyedUnarchiver.unarchiveObject(with: savedData) as! debate?
         }
         
-        let speakerName = currentDebate?.rounds["OpenAff"]?.speakersActive
+        let speakerName = currentDebate?.rounds[roundCounter!].speakersActive
+        let roundName = currentDebate?.rounds[roundCounter!]
         AffirmativeLabel.text = AffirmativeLabel.text! + " (" + speakerName! + ")"
         
         /*
