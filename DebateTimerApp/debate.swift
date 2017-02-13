@@ -8,25 +8,42 @@
 
 import UIKit
 
-class debate: NSObject {
+class debate: NSObject, NSCoding {
     // MARK: Properties
-    var speakers = [
-        "Affirmative": [debater](),
-        "Negative": [debater]()
-    ]
-    var rounds = [
-        "OpenAff": debateRound(inName: "OpenAff", inType: "Opener"),
-        "OpenNeg": debateRound(inName: "OpenNeg", inType: "Opener"),
-        "QOC" : debateRound(inName: "QOC", inType: "Question"),
-        "RebAff": debateRound(inName: "RebAff", inType: "Rebuttal" ),
-        "RebNeg": debateRound(inName: "RebNeg", inType: "Rebuttal"),
-        "CloseAff": debateRound(inName: "CloseAff", inType: "Closing"),
-        "CloseNeg": debateRound(inName: "CloseNeg", inType: "Closing")
-    ]
+    var affSpeakers = [debater]()
+    var negSpeakers = [debater]()
+    var rounds = [String: debateRound]()
+    var name: String?
     
-    init(Affspeaker1: debater, Affspeaker2: debater, Negspeaker1: debater, Negspeaker2: debater)
+    init(inName: String, Affspeaker1: debater, Affspeaker2: debater, Negspeaker1: debater, Negspeaker2: debater)
     {
-        self.speakers["Affirmative"] = [Affspeaker1, Affspeaker2]
-        self.speakers["Negative"] = [Negspeaker1, Negspeaker2]
+        name = inName
+        self.affSpeakers = [Affspeaker1, Affspeaker2]
+        self.negSpeakers = [Negspeaker1, Negspeaker2]
+        self.rounds = [
+            "OpenAff": debateRound(inName: "OpenAff", inType: "Opener", possPoints: 15, speaker: Affspeaker1.name!),
+            "OpenNeg": debateRound(inName: "OpenNeg", inType: "Opener", possPoints: 15, speaker: Negspeaker1.name!),
+            "QOC" : debateRound(inName: "QOC", inType: "Question", possPoints: 15, speaker: "All"),
+            "RebAff": debateRound(inName: "RebAff", inType: "Rebuttal", possPoints: 15, speaker: Affspeaker2.name!),
+            "RebNeg": debateRound(inName: "RebNeg", inType: "Rebuttal", possPoints: 15, speaker: Negspeaker2.name!),
+            "CloseAff": debateRound(inName: "CloseAff", inType: "Closing", possPoints: 15, speaker: Affspeaker1.name!),
+            "CloseNeg": debateRound(inName: "CloseNeg", inType: "Closing", possPoints: 15, speaker: Affspeaker2.name!)
+        ]
+
     }
+    
+    required init(coder aDecoder: NSCoder) {
+        affSpeakers = aDecoder.decodeObject(forKey: "affSpeakers") as! [debater]
+        negSpeakers = aDecoder.decodeObject(forKey: "negSpeakers") as! [debater]
+        rounds = aDecoder.decodeObject(forKey: "rounds") as! [String : debateRound]
+        name = aDecoder.decodeObject(forKey: "name") as? String
+    }
+    
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(affSpeakers, forKey: "affSpeakers")
+        aCoder.encode(negSpeakers, forKey: "negSpeakers")
+        aCoder.encode(rounds, forKey: "rounds")
+        aCoder.encode(name, forKey: "name")
+    }
+    
 }
