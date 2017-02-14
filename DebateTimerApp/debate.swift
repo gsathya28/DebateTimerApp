@@ -21,7 +21,7 @@ class debate: NSObject, NSCoding {
         self.affSpeakers = [Affspeaker1, Affspeaker2]
         self.negSpeakers = [Negspeaker1, Negspeaker2]
         self.rounds = [
-            debateRound(inName: "Opening Statement for Affirmative", inType: "Opener", possPoints: 15, speaker: Affspeaker1.name!),
+            debateRound(inName: "Opening Statement for Affirmative - Love ", inType: "Opener", possPoints: 15, speaker: Affspeaker1.name!),
             debateRound(inName: "Opening Statement for Negative", inType: "Opener", possPoints: 15, speaker: Negspeaker1.name!),
             debateRound(inName: "QOC", inType: "Question", possPoints: 15, speaker: "All"),
             debateRound(inName: "RebAff", inType: "Rebuttal", possPoints: 15, speaker: Affspeaker2.name!),

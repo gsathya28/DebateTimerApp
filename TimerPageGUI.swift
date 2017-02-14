@@ -39,7 +39,9 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
     @IBOutlet weak var AffirmativeLabel: UILabel!
     var currentDebate: debate?
     var roundCounter: Int?
+    var round: debateRound?
     
+    // Load Stuff
     override func viewDidLoad() {
         super.viewDidLoad()
         pickerView1.delegate = self
@@ -56,8 +58,11 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
         }
         
         let speakerName = currentDebate?.rounds[roundCounter!].speakersActive
-        let roundName = currentDebate?.rounds[roundCounter!]
-        AffirmativeLabel.text = AffirmativeLabel.text! + " (" + speakerName! + ")"
+        round = currentDebate?.rounds[roundCounter!]
+        let roundName = currentDebate?.rounds[roundCounter!].roundName
+        AffirmativeLabel.text = roundName! + " (" + speakerName! + ")"
+        
+        
         
         /*
         //create rectangle
