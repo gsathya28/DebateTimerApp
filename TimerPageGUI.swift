@@ -62,6 +62,22 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
         let roundName = currentDebate?.rounds[roundCounter!].roundName
         AffirmativeLabel.text = roundName! + " (" + speakerName! + ")"
         
+        if (roundCounter! < 2)
+        {
+            
+        }
+        else if (roundCounter == 2)
+        {
+            
+        }
+        else
+        {
+            
+        }
+        
+        
+        let roundCounterSet = roundCounter! + 1
+        defaults.set(roundCounterSet, forKey: "roundCounter")
         
         
         /*
