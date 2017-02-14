@@ -226,7 +226,6 @@
 				TargetAttributes = {
 					35ADAB511DF5D17F00ED8479 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 956SB9JJUH;
 						ProvisioningStyle = Automatic;
 					};
 					35ADAB651DF5D17F00ED8479 = {
@@ -457,7 +456,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 956SB9JJUH;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = DebateTimerApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -471,7 +470,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 956SB9JJUH;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = DebateTimerApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
