@@ -1092,10 +1092,10 @@ Delivery</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="4WJ-eM-2bk"/>
         <segue reference="SCZ-R1-SHK"/>
         <segue reference="EXE-Vb-qE5"/>
-        <segue reference="4WJ-eM-2bk"/>
-        <segue reference="Zbr-rn-7LY"/>
+        <segue reference="TQC-FY-qUc"/>
         <segue reference="bun-GC-Vrl"/>
         <segue reference="eqg-fd-OoQ"/>
     </inferredMetricsTieBreakers>
