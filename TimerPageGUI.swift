@@ -40,6 +40,7 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
     var currentDebate: debate?
     var roundCounter: Int?
     var round: debateRound?
+    @IBOutlet weak var rubricText: UILabel!
     
     // Load Stuff
     override func viewDidLoad() {
@@ -61,23 +62,36 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
         round = currentDebate?.rounds[roundCounter!]
         let roundName = currentDebate?.rounds[roundCounter!].roundName
         AffirmativeLabel.text = roundName! + " (" + speakerName! + ")"
-        
+
         if (roundCounter! < 2)
         {
+            rubricText.text = "Grading Rubric \n\nAre the arguments well supported with logical reasoning or evidence? \n\nDoes the case open and close effectively? Was each argument clearly stated? \n\nWere there 2-3 clearly defined contention statements? (2 points) \n\nWere there 3 supporting pieces of evidence for each contention? (3 pts) \n HI!"
+            
+            if (roundCounter! == 0)
+            {
+                pause.backgroundColor = UIColor.red
+                continueSegue.isHidden = true
+            }
             
         }
         else if (roundCounter == 2)
         {
-            
+            // Segue To QOC
         }
         else
         {
-            
+            if (roundCounter! == 3 || roundCounter! == 4)
+            {
+                rubricText.text = "Gradic Rubric \n\nDoes the case refute the opposing case? \n\nDoes the case have supporting data and arguments?"
+            }
+            if (roundCounter! == 5 || roundCounter! == 6)
+            {
+                rubricText.text = "Gradic Ruburic \n\nDoes the team defend the most important point in their own case and attack the most important point in their opponent's case?"
+            }
         }
         
         
-        let roundCounterSet = roundCounter! + 1
-        defaults.set(roundCounterSet, forKey: "roundCounter")
+        
         
         
         /*
@@ -202,6 +216,16 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return pickerData1[row]
+    }
+    
+    
+    @IBAction func continueButton(_ sender: UIButton) {
+        let defaults = UserDefaults.standard
+        let roundCounterSet = roundCounter! + 1
+        defaults.set(roundCounterSet, forKey: "roundCounter")
+        
+        
+        
     }
 
 }

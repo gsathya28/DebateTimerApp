@@ -144,7 +144,7 @@
                                 </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1GA-Ij-r0d">
-                                <frame key="frameInset" minX="430" minY="292" height="160" maxX="-55"/>
+                                <frame key="frameInset" minX="427" minY="292" height="160" maxX="-55"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <outlet property="dataSource" destination="zpc-qf-6wa" id="WfA-3L-wbc"/>
@@ -318,6 +318,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <state key="normal" title="Continue"/>
                                 <connections>
+                                    <action selector="continueButton:" destination="gti-Af-EDU" eventType="touchUpInside" id="PJf-fC-Gel"/>
                                     <segue destination="Sem-sA-q1X" kind="show" id="eqg-fd-OoQ"/>
                                 </connections>
                             </button>
@@ -358,6 +359,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                         <outlet property="pause" destination="pY3-XG-lE0" id="4PF-LB-zAb"/>
                         <outlet property="pickerView1" destination="djN-3Y-GT9" id="Itc-3P-8XP"/>
                         <outlet property="reset" destination="b4U-0g-JDb" id="LwR-F3-5p7"/>
+                        <outlet property="rubricText" destination="AQE-Na-tAs" id="M6i-Yc-8QI"/>
                         <outlet property="start" destination="6mD-p7-Iqs" id="s9N-hN-WQ7"/>
                     </connections>
                 </viewController>
@@ -1197,10 +1199,10 @@ Delivery</string>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="eqg-fd-OoQ"/>
-        <segue reference="bun-GC-Vrl"/>
-        <segue reference="TQC-FY-qUc"/>
+        <segue reference="m6D-CF-gQk"/>
+        <segue reference="Zbr-rn-7LY"/>
+        <segue reference="T2u-bR-ZjG"/>
         <segue reference="SCZ-R1-SHK"/>
         <segue reference="bmw-vx-UyF"/>
-        <segue reference="4WJ-eM-2bk"/>
     </inferredMetricsTieBreakers>
 </document>
