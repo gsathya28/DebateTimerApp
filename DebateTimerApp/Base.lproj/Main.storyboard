@@ -304,9 +304,6 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                 <state key="normal" title="Save">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <action selector="saveTime:" destination="gti-Af-EDU" eventType="touchUpInside" id="0J4-g4-aA8"/>
-                                </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="djN-3Y-GT9">
                                 <frame key="frameInset" minY="581" height="187" maxX="375"/>
@@ -348,6 +345,15 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LfV-yU-IaL">
+                                <frame key="frameInset" minX="606" minY="691" width="194" height="73"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Next Round"/>
+                                <connections>
+                                    <action selector="refreshView:" destination="gti-Af-EDU" eventType="touchUpInside" id="VgG-e3-cQe"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -358,8 +364,10 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                         <outlet property="counterlabel" destination="5Rw-NW-ian" id="rVr-B7-pUb"/>
                         <outlet property="pause" destination="pY3-XG-lE0" id="4PF-LB-zAb"/>
                         <outlet property="pickerView1" destination="djN-3Y-GT9" id="Itc-3P-8XP"/>
+                        <outlet property="refreshButton" destination="LfV-yU-IaL" id="kf8-hH-O8c"/>
                         <outlet property="reset" destination="b4U-0g-JDb" id="LwR-F3-5p7"/>
                         <outlet property="rubricText" destination="AQE-Na-tAs" id="M6i-Yc-8QI"/>
+                        <outlet property="save" destination="TX5-0d-NeB" id="fdg-h5-IeA"/>
                         <outlet property="start" destination="6mD-p7-Iqs" id="s9N-hN-WQ7"/>
                     </connections>
                 </viewController>
@@ -1198,16 +1206,11 @@ Delivery</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="6Wt-RA-eNk"/>
+        <segue reference="T2u-bR-ZjG"/>
         <segue reference="eqg-fd-OoQ"/>
         <segue reference="m6D-CF-gQk"/>
-        <segue reference="Zbr-rn-7LY"/>
-        <segue reference="T2u-bR-ZjG"/>
-        <segue reference="SCZ-R1-SHK"/>
-        <segue reference="Zbr-rn-7LY"/>
-        <segue reference="m6D-CF-gQk"/>
-        <segue reference="SRF-xn-LXD"/>
-        <segue reference="T2u-bR-ZjG"/>
-        <segue reference="6Wt-RA-eNk"/>
         <segue reference="bmw-vx-UyF"/>
+        <segue reference="TQC-FY-qUc"/>
     </inferredMetricsTieBreakers>
 </document>

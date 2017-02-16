@@ -18,6 +18,8 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
     var pickerData1 = ["0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15"]
     var keyboardHeight: Int = 0
     @IBOutlet weak var continueSegue: UIButton!
+    @IBOutlet var refreshButton: UIButton!
+    
     
     @IBOutlet var counterlabel: UILabel!
     var timer = Timer()
@@ -36,7 +38,11 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
     @IBOutlet var pause: UIButton!
     @IBOutlet var start: UIButton!
     @IBOutlet var reset: UIButton!
+    @IBOutlet var save: UIButton!
+    
+    
     @IBOutlet weak var AffirmativeLabel: UILabel!
+    
     var currentDebate: debate?
     var roundCounter: Int?
     var round: debateRound?
@@ -47,6 +53,7 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
         super.viewDidLoad()
         pickerView1.delegate = self
         pickerView1.dataSource = self
+        
         
         let defaults = UserDefaults.standard
         let id = defaults.object(forKey: "current") as? String
@@ -66,16 +73,23 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
         {
             rubricText.text = "Grading Rubric \n\nAre the arguments well supported with logical reasoning or evidence? \n\nDoes the case open and close effectively? Was each argument clearly stated? \n\nWere there 2-3 clearly defined contention statements? (2 points) \n\nWere there 3 supporting pieces of evidence for each contention? (3 pts) \n HI!"
             
-            if (roundCounter! == 0)
+            refreshButton.isHidden = false
+            continueSegue.isHidden = true
+            
+            if (roundCounter! == 1)
             {
                 pause.backgroundColor = UIColor.red
-                continueSegue.isHidden = true
+                start.backgroundColor = UIColor.red
+                reset.backgroundColor = UIColor.red
+                save.backgroundColor = UIColor.red
+                continueSegue.isHidden = false
+                refreshButton.isHidden = true
             }
             
         }
         else if (roundCounter == 2)
         {
-            // Segue To QOC
+            // Segue To QOC - should not come here
         }
         else
         {
@@ -225,5 +239,13 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
         
         
     }
+    
+    @IBAction func refreshView(_ sender: AnyObject) {
+        let defaults = UserDefaults.standard
+        let roundCounterSet = roundCounter! + 1
+        defaults.set(roundCounterSet, forKey: "roundCounter")
+        
+    }
+    
 
 }
