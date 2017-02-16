@@ -57,11 +57,10 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
         {
             currentDebate = NSKeyedUnarchiver.unarchiveObject(with: savedData) as! debate?
         }
-        
-        let speakerName = currentDebate?.rounds[roundCounter!].speakersActive
+
         round = currentDebate?.rounds[roundCounter!]
         let roundName = currentDebate?.rounds[roundCounter!].roundName
-        AffirmativeLabel.text = roundName! + " (" + speakerName! + ")"
+        AffirmativeLabel.text = roundName!
 
         if (roundCounter! < 2)
         {
@@ -223,7 +222,6 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
         let defaults = UserDefaults.standard
         let roundCounterSet = roundCounter! + 1
         defaults.set(roundCounterSet, forKey: "roundCounter")
-        
         
         
     }
