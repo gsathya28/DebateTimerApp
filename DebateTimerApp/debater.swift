@@ -26,7 +26,7 @@ class debater: NSObject, NSCoding {
     required init(coder aDecoder: NSCoder) {
         stance = aDecoder.decodeObject(forKey: "stance") as? String
         debateScores = (aDecoder.decodeObject(forKey: "scores") as? [String: Int])!
-        debateTimes = (aDecoder.decodeObject(forKey: "times") as? [String: Int])!
+        debateTimes = aDecoder.decodeObject(forKey: "times") as? [String: Int]!
         name = (aDecoder.decodeObject(forKey: "name") as? String)!
     }
     
