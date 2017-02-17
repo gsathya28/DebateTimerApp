@@ -23,7 +23,7 @@ class Individual_Evaluation: UIViewController, UITextViewDelegate {
         CommentsBoxAff!.delegate = self
         Stu1CommentAff!.delegate = self
         Stu1CommentNeg.delegate = self
-        NotificationCenter.default.addObserver(self, selector: #selector(OpenStateNegGUI.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(Individual_Evaluation.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         
     }
     
