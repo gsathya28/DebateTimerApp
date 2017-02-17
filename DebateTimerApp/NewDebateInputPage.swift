@@ -23,6 +23,7 @@ class NewDebateInputPage: UIViewController, UIPickerViewDataSource, UIPickerView
     
    
     var pickerData = ["Hour 1", "Hour 2", "Hour 3", "Hour 4", "Hour 5", "Hour 6", "Hour 7"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         pickerView.delegate = self
@@ -47,8 +48,9 @@ class NewDebateInputPage: UIViewController, UIPickerViewDataSource, UIPickerView
         return pickerData[row]
     }
     
+    @IBAction func unwindToInputPage(_sender: UIStoryboardSegue) {
     
-    
+    }
     
     @IBAction func createDebate(_ sender: UIButton) {
         // Enters in an arry whether the textboxes are entered

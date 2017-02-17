@@ -244,7 +244,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
-                                    <segue destination="DZA-JW-AHI" kind="show" id="Zbr-rn-7LY"/>
+                                    <segue destination="DZA-JW-AHI" kind="show" id="IG0-fj-9kK"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="17" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AQE-Na-tAs">
@@ -318,7 +318,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <state key="normal" title="Continue"/>
                                 <connections>
-                                    <segue destination="Sem-sA-q1X" kind="show" id="eqg-fd-OoQ"/>
+                                    <segue destination="TFs-N0-eib" kind="unwind" unwindAction="unwindToInputPageWith_sender:" id="H9q-W8-5Wd"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b4U-0g-JDb">
@@ -362,6 +362,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s6w-sH-9Ni" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="TFs-N0-eib" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1478.90625" y="-708.59375"/>
         </scene>
@@ -1196,11 +1197,10 @@ Delivery</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Zbr-rn-7LY"/>
-        <segue reference="m6D-CF-gQk"/>
-        <segue reference="SRF-xn-LXD"/>
-        <segue reference="T2u-bR-ZjG"/>
+        <segue reference="IG0-fj-9kK"/>
+        <segue reference="bun-GC-Vrl"/>
         <segue reference="6Wt-RA-eNk"/>
+        <segue reference="T2u-bR-ZjG"/>
         <segue reference="bmw-vx-UyF"/>
     </inferredMetricsTieBreakers>
 </document>
