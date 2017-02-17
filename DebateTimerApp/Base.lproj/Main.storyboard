@@ -483,7 +483,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Continue"/>
                                 <connections>
-                                    <segue destination="gti-Af-EDU" kind="show" id="r5P-vI-7E5"/>
+                                    <segue destination="l0r-Ki-8g6" kind="show" id="qm1-59-UhY"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1114,6 +1114,7 @@ Delivery</string>
         <segue reference="eD5-ex-Dmw"/>
         <segue reference="Zbr-rn-7LY"/>
         <segue reference="SAW-Ld-1wq"/>
+        <segue reference="qm1-59-UhY"/>
         <segue reference="IyJ-wa-70a"/>
     </inferredMetricsTieBreakers>
 </document>
