@@ -36,11 +36,19 @@ class IntermediaryMenu: UIViewController {
             continueQOC.isEnabled = true
         }
         
-        if (roundCounter! >= 6)
+        if (roundCounter! == 6)
         {
             continueRegular.isEnabled = false
             continueQOC.isEnabled = false
             individualEval.isEnabled = true
+            roundLabel.isHidden = true
+            finishedLabel.isHidden = false
+        }
+        if (roundCounter! == 7)
+        {
+            continueRegular.isEnabled = false
+            continueQOC.isEnabled = false
+            individualEval.isEnabled = false
             roundLabel.isHidden = true
             finishedLabel.isHidden = false
         }

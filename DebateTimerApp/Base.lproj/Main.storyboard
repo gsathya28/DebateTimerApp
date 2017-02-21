@@ -918,6 +918,7 @@ Delivery</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Continue"/>
                                 <connections>
+                                    <action selector="continueMenu:" destination="Wfb-RC-aoK" eventType="touchUpInside" id="xNi-E3-4Ps"/>
                                     <segue destination="jO5-tJ-Jov" kind="show" id="Vhj-64-4HN"/>
                                 </connections>
                             </button>
