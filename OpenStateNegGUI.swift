@@ -85,6 +85,8 @@ class OpenStateNegGUI: UIViewController ,UITextViewDelegate, UIPickerViewDataSou
         
     }
     
+    @IBAction func unwindToOpenStateNegGui(_sender: UIStoryboardSegue) {
+    }
     
     // This is the method that will run when the play button is activated. This is what I meant when you have to drag the button into the code as a button. I’ll go through each line one by one.
     

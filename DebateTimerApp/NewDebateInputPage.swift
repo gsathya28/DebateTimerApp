@@ -49,7 +49,6 @@ class NewDebateInputPage: UIViewController, UIPickerViewDataSource, UIPickerView
     }
     
     @IBAction func unwindToInputPage(_sender: UIStoryboardSegue) {
-    
     }
     
     @IBAction func createDebate(_ sender: UIButton) {
