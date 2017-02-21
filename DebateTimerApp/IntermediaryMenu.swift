@@ -14,19 +14,35 @@ class IntermediaryMenu: UIViewController {
     
     @IBOutlet var continueRegular: UIButton!
     @IBOutlet var continueQOC: UIButton!
+    @IBOutlet var individualEval: UIButton!
+    
+    
+    @IBOutlet weak var finishedLabel: UILabel!
+    @IBOutlet weak var roundLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let defaults = UserDefaults.standard
         roundCounter = defaults.object(forKey: "roundCounter") as? Int
         
-        continueRegular.isHidden = false
-        continueQOC.isHidden = true
+        continueRegular.isEnabled = true
+        continueQOC.isEnabled = false
+        individualEval.isEnabled = false
+        finishedLabel.isHidden = true
         
         if (roundCounter! <= 1)
         {
-            continueRegular.isHidden = true
-            continueQOC.isHidden = false
+            continueRegular.isEnabled = false
+            continueQOC.isEnabled = true
+        }
+        
+        if (roundCounter! >= 6)
+        {
+            continueRegular.isEnabled = false
+            continueQOC.isEnabled = false
+            individualEval.isEnabled = true
+            roundLabel.isHidden = true
+            finishedLabel.isHidden = false
         }
         
         // Do any additional setup after loading the view.

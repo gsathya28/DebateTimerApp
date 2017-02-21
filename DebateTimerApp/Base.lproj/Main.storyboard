@@ -1080,15 +1080,6 @@ Delivery</string>
                                     <segue destination="gti-Af-EDU" kind="show" id="eD5-ex-Dmw"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xB1-WH-Ukm">
-                                <frame key="frameInset" minX="430" minY="456" width="164" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <state key="normal" title="Debate Data"/>
-                                <connections>
-                                    <segue destination="hek-Cu-m6s" kind="show" id="hni-n4-edg"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Zs-Wq-3UZ">
                                 <frame key="frameInset" minX="489" minY="606" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1097,7 +1088,7 @@ Delivery</string>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SNr-HK-iwO">
                                 <frame key="frameInset" minX="331" minY="399" width="363" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <state key="normal" title="Go to Rounds of Clarification"/>
                                 <connections>
                                     <action selector="continueQOCRound:" destination="jO5-tJ-Jov" eventType="touchUpInside" id="xqx-JX-16d"/>
@@ -1110,12 +1101,40 @@ Delivery</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <state key="normal" title="Main Menu"/>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="The Debate is finished!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OBD-We-Gm6">
+                                <frame key="frameInset" minX="196" minY="143" width="631" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xeo-0E-pyr">
+                                <frame key="frameInset" minX="377" minY="462" width="270" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Individual Evaluations"/>
+                                <connections>
+                                    <segue destination="Wfb-RC-aoK" kind="show" id="Lta-gn-6gl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xB1-WH-Ukm">
+                                <frame key="frameInset" minX="430" minY="500" width="164" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Debate Data"/>
+                                <connections>
+                                    <segue destination="hek-Cu-m6s" kind="show" id="hni-n4-edg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="continueQOC" destination="SNr-HK-iwO" id="1bA-gh-Ozj"/>
                         <outlet property="continueRegular" destination="mq0-eE-tOm" id="FWl-d6-5Zl"/>
+                        <outlet property="finishedLabel" destination="OBD-We-Gm6" id="5rb-lC-1wJ"/>
+                        <outlet property="individualEval" destination="Xeo-0E-pyr" id="VTh-RK-CUQ"/>
+                        <outlet property="roundLabel" destination="QBz-HU-drM" id="a9b-ry-mSC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vIN-sq-pHz" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1124,10 +1143,10 @@ Delivery</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="fO6-5b-xKA"/>
+        <segue reference="d5g-fy-6v1"/>
         <segue reference="U2Z-JP-mfG"/>
         <segue reference="eD5-ex-Dmw"/>
+        <segue reference="hni-n4-edg"/>
         <segue reference="Zbr-rn-7LY"/>
-        <segue reference="brT-oz-uQA"/>
     </inferredMetricsTieBreakers>
 </document>
