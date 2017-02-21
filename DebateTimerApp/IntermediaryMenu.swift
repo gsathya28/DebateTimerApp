@@ -10,9 +10,25 @@ import UIKit
 
 class IntermediaryMenu: UIViewController {
 
+    var roundCounter: Int?
+    
+    @IBOutlet var continueRegular: UIButton!
+    @IBOutlet var continueQOC: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let defaults = UserDefaults.standard
+        roundCounter = defaults.object(forKey: "roundCounter") as? Int
+        
+        continueRegular.isHidden = false
+        continueQOC.isHidden = true
+        
+        if (roundCounter! <= 1)
+        {
+            continueRegular.isHidden = true
+            continueQOC.isHidden = false
+        }
+        
         // Do any additional setup after loading the view.
     }
 
@@ -31,5 +47,17 @@ class IntermediaryMenu: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
+    @IBAction func continueRound(_ sender: UIButton) {
+        let defaults = UserDefaults.standard
+        roundCounter = roundCounter! + 1
+        defaults.set(roundCounter, forKey: "roundCounter")
+    }
+    
+    @IBAction func continueQOCRound(_ sender: UIButton) {
+        let defaults = UserDefaults.standard
+        roundCounter = roundCounter! + 1
+        defaults.set(roundCounter, forKey: "roundCounter")
+    }
+    
 }

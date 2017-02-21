@@ -309,16 +309,6 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                 <frame key="frameInset" minY="581" height="187" maxX="375"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </pickerView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c3C-Op-6CA">
-                                <frame key="frameInset" minX="827" minY="683" width="187" height="77"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                <state key="normal" title="Continue"/>
-                                <connections>
-                                    <action selector="continueButton:" destination="gti-Af-EDU" eventType="touchUpInside" id="PJf-fC-Gel"/>
-                                    <segue destination="erh-ok-Coz" kind="show" id="SAW-Ld-1wq"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b4U-0g-JDb">
                                 <frame key="frameInset" minX="541" minY="385" width="230" height="167"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -345,14 +335,13 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LfV-yU-IaL">
-                                <frame key="frameInset" minX="606" minY="691" width="194" height="73"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c3C-Op-6CA">
+                                <frame key="frameInset" minX="817" minY="683" width="187" height="77"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="Next Round"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <state key="normal" title="Continue"/>
                                 <connections>
-                                    <action selector="refreshView:" destination="gti-Af-EDU" eventType="touchUpInside" id="VgG-e3-cQe"/>
-                                    <segue destination="jO5-tJ-Jov" kind="show" id="oIV-di-esk"/>
+                                    <segue destination="jO5-tJ-Jov" kind="show" id="Vs6-I1-zta"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -361,11 +350,9 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                     <connections>
                         <outlet property="AffirmativeLabel" destination="pP0-EG-xMW" id="lhL-sc-yzN"/>
                         <outlet property="CommentsBox" destination="WEC-pW-H4B" id="Kzw-1H-Zbj"/>
-                        <outlet property="continueSegue" destination="c3C-Op-6CA" id="ENT-hj-C26"/>
                         <outlet property="counterlabel" destination="5Rw-NW-ian" id="rVr-B7-pUb"/>
                         <outlet property="pause" destination="pY3-XG-lE0" id="4PF-LB-zAb"/>
                         <outlet property="pickerView1" destination="djN-3Y-GT9" id="Itc-3P-8XP"/>
-                        <outlet property="refreshButton" destination="LfV-yU-IaL" id="kf8-hH-O8c"/>
                         <outlet property="reset" destination="b4U-0g-JDb" id="LwR-F3-5p7"/>
                         <outlet property="rubricText" destination="AQE-Na-tAs" id="M6i-Yc-8QI"/>
                         <outlet property="save" destination="TX5-0d-NeB" id="fdg-h5-IeA"/>
@@ -502,7 +489,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OPr-aZ-IjK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2616" y="261"/>
+            <point key="canvasLocation" x="2610" y="123"/>
         </scene>
         <!--NEGATIVE-->
         <scene sceneID="wCL-7n-qMY">
@@ -572,7 +559,8 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Wfb-RC-aoK" kind="show" id="EXE-Vb-qE5"/>
+                                    <action selector="continueMenu:" destination="2tF-uJ-9Gm" eventType="touchUpInside" id="UG4-h2-kYR"/>
+                                    <segue destination="jO5-tJ-Jov" kind="show" id="Czm-Oh-EDZ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -585,7 +573,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GgM-Lh-w7U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4189" y="656"/>
+            <point key="canvasLocation" x="3312" y="-702"/>
         </scene>
         <!--AFFIRMATIVE-->
         <scene sceneID="1p9-Bx-bsJ">
@@ -655,7 +643,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Wfb-RC-aoK" kind="show" id="IyJ-wa-70a"/>
+                                    <segue destination="jO5-tJ-Jov" kind="show" id="U2Z-JP-mfG"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -668,7 +656,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kjb-6C-1zZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4189" y="-152"/>
+            <point key="canvasLocation" x="2610" y="-701"/>
         </scene>
         <!--Individual Evaluation-->
         <scene sceneID="ED3-UB-2mg">
@@ -694,9 +682,6 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Back"/>
-                                <connections>
-                                    <segue destination="l0r-Ki-8g6" kind="show" id="SCZ-R1-SHK"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dFX-j7-PBO">
                                 <frame key="frameInset" minX="133" minY="161" width="379" height="168"/>
@@ -947,7 +932,7 @@ Delivery</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uti-oo-Qp4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5231" y="261"/>
+            <point key="canvasLocation" x="2610" y="950"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Ed7-du-j6o">
@@ -966,9 +951,6 @@ Delivery</string>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Back"/>
-                                <connections>
-                                    <segue destination="Wfb-RC-aoK" kind="show" id="bmw-vx-UyF"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Topic" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bcj-im-o7c">
                                 <frame key="frameInset" minX="310" minY="7" width="405" height="87"/>
@@ -1048,7 +1030,7 @@ Delivery</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TyO-Xx-vfg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5904" y="261"/>
+            <point key="canvasLocation" x="1924" y="950"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="DzG-rI-Fz7">
@@ -1066,12 +1048,12 @@ Delivery</string>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uiv-vN-bm5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3289" y="261"/>
+            <point key="canvasLocation" x="3312" y="123"/>
         </scene>
-        <!--View Controller-->
+        <!--Intermediary Menu-->
         <scene sceneID="BVM-BB-y0b">
             <objects>
-                <viewController id="jO5-tJ-Jov" sceneMemberID="viewController">
+                <viewController id="jO5-tJ-Jov" customClass="IntermediaryMenu" customModule="DebateTimerApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TbI-nq-3Fr"/>
                         <viewControllerLayoutGuide type="bottom" id="V1P-6u-Kn6"/>
@@ -1087,34 +1069,64 @@ Delivery</string>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Zs-Wq-3UZ">
-                                <frame key="frameInset" minX="489" minY="410" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Back"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mq0-eE-tOm">
-                                <frame key="frameInset" minX="430" minY="347" width="164" height="30"/>
+                                <frame key="frameInset" minX="430" minY="347" width="164" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <state key="normal" title="Continue "/>
                                 <connections>
+                                    <action selector="continueRound:" destination="jO5-tJ-Jov" eventType="touchUpInside" id="tgp-ix-2Sa"/>
                                     <segue destination="gti-Af-EDU" kind="show" id="eD5-ex-Dmw"/>
                                 </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xB1-WH-Ukm">
+                                <frame key="frameInset" minX="430" minY="456" width="164" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Debate Data"/>
+                                <connections>
+                                    <segue destination="hek-Cu-m6s" kind="show" id="hni-n4-edg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Zs-Wq-3UZ">
+                                <frame key="frameInset" minX="489" minY="606" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Back"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SNr-HK-iwO">
+                                <frame key="frameInset" minX="331" minY="399" width="363" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Go to Rounds of Clarification"/>
+                                <connections>
+                                    <action selector="continueQOCRound:" destination="jO5-tJ-Jov" eventType="touchUpInside" id="xqx-JX-16d"/>
+                                    <segue destination="erh-ok-Coz" kind="show" id="d5g-fy-6v1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UPM-Hv-KFN">
+                                <frame key="frameInset" minX="420" minY="76" width="184" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Main Menu"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="continueQOC" destination="SNr-HK-iwO" id="1bA-gh-Ozj"/>
+                        <outlet property="continueRegular" destination="mq0-eE-tOm" id="FWl-d6-5Zl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vIN-sq-pHz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1924" y="123"/>
+            <point key="canvasLocation" x="1923.6328124999998" y="122.65625"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="eD5-ex-Dmw"/>
+        <segue reference="U2Z-JP-mfG"/>
+        <segue reference="fO6-5b-xKA"/>
+        <segue reference="hni-n4-edg"/>
         <segue reference="Zbr-rn-7LY"/>
-        <segue reference="SAW-Ld-1wq"/>
-        <segue reference="qm1-59-UhY"/>
-        <segue reference="IyJ-wa-70a"/>
     </inferredMetricsTieBreakers>
 </document>

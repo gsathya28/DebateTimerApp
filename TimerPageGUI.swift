@@ -73,8 +73,6 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
         {
             rubricText.text = "Grading Rubric \n\nAre the arguments well supported with logical reasoning or evidence? \n\nDoes the case open and close effectively? Was each argument clearly stated? \n\nWere there 2-3 clearly defined contention statements? (2 points) \n\nWere there 3 supporting pieces of evidence for each contention? (3 pts) \n HI!"
             
-            refreshButton.isHidden = false
-            continueSegue.isHidden = true
             
             if (roundCounter! == 1)
             {
@@ -82,8 +80,7 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
                 start.backgroundColor = UIColor.red
                 reset.backgroundColor = UIColor.red
                 save.backgroundColor = UIColor.red
-                continueSegue.isHidden = false
-                refreshButton.isHidden = true
+                
             }
             
         }
@@ -231,21 +228,4 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
         return pickerData1[row]
     }
     
-    
-    @IBAction func continueButton(_ sender: UIButton) {
-        let defaults = UserDefaults.standard
-        let roundCounterSet = roundCounter! + 1
-        defaults.set(roundCounterSet, forKey: "roundCounter")
-        
-        
-    }
-    
-    @IBAction func refreshView(_ sender: AnyObject) {
-        let defaults = UserDefaults.standard
-        let roundCounterSet = roundCounter! + 1
-        defaults.set(roundCounterSet, forKey: "roundCounter")
-        
-    }
-    
-
 }
