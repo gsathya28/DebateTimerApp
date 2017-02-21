@@ -643,6 +643,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="continueMenu:" destination="nvc-rV-ZDs" eventType="touchUpInside" id="MrN-9B-eUN"/>
                                     <segue destination="jO5-tJ-Jov" kind="show" id="U2Z-JP-mfG"/>
                                 </connections>
                             </button>
@@ -1123,10 +1124,10 @@ Delivery</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="eD5-ex-Dmw"/>
-        <segue reference="U2Z-JP-mfG"/>
         <segue reference="fO6-5b-xKA"/>
-        <segue reference="hni-n4-edg"/>
+        <segue reference="U2Z-JP-mfG"/>
+        <segue reference="eD5-ex-Dmw"/>
         <segue reference="Zbr-rn-7LY"/>
+        <segue reference="brT-oz-uQA"/>
     </inferredMetricsTieBreakers>
 </document>
