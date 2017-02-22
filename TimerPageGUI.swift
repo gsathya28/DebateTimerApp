@@ -178,9 +178,10 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
         pause.isEnabled = true
     }
     
-    @IBAction func saveTime(_ sender: UIButton) {
+    @IBAction func saveTimer(_ sender: UIButton) {
         
     }
+    
     
     
     func action()
