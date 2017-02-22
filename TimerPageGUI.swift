@@ -17,9 +17,8 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
     @IBOutlet weak var pickerView1: UIPickerView!
     var pickerData1 = ["0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15"]
     var keyboardHeight: Int = 0
-    @IBOutlet weak var continueSegue: UIButton!
-    @IBOutlet var refreshButton: UIButton!
     
+    @IBOutlet var continueSegue: UIButton!
     
     @IBOutlet var counterlabel: UILabel!
     var timer = Timer()

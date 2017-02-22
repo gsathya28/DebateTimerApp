@@ -30,7 +30,7 @@ class IntermediaryMenu: UIViewController {
         individualEval.isEnabled = false
         finishedLabel.isHidden = true
         
-        if (roundCounter! <= 1)
+        if (roundCounter! == 1)
         {
             continueRegular.isEnabled = false
             continueQOC.isEnabled = true
