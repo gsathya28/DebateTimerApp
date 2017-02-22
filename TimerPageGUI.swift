@@ -12,6 +12,8 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
     
     // Properties- Set the variables here
     
+    @IBOutlet weak var back: UIButton!
+    @IBOutlet weak var back2: UIButton!
     @IBOutlet weak var CommentsBox: UITextView!
     @IBOutlet weak var pickerView1: UIPickerView!
     
@@ -68,6 +70,15 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
         let roundName = currentDebate?.rounds[roundCounter!].roundName
         AffirmativeLabel.text = roundName!
 
+        if roundCounter != 0
+        {
+            back.isHidden = true
+        }
+        else if roundCounter != 1
+        {
+            back2.isHidden = true
+        }
+        
         if (roundCounter! < 2)
         {
             rubricText.text = "Grading Rubric \n\nAre the arguments well supported with logical reasoning or evidence? \n\nDoes the case open and close effectively? Was each argument clearly stated? \n\nWere there 2-3 clearly defined contention statements? (2 points) \n\nWere there 3 supporting pieces of evidence for each contention? (3 pts) \n HI!"

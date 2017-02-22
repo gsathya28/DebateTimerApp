@@ -140,7 +140,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="kjZ-OF-VeM"/>
+                                    <segue destination="trl-rp-3LU" kind="unwind" unwindAction="unwindToTitlePageWith_sender:" id="SCo-6W-M6b"/>
                                 </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1GA-Ij-r0d">
@@ -216,6 +216,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="17m-NT-2Xw" sceneMemberID="firstResponder"/>
+                <exit id="trl-rp-3LU" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="569" y="123"/>
         </scene>
@@ -244,7 +245,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
-                                    <segue destination="DZA-JW-AHI" kind="show" id="Zbr-rn-7LY"/>
+                                    <segue destination="4M5-4f-s3y" kind="unwind" unwindAction="unwindToNewDebateInputPageWith_sender:" id="asc-7K-FzV"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="17" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AQE-Na-tAs">
@@ -347,12 +348,20 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                     <segue destination="jO5-tJ-Jov" kind="show" id="Vs6-I1-zta"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yr2-2Q-Z4L">
+                                <frame key="frameInset" width="164" height="94"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Back"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="AffirmativeLabel" destination="pP0-EG-xMW" id="lhL-sc-yzN"/>
                         <outlet property="CommentsBox" destination="WEC-pW-H4B" id="Kzw-1H-Zbj"/>
+                        <outlet property="back" destination="bYf-RB-nDQ" id="l8g-St-KZY"/>
+                        <outlet property="back2" destination="yr2-2Q-Z4L" id="YL6-Ni-wbP"/>
                         <outlet property="continueSegue" destination="c3C-Op-6CA" id="han-co-kX2"/>
                         <outlet property="counterlabel" destination="5Rw-NW-ian" id="rVr-B7-pUb"/>
                         <outlet property="pause" destination="pY3-XG-lE0" id="4PF-LB-zAb"/>
@@ -364,8 +373,9 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s6w-sH-9Ni" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="4M5-4f-s3y" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1211" y="123"/>
+            <point key="canvasLocation" x="1210.546875" y="122.65625"/>
         </scene>
         <!--QOC-->
         <scene sceneID="qSN-Ko-rd6">
@@ -1150,7 +1160,6 @@ Delivery</string>
     <inferredMetricsTieBreakers>
         <segue reference="d5g-fy-6v1"/>
         <segue reference="Vs6-I1-zta"/>
-        <segue reference="eD5-ex-Dmw"/>
-        <segue reference="Zbr-rn-7LY"/>
+        <segue reference="bun-GC-Vrl"/>
     </inferredMetricsTieBreakers>
 </document>
