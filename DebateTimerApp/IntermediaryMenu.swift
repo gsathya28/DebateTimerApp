@@ -20,10 +20,22 @@ class IntermediaryMenu: UIViewController {
     @IBOutlet weak var finishedLabel: UILabel!
     @IBOutlet weak var roundLabel: UILabel!
     
+    var currentDebate: debate?
+    var round: debateRound?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let defaults = UserDefaults.standard
         roundCounter = defaults.object(forKey: "roundCounter") as? Int
+        let id = defaults.object(forKey: "current") as? String
+        
+        if let savedData = defaults.object(forKey: id!) as? Data
+        {
+            currentDebate = NSKeyedUnarchiver.unarchiveObject(with: savedData) as! debate?
+        }
+        
+        round = currentDebate?.rounds[roundCounter!]
+        roundLabel.text = String(describing: round?.roundDTime?[0])
         
         continueRegular.isEnabled = true
         continueQOC.isEnabled = false

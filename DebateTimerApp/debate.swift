@@ -78,11 +78,6 @@ class debate: NSObject, NSCoding {
             debateRound(inName: "CloseNeg", inType: "Closing", possPoints: 15)
         ]
     }
-
-
-
-    
-    
     
     required init(coder aDecoder: NSCoder) {
         affSpeakers = aDecoder.decodeObject(forKey: "affSpeakers") as! [debater]

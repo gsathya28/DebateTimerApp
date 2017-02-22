@@ -39,12 +39,14 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
     @IBOutlet var reset: UIButton!
     @IBOutlet var save: UIButton!
     
+    let defaults = UserDefaults.standard
     
     @IBOutlet weak var AffirmativeLabel: UILabel!
     
     var currentDebate: debate?
     var roundCounter: Int?
     var round: debateRound?
+    var id: String?
     @IBOutlet weak var rubricText: UILabel!
     
     // Load Stuff
@@ -53,9 +55,7 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
         pickerView1.delegate = self
         pickerView1.dataSource = self
         
-        
-        let defaults = UserDefaults.standard
-        let id = defaults.object(forKey: "current") as? String
+        id = defaults.object(forKey: "current") as? String
         
         roundCounter = defaults.object(forKey: "roundCounter") as? Int
         
@@ -98,10 +98,6 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
                 rubricText.text = "Gradic Ruburic \n\nDoes the team defend the most important point in their own case and attack the most important point in their opponent's case?"
             }
         }
-        
-        
-        
-        
         
         /*
         //create rectangle
@@ -179,7 +175,9 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
     }
     
     @IBAction func saveTimer(_ sender: UIButton) {
-        
+        round?.roundDTime = [centisecond, decisecond, second, tensecond, minute]
+        let savedData = NSKeyedArchiver.archivedData(withRootObject: currentDebate)
+        defaults.set(savedData, forKey: id!)
     }
     
     
