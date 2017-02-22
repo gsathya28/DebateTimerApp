@@ -9,12 +9,14 @@
 import UIKit
 
 class debateRound: NSObject, NSCoding {
+    // MARK: Properties
     var roundName: String?
     var roundType: String?
     var roundDTime: [Int]?
     var roundPoints: Int?
     var roundPointsPossible: Int?
     
+    // MARK: Initializers
     init(inName: String, inType: String, possPoints: Int)
     {
         self.roundName = inName
@@ -24,6 +26,7 @@ class debateRound: NSObject, NSCoding {
         self.roundDTime = [0,0,0,0,0]
     }
     
+    // MARK: Encoding (NSCoder)
     required init(coder aDecoder: NSCoder) {
         roundName = (aDecoder.decodeObject(forKey: "name") as? String)!
         roundType = (aDecoder.decodeObject(forKey: "type") as? String)!

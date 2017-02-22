@@ -15,6 +15,7 @@ class debate: NSObject, NSCoding {
     var rounds = [debateRound]()
     var name: String?
     
+    // MARK: Constructors
     init(inName: String, Affspeaker1: debater, Affspeaker2: debater, Negspeaker1: debater, Negspeaker2: debater)
     {
         name = inName
@@ -79,6 +80,7 @@ class debate: NSObject, NSCoding {
         ]
     }
     
+    // MARK: Encoding (NSCoder)
     required init(coder aDecoder: NSCoder) {
         affSpeakers = aDecoder.decodeObject(forKey: "affSpeakers") as! [debater]
         negSpeakers = aDecoder.decodeObject(forKey: "negSpeakers") as! [debater]

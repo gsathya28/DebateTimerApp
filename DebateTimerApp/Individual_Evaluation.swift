@@ -9,14 +9,15 @@
 import UIKit
 
 class Individual_Evaluation: UIViewController, UITextViewDelegate {
-
+    
+// MARK: Outs
     @IBOutlet weak var CommentsBoxNeg: UITextView!
     @IBOutlet weak var CommentsBoxAff: UITextView!
     @IBOutlet weak var Stu1CommentAff: UITextView!
     @IBOutlet weak var Stu1CommentNeg: UITextView!
     
-    var keyboardHeight: Int = 0
     
+// MARK: ViewLoader
     override func viewDidLoad() {
         super.viewDidLoad()
         CommentsBoxNeg!.delegate = self
@@ -26,6 +27,14 @@ class Individual_Evaluation: UIViewController, UITextViewDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(Individual_Evaluation.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         
     }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+// MARK: Keyboard Stuff
+    var keyboardHeight: Int = 0
     
     func keyboardWillShow(notification:NSNotification)
     {
@@ -46,11 +55,7 @@ class Individual_Evaluation: UIViewController, UITextViewDelegate {
         self.view.frame = self.view.frame.offsetBy(dx: 0, dy: CGFloat(keyboardHeight))
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+// MARK: Round Counting Mechanism
     @IBAction func continueMenu(_ sender: UIButton) {
         let defaults = UserDefaults.standard
         var roundCounter = defaults.object(forKey: "roundCounter") as? Int

@@ -10,10 +10,11 @@ import UIKit
 
 class QOC_Evaluation_Aff: UIViewController, UITextViewDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
 
+// MARK: Outlets
     @IBOutlet weak var PickerView: UIPickerView!
 
-    var pickerData1 = ["0","1","2","3","4","5"]
     
+// MARK: ViewLoader
     override func viewDidLoad() {
         super.viewDidLoad()
         PickerView.delegate = self
@@ -25,7 +26,10 @@ class QOC_Evaluation_Aff: UIViewController, UITextViewDelegate, UIPickerViewData
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    
+// MARK: PickerView Data and Functions
+    var pickerData1 = ["0","1","2","3","4","5"]
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -43,7 +47,8 @@ class QOC_Evaluation_Aff: UIViewController, UITextViewDelegate, UIPickerViewData
         let myTitle = NSAttributedString(string: titleData, attributes: [NSFontAttributeName:UIFont(name: "Georgia", size: 15.0)!,NSForegroundColorAttributeName:UIColor.white])
         return myTitle
     }
-    
+
+// MARK: Round Counter Mechanism
     @IBAction func continueMenu(_ sender: UIButton) {
         /*
         let defaults = UserDefaults.standard

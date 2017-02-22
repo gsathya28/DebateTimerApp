@@ -10,10 +10,10 @@ import UIKit
 
 class QOC_Evalutation_Neg: UIViewController, UITextViewDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
     
+// MARK: Outlets
     @IBOutlet weak var PickerView: UIPickerView!
-
-    var pickerData1 = ["0","1","2","3","4","5"]
     
+// MARK: ViewLoader
     override func viewDidLoad() {
         super.viewDidLoad()
         PickerView.delegate = self
@@ -27,6 +27,8 @@ class QOC_Evalutation_Neg: UIViewController, UITextViewDelegate, UIPickerViewDat
         // Dispose of any resources that can be recreated.
     }
     
+// MARK: PickerView Stuff
+    var pickerData1 = ["0","1","2","3","4","5"]
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -45,7 +47,7 @@ class QOC_Evalutation_Neg: UIViewController, UITextViewDelegate, UIPickerViewDat
         return myTitle
     }
     
-    
+// MARK: Round Counting Mechanisms
     @IBAction func continueMenu(_ sender: UIButton) {
         /*
         let defaults = UserDefaults.standard

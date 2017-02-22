@@ -10,46 +10,46 @@ import UIKit
 
 class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
     
-    
     // Properties- Set the variables here
     
     @IBOutlet weak var CommentsBox: UITextView!
     @IBOutlet weak var pickerView1: UIPickerView!
-    var pickerData1 = ["0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15"]
-    var keyboardHeight: Int = 0
     
     @IBOutlet var continueSegue: UIButton!
     
+    // These are the buttons Pause, Play and Reset: THESE ARE OUTLETS.
+    
+    @IBOutlet var pause: UIButton!
+    @IBOutlet var start: UIButton!
+    @IBOutlet var reset: UIButton!
+    @IBOutlet var save: UIButton!
+
+    @IBOutlet weak var AffirmativeLabel: UILabel!
     @IBOutlet var counterlabel: UILabel!
+    @IBOutlet weak var rubricText: UILabel!
+
+// MARK: Properties
+    
+    // Data Variables
+    let defaults = UserDefaults.standard
+    var currentDebate: debate?
+    var roundCounter: Int?
+    var round: debateRound?
+    var id: String?
+    
+    // Timer Initializer
     var timer = Timer()
-    // This is to keep track of each digit in the timer
+    
+    // Timer Variables
     var centisecond = 0
     var decisecond = 0
     var second = 0
     var tensecond = 0
     var minute = 0
     var rawTime = 0
-    // This is different, I’m not exactly sure what this is for, looking back. I’ll look into this.
     var savedcentisecond = 0
     
-    // These are the buttons Pause, Play and Reset: HOWEVER: THESE ARE OUTLETS. When you make this code. You’re going to have to drag the button twice. Once to make it into an outlet, another time to make it into a method (down below).
-    
-    @IBOutlet var pause: UIButton!
-    @IBOutlet var start: UIButton!
-    @IBOutlet var reset: UIButton!
-    @IBOutlet var save: UIButton!
-    
-    let defaults = UserDefaults.standard
-    
-    @IBOutlet weak var AffirmativeLabel: UILabel!
-    
-    var currentDebate: debate?
-    var roundCounter: Int?
-    var round: debateRound?
-    var id: String?
-    @IBOutlet weak var rubricText: UILabel!
-    
-    // Load Stuff
+// MARK: ViewLoader
     override func viewDidLoad() {
         super.viewDidLoad()
         pickerView1.delegate = self
@@ -112,7 +112,9 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
         NotificationCenter.default.addObserver(self, selector: #selector(TimerPageGUI.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         
     }
-    
+
+// MARK: Keyboard Stuff
+    var keyboardHeight: Int = 0
     func keyboardWillShow(notification:NSNotification)
     {
         let userInfo:NSDictionary = notification.userInfo! as NSDictionary
@@ -138,7 +140,7 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
     }
     
     
-    // This is the method that will run when the play button is activated. This is what I meant when you have to drag the button into the code as a button. I’ll go through each line one by one.
+// MARK: Button Actions - Timer Functions (Play, Pause, Reset, and Save)
     
     @IBAction func startTimer(_ sender: UIButton) {
         centisecond = savedcentisecond
@@ -149,8 +151,6 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
         continueSegue.isEnabled = false
     }
     
-    // This is the method that will run when the pause button is pressed
-    
     @IBAction func pauseTimer(_ sender: UIButton) {
         timer.invalidate()
         savedcentisecond = centisecond
@@ -160,7 +160,6 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
         pause.isEnabled = false
         continueSegue.isEnabled = true
     }
-    
     
     @IBAction func resetTimer(_ sender: UIButton) {
         timer.invalidate()
@@ -179,8 +178,6 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
         let savedData = NSKeyedArchiver.archivedData(withRootObject: currentDebate)
         defaults.set(savedData, forKey: id!)
     }
-    
-    
     
     func action()
     {
@@ -212,8 +209,11 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
         }
         
         counterlabel.text = String(minute) + ":" + String(tensecond) + String(second) +  ":" + String(decisecond) + String(centisecond)
-        
     }
+    
+    
+// MARK: PickerView Functions and Data
+    var pickerData1 = ["0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15"]
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }

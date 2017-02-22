@@ -10,38 +10,43 @@ import UIKit
 
 class IntermediaryMenu: UIViewController {
 
-    var roundCounter: Int?
     
+// MARK: GUI BUTTONS
     @IBOutlet var continueRegular: UIButton!
     @IBOutlet var continueQOC: UIButton!
     @IBOutlet var individualEval: UIButton!
     
-    
+// MARK: GUI LABELS
     @IBOutlet weak var finishedLabel: UILabel!
     @IBOutlet weak var roundLabel: UILabel!
     
+// MARK: PROPERTIES
     var currentDebate: debate?
     var round: debateRound?
+    var roundCounter: Int?
     
+// MARK: ViewLoader
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+    // Data Retreival
         let defaults = UserDefaults.standard
         roundCounter = defaults.object(forKey: "roundCounter") as? Int
         let id = defaults.object(forKey: "current") as? String
-        
         if let savedData = defaults.object(forKey: id!) as? Data
         {
             currentDebate = NSKeyedUnarchiver.unarchiveObject(with: savedData) as! debate?
         }
-        
         round = currentDebate?.rounds[roundCounter!]
         roundLabel.text = String(describing: round?.roundDTime?[0])
         
+    // Default states of buttons and labels
         continueRegular.isEnabled = true
         continueQOC.isEnabled = false
         individualEval.isEnabled = false
         finishedLabel.isHidden = true
         
+    // Conditionals based on roundCounter
         if (roundCounter! == 1)
         {
             continueRegular.isEnabled = false
@@ -64,8 +69,9 @@ class IntermediaryMenu: UIViewController {
             roundLabel.isHidden = true
             finishedLabel.isHidden = false
         }
-        
+
         // Do any additional setup after loading the view.
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -83,6 +89,9 @@ class IntermediaryMenu: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
+// Round Counting Mechanism - Adds one after user confirms to go to next round
     
     @IBAction func continueRound(_ sender: UIButton) {
         let defaults = UserDefaults.standard

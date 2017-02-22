@@ -23,6 +23,7 @@ class debater: NSObject, NSCoding {
         self.stance? = inStance
     }
     
+    // MARK: Encoding
     required init(coder aDecoder: NSCoder) {
         stance = aDecoder.decodeObject(forKey: "stance") as? String
         debateScores = (aDecoder.decodeObject(forKey: "scores") as? [String: Int])!
