@@ -47,9 +47,9 @@ class NewDebateInputPage: UIViewController, UIPickerViewDataSource, UIPickerView
         return pickerData[row]
     }
     
-    
-    
-    
+    @IBAction func unwindToNewDebateInputPage(_sender: UIStoryboardSegue) {
+    }
+
     @IBAction func createDebate(_ sender: UIButton) {
         // Enters in an arry whether the textboxes are entered
         let enteredText =
