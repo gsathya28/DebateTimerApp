@@ -23,7 +23,9 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    // Buttons that segueway - nothing here yet - no plans here yet either
+    
     @IBAction func NewDebate(_ sender: AnyObject) {
     }
     

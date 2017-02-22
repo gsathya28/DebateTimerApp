@@ -10,14 +10,15 @@ import UIKit
 
 class QOC: UIViewController {
 
-    //Initialize objects
+//MARK: Initialize outlets
     @IBOutlet weak var Affirmative: UILabel!
     @IBOutlet weak var Negative: UILabel!
    
     
     var Afftimer = Timer()
     var Negtimer = Timer()
-    // This is to keep track of each digit in the timer
+    
+// MARK: Timer Variables
     var Affcentisecond = 0
     var Affdecisecond = 0
     var Affsecond = 0
@@ -29,12 +30,11 @@ class QOC: UIViewController {
     var Negsecond = 0
     var Negtensecond = 0
     var Negminute = 0
-    // This is different, I’m not exactly sure what this is for, looking back. I’ll look into this.
+    
     var Affsavedcentisecond = 0
     var Negsavedcentisecond = 0
-    // These are the buttons Pause, Play and Reset: HOWEVER: THESE ARE OUTLETS. When you make this code. You’re going to have to drag the button twice. Once to make it into an outlet, another time to make it into a method (down below).
     
-    //initialize buttons/labels for timers
+//MARK: initialize Buttons (as Outlets)
     @IBOutlet weak var AffStart: UIButton!
     @IBOutlet weak var NegStart: UIButton!
     @IBOutlet weak var AffLabel: UILabel!
@@ -45,17 +45,17 @@ class QOC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Changes the labels so it's oriented sideways along the side
         Affirmative.transform = CGAffineTransform(rotationAngle: -(CGFloat.pi / 2))
         Negative.transform = CGAffineTransform(rotationAngle: CGFloat.pi/2)
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        
     }
     
     
-    // This is the method that will run when the play button is activated. This is what I meant when you have to drag the button into the code as a button. I’ll go through each line one by one.
+// MARK: Button Functions (Start, Reset, Pause - for both aff and neg)
     
     @IBAction func startTimer(_ sender: UIButton) {
         
