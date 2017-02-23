@@ -185,7 +185,9 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
     }
     
     @IBAction func saveTimer(_ sender: UIButton) {
+        
         round?.roundDTime = [centisecond, decisecond, second, tensecond, minute]
+        currentDebate?.rounds[roundCounter!] = round!
         let savedData = NSKeyedArchiver.archivedData(withRootObject: currentDebate)
         defaults.set(savedData, forKey: id!)
     }
