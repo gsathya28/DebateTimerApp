@@ -89,6 +89,13 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NuL-8e-3yX">
                                 <frame key="frameInset" width="1024" height="998"/>
                                 <subviews>
+                                    <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1GA-Ij-r0d">
+                                        <rect key="frame" x="368" y="347" width="303" height="137"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="zpc-qf-6wa" id="WfA-3L-wbc"/>
+                                            <outlet property="delegate" destination="zpc-qf-6wa" id="VU8-wj-ZyL"/>
+                                        </connections>
+                                    </pickerView>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="87k-Ag-mT6">
                                         <rect key="frame" x="0.0" y="0.0" width="164" height="94"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -171,14 +178,6 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1GA-Ij-r0d">
-                                        <rect key="frame" x="382" y="347" width="396" height="137"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                        <connections>
-                                            <outlet property="dataSource" destination="zpc-qf-6wa" id="WfA-3L-wbc"/>
-                                            <outlet property="delegate" destination="zpc-qf-6wa" id="VU8-wj-ZyL"/>
-                                        </connections>
-                                    </pickerView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Negative" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DFN-xp-55Z">
                                         <rect key="frame" x="447" y="505" width="130" height="42"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -229,6 +228,10 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="1GA-Ij-r0d" firstAttribute="centerX" secondItem="NuL-8e-3yX" secondAttribute="centerX" constant="5" id="QKm-yy-ehB"/>
+                                    <constraint firstItem="1GA-Ij-r0d" firstAttribute="centerY" secondItem="NuL-8e-3yX" secondAttribute="centerY" constant="35" id="sUo-ew-XSA"/>
+                                </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
