@@ -43,13 +43,5 @@ class QOC_Evaluation_Aff: UIViewController, UITextViewDelegate, UIPickerViewData
         let myTitle = NSAttributedString(string: titleData, attributes: [NSFontAttributeName:UIFont(name: "Georgia", size: 15.0)!,NSForegroundColorAttributeName:UIColor.white])
         return myTitle
     }
-    
-    @IBAction func continueMenu(_ sender: UIButton) {
-        let defaults = UserDefaults.standard
-        var roundCounter = defaults.object(forKey: "roundCounter") as? Int
-        roundCounter = roundCounter! + 1
-        defaults.set(roundCounter, forKey: "roundCounter")
-    }
-    
 
 }

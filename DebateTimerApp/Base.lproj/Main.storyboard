@@ -72,7 +72,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-175" y="123"/>
+            <point key="canvasLocation" x="117.18749999999999" y="123.4375"/>
         </scene>
         <!--New Debate Input Page-->
         <scene sceneID="Olo-Ap-NMm">
@@ -252,9 +252,8 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="17m-NT-2Xw" sceneMemberID="firstResponder"/>
-                <exit id="trl-rp-3LU" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="569" y="123"/>
+            <point key="canvasLocation" x="808.59375" y="122.65625"/>
         </scene>
         <!--Timer PageGUI-->
         <scene sceneID="5mE-Eb-tp1">
@@ -268,7 +267,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="1150"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Opening Statement for Affirmative" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pP0-EG-xMW">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Opening Statement for Affermative" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pP0-EG-xMW">
                                 <frame key="frameInset" width="1024" height="122"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
@@ -281,7 +280,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
-                                    <segue destination="4M5-4f-s3y" kind="unwind" unwindAction="unwindToNewDebateInputPageWith_sender:" id="asc-7K-FzV"/>
+                                    <segue destination="DZA-JW-AHI" kind="show" id="Zbr-rn-7LY"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="17" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AQE-Na-tAs">
@@ -341,11 +340,23 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                 <state key="normal" title="Save">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="saveTime:" destination="gti-Af-EDU" eventType="touchUpInside" id="0J4-g4-aA8"/>
+                                </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="djN-3Y-GT9">
                                 <frame key="frameInset" minY="581" height="187" maxX="375"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c3C-Op-6CA">
+                                <frame key="frameInset" minX="827" minY="683" width="187" height="77"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <state key="normal" title="Continue"/>
+                                <connections>
+                                    <segue destination="Sem-sA-q1X" kind="show" id="eqg-fd-OoQ"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b4U-0g-JDb">
                                 <frame key="frameInset" minX="541" minY="385" width="230" height="167"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -390,6 +401,140 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
             </objects>
             <point key="canvasLocation" x="1478.90625" y="-708.59375"/>
         </scene>
+        <!--Open State NegGUI-->
+        <scene sceneID="tek-Qc-OR7">
+            <objects>
+                <viewController id="Sem-sA-q1X" customClass="OpenStateNegGUI" customModule="DebateTimerApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LxH-lz-jFw"/>
+                        <viewControllerLayoutGuide type="bottom" id="qvf-Y3-Icn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="do7-Vd-mte">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1150"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eyp-HN-nKm">
+                                <frame key="frameInset" minY="581" height="187" maxX="375"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JAo-Fn-RfZ">
+                                <frame key="frameInset" minX="541" minY="217" width="230" height="167"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.99835759401321411" green="0.15366229240707166" blue="0.090336911732726774" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Start">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="startTimer:" destination="Sem-sA-q1X" eventType="touchUpInside" id="waS-vN-Y3w"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LbV-AV-acP">
+                                <frame key="frameInset" minX="772" minY="217" width="230" height="167"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.99835759400000001" green="0.15366229240000001" blue="0.090336911729999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Pause">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pauseTimer:" destination="Sem-sA-q1X" eventType="touchUpInside" id="dKY-bu-s05"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Sk-qB-r8V">
+                                <frame key="frameInset" minX="541" minY="385" width="230" height="167"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.99835759400000001" green="0.15366229240000001" blue="0.090336911729999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Reset">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="resetTimer:" destination="Sem-sA-q1X" eventType="touchUpInside" id="TPL-XQ-gvO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M97-lG-UP5">
+                                <frame key="frameInset" minX="772" minY="385" width="230" height="167"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.99835759400000001" green="0.15366229240000001" blue="0.090336911729999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Sb-kg-YVw">
+                                <frame key="frameInset" minX="827" minY="683" width="187" height="77"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <state key="normal" title="Continue"/>
+                                <connections>
+                                    <segue destination="erh-ok-Coz" kind="show" id="T2u-bR-ZjG"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="17" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zpn-1W-laP">
+                                <frame key="frameInset" minX="20" minY="99" width="513" height="501"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <string key="text">  Grading Rubric
+
+Are the arguments well supported with logical reasoning or evidence?
+
+Does the case open and close effectively?
+
+Was each argument clearly stated?
+
+Were there 2-3 clearly defined contention statements? (2 points)
+
+Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yRs-sy-EZ9">
+                                <frame key="frameInset" minX="541" minY="116" width="460" height="93"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Opening Statement for Affermative" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ghP-lw-t03">
+                                <frame key="frameInset" width="1024" height="122"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Comments:" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hJq-y9-SnE">
+                                <frame key="frameInset" minX="541" minY="570" width="460" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SzK-nZ-85N">
+                                <frame key="frameInset" width="164" height="94"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="gti-Af-EDU" kind="show" id="m6D-CF-gQk"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="CommentBoxNeg" destination="hJq-y9-SnE" id="vD8-NA-hu1"/>
+                        <outlet property="counterLabel" destination="yRs-sy-EZ9" id="5Mb-C4-9pu"/>
+                        <outlet property="pause" destination="LbV-AV-acP" id="54u-MX-DwI"/>
+                        <outlet property="pickerView2" destination="eyp-HN-nKm" id="BA9-uP-aNA"/>
+                        <outlet property="reset" destination="0Sk-qB-r8V" id="mb3-ME-XsZ"/>
+                        <outlet property="start" destination="JAo-Fn-RfZ" id="eul-FS-FSD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z7c-ue-Gau" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1472.4609375" y="-14.0625"/>
+        </scene>
         <!--QOC-->
         <scene sceneID="qSN-Ko-rd6">
             <objects>
@@ -407,6 +552,9 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="Sem-sA-q1X" kind="show" id="SRF-xn-LXD"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Questions of Clarification" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fD1-N7-K7v">
                                 <frame key="frameInset" minX="172" width="681" height="122"/>
@@ -492,12 +640,12 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YCy-TK-96L">
-                                <frame key="frameInset" minX="664" minY="666" width="175" height="102"/>
+                                <frame key="frameInset" minX="849" minY="666" width="175" height="102"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Continue"/>
                                 <connections>
-                                    <segue destination="l0r-Ki-8g6" kind="show" id="qm1-59-UhY"/>
+                                    <segue destination="l0r-Ki-8g6" kind="show" id="6Wt-RA-eNk"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -516,7 +664,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OPr-aZ-IjK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2610" y="123"/>
+            <point key="canvasLocation" x="2187.890625" y="-14.0625"/>
         </scene>
         <!--NEGATIVE-->
         <scene sceneID="wCL-7n-qMY">
@@ -586,8 +734,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="continueMenu:" destination="2tF-uJ-9Gm" eventType="touchUpInside" id="UG4-h2-kYR"/>
-                                    <segue destination="jO5-tJ-Jov" kind="show" id="Czm-Oh-EDZ"/>
+                                    <segue destination="Wfb-RC-aoK" kind="show" id="EXE-Vb-qE5"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -600,7 +747,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GgM-Lh-w7U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3312" y="-702"/>
+            <point key="canvasLocation" x="3750.5859374999995" y="597.65625"/>
         </scene>
         <!--AFFIRMATIVE-->
         <scene sceneID="1p9-Bx-bsJ">
@@ -670,8 +817,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="continueMenu:" destination="nvc-rV-ZDs" eventType="touchUpInside" id="MrN-9B-eUN"/>
-                                    <segue destination="jO5-tJ-Jov" kind="show" id="U2Z-JP-mfG"/>
+                                    <segue destination="Wfb-RC-aoK" kind="show" id="IyJ-wa-70a"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -684,7 +830,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kjb-6C-1zZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2610" y="-701"/>
+            <point key="canvasLocation" x="3750.5859374999995" y="-285.15625"/>
         </scene>
         <!--Individual Evaluation-->
         <scene sceneID="ED3-UB-2mg">
@@ -710,6 +856,9 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="l0r-Ki-8g6" kind="show" id="SCZ-R1-SHK"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dFX-j7-PBO">
                                 <frame key="frameInset" minX="133" minY="161" width="379" height="168"/>
@@ -944,10 +1093,6 @@ Delivery</string>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Continue"/>
-                                <connections>
-                                    <action selector="continueMenu:" destination="Wfb-RC-aoK" eventType="touchUpInside" id="xNi-E3-4Ps"/>
-                                    <segue destination="jO5-tJ-Jov" kind="show" id="Vhj-64-4HN"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -961,105 +1106,7 @@ Delivery</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uti-oo-Qp4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2610" y="950"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="Ed7-du-j6o">
-            <objects>
-                <viewController id="hek-Cu-m6s" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="fTQ-mW-GRf"/>
-                        <viewControllerLayoutGuide type="bottom" id="4Ys-kA-oNE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ttm-zY-0fZ">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EKR-IT-HXn">
-                                <frame key="frameInset" width="164" height="94"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Back"/>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Topic" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bcj-im-o7c">
-                                <frame key="frameInset" minX="310" minY="7" width="405" height="87"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gjg-78-QKA">
-                                <frame key="frameInset" minX="842" width="182" height="77"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Save as PDF"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uAs-gn-hya">
-                                <frame key="frameInset" minX="329" minY="680" width="367" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
-                                <state key="normal" title="Save For Later and Exit">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Affirmative" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iDh-ei-VXB">
-                                <frame key="frameInset" minY="122" width="1024" height="71"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Negative" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RhV-r7-zNl">
-                                <frame key="frameInset" minY="424" width="1024" height="71"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KwR-4S-W8a">
-                                <frame key="frameInset" minX="247" minY="226" width="197" height="119"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="Student 1">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bnN-K4-KzY">
-                                <frame key="frameInset" minX="247" minY="503" width="197" height="119"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.0" blue="0.041046944600000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="Student 1">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="72Y-9c-Vp4">
-                                <frame key="frameInset" minX="580" minY="226" width="197" height="119"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="Student 2">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RFw-fn-lHS">
-                                <frame key="frameInset" minX="580" minY="503" width="197" height="119"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.0" blue="0.041046944600000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="Student 2">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="TyO-Xx-vfg" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1924" y="950"/>
+            <point key="canvasLocation" x="4657.6171875" y="260.9375"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="DzG-rI-Fz7">
@@ -1077,97 +1124,7 @@ Delivery</string>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uiv-vN-bm5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3312" y="123"/>
-        </scene>
-        <!--Intermediary Menu-->
-        <scene sceneID="BVM-BB-y0b">
-            <objects>
-                <viewController id="jO5-tJ-Jov" customClass="IntermediaryMenu" customModule="DebateTimerApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="TbI-nq-3Fr"/>
-                        <viewControllerLayoutGuide type="bottom" id="V1P-6u-Kn6"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="3I2-Ni-4fA">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You are going to the next round. Continue?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QBz-HU-drM">
-                                <frame key="frameInset" minX="313" minY="241" width="399" height="56"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mq0-eE-tOm">
-                                <frame key="frameInset" minX="430" minY="347" width="164" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <state key="normal" title="Continue "/>
-                                <connections>
-                                    <action selector="continueRound:" destination="jO5-tJ-Jov" eventType="touchUpInside" id="tgp-ix-2Sa"/>
-                                    <segue destination="gti-Af-EDU" kind="show" id="eD5-ex-Dmw"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Zs-Wq-3UZ">
-                                <frame key="frameInset" minX="489" minY="606" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Back"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SNr-HK-iwO">
-                                <frame key="frameInset" minX="331" minY="399" width="363" height="47"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <state key="normal" title="Go to Rounds of Clarification"/>
-                                <connections>
-                                    <action selector="continueQOCRound:" destination="jO5-tJ-Jov" eventType="touchUpInside" id="xqx-JX-16d"/>
-                                    <segue destination="erh-ok-Coz" kind="show" id="d5g-fy-6v1"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UPM-Hv-KFN">
-                                <frame key="frameInset" minX="420" minY="76" width="184" height="59"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <state key="normal" title="Main Menu"/>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="The Debate is finished!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OBD-We-Gm6">
-                                <frame key="frameInset" minX="196" minY="143" width="631" height="90"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xeo-0E-pyr">
-                                <frame key="frameInset" minX="377" minY="462" width="270" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <state key="normal" title="Individual Evaluations"/>
-                                <connections>
-                                    <segue destination="Wfb-RC-aoK" kind="show" id="Lta-gn-6gl"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xB1-WH-Ukm">
-                                <frame key="frameInset" minX="430" minY="500" width="164" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <state key="normal" title="Debate Data"/>
-                                <connections>
-                                    <segue destination="hek-Cu-m6s" kind="show" id="hni-n4-edg"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <connections>
-                        <outlet property="continueQOC" destination="SNr-HK-iwO" id="1bA-gh-Ozj"/>
-                        <outlet property="continueRegular" destination="mq0-eE-tOm" id="FWl-d6-5Zl"/>
-                        <outlet property="finishedLabel" destination="OBD-We-Gm6" id="5rb-lC-1wJ"/>
-                        <outlet property="individualEval" destination="Xeo-0E-pyr" id="VTh-RK-CUQ"/>
-                        <outlet property="roundLabel" destination="QBz-HU-drM" id="a9b-ry-mSC"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vIN-sq-pHz" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1923.6328124999998" y="122.65625"/>
+            <point key="canvasLocation" x="3007" y="123"/>
         </scene>
         <!--Fake-->
         <scene sceneID="1UW-IZ-D8n">
@@ -1228,8 +1185,5 @@ Delivery</string>
         <segue reference="T2u-bR-ZjG"/>
         <segue reference="SCZ-R1-SHK"/>
         <segue reference="EXE-Vb-qE5"/>
-        <segue reference="d5g-fy-6v1"/>
-        <segue reference="Vs6-I1-zta"/>
-        <segue reference="bun-GC-Vrl"/>
     </inferredMetricsTieBreakers>
 </document>

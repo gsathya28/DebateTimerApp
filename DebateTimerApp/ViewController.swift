@@ -24,9 +24,6 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func unwindToTitlePage(_sender: UIStoryboardSegue) {
-    }
-    
     @IBAction func NewDebate(_ sender: AnyObject) {
     }
     
