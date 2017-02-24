@@ -9,30 +9,43 @@
 import UIKit
 
 
-class NewDebateInputPage: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate
+class NewDebateInputPage: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate
     {
     
-    @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var pickerView: UIPickerView!
-
-    @IBOutlet weak var debateName: UITextField!
-    
-    @IBOutlet weak var speak1Aff: UITextField!
-    @IBOutlet weak var speak2Aff: UITextField!
     @IBOutlet weak var speak1Neg: UITextField!
-    @IBOutlet weak var speak2Neg: UITextField!
     
-   
+    
+    var keyboardHeight: Int = 0
+    
     var pickerData = ["Hour 1", "Hour 2", "Hour 3", "Hour 4", "Hour 5", "Hour 6", "Hour 7"]
     override func viewDidLoad() {
         super.viewDidLoad()
-        pickerView.delegate = self
-        pickerView.dataSource = self
-        // Do any additional setup after loading the view, typically from a nib.
+        speak1Neg.delegate = self
         
-        scrollView.contentSize.height = 1150
         
+        NotificationCenter.default.addObserver(self, selector: #selector(NewDebateInputPage.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(NewDebateInputPage.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
+    
+    func keyboardWillShow(notification:NSNotification)
+    {
+        let userInfo:NSDictionary = notification.userInfo! as NSDictionary
+        let keyboardFrame:NSValue = userInfo.value(forKey: UIKeyboardFrameEndUserInfoKey) as! NSValue
+        let keyboardRectangle = keyboardFrame.cgRectValue
+        self.keyboardHeight = Int(keyboardRectangle.height)
+        self.view.frame = self.view.frame.offsetBy(dx: 0, dy: -(CGFloat(keyboardHeight)))
+    }
+    
+    func keyboardWillHide(notification: NSNotification)
+    {
+        let userInfo:NSDictionary = notification.userInfo! as NSDictionary
+        let keyboardFrame:NSValue = userInfo.value(forKey: UIKeyboardFrameEndUserInfoKey) as! NSValue
+        let keyboardRectangle = keyboardFrame.cgRectValue
+        self.keyboardHeight = Int(keyboardRectangle.height)
+        self.view.frame = self.view.frame.offsetBy(dx: 0, dy: (CGFloat(keyboardHeight)))
+    }
+
     
     //Hello! Test Commit!
     
@@ -57,6 +70,7 @@ class NewDebateInputPage: UIViewController, UIPickerViewDataSource, UIPickerView
     
     
     @IBAction func createDebate(_ sender: UIButton) {
+        /*
         // Enters in an arry whether the textboxes are entered
         let enteredText =
             [speak1Aff.text,
@@ -88,7 +102,7 @@ class NewDebateInputPage: UIViewController, UIPickerViewDataSource, UIPickerView
         
         let savedData = NSKeyedArchiver.archivedData(withRootObject: currentDebate)
         defaults.set(savedData, forKey: debateName.text!)
-        
+        */
     }
         
 }
