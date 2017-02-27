@@ -13,6 +13,7 @@ class NewDebateInputPage: UIViewController, UIPickerViewDataSource, UIPickerView
     {
     
     @IBOutlet weak var pickerView: UIPickerView!
+    @IBOutlet weak var scrollView: UIScrollView!
 
     @IBOutlet weak var debateName: UITextField!
     
