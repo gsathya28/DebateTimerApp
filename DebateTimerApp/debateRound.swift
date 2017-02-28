@@ -12,7 +12,7 @@ class debateRound: NSObject, NSCoding {
     // MARK: Properties
     var roundName: String?
     var roundType: String?
-    var roundDTime = NSMutableArray(object: Int())
+    var roundRawTime: Int
     var roundPoints: Int?
     var roundPointsPossible: Int?
     
@@ -23,7 +23,7 @@ class debateRound: NSObject, NSCoding {
         self.roundType = inType
         self.roundPointsPossible = possPoints
         self.roundPoints = 0
-        self.roundDTime = [0,0,0,0,0,0]
+        self.roundRawTime = 0
     }
     
     // MARK: Encoding (NSCoder)
@@ -32,7 +32,7 @@ class debateRound: NSObject, NSCoding {
         roundType = (aDecoder.decodeObject(forKey: "type") as? String)!
         roundPointsPossible = aDecoder.decodeObject(forKey: "possPoints") as? Int
         roundPoints = aDecoder.decodeObject(forKey: "points") as? Int
-        roundDTime = (aDecoder.decodeObject(forKey: "rawTime") as! NSMutableArray?)!
+        roundRawTime = (aDecoder.decodeObject(forKey: "rawTime") as? Int
     }
     
     func encode(with aCoder: NSCoder) {
@@ -40,7 +40,7 @@ class debateRound: NSObject, NSCoding {
         aCoder.encode(roundType, forKey: "type")
         aCoder.encode(roundPointsPossible, forKey: "possPoints")
         aCoder.encode(roundPoints, forKey: "points")
-        aCoder.encode(roundDTime, forKey: "rawTime")
+        aCoder.encode(roundRawTime, forKey: "rawTime")
     }
 
     

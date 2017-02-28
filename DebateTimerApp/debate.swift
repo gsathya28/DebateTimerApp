@@ -10,9 +10,9 @@ import UIKit
 
 class debate: NSObject, NSCoding {
     // MARK: Properties
-    var affSpeakers = NSMutableArray(object: debater.self)
-    var negSpeakers = NSMutableArray(object: debater.self)
-    var rounds = NSMutableArray(object: debateRound.self)
+    var affSpeakers: [debater]
+    var negSpeakers: [debater]
+    var rounds = [debateRound]()
     var name: String?
     
     // MARK: Constructors
@@ -84,9 +84,9 @@ class debate: NSObject, NSCoding {
     
     
     required init(coder aDecoder: NSCoder) {
-        affSpeakers = aDecoder.decodeObject(forKey: "affSpeakers") as! NSMutableArray
-        negSpeakers = aDecoder.decodeObject(forKey: "negSpeakers") as! NSMutableArray
-        rounds = aDecoder.decodeObject(forKey: "rounds") as! NSMutableArray
+        affSpeakers = aDecoder.decodeObject(forKey: "affSpeakers") as! [debater]
+        negSpeakers = aDecoder.decodeObject(forKey: "negSpeakers") as! [debater]
+        rounds = aDecoder.decodeObject(forKey: "rounds") as! [debateRound]
         name = aDecoder.decodeObject(forKey: "name") as? String
     }
     
