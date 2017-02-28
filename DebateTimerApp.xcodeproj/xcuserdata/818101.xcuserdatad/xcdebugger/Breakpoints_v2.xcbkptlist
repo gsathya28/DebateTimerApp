@@ -25,8 +25,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "42"
             endingLineNumber = "42"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
+            landmarkName = "TimerPageGUI"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -119,8 +119,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "51"
             endingLineNumber = "51"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
+            landmarkName = "TimerPageGUI"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
