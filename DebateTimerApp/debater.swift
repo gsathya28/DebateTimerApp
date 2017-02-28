@@ -13,8 +13,8 @@ class debater: NSObject, NSCoding {
     // MARK: Properties
     var name: String?
     var stance: String?
-    var debateScores: [String: Int]?
-    var debateTimes: [String: Int]?
+    var debateScores = NSDictionary(object: Int(), forKey: String() as NSCopying)
+    var debateTimes = NSDictionary(object: Int(), forKey: String() as NSCopying)
     
     // MARK: Initializer
     init(inName: String, inStance: String)
@@ -26,8 +26,8 @@ class debater: NSObject, NSCoding {
     // MARK: Encoding
     required init(coder aDecoder: NSCoder) {
         stance = aDecoder.decodeObject(forKey: "stance") as? String
-        debateScores = (aDecoder.decodeObject(forKey: "scores") as? [String: Int])!
-        debateTimes = aDecoder.decodeObject(forKey: "times") as? [String: Int]!
+        debateScores = (aDecoder.decodeObject(forKey: "scores") as? [String: Int])! as NSDictionary
+        debateTimes = (aDecoder.decodeObject(forKey: "times") as? [String: Int])! as NSDictionary
         name = (aDecoder.decodeObject(forKey: "name") as? String)!
     }
     

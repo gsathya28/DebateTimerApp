@@ -10,9 +10,9 @@ import UIKit
 
 class debate: NSObject, NSCoding {
     // MARK: Properties
-    var affSpeakers = [debater]()
-    var negSpeakers = [debater]()
-    var rounds = [debateRound]()
+    var affSpeakers = NSMutableArray(object: debater.self)
+    var negSpeakers = NSMutableArray(object: debater.self)
+    var rounds = NSMutableArray(object: debateRound.self)
     var name: String?
     
     // MARK: Constructors
@@ -31,7 +31,7 @@ class debate: NSObject, NSCoding {
             debateRound(inName: "CloseNeg", inType: "Closing", possPoints: 15)
         ]
     }
-    
+    /*
     init(inName: String, Affspeaker1: debater, Affspeaker2: debater, Negspeaker1: debater, Negspeaker2: debater, Affspeaker3: debater)
     {
         name = inName
@@ -79,12 +79,14 @@ class debate: NSObject, NSCoding {
             debateRound(inName: "CloseNeg", inType: "Closing", possPoints: 15)
         ]
     }
-    
+    */
     // MARK: Encoding (NSCoder)
+    
+    
     required init(coder aDecoder: NSCoder) {
-        affSpeakers = aDecoder.decodeObject(forKey: "affSpeakers") as! [debater]
-        negSpeakers = aDecoder.decodeObject(forKey: "negSpeakers") as! [debater]
-        rounds = aDecoder.decodeObject(forKey: "rounds") as! [debateRound]
+        affSpeakers = aDecoder.decodeObject(forKey: "affSpeakers") as! NSMutableArray
+        negSpeakers = aDecoder.decodeObject(forKey: "negSpeakers") as! NSMutableArray
+        rounds = aDecoder.decodeObject(forKey: "rounds") as! NSMutableArray
         name = aDecoder.decodeObject(forKey: "name") as? String
     }
     
@@ -94,5 +96,5 @@ class debate: NSObject, NSCoding {
         aCoder.encode(rounds, forKey: "rounds")
         aCoder.encode(name, forKey: "name")
     }
-    
+ 
 }

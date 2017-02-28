@@ -15,7 +15,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "188"
             endingLineNumber = "188"
-            landmarkName = "saveTimer(_:)"
+            landmarkName = "resetTimer(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

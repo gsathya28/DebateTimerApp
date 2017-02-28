@@ -37,8 +37,8 @@ class IntermediaryMenu: UIViewController {
         {
             currentDebate = NSKeyedUnarchiver.unarchiveObject(with: savedData) as! debate?
         }
-        round = currentDebate?.rounds[roundCounter!]
-        roundLabel.text = String(describing: round?.roundDTime?[0])
+        round = currentDebate?.rounds[roundCounter!] as! debateRound?
+        roundLabel.text = String(describing: round?.roundDTime[0])
         
     // Default states of buttons and labels
         continueRegular.isEnabled = true

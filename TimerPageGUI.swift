@@ -66,8 +66,8 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
             currentDebate = NSKeyedUnarchiver.unarchiveObject(with: savedData) as! debate?
         }
 
-        round = currentDebate?.rounds[roundCounter!]
-        let roundName = currentDebate?.rounds[roundCounter!].roundName
+        round = currentDebate?.rounds[roundCounter!] as! debateRound?
+        let roundName = round?.roundName
         AffirmativeLabel.text = roundName!
 
         if roundCounter != 0
@@ -122,6 +122,12 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
         CommentsBox!.delegate = self
         NotificationCenter.default.addObserver(self, selector: #selector(TimerPageGUI.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         
+        
+        round?.roundDTime = [minute, decisecond, tensecond, second, decisecond, centisecond]
+        currentDebate?.rounds[roundCounter!] = round!
+        let savedDataStuff = NSKeyedArchiver.archivedData(withRootObject: currentDebate)
+        defaults.set(savedDataStuff, forKey: id!)
+ 
     }
 
 // MARK: Keyboard Stuff
@@ -185,11 +191,10 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
     }
     
     @IBAction func saveTimer(_ sender: UIButton) {
-        
-        round?.roundDTime = [centisecond, decisecond, second, tensecond, minute]
+        round?.roundDTime = [minute, decisecond, tensecond, second, decisecond, centisecond]
         currentDebate?.rounds[roundCounter!] = round!
-        let savedData = NSKeyedArchiver.archivedData(withRootObject: currentDebate)
-        defaults.set(savedData, forKey: id!)
+        let savedDataStuff = NSKeyedArchiver.archivedData(withRootObject: currentDebate)
+        defaults.set(savedDataStuff, forKey: id!)
     }
     
     func action()
