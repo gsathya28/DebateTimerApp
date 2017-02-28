@@ -12,7 +12,7 @@ import UIKit
 class NewDebateInputPage: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate
     {
     
-    @IBOutlet weak var pickerView: UIPickerView!
+    
     @IBOutlet weak var scrollView: UIScrollView!
 
 
