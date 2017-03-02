@@ -22,7 +22,8 @@ class NewDebateInputPage: UIViewController, UIPickerViewDataSource, UIPickerView
     @IBOutlet weak var speak1Neg: UITextField!
     @IBOutlet weak var speak2Neg: UITextField!
     
-   
+    let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
+    
     var pickerData = ["Hour 1", "Hour 2", "Hour 3", "Hour 4", "Hour 5", "Hour 6", "Hour 7"]
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,10 +74,14 @@ class NewDebateInputPage: UIViewController, UIPickerViewDataSource, UIPickerView
         let defaults = UserDefaults.standard
         defaults.set(debateName.text, forKey: "current")
         
-        let savedData = NSKeyedArchiver.archivedData(withRootObject: currentDebate)
-        defaults.set(savedData, forKey: debateName.text!)
+        let ArchiveURLCurrent = DocumentsDirectory.appendingPathComponent(debateName.text!)
         
-        defaults.set(0, forKey: "roundCounter")
+        let savedData = NSKeyedArchiver.archiveRootObject(currentDebate, toFile: ArchiveURLCurrent.path)
+        if savedData
+        {
+            print("HAHAHAHAHAHA!")
+        }
+        
     }
     
 }

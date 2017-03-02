@@ -41,6 +41,7 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
     @IBOutlet var reset: UIButton!
     @IBOutlet var save: UIButton!
     
+    let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
     
     @IBOutlet weak var AffirmativeLabel: UILabel!
     
@@ -58,17 +59,14 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
         
         let defaults = UserDefaults.standard
         let id = defaults.object(forKey: "current") as? String
+        let ArchiveURLCurrent = DocumentsDirectory.appendingPathComponent(id!)
         
         roundCounter = defaults.object(forKey: "roundCounter") as? Int
         
-        if let savedData = defaults.object(forKey: id!) as? Data
-        {
-            currentDebate = NSKeyedUnarchiver.unarchiveObject(with: savedData) as! debate?
-        }
-
+        currentDebate = NSKeyedUnarchiver.unarchiveObject(withFile: ArchiveURLCurrent.path) as! debate?
+        
         round = currentDebate?.rounds[roundCounter!]
         let roundName = currentDebate?.rounds[roundCounter!].roundName
-        AffirmativeLabel.text = roundName!
 
         if roundCounter != 0
         {
