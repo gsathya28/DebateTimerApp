@@ -43,6 +43,11 @@ class QOC_Evaluation_Aff: UIViewController, UITextViewDelegate, UIPickerViewData
         let myTitle = NSAttributedString(string: titleData, attributes: [NSFontAttributeName:UIFont(name: "Georgia", size: 15.0)!,NSForegroundColorAttributeName:UIColor.white])
         return myTitle
     }
+    
+    @IBAction func continueMenu(_ sender: UIButton) {
+        
+    }
+    
 
     @IBAction func unwindToQOCEvaluationAff(_sender: UIStoryboardSegue) {
     }

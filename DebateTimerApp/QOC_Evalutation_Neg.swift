@@ -45,4 +45,12 @@ class QOC_Evalutation_Neg: UIViewController, UITextViewDelegate, UIPickerViewDat
         return myTitle
     }
     
+<<<<<<< HEAD
+=======
+    
+    @IBAction func continueMenu(_ sender: UIButton) {
+        
+    }
+    
+>>>>>>> master
 }

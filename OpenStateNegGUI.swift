@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 //
 //  OpenStateNegGUI.swift
 //  DebateTimerApp
@@ -166,3 +167,5 @@ class OpenStateNegGUI: UIViewController ,UITextViewDelegate, UIPickerViewDataSou
     }
     
 }
+=======
+>>>>>>> master
