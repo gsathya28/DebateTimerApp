@@ -44,13 +44,4 @@ class QOC_Evalutation_Neg: UIViewController, UITextViewDelegate, UIPickerViewDat
         let myTitle = NSAttributedString(string: titleData, attributes: [NSFontAttributeName:UIFont(name: "Georgia", size: 15.0)!,NSForegroundColorAttributeName:UIColor.white])
         return myTitle
     }
-    
-<<<<<<< HEAD
-=======
-    
-    @IBAction func continueMenu(_ sender: UIButton) {
-        
-    }
-    
->>>>>>> master
 }

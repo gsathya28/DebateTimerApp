@@ -48,7 +48,6 @@ class QOC_Evaluation_Aff: UIViewController, UITextViewDelegate, UIPickerViewData
         
     }
     
-
     @IBAction func unwindToQOCEvaluationAff(_sender: UIStoryboardSegue) {
     }
     
