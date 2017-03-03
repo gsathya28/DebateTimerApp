@@ -239,15 +239,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bYf-RB-nDQ">
-                                <frame key="frameInset" width="164" height="94"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="Back"/>
-                                <connections>
-                                    <segue destination="4M5-4f-s3y" kind="unwind" unwindAction="unwindToNewDebateInputPageWith_sender:" id="asc-7K-FzV"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="17" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AQE-Na-tAs">
                                 <frame key="frameInset" minX="20" minY="99" width="513" height="501"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -351,7 +342,16 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
-                                    <segue destination="4M5-4f-s3y" kind="unwind" unwindAction="unwindToNewDebateInputPageWith_sender:" id="D52-sa-peO"/>
+                                    <segue destination="4M5-4f-s3y" kind="unwind" unwindAction="unwindToNewDebateInputPageWith_sender:" id="8pM-yj-KyU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VeP-mX-Fq5">
+                                <frame key="frameInset" width="164" height="94"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="4M5-4f-s3y" kind="unwind" unwindAction="unwindToMenuWith_sender:" id="INf-FK-hlm"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -359,9 +359,9 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                     </view>
                     <connections>
                         <outlet property="AffirmativeLabel" destination="pP0-EG-xMW" id="lhL-sc-yzN"/>
+                        <outlet property="Back2" destination="VeP-mX-Fq5" id="h5w-zh-irR"/>
                         <outlet property="CommentsBox" destination="WEC-pW-H4B" id="Kzw-1H-Zbj"/>
-                        <outlet property="back" destination="bYf-RB-nDQ" id="l8g-St-KZY"/>
-                        <outlet property="back2" destination="yr2-2Q-Z4L" id="YL6-Ni-wbP"/>
+                        <outlet property="back" destination="yr2-2Q-Z4L" id="qcV-aj-xgB"/>
                         <outlet property="continueSegue" destination="c3C-Op-6CA" id="han-co-kX2"/>
                         <outlet property="counterlabel" destination="5Rw-NW-ian" id="rVr-B7-pUb"/>
                         <outlet property="pause" destination="pY3-XG-lE0" id="4PF-LB-zAb"/>
@@ -1101,6 +1101,9 @@ Delivery</string>
                                 <frame key="frameInset" minX="489" minY="606" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="Zrw-K8-pDX" kind="unwind" unwindAction="unwindToOpenAffPageGUIWith_sender:" id="jnc-gK-nbp"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SNr-HK-iwO">
                                 <frame key="frameInset" minX="331" minY="399" width="363" height="47"/>
@@ -1147,6 +1150,7 @@ Delivery</string>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="back" destination="1Zs-Wq-3UZ" id="G6o-ob-CjI"/>
                         <outlet property="continueQOC" destination="SNr-HK-iwO" id="1bA-gh-Ozj"/>
                         <outlet property="continueRegular" destination="mq0-eE-tOm" id="FWl-d6-5Zl"/>
                         <outlet property="finishedLabel" destination="OBD-We-Gm6" id="5rb-lC-1wJ"/>
@@ -1155,12 +1159,13 @@ Delivery</string>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vIN-sq-pHz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Zrw-K8-pDX" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1923.6328124999998" y="122.65625"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="bun-GC-Vrl"/>
         <segue reference="Vs6-I1-zta"/>
-        <segue reference="eD5-ex-Dmw"/>
     </inferredMetricsTieBreakers>
 </document>

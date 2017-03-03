@@ -15,6 +15,7 @@ class IntermediaryMenu: UIViewController {
     @IBOutlet var continueRegular: UIButton!
     @IBOutlet var continueQOC: UIButton!
     @IBOutlet var individualEval: UIButton!
+    @IBOutlet weak var back: UIButton!
     
     
     @IBOutlet weak var finishedLabel: UILabel!
@@ -34,6 +35,7 @@ class IntermediaryMenu: UIViewController {
         {
             continueRegular.isEnabled = false
             continueQOC.isEnabled = true
+            
         }
         
         if (roundCounter! == 6)
@@ -61,6 +63,8 @@ class IntermediaryMenu: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func unwindToMenu(_sender: UIStoryboardSegue){
+    }
 
     /*
     // MARK: - Navigation
