@@ -66,7 +66,6 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
         currentDebate = NSKeyedUnarchiver.unarchiveObject(withFile: ArchiveURLCurrent.path) as! debate?
         
         round = currentDebate?.rounds[roundCounter!]
-        let roundName = currentDebate?.rounds[roundCounter!].roundName
 
         if roundCounter != 0
         {
