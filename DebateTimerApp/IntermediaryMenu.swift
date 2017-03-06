@@ -11,11 +11,14 @@ import UIKit
 class IntermediaryMenu: UIViewController {
 
     var roundCounter: Int?
+    var menuCounter: Int?
     
     @IBOutlet var continueRegular: UIButton!
     @IBOutlet var continueQOC: UIButton!
     @IBOutlet var individualEval: UIButton!
     @IBOutlet weak var back: UIButton!
+    @IBOutlet weak var back2: UIButton!
+    @IBOutlet weak var back3: UIButton!
     
     
     @IBOutlet weak var finishedLabel: UILabel!
@@ -31,6 +34,21 @@ class IntermediaryMenu: UIViewController {
         individualEval.isEnabled = false
         finishedLabel.isHidden = true
         
+        if(menuCounter! != 3 || menuCounter! != 8)
+        {
+            back2.isHidden = true
+            back3.isHidden = true
+        }
+        if(menuCounter! == 3)
+        {
+            back.isHidden = true
+            back3.isHidden = true
+        }
+        if(menuCounter! == 8)
+        {
+            back.isHidden = true
+            back2.isHidden = true
+        }
         if (roundCounter! == 1)
         {
             continueRegular.isEnabled = false

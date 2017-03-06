@@ -16,6 +16,7 @@ class Individual_Evaluation: UIViewController, UITextViewDelegate {
     @IBOutlet weak var Stu1CommentNeg: UITextView!
     
     var keyboardHeight: Int = 0
+    var menuCounter: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,5 +57,13 @@ class Individual_Evaluation: UIViewController, UITextViewDelegate {
         var roundCounter = defaults.object(forKey: "roundCounter") as? Int
         roundCounter = roundCounter! + 1
         defaults.set(roundCounter, forKey: "roundCounter")
+    }
+    @IBAction func ContinueMenu(_ sender: UIButton) {
+        let defaults = UserDefaults.standard
+        menuCounter = defaults.object(forKey: "menuCounter") as? Int
+        menuCounter = menuCounter! + 1
+        defaults.set(menuCounter, forKey: "menuCounter")
+    }
+    @IBAction func unwindToIndividual(_sender: UIStoryboardSegue){
     }
 }

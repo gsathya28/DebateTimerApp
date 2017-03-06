@@ -333,6 +333,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <state key="normal" title="Continue"/>
                                 <connections>
+                                    <action selector="continueRound:" destination="gti-Af-EDU" eventType="touchUpInside" id="vsb-pa-b9j"/>
                                     <segue destination="jO5-tJ-Jov" kind="show" id="Vs6-I1-zta"/>
                                 </connections>
                             </button>
@@ -394,6 +395,9 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="en9-GT-8HT" kind="unwind" unwindAction="unwindToMenuWith_sender:" id="aXU-Mh-Rye"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Questions of Clarification" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fD1-N7-K7v">
                                 <frame key="frameInset" minX="172" width="681" height="122"/>
@@ -502,6 +506,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OPr-aZ-IjK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="en9-GT-8HT" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2610" y="123"/>
         </scene>
@@ -525,7 +530,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="bUC-bl-A1T" kind="unwind" unwindAction="unwindToQOCWith_sender:" id="LgX-tv-dzv"/>
+                                    <segue destination="bUC-bl-A1T" kind="unwind" unwindAction="unwindToQOCWith_sender:" id="Ip9-CD-9bO"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TrR-UV-cfs">
@@ -566,6 +571,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="ContinueMenu:" destination="2tF-uJ-9Gm" eventType="touchUpInside" id="HXk-Xt-mxf"/>
                                     <action selector="continueMenu:" destination="2tF-uJ-9Gm" eventType="touchUpInside" id="UG4-h2-kYR"/>
                                     <segue destination="jO5-tJ-Jov" kind="show" id="Czm-Oh-EDZ"/>
                                 </connections>
@@ -610,7 +616,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Xyg-3T-VOc" kind="unwind" unwindAction="unwindToQOCWith_sender:" id="X09-Cu-uvd"/>
+                                    <segue destination="Xyg-3T-VOc" kind="unwind" unwindAction="unwindToQOCWith_sender:" id="lpY-Qn-sSm"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Questions Of Clarification - Affirmative" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4BN-T2-qgh">
@@ -659,6 +665,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                 </state>
                                 <connections>
                                     <action selector="continueMenu:" destination="nvc-rV-ZDs" eventType="touchUpInside" id="MrN-9B-eUN"/>
+                                    <action selector="countinueMenu:" destination="nvc-rV-ZDs" eventType="touchUpInside" id="t2K-DI-ri0"/>
                                     <segue destination="jO5-tJ-Jov" kind="show" id="U2Z-JP-mfG"/>
                                 </connections>
                             </button>
@@ -934,6 +941,7 @@ Delivery</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Continue"/>
                                 <connections>
+                                    <action selector="ContinueMenu:" destination="Wfb-RC-aoK" eventType="touchUpInside" id="hkY-zr-1KV"/>
                                     <action selector="continueMenu:" destination="Wfb-RC-aoK" eventType="touchUpInside" id="xNi-E3-4Ps"/>
                                     <segue destination="jO5-tJ-Jov" kind="show" id="Vhj-64-4HN"/>
                                 </connections>
@@ -1146,11 +1154,29 @@ Delivery</string>
                                     <segue destination="hek-Cu-m6s" kind="show" id="hni-n4-edg"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i7f-eX-Uyb">
+                                <frame key="frameInset" minX="489" minY="606" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="Zrw-K8-pDX" kind="unwind" unwindAction="unwindToQOCEvaluationAffWith_sender:" id="t6L-dB-0Gh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4P8-ii-vhf">
+                                <frame key="frameInset" minX="489" minY="606" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="Zrw-K8-pDX" kind="unwind" unwindAction="unwindToIndividualWith_sender:" id="Zh3-9J-DsQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="back" destination="1Zs-Wq-3UZ" id="G6o-ob-CjI"/>
+                        <outlet property="back2" destination="i7f-eX-Uyb" id="EpD-EY-4up"/>
+                        <outlet property="back3" destination="4P8-ii-vhf" id="X7r-3G-BFf"/>
                         <outlet property="continueQOC" destination="SNr-HK-iwO" id="1bA-gh-Ozj"/>
                         <outlet property="continueRegular" destination="mq0-eE-tOm" id="FWl-d6-5Zl"/>
                         <outlet property="finishedLabel" destination="OBD-We-Gm6" id="5rb-lC-1wJ"/>
@@ -1165,7 +1191,7 @@ Delivery</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="bun-GC-Vrl"/>
         <segue reference="Vs6-I1-zta"/>
+        <segue reference="eD5-ex-Dmw"/>
     </inferredMetricsTieBreakers>
 </document>

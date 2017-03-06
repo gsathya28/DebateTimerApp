@@ -13,6 +13,7 @@ class QOC_Evalutation_Neg: UIViewController, UITextViewDelegate, UIPickerViewDat
     @IBOutlet weak var PickerView: UIPickerView!
 
     var pickerData1 = ["0","1","2","3","4","5"]
+    var menuCounter: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,5 +44,11 @@ class QOC_Evalutation_Neg: UIViewController, UITextViewDelegate, UIPickerViewDat
         let titleData = pickerData1[row]
         let myTitle = NSAttributedString(string: titleData, attributes: [NSFontAttributeName:UIFont(name: "Georgia", size: 15.0)!,NSForegroundColorAttributeName:UIColor.white])
         return myTitle
+    }
+    @IBAction func ContinueMenu(_ sender: UIButton) {
+        let defaults = UserDefaults.standard
+        menuCounter = defaults.object(forKey: "menuCounter") as? Int
+        menuCounter = menuCounter! + 1
+        defaults.set(menuCounter, forKey: "menuCounter")
     }
 }

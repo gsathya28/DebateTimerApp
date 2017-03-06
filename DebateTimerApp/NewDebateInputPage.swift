@@ -84,6 +84,7 @@ class NewDebateInputPage: UIViewController, UIPickerViewDataSource, UIPickerView
         defaults.set(savedData, forKey: debateName.text!)
         
         defaults.set(0, forKey: "roundCounter")
+        defaults.set(0, forKey: "menuCounter")
     }
     
 }

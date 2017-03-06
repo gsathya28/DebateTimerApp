@@ -48,6 +48,7 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
     var roundCounter: Int?
     var round: debateRound?
     @IBOutlet weak var rubricText: UILabel!
+    var menuCounter: Int?
     
     // Load Stuff
     override func viewDidLoad() {
@@ -233,6 +234,13 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return pickerData1[row]
+    }
+    
+    @IBAction func continueRound(_ sender: UIButton) {
+        let defaults = UserDefaults.standard
+        menuCounter = defaults.object(forKey: "menuCounter") as? Int
+        menuCounter = menuCounter! + 1
+        defaults.set(menuCounter, forKey: "menuCounter")
     }
     
 }
