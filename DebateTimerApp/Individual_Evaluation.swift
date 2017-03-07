@@ -16,7 +16,7 @@ class Individual_Evaluation: UIViewController, UITextViewDelegate {
     @IBOutlet weak var Stu1CommentNeg: UITextView!
     
     var keyboardHeight: Int = 0
-    var menuCounter: Int?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +25,6 @@ class Individual_Evaluation: UIViewController, UITextViewDelegate {
         Stu1CommentAff!.delegate = self
         Stu1CommentNeg.delegate = self
         NotificationCenter.default.addObserver(self, selector: #selector(Individual_Evaluation.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        
     }
     
     func keyboardWillShow(notification:NSNotification)
@@ -58,12 +57,7 @@ class Individual_Evaluation: UIViewController, UITextViewDelegate {
         roundCounter = roundCounter! + 1
         defaults.set(roundCounter, forKey: "roundCounter")
     }
-    @IBAction func ContinueMenu(_ sender: UIButton) {
-        let defaults = UserDefaults.standard
-        menuCounter = defaults.object(forKey: "menuCounter") as? Int
-        menuCounter = menuCounter! + 1
-        defaults.set(menuCounter, forKey: "menuCounter")
-    }
     @IBAction func unwindToIndividual(_sender: UIStoryboardSegue){
     }
+    
 }

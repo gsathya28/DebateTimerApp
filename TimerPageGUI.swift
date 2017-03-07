@@ -48,7 +48,6 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
     var roundCounter: Int?
     var round: debateRound?
     @IBOutlet weak var rubricText: UILabel!
-    var menuCounter: Int?
     
     // Load Stuff
     override func viewDidLoad() {
@@ -105,7 +104,7 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
         {
             Back2.isHidden = true
         }
-        if(roundCounter! == 1)
+        if(roundCounter! >= 1)
         {
             back.isHidden = true
         }
@@ -236,11 +235,10 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
         return pickerData1[row]
     }
     
-    @IBAction func continueRound(_ sender: UIButton) {
+    @IBAction func back2menu(_ sender: UIButton) {
+        roundCounter = roundCounter! - 1
         let defaults = UserDefaults.standard
-        menuCounter = defaults.object(forKey: "menuCounter") as? Int
-        menuCounter = menuCounter! + 1
-        defaults.set(menuCounter, forKey: "menuCounter")
+        defaults.set(roundCounter, forKey: "roundCounter")
     }
     
 }

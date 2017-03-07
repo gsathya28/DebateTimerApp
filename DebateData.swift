@@ -23,5 +23,4 @@ class DebateData: UIViewController {
 
     @IBAction func unwindToDebateData(_sender: UIStoryboardSegue) {
     }
-    
 }

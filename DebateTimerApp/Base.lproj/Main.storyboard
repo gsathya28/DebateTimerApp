@@ -327,16 +327,6 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c3C-Op-6CA">
-                                <frame key="frameInset" minX="817" minY="683" width="187" height="77"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                <state key="normal" title="Continue"/>
-                                <connections>
-                                    <action selector="continueRound:" destination="gti-Af-EDU" eventType="touchUpInside" id="vsb-pa-b9j"/>
-                                    <segue destination="jO5-tJ-Jov" kind="show" id="Vs6-I1-zta"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yr2-2Q-Z4L">
                                 <frame key="frameInset" width="164" height="94"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -352,7 +342,17 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
+                                    <action selector="back2menu:" destination="gti-Af-EDU" eventType="touchUpInside" id="CbS-RZ-QEj"/>
                                     <segue destination="4M5-4f-s3y" kind="unwind" unwindAction="unwindToMenuWith_sender:" id="INf-FK-hlm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c3C-Op-6CA">
+                                <frame key="frameInset" minX="814" minY="671" width="187" height="77"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <state key="normal" title="Continue"/>
+                                <connections>
+                                    <segue destination="jO5-tJ-Jov" kind="show" id="Vs6-I1-zta"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -396,6 +396,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
+                                    <action selector="back2Menu:" destination="erh-ok-Coz" eventType="touchUpInside" id="a6J-3o-EDM"/>
                                     <segue destination="en9-GT-8HT" kind="unwind" unwindAction="unwindToMenuWith_sender:" id="aXU-Mh-Rye"/>
                                 </connections>
                             </button>
@@ -552,7 +553,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NxJ-CJ-8iQ">
-                                <frame key="frameInset" minX="429" minY="351" height="216" maxX="-55"/>
+                                <frame key="frameInset" minX="427" minY="351" height="216" maxX="-54"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </pickerView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Comments:" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="kJZ-SE-G7u">
@@ -571,8 +572,6 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="ContinueMenu:" destination="2tF-uJ-9Gm" eventType="touchUpInside" id="HXk-Xt-mxf"/>
-                                    <action selector="continueMenu:" destination="2tF-uJ-9Gm" eventType="touchUpInside" id="UG4-h2-kYR"/>
                                     <segue destination="jO5-tJ-Jov" kind="show" id="Czm-Oh-EDZ"/>
                                 </connections>
                             </button>
@@ -664,8 +663,6 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="continueMenu:" destination="nvc-rV-ZDs" eventType="touchUpInside" id="MrN-9B-eUN"/>
-                                    <action selector="countinueMenu:" destination="nvc-rV-ZDs" eventType="touchUpInside" id="t2K-DI-ri0"/>
                                     <segue destination="jO5-tJ-Jov" kind="show" id="U2Z-JP-mfG"/>
                                 </connections>
                             </button>
@@ -941,8 +938,7 @@ Delivery</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Continue"/>
                                 <connections>
-                                    <action selector="ContinueMenu:" destination="Wfb-RC-aoK" eventType="touchUpInside" id="hkY-zr-1KV"/>
-                                    <action selector="continueMenu:" destination="Wfb-RC-aoK" eventType="touchUpInside" id="xNi-E3-4Ps"/>
+                                    <action selector="continueMenu:" destination="Wfb-RC-aoK" eventType="touchUpInside" id="hMp-p7-Qju"/>
                                     <segue destination="jO5-tJ-Jov" kind="show" id="Vhj-64-4HN"/>
                                 </connections>
                             </button>
@@ -960,10 +956,10 @@ Delivery</string>
             </objects>
             <point key="canvasLocation" x="2610" y="950"/>
         </scene>
-        <!--View Controller-->
+        <!--Debate Data-->
         <scene sceneID="Ed7-du-j6o">
             <objects>
-                <viewController id="hek-Cu-m6s" sceneMemberID="viewController">
+                <viewController id="hek-Cu-m6s" customClass="DebateData" customModule="DebateTimerApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fTQ-mW-GRf"/>
                         <viewControllerLayoutGuide type="bottom" id="4Ys-kA-oNE"/>
@@ -977,6 +973,9 @@ Delivery</string>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="back2Menu:" destination="hek-Cu-m6s" eventType="touchUpInside" id="FFc-5h-aQs"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Topic" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bcj-im-o7c">
                                 <frame key="frameInset" minX="310" minY="7" width="405" height="87"/>
@@ -1105,14 +1104,6 @@ Delivery</string>
                                     <segue destination="gti-Af-EDU" kind="show" id="eD5-ex-Dmw"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Zs-Wq-3UZ">
-                                <frame key="frameInset" minX="489" minY="606" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Back"/>
-                                <connections>
-                                    <segue destination="Zrw-K8-pDX" kind="unwind" unwindAction="unwindToOpenAffPageGUIWith_sender:" id="jnc-gK-nbp"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SNr-HK-iwO">
                                 <frame key="frameInset" minX="331" minY="399" width="363" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1155,7 +1146,7 @@ Delivery</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i7f-eX-Uyb">
-                                <frame key="frameInset" minX="489" minY="606" width="46" height="30"/>
+                                <frame key="frameInset" minX="601" minY="630" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
@@ -1163,11 +1154,19 @@ Delivery</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4P8-ii-vhf">
-                                <frame key="frameInset" minX="489" minY="606" width="46" height="30"/>
+                                <frame key="frameInset" minX="403" minY="594" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
                                     <segue destination="Zrw-K8-pDX" kind="unwind" unwindAction="unwindToIndividualWith_sender:" id="Zh3-9J-DsQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Zs-Wq-3UZ">
+                                <frame key="frameInset" minX="451" minY="655" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="Zrw-K8-pDX" kind="unwind" unwindAction="unwindToOpenAffPageGUIWith_sender:" id="jnc-gK-nbp"/>
                                 </connections>
                             </button>
                         </subviews>

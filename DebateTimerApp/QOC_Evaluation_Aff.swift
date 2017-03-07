@@ -14,8 +14,6 @@ class QOC_Evaluation_Aff: UIViewController, UITextViewDelegate, UIPickerViewData
 
     var pickerData1 = ["0","1","2","3","4","5"]
     
-    var menuCounter: Int?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         PickerView.delegate = self
@@ -44,17 +42,6 @@ class QOC_Evaluation_Aff: UIViewController, UITextViewDelegate, UIPickerViewData
         let titleData = pickerData1[row]
         let myTitle = NSAttributedString(string: titleData, attributes: [NSFontAttributeName:UIFont(name: "Georgia", size: 15.0)!,NSForegroundColorAttributeName:UIColor.white])
         return myTitle
-    }
-    
-    @IBAction func countinueMenu(_ sender: UIButton) {
-        let defaults = UserDefaults.standard
-        menuCounter = defaults.object(forKey: "menuCounter") as? Int
-        menuCounter = menuCounter! + 1
-        defaults.set(menuCounter, forKey: "menuCounter")
-    }
-    
-    
-    @IBAction func continueMenu(_ sender: UIButton) {
     }
     
     @IBAction func unwindToQOCEvaluationAff(_sender: UIStoryboardSegue) {

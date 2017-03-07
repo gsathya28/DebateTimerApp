@@ -14,6 +14,7 @@ class QOC: UIViewController {
     @IBOutlet weak var Affirmative: UILabel!
     @IBOutlet weak var Negative: UILabel!
    
+    var roundCounter : Int?
     
     var Afftimer = Timer()
     var Negtimer = Timer()
@@ -159,6 +160,14 @@ class QOC: UIViewController {
         NegLabel.text = String(Negminute) + ":" + String(Negtensecond) + String(Negsecond) +  ":" + String(Negdecisecond) + String(Negcentisecond)
 
     }
+    
+    @IBAction func back2Menu(_ sender: AnyObject) {
+        let defaults = UserDefaults.standard
+        roundCounter = defaults.object(forKey: "roundCounter") as? Int
+        roundCounter = roundCounter! - 1
+        defaults.set(roundCounter, forKey: "roundCounter")
+    }
+    
     
     @IBAction func pauseTimer(_ sender: UIButton) {
         Afftimer.invalidate()
