@@ -13,6 +13,7 @@ class QOC: UIViewController {
     //Initialize objects
     @IBOutlet weak var Affirmative: UILabel!
     @IBOutlet weak var Negative: UILabel!
+    @IBOutlet weak var back: UIButton!
    
     var roundCounter : Int?
     
@@ -161,11 +162,11 @@ class QOC: UIViewController {
 
     }
     
-    @IBAction func back2Menu(_ sender: AnyObject) {
+    @IBAction func back2menu(_ sender: UIButton) {
         let defaults = UserDefaults.standard
         roundCounter = defaults.object(forKey: "roundCounter") as? Int
-        roundCounter = roundCounter! - 1
         defaults.set(roundCounter, forKey: "roundCounter")
+        roundCounter = roundCounter! - 1
     }
     
     

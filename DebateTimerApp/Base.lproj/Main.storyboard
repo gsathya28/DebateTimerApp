@@ -396,7 +396,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
-                                    <action selector="back2Menu:" destination="erh-ok-Coz" eventType="touchUpInside" id="a6J-3o-EDM"/>
+                                    <action selector="back2menu:" destination="erh-ok-Coz" eventType="touchUpInside" id="T89-MQ-dPG"/>
                                     <segue destination="en9-GT-8HT" kind="unwind" unwindAction="unwindToMenuWith_sender:" id="aXU-Mh-Rye"/>
                                 </connections>
                             </button>
@@ -503,6 +503,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                         <outlet property="NegStart" destination="pe2-xd-uuP" id="Lku-UU-aC2"/>
                         <outlet property="Negative" destination="Vyo-Ja-o7o" id="6Fs-qS-pp1"/>
                         <outlet property="Pause" destination="sHL-tg-4fk" id="Ok5-TT-vDv"/>
+                        <outlet property="back" destination="qoa-Bh-UdL" id="v6g-dU-sFv"/>
                         <outlet property="reset" destination="mPG-GT-cbV" id="I7k-sP-I0P"/>
                     </connections>
                 </viewController>
@@ -1148,7 +1149,7 @@ Delivery</string>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i7f-eX-Uyb">
                                 <frame key="frameInset" minX="601" minY="630" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Back"/>
+                                <state key="normal" title="Back2"/>
                                 <connections>
                                     <segue destination="Zrw-K8-pDX" kind="unwind" unwindAction="unwindToQOCEvaluationAffWith_sender:" id="t6L-dB-0Gh"/>
                                 </connections>
@@ -1156,7 +1157,7 @@ Delivery</string>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4P8-ii-vhf">
                                 <frame key="frameInset" minX="403" minY="594" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Back"/>
+                                <state key="normal" title="Back3"/>
                                 <connections>
                                     <segue destination="Zrw-K8-pDX" kind="unwind" unwindAction="unwindToIndividualWith_sender:" id="Zh3-9J-DsQ"/>
                                 </connections>
@@ -1164,7 +1165,7 @@ Delivery</string>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Zs-Wq-3UZ">
                                 <frame key="frameInset" minX="451" minY="655" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Back"/>
+                                <state key="normal" title="Back1"/>
                                 <connections>
                                     <segue destination="Zrw-K8-pDX" kind="unwind" unwindAction="unwindToOpenAffPageGUIWith_sender:" id="jnc-gK-nbp"/>
                                 </connections>
