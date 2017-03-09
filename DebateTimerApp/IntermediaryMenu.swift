@@ -33,18 +33,19 @@ class IntermediaryMenu: UIViewController {
         individualEval.isEnabled = false
         finishedLabel.isHidden = true
         
-        if(roundCounter! <= 1)
+        if(roundCounter! <= 1 || (roundCounter! > 2 && roundCounter! <= 6))
         {
+            back.isHidden = false
             back2.isHidden = true
             back3.isHidden = true
         }
         if(roundCounter! == 2)
         {
             back.isHidden = true
-            back3.isHidden = true
             back2.isHidden = false
+            back3.isHidden = true
         }
-        if(roundCounter! > 2)
+        if(roundCounter! > 6)
         {
             back.isHidden = true
             back2.isHidden = true
