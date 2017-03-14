@@ -108,4 +108,9 @@ class IntermediaryMenu: UIViewController {
         defaults.set(roundCounter, forKey: "roundCounter")
     }
     
+    @IBAction func counterPrint(_ sender: UIButton) {
+        print(roundCounter ?? "Something went wrong")
+    }
+    
+    
 }

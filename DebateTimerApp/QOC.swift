@@ -49,6 +49,9 @@ class QOC: UIViewController {
         
         Affirmative.transform = CGAffineTransform(rotationAngle: -(CGFloat.pi / 2))
         Negative.transform = CGAffineTransform(rotationAngle: CGFloat.pi/2)
+        
+        let defaults = UserDefaults.standard
+        roundCounter = defaults.object(forKey: "roundCounter") as? Int
     }
     
     override func didReceiveMemoryWarning() {
@@ -182,5 +185,10 @@ class QOC: UIViewController {
         Pause.isEnabled = false
         reset.isEnabled = true
     }
+    
+    @IBAction func counterPrint(_ sender: UIButton) {
+        print(roundCounter ?? "Something went wrong")
+    }
+    
     
 }
