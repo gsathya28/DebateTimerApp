@@ -49,6 +49,9 @@ class QOC: UIViewController {
         
         Affirmative.transform = CGAffineTransform(rotationAngle: -(CGFloat.pi / 2))
         Negative.transform = CGAffineTransform(rotationAngle: CGFloat.pi/2)
+        
+        let defaults = UserDefaults.standard
+        roundCounter = defaults.object(forKey: "roundCounter") as? Int
     }
     
     override func didReceiveMemoryWarning() {
@@ -169,6 +172,12 @@ class QOC: UIViewController {
         roundCounter = roundCounter! - 1
     }
     
+    @IBAction func a(_ sender: Any) {
+        let defaults = UserDefaults.standard
+        print(defaults.object(forKey: "roundCounter"))
+        roundCounter = roundCounter! - 1
+        defaults.set(roundCounter, forKey: "roundCounter")
+    }
     
     @IBAction func pauseTimer(_ sender: UIButton) {
         Afftimer.invalidate()

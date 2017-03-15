@@ -24,6 +24,7 @@ class IntermediaryMenu: UIViewController {
     @IBOutlet weak var roundLabel: UILabel!
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         let defaults = UserDefaults.standard
         roundCounter = defaults.object(forKey: "roundCounter") as? Int
@@ -100,6 +101,10 @@ class IntermediaryMenu: UIViewController {
         let defaults = UserDefaults.standard
         roundCounter = roundCounter! + 1
         defaults.set(roundCounter, forKey: "roundCounter")
+    }
+    @IBAction func b(_ sender: Any) {
+        let defaults = UserDefaults.standard
+        print(defaults.object(forKey: "roundCounter"))
     }
     
     @IBAction func continueQOCRound(_ sender: UIButton) {

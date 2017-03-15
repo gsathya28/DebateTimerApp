@@ -120,7 +120,6 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
         */
         CommentsBox!.delegate = self
         NotificationCenter.default.addObserver(self, selector: #selector(TimerPageGUI.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        
     }
     
     func keyboardWillShow(notification:NSNotification)
@@ -240,5 +239,7 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
         let defaults = UserDefaults.standard
         defaults.set(roundCounter, forKey: "roundCounter")
     }
+    
+    
     
 }
