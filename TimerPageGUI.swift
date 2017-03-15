@@ -240,13 +240,5 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
         defaults.set(roundCounter, forKey: "roundCounter")
     }
     
-<<<<<<< HEAD
-=======
-    @IBAction func counterPrint(_ sender: UIButton) {
-        print(roundCounter ?? "Something went wrong")
-    }
-    
->>>>>>> origin/segue
-    
     
 }
