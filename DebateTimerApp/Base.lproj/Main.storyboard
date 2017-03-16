@@ -671,6 +671,14 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                     <segue destination="jO5-tJ-Jov" kind="show" id="U2Z-JP-mfG"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KUS-h1-jYy">
+                                <rect key="frame" x="200" y="653" width="128" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="roundCounterPrint"/>
+                                <connections>
+                                    <action selector="counterPrint:" destination="nvc-rV-ZDs" eventType="touchUpInside" id="az0-ib-aMB"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.35229389812692546" green="0.72546178740476175" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -1201,7 +1209,7 @@ Delivery</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="U2Z-JP-mfG"/>
+        <segue reference="Vs6-I1-zta"/>
         <segue reference="eD5-ex-Dmw"/>
     </inferredMetricsTieBreakers>
 </document>
