@@ -9,11 +9,13 @@
 /* Begin PBXBuildFile section */
 		101285991E269D6500F6DEE3 /* OpenStateNegGUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101285981E269D6500F6DEE3 /* OpenStateNegGUI.swift */; };
 		10D9241B1E044E1B004D8AD5 /* TimerPageGUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D9241A1E044E1B004D8AD5 /* TimerPageGUI.swift */; };
+		311015B01E7B23330043224D /* Indiv_Eval_AffViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311015AF1E7B23330043224D /* Indiv_Eval_AffViewController.swift */; };
 		311C6A741E42481A00371B1D /* QOC_Evaluation_Aff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311C6A731E42481A00371B1D /* QOC_Evaluation_Aff.swift */; };
 		311C6A761E42494F00371B1D /* QOC_Evalutation_Neg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311C6A751E42494F00371B1D /* QOC_Evalutation_Neg.swift */; };
-		31322EA21E44E93E0061936B /* Individual_Evaluation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31322EA11E44E93E0061936B /* Individual_Evaluation.swift */; };
+		3153C57B1E52594A00EE4F7D /* DebateData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3153C57A1E52594A00EE4F7D /* DebateData.swift */; };
 		319F0A1B1DF9C6DE00C65073 /* NewDebateInputPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319F0A1A1DF9C6DE00C65073 /* NewDebateInputPage.swift */; };
 		31A31BBA1E312875008B21E9 /* QOC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A31BB91E312875008B21E9 /* QOC.swift */; };
+		353942D81E57642700051752 /* IntermediaryMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353942D71E57642700051752 /* IntermediaryMenu.swift */; };
 		35ADAB561DF5D17F00ED8479 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35ADAB551DF5D17F00ED8479 /* AppDelegate.swift */; };
 		35ADAB581DF5D17F00ED8479 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35ADAB571DF5D17F00ED8479 /* ViewController.swift */; };
 		35ADAB5B1DF5D17F00ED8479 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35ADAB591DF5D17F00ED8479 /* Main.storyboard */; };
@@ -24,8 +26,6 @@
 		35ADAB8A1DF5D48400ED8479 /* debate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35ADAB891DF5D48400ED8479 /* debate.swift */; };
 		35ADAB8C1DF5D4A000ED8479 /* debateRound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35ADAB8B1DF5D4A000ED8479 /* debateRound.swift */; };
 		35ADAB8E1DF5D4B800ED8479 /* debater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35ADAB8D1DF5D4B800ED8479 /* debater.swift */; };
-		35ADAB921DF5D51B00ED8479 /* roundScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35ADAB911DF5D51B00ED8479 /* roundScore.swift */; };
-		35ADAB941DF5D57700ED8479 /* roundTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35ADAB931DF5D57700ED8479 /* roundTime.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,11 +48,13 @@
 /* Begin PBXFileReference section */
 		101285981E269D6500F6DEE3 /* OpenStateNegGUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OpenStateNegGUI.swift; path = ../OpenStateNegGUI.swift; sourceTree = "<group>"; };
 		10D9241A1E044E1B004D8AD5 /* TimerPageGUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimerPageGUI.swift; path = ../TimerPageGUI.swift; sourceTree = "<group>"; };
+		311015AF1E7B23330043224D /* Indiv_Eval_AffViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Indiv_Eval_AffViewController.swift; sourceTree = "<group>"; };
 		311C6A731E42481A00371B1D /* QOC_Evaluation_Aff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QOC_Evaluation_Aff.swift; sourceTree = "<group>"; };
 		311C6A751E42494F00371B1D /* QOC_Evalutation_Neg.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QOC_Evalutation_Neg.swift; sourceTree = "<group>"; };
-		31322EA11E44E93E0061936B /* Individual_Evaluation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Individual_Evaluation.swift; sourceTree = "<group>"; };
+		3153C57A1E52594A00EE4F7D /* DebateData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DebateData.swift; path = ../DebateData.swift; sourceTree = "<group>"; };
 		319F0A1A1DF9C6DE00C65073 /* NewDebateInputPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewDebateInputPage.swift; sourceTree = "<group>"; };
 		31A31BB91E312875008B21E9 /* QOC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QOC.swift; sourceTree = "<group>"; };
+		353942D71E57642700051752 /* IntermediaryMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntermediaryMenu.swift; sourceTree = "<group>"; };
 		35ADAB521DF5D17F00ED8479 /* DebateTimerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DebateTimerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35ADAB551DF5D17F00ED8479 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		35ADAB571DF5D17F00ED8479 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -69,8 +71,6 @@
 		35ADAB891DF5D48400ED8479 /* debate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = debate.swift; sourceTree = "<group>"; };
 		35ADAB8B1DF5D4A000ED8479 /* debateRound.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = debateRound.swift; sourceTree = "<group>"; };
 		35ADAB8D1DF5D4B800ED8479 /* debater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = debater.swift; sourceTree = "<group>"; };
-		35ADAB911DF5D51B00ED8479 /* roundScore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = roundScore.swift; sourceTree = "<group>"; };
-		35ADAB931DF5D57700ED8479 /* roundTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = roundTime.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +101,7 @@
 		35ADAB491DF5D17F00ED8479 = {
 			isa = PBXGroup;
 			children = (
+				311015AF1E7B23330043224D /* Indiv_Eval_AffViewController.swift */,
 				35ADAB541DF5D17F00ED8479 /* DebateTimerApp */,
 				35ADAB691DF5D17F00ED8479 /* DebateTimerAppTests */,
 				35ADAB741DF5D17F00ED8479 /* DebateTimerAppUITests */,
@@ -124,20 +125,19 @@
 				35ADAB551DF5D17F00ED8479 /* AppDelegate.swift */,
 				35ADAB5C1DF5D17F00ED8479 /* Assets.xcassets */,
 				35ADAB891DF5D48400ED8479 /* debate.swift */,
+				3153C57A1E52594A00EE4F7D /* DebateData.swift */,
 				35ADAB8D1DF5D4B800ED8479 /* debater.swift */,
 				35ADAB8B1DF5D4A000ED8479 /* debateRound.swift */,
-				31322EA11E44E93E0061936B /* Individual_Evaluation.swift */,
 				35ADAB611DF5D17F00ED8479 /* Info.plist */,
 				35ADAB5E1DF5D17F00ED8479 /* LaunchScreen.storyboard */,
 				35ADAB591DF5D17F00ED8479 /* Main.storyboard */,
+				353942D71E57642700051752 /* IntermediaryMenu.swift */,
 				311C6A751E42494F00371B1D /* QOC_Evalutation_Neg.swift */,
 				311C6A731E42481A00371B1D /* QOC_Evaluation_Aff.swift */,
 				319F0A1A1DF9C6DE00C65073 /* NewDebateInputPage.swift */,
 				10D9241A1E044E1B004D8AD5 /* TimerPageGUI.swift */,
 				101285981E269D6500F6DEE3 /* OpenStateNegGUI.swift */,
 				31A31BB91E312875008B21E9 /* QOC.swift */,
-				35ADAB931DF5D57700ED8479 /* roundTime.swift */,
-				35ADAB911DF5D51B00ED8479 /* roundScore.swift */,
 				35ADAB571DF5D17F00ED8479 /* ViewController.swift */,
 			);
 			path = DebateTimerApp;
@@ -296,20 +296,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				31322EA21E44E93E0061936B /* Individual_Evaluation.swift in Sources */,
 				35ADAB581DF5D17F00ED8479 /* ViewController.swift in Sources */,
 				10D9241B1E044E1B004D8AD5 /* TimerPageGUI.swift in Sources */,
-				35ADAB921DF5D51B00ED8479 /* roundScore.swift in Sources */,
 				35ADAB8C1DF5D4A000ED8479 /* debateRound.swift in Sources */,
 				101285991E269D6500F6DEE3 /* OpenStateNegGUI.swift in Sources */,
+				353942D81E57642700051752 /* IntermediaryMenu.swift in Sources */,
+				311015B01E7B23330043224D /* Indiv_Eval_AffViewController.swift in Sources */,
 				311C6A741E42481A00371B1D /* QOC_Evaluation_Aff.swift in Sources */,
 				319F0A1B1DF9C6DE00C65073 /* NewDebateInputPage.swift in Sources */,
 				35ADAB561DF5D17F00ED8479 /* AppDelegate.swift in Sources */,
 				35ADAB8A1DF5D48400ED8479 /* debate.swift in Sources */,
+				3153C57B1E52594A00EE4F7D /* DebateData.swift in Sources */,
 				311C6A761E42494F00371B1D /* QOC_Evalutation_Neg.swift in Sources */,
 				31A31BBA1E312875008B21E9 /* QOC.swift in Sources */,
 				35ADAB8E1DF5D4B800ED8479 /* debater.swift in Sources */,
-				35ADAB941DF5D57700ED8479 /* roundTime.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

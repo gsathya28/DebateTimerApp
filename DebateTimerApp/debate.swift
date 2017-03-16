@@ -8,25 +8,94 @@
 
 import UIKit
 
-class debate: NSObject {
+class debate: NSObject, NSCoding {
     // MARK: Properties
-    var speakers = [
-        "Affirmative": [debater](),
-        "Negative": [debater]()
-    ]
-    var rounds = [
-        "OpenAff": debateRound(inName: "OpenAff", inType: "Opener"),
-        "OpenNeg": debateRound(inName: "OpenNeg", inType: "Opener"),
-        "QOC" : debateRound(inName: "QOC", inType: "Question"),
-        "RebAff": debateRound(inName: "RebAff", inType: "Rebuttal" ),
-        "RebNeg": debateRound(inName: "RebNeg", inType: "Rebuttal"),
-        "CloseAff": debateRound(inName: "CloseAff", inType: "Closing"),
-        "CloseNeg": debateRound(inName: "CloseNeg", inType: "Closing")
-    ]
+    var affSpeakers = [debater]()
+    var negSpeakers = [debater]()
+    var rounds = [debateRound]()
+    var name: String?
     
-    init(Affspeaker1: debater, Affspeaker2: debater, Negspeaker1: debater, Negspeaker2: debater)
+    init(inName: String, Affspeaker1: debater, Affspeaker2: debater, Negspeaker1: debater, Negspeaker2: debater)
     {
-        self.speakers["Affirmative"] = [Affspeaker1, Affspeaker2]
-        self.speakers["Negative"] = [Negspeaker1, Negspeaker2]
+        name = inName
+        self.affSpeakers = [Affspeaker1, Affspeaker2]
+        self.negSpeakers = [Negspeaker1, Negspeaker2]
+        self.rounds = [
+            debateRound(inName: "Opening Statement for Affirmative - Love ", inType: "Opener", possPoints: 15),
+            debateRound(inName: "Opening Statement for Negative", inType: "Opener", possPoints: 15),
+            debateRound(inName: "QOC", inType: "Question", possPoints: 15),
+            debateRound(inName: "RebAff", inType: "Rebuttal", possPoints: 15),
+            debateRound(inName: "RebNeg", inType: "Rebuttal", possPoints: 15),
+            debateRound(inName: "CloseAff", inType: "Closing", possPoints: 15),
+            debateRound(inName: "CloseNeg", inType: "Closing", possPoints: 15)
+        ]
     }
+    
+    init(inName: String, Affspeaker1: debater, Affspeaker2: debater, Negspeaker1: debater, Negspeaker2: debater, Affspeaker3: debater)
+    {
+        name = inName
+        self.affSpeakers = [Affspeaker1, Affspeaker2, Affspeaker3]
+        self.negSpeakers = [Negspeaker1, Negspeaker2]
+        self.rounds = [
+            debateRound(inName: "Opening Statement for Affirmative - Love ", inType: "Opener", possPoints: 15),
+            debateRound(inName: "Opening Statement for Negative", inType: "Opener", possPoints: 15),
+            debateRound(inName: "QOC", inType: "Question", possPoints: 15),
+            debateRound(inName: "RebAff", inType: "Rebuttal", possPoints: 15),
+            debateRound(inName: "RebNeg", inType: "Rebuttal", possPoints: 15),
+            debateRound(inName: "CloseAff", inType: "Closing", possPoints: 15),
+            debateRound(inName: "CloseNeg", inType: "Closing", possPoints: 15)
+        ]
+    }
+    
+    init(inName: String, Affspeaker1: debater, Affspeaker2: debater, Negspeaker1: debater, Negspeaker2: debater, NegSpeaker3: debater)
+    {
+        name = inName
+        self.affSpeakers = [Affspeaker1, Affspeaker2]
+        self.negSpeakers = [Negspeaker1, Negspeaker2, NegSpeaker3]
+        self.rounds = [
+            debateRound(inName: "Opening Statement for Affirmative - Love ", inType: "Opener", possPoints: 15),
+            debateRound(inName: "Opening Statement for Negative", inType: "Opener", possPoints: 15),
+            debateRound(inName: "QOC", inType: "Question", possPoints: 15),
+            debateRound(inName: "RebAff", inType: "Rebuttal", possPoints: 15),
+            debateRound(inName: "RebNeg", inType: "Rebuttal", possPoints: 15),
+            debateRound(inName: "CloseAff", inType: "Closing", possPoints: 15),
+            debateRound(inName: "CloseNeg", inType: "Closing", possPoints: 15)
+        ]
+    }
+    
+    init(inName: String, Affspeaker1: debater, Affspeaker2: debater, Negspeaker1: debater, Negspeaker2: debater, Affspeaker3: debater, Negspeaker3: debater)
+    {
+        name = inName
+        self.affSpeakers = [Affspeaker1, Affspeaker2, Affspeaker3]
+        self.negSpeakers = [Negspeaker1, Negspeaker2, Negspeaker3]
+        self.rounds = [
+            debateRound(inName: "Opening Statement for Affirmative - Love ", inType: "Opener", possPoints: 15),
+            debateRound(inName: "Opening Statement for Negative", inType: "Opener", possPoints: 15),
+            debateRound(inName: "QOC", inType: "Question", possPoints: 15),
+            debateRound(inName: "RebAff", inType: "Rebuttal", possPoints: 15),
+            debateRound(inName: "RebNeg", inType: "Rebuttal", possPoints: 15),
+            debateRound(inName: "CloseAff", inType: "Closing", possPoints: 15),
+            debateRound(inName: "CloseNeg", inType: "Closing", possPoints: 15)
+        ]
+    }
+
+
+
+    
+    
+    
+    required init(coder aDecoder: NSCoder) {
+        affSpeakers = aDecoder.decodeObject(forKey: "affSpeakers") as! [debater]
+        negSpeakers = aDecoder.decodeObject(forKey: "negSpeakers") as! [debater]
+        rounds = aDecoder.decodeObject(forKey: "rounds") as! [debateRound]
+        name = aDecoder.decodeObject(forKey: "name") as? String
+    }
+    
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(affSpeakers, forKey: "affSpeakers")
+        aCoder.encode(negSpeakers, forKey: "negSpeakers")
+        aCoder.encode(rounds, forKey: "rounds")
+        aCoder.encode(name, forKey: "name")
+    }
+    
 }
