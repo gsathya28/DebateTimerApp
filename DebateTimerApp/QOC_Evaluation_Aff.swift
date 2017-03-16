@@ -47,9 +47,5 @@ class QOC_Evaluation_Aff: UIViewController, UITextViewDelegate, UIPickerViewData
     @IBAction func unwindToQOCEvaluationAff(_sender: UIStoryboardSegue) {
     }
     
-    @IBAction func counterPrint(_ sender: UIButton) {
-        print(roundCounter ?? "Something went wrong")
-    }
-    
     
 }

@@ -109,6 +109,8 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
             back.isHidden = true
         }
         
+        print(String(describing: roundCounter))
+        
         /*
         //create rectangle
         let frame1 = CGRect(x: 567, y: 570, width: 447, height: 128)
@@ -187,6 +189,7 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
     }
     
     @IBAction func unwindToOpenAffPageGUI(_sender: UIStoryboardSegue) {
+        print(String(describing: roundCounter))
     }
 
     
@@ -240,13 +243,6 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
         defaults.set(roundCounter, forKey: "roundCounter")
     }
     
-<<<<<<< HEAD
-=======
-    @IBAction func counterPrint(_ sender: UIButton) {
-        print(roundCounter ?? "Something went wrong")
-    }
-    
->>>>>>> origin/segue
     
     
 }
