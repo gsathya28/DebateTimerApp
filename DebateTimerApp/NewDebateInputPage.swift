@@ -13,6 +13,7 @@ class NewDebateInputPage: UIViewController, UIPickerViewDataSource, UIPickerView
     {
     
     @IBOutlet weak var pickerView: UIPickerView!
+    @IBOutlet weak var scrollView: UIScrollView!
 
     @IBOutlet weak var debateName: UITextField!
     
@@ -29,6 +30,9 @@ class NewDebateInputPage: UIViewController, UIPickerViewDataSource, UIPickerView
         pickerView.delegate = self
         pickerView.dataSource = self
         // Do any additional setup after loading the view, typically from a nib.
+        
+        scrollView.contentSize.height = 1150
+        
     }
     
     override func didReceiveMemoryWarning() {
