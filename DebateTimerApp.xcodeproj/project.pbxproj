@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		100A44C51E8031120041EDED /* Indiv_Eval_NegViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100A44C41E8031120041EDED /* Indiv_Eval_NegViewController.swift */; };
 		101285991E269D6500F6DEE3 /* OpenStateNegGUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101285981E269D6500F6DEE3 /* OpenStateNegGUI.swift */; };
 		10D9241B1E044E1B004D8AD5 /* TimerPageGUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D9241A1E044E1B004D8AD5 /* TimerPageGUI.swift */; };
 		311015B01E7B23330043224D /* Indiv_Eval_AffViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311015AF1E7B23330043224D /* Indiv_Eval_AffViewController.swift */; };
@@ -46,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		100A44C41E8031120041EDED /* Indiv_Eval_NegViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Indiv_Eval_NegViewController.swift; sourceTree = "<group>"; };
 		101285981E269D6500F6DEE3 /* OpenStateNegGUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OpenStateNegGUI.swift; path = ../OpenStateNegGUI.swift; sourceTree = "<group>"; };
 		10D9241A1E044E1B004D8AD5 /* TimerPageGUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimerPageGUI.swift; path = ../TimerPageGUI.swift; sourceTree = "<group>"; };
 		311015AF1E7B23330043224D /* Indiv_Eval_AffViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Indiv_Eval_AffViewController.swift; path = ../Indiv_Eval_AffViewController.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 				35ADAB611DF5D17F00ED8479 /* Info.plist */,
 				35ADAB5E1DF5D17F00ED8479 /* LaunchScreen.storyboard */,
 				35ADAB591DF5D17F00ED8479 /* Main.storyboard */,
+				100A44C41E8031120041EDED /* Indiv_Eval_NegViewController.swift */,
 				353942D71E57642700051752 /* IntermediaryMenu.swift */,
 				311015AF1E7B23330043224D /* Indiv_Eval_AffViewController.swift */,
 				311C6A751E42494F00371B1D /* QOC_Evalutation_Neg.swift */,
@@ -303,6 +306,7 @@
 				353942D81E57642700051752 /* IntermediaryMenu.swift in Sources */,
 				311015B01E7B23330043224D /* Indiv_Eval_AffViewController.swift in Sources */,
 				311C6A741E42481A00371B1D /* QOC_Evaluation_Aff.swift in Sources */,
+				100A44C51E8031120041EDED /* Indiv_Eval_NegViewController.swift in Sources */,
 				319F0A1B1DF9C6DE00C65073 /* NewDebateInputPage.swift in Sources */,
 				35ADAB561DF5D17F00ED8479 /* AppDelegate.swift in Sources */,
 				35ADAB8A1DF5D48400ED8479 /* debate.swift in Sources */,

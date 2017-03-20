@@ -1,28 +1,29 @@
 //
-//  Indiv_Eval_AffViewController.swift
+//  Indiv_Eval_NegViewController.swift
 //  DebateTimerApp
 //
-//  Created by GOFFMAN, BENJAMIN on 3/16/17.
+//  Created by FLAUM, JACOB on 3/20/17.
 //  Copyright © 2017 GOVINDARAJAN, SATHYANARAYANAN. All rights reserved.
 //
 
 import UIKit
 
-class Indiv_Eval_AffViewController: UIViewController, UITextViewDelegate {
+class Indiv_Eval_NegViewController: UIViewController {
+
+    @IBOutlet weak var scrollV1: UIScrollView!
     
-    @IBOutlet weak var scrollV: UIScrollView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        scrollV.contentSize.height = 1150
-
         
+        scrollV1.contentSize.height = 1150
+
         // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+        
     }
     
 
