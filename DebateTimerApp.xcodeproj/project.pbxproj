@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		101285991E269D6500F6DEE3 /* OpenStateNegGUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101285981E269D6500F6DEE3 /* OpenStateNegGUI.swift */; };
 		10D9241B1E044E1B004D8AD5 /* TimerPageGUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D9241A1E044E1B004D8AD5 /* TimerPageGUI.swift */; };
+		3114C6401E803415003B3175 /* numberpad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3114C63F1E803415003B3175 /* numberpad.swift */; };
 		311C6A741E42481A00371B1D /* QOC_Evaluation_Aff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311C6A731E42481A00371B1D /* QOC_Evaluation_Aff.swift */; };
 		311C6A761E42494F00371B1D /* QOC_Evalutation_Neg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311C6A751E42494F00371B1D /* QOC_Evalutation_Neg.swift */; };
 		31322EA21E44E93E0061936B /* Individual_Evaluation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31322EA11E44E93E0061936B /* Individual_Evaluation.swift */; };
@@ -48,6 +49,7 @@
 /* Begin PBXFileReference section */
 		101285981E269D6500F6DEE3 /* OpenStateNegGUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OpenStateNegGUI.swift; path = ../OpenStateNegGUI.swift; sourceTree = "<group>"; };
 		10D9241A1E044E1B004D8AD5 /* TimerPageGUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimerPageGUI.swift; path = ../TimerPageGUI.swift; sourceTree = "<group>"; };
+		3114C63F1E803415003B3175 /* numberpad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = numberpad.swift; sourceTree = "<group>"; };
 		311C6A731E42481A00371B1D /* QOC_Evaluation_Aff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QOC_Evaluation_Aff.swift; sourceTree = "<group>"; };
 		311C6A751E42494F00371B1D /* QOC_Evalutation_Neg.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QOC_Evalutation_Neg.swift; sourceTree = "<group>"; };
 		31322EA11E44E93E0061936B /* Individual_Evaluation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Individual_Evaluation.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				35ADAB611DF5D17F00ED8479 /* Info.plist */,
 				35ADAB5E1DF5D17F00ED8479 /* LaunchScreen.storyboard */,
 				35ADAB591DF5D17F00ED8479 /* Main.storyboard */,
+				3114C63F1E803415003B3175 /* numberpad.swift */,
 				353942D71E57642700051752 /* IntermediaryMenu.swift */,
 				311C6A751E42494F00371B1D /* QOC_Evalutation_Neg.swift */,
 				311C6A731E42481A00371B1D /* QOC_Evaluation_Aff.swift */,
@@ -297,6 +300,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				31322EA21E44E93E0061936B /* Individual_Evaluation.swift in Sources */,
+				3114C6401E803415003B3175 /* numberpad.swift in Sources */,
 				35ADAB581DF5D17F00ED8479 /* ViewController.swift in Sources */,
 				10D9241B1E044E1B004D8AD5 /* TimerPageGUI.swift in Sources */,
 				35ADAB8C1DF5D4A000ED8479 /* debateRound.swift in Sources */,

@@ -51,6 +51,7 @@
                                 </state>
                                 <connections>
                                     <action selector="PreviousDebates:" destination="BYZ-38-t0r" eventType="touchUpInside" id="n9Q-s0-4KX"/>
+                                    <segue destination="kab-Yg-4gT" kind="show" id="Kg9-le-6mt"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JNf-ka-7Jg">
@@ -75,6 +76,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-175" y="123"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="At3-ss-ZJx">
+            <objects>
+                <viewController id="kab-Yg-4gT" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="83i-aq-r50"/>
+                        <viewControllerLayoutGuide type="bottom" id="3TP-Yv-yC7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1TJ-J0-z9D">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4zK-3o-hMF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-162" y="1079"/>
         </scene>
         <!--New Debate Input Page-->
         <scene sceneID="Olo-Ap-NMm">
