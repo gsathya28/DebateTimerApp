@@ -48,7 +48,7 @@
 /* Begin PBXFileReference section */
 		101285981E269D6500F6DEE3 /* OpenStateNegGUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OpenStateNegGUI.swift; path = ../OpenStateNegGUI.swift; sourceTree = "<group>"; };
 		10D9241A1E044E1B004D8AD5 /* TimerPageGUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimerPageGUI.swift; path = ../TimerPageGUI.swift; sourceTree = "<group>"; };
-		311015AF1E7B23330043224D /* Indiv_Eval_AffViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Indiv_Eval_AffViewController.swift; sourceTree = "<group>"; };
+		311015AF1E7B23330043224D /* Indiv_Eval_AffViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Indiv_Eval_AffViewController.swift; path = ../Indiv_Eval_AffViewController.swift; sourceTree = "<group>"; };
 		311C6A731E42481A00371B1D /* QOC_Evaluation_Aff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QOC_Evaluation_Aff.swift; sourceTree = "<group>"; };
 		311C6A751E42494F00371B1D /* QOC_Evalutation_Neg.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QOC_Evalutation_Neg.swift; sourceTree = "<group>"; };
 		3153C57A1E52594A00EE4F7D /* DebateData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DebateData.swift; path = ../DebateData.swift; sourceTree = "<group>"; };
@@ -101,7 +101,6 @@
 		35ADAB491DF5D17F00ED8479 = {
 			isa = PBXGroup;
 			children = (
-				311015AF1E7B23330043224D /* Indiv_Eval_AffViewController.swift */,
 				35ADAB541DF5D17F00ED8479 /* DebateTimerApp */,
 				35ADAB691DF5D17F00ED8479 /* DebateTimerAppTests */,
 				35ADAB741DF5D17F00ED8479 /* DebateTimerAppUITests */,
@@ -132,6 +131,7 @@
 				35ADAB5E1DF5D17F00ED8479 /* LaunchScreen.storyboard */,
 				35ADAB591DF5D17F00ED8479 /* Main.storyboard */,
 				353942D71E57642700051752 /* IntermediaryMenu.swift */,
+				311015AF1E7B23330043224D /* Indiv_Eval_AffViewController.swift */,
 				311C6A751E42494F00371B1D /* QOC_Evalutation_Neg.swift */,
 				311C6A731E42481A00371B1D /* QOC_Evaluation_Aff.swift */,
 				319F0A1A1DF9C6DE00C65073 /* NewDebateInputPage.swift */,

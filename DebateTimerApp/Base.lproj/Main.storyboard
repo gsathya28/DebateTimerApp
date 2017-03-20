@@ -863,6 +863,9 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                         <state key="normal" title="Back">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="qUR-iz-0ez" kind="unwind" unwindAction="rewindToMenuWith_sender:" id="Hag-kb-Yln"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="/5     Delivery" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0J1-5C-sQD">
                                         <rect key="frame" x="332" y="521" width="378" height="40"/>
@@ -944,6 +947,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                     <size key="freeformSize" width="1024" height="1100"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3MX-vl-BOn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="qUR-iz-0ez" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3267.7734375" y="1945.3125"/>
         </scene>
@@ -969,6 +973,9 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                         <state key="normal" title="Back">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="8JO-0R-cua" kind="unwind" unwindAction="rewindToMenuWith_sender:" id="ry9-bK-KmG"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3HW-Zc-1QI">
                                         <rect key="frame" x="860" y="0.0" width="164" height="94"/>
@@ -1064,6 +1071,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                     <size key="freeformSize" width="1024" height="1100"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Esy-ok-Yq7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="8JO-0R-cua" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3301.7578125" y="976.5625"/>
         </scene>

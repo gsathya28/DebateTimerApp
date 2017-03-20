@@ -72,6 +72,9 @@ class IntermediaryMenu: UIViewController {
     }
     */
     
+    @IBAction func rewindToMenu(_sender: UIStoryboardSegue) {
+    }
+    
     @IBAction func continueRound(_ sender: UIButton) {
         let defaults = UserDefaults.standard
         roundCounter = roundCounter! + 1
