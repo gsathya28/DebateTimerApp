@@ -15,25 +15,49 @@ class IntermediaryMenu: UIViewController {
     @IBOutlet var continueRegular: UIButton!
     @IBOutlet var continueQOC: UIButton!
     @IBOutlet var individualEval: UIButton!
+    @IBOutlet weak var back: UIButton!
+    @IBOutlet weak var back2: UIButton!
+    @IBOutlet weak var back3: UIButton!
     
     
     @IBOutlet weak var finishedLabel: UILabel!
     @IBOutlet weak var roundLabel: UILabel!
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         let defaults = UserDefaults.standard
         roundCounter = defaults.object(forKey: "roundCounter") as? Int
+        print(String(describing: roundCounter))
         
         continueRegular.isEnabled = true
         continueQOC.isEnabled = false
         individualEval.isEnabled = false
         finishedLabel.isHidden = true
         
+        if(roundCounter! <= 1 || (roundCounter! > 2 && roundCounter! <= 6))
+        {
+            back.isHidden = false
+            back2.isHidden = true
+            back3.isHidden = true
+        }
+        if(roundCounter! == 2)
+        {
+            back.isHidden = true
+            back2.isHidden = false
+            back3.isHidden = true
+        }
+        if(roundCounter! > 6)
+        {
+            back.isHidden = true
+            back2.isHidden = true
+            back3.isHidden = false
+        }
         if (roundCounter! == 1)
         {
             continueRegular.isEnabled = false
             continueQOC.isEnabled = true
+            
         }
         
         if (roundCounter! == 6)
@@ -53,6 +77,7 @@ class IntermediaryMenu: UIViewController {
             finishedLabel.isHidden = false
         }
         
+        
         // Do any additional setup after loading the view.
     }
 
@@ -61,6 +86,9 @@ class IntermediaryMenu: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func unwindToMenu(_sender: UIStoryboardSegue){
+        print(String(describing: roundCounter))
+    }
 
     /*
     // MARK: - Navigation
@@ -77,11 +105,19 @@ class IntermediaryMenu: UIViewController {
         roundCounter = roundCounter! + 1
         defaults.set(roundCounter, forKey: "roundCounter")
     }
+    @IBAction func b(_ sender: Any) {
+    
+    }
     
     @IBAction func continueQOCRound(_ sender: UIButton) {
         let defaults = UserDefaults.standard
         roundCounter = roundCounter! + 1
         defaults.set(roundCounter, forKey: "roundCounter")
     }
+    
+    @IBAction func counterPrint(_ sender: UIButton) {
+        print(roundCounter ?? "Something went wrong")
+    }
+    
     
 }
