@@ -13,8 +13,8 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
     
     // Properties- Set the variables here
     
+    @IBOutlet weak var Back2: UIButton!
     @IBOutlet weak var back: UIButton!
-    @IBOutlet weak var back2: UIButton!
     @IBOutlet weak var CommentsBox: UITextView!
     @IBOutlet weak var pickerView1: UIPickerView!
     var pickerData1 = ["0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15"]
@@ -56,13 +56,13 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
         pickerView1.delegate = self
         pickerView1.dataSource = self
         
-        
         let defaults = UserDefaults.standard
         let id = defaults.object(forKey: "current") as? String
         let ArchiveURLCurrent = DocumentsDirectory.appendingPathComponent(id!)
         
         roundCounter = defaults.object(forKey: "roundCounter") as? Int
         
+
         currentDebate = NSKeyedUnarchiver.unarchiveObject(withFile: ArchiveURLCurrent.path) as! debate?
         
         round = currentDebate?.rounds[roundCounter!]
@@ -73,7 +73,7 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
         }
         else if roundCounter != 1
         {
-            back2.isHidden = true
+            Back2.isHidden = true
         }
         
         if (roundCounter! < 2)
@@ -107,9 +107,16 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
             }
         }
         
+        if(roundCounter! == 0)
+        {
+            Back2.isHidden = true
+        }
+        if(roundCounter! >= 1)
+        {
+            back.isHidden = true
+        }
         
-        
-        
+        print(String(describing: roundCounter))
         
         /*
         //create rectangle
@@ -122,7 +129,6 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
         */
         CommentsBox!.delegate = self
         NotificationCenter.default.addObserver(self, selector: #selector(TimerPageGUI.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        
     }
     
     func keyboardWillShow(notification:NSNotification)
@@ -148,7 +154,6 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
         super.didReceiveMemoryWarning()
         
     }
-    
     
     // This is the method that will run when the play button is activated. This is what I meant when you have to drag the button into the code as a button. I’ll go through each line one by one.
     
@@ -190,6 +195,10 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
         
     }
     
+    @IBAction func unwindToOpenAffPageGUI(_sender: UIStoryboardSegue) {
+        print(String(describing: roundCounter))
+    }
+
     
     func action()
     {
@@ -234,5 +243,7 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return pickerData1[row]
     }
+    
+    
     
 }

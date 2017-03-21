@@ -25,6 +25,7 @@ class NewDebateInputPage: UIViewController, UIPickerViewDataSource, UIPickerView
     let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
     
     var pickerData = ["Hour 1", "Hour 2", "Hour 3", "Hour 4", "Hour 5", "Hour 6", "Hour 7"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         pickerView.delegate = self
@@ -51,10 +52,9 @@ class NewDebateInputPage: UIViewController, UIPickerViewDataSource, UIPickerView
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return pickerData[row]
     }
-    
     @IBAction func unwindToNewDebateInputPage(_sender: UIStoryboardSegue) {
     }
-
+    
     @IBAction func createDebate(_ sender: UIButton) {
         // Enters in an arry whether the textboxes are entered
         let enteredText =
@@ -81,7 +81,7 @@ class NewDebateInputPage: UIViewController, UIPickerViewDataSource, UIPickerView
         {
             print("HAHAHAHAHAHA!")
         }
-        
+        defaults.set(0, forKey: "roundCounter")
     }
     
 }
