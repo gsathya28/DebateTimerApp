@@ -237,12 +237,6 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
         return pickerData1[row]
     }
     
-    @IBAction func back2menu(_ sender: UIButton) {
-        roundCounter = roundCounter! - 1
-        let defaults = UserDefaults.standard
-        defaults.set(roundCounter, forKey: "roundCounter")
-    }
-    
     
     
 }

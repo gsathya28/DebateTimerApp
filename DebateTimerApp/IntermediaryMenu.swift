@@ -87,7 +87,9 @@ class IntermediaryMenu: UIViewController {
     }
     
     @IBAction func unwindToMenu(_sender: UIStoryboardSegue){
-        print(String(describing: roundCounter))
+        roundCounter = roundCounter! - 1
+        let defaults = UserDefaults.standard
+        defaults.set(roundCounter, forKey: "roundCounter")
     }
 
     /*
