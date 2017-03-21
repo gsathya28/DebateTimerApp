@@ -77,10 +77,10 @@
             </objects>
             <point key="canvasLocation" x="-175" y="123"/>
         </scene>
-        <!--View Controller-->
+        <!--Numberpad-->
         <scene sceneID="At3-ss-ZJx">
             <objects>
-                <viewController id="kab-Yg-4gT" sceneMemberID="viewController">
+                <viewController id="kab-Yg-4gT" customClass="numberpad" customModule="DebateTimerApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="83i-aq-r50"/>
                         <viewControllerLayoutGuide type="bottom" id="3TP-Yv-yC7"/>
@@ -93,7 +93,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4zK-3o-hMF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-162" y="1079"/>
+            <point key="canvasLocation" x="-162.3046875" y="1078.90625"/>
         </scene>
         <!--New Debate Input Page-->
         <scene sceneID="Olo-Ap-NMm">

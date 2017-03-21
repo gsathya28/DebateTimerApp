@@ -9,24 +9,9 @@
 import UIKit
 
 class numberpad: UIViewController {
-
-    let alert = UIAlertController(title: "AlertController Tutorial",
-                                  message: "Submit something",
-                                  preferredStyle: .alert)
-    
-    //submit button
-    let submitAction = UIAlertAction(title: "Submit", style: .default, handler: { (action) -> Void in
-        // Get 1st TextField's text
-        let textField = alert.textFields![0]
-        print(textField.text!)
-    })
-    
-    // Cancel button
-    let cancel = UIAlertAction(title: "Cancel", style: .destructive, handler: { (action) -> Void in })
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
 
