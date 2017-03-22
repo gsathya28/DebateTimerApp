@@ -21,6 +21,8 @@ class Indiv_Eval_AffViewController: UIViewController, UITextViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //makes the keyboard show the numbers instead of letters
         textfield.keyboardType = UIKeyboardType.numberPad
         textfield1.keyboardType = UIKeyboardType.numberPad
         textfield2.keyboardType = UIKeyboardType.numberPad
