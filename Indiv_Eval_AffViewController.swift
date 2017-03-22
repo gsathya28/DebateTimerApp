@@ -10,10 +10,23 @@ import UIKit
 
 class Indiv_Eval_AffViewController: UIViewController, UITextViewDelegate {
     
+    @IBOutlet weak var textfield: UITextField!
+    @IBOutlet weak var textfield1: UITextField!
+    @IBOutlet weak var textfield2: UITextField!
+    @IBOutlet weak var textfield3: UITextField!
+    @IBOutlet weak var textfield4: UITextField!
+    @IBOutlet weak var textfield5: UITextField!
+    
     @IBOutlet weak var scrollV: UIScrollView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        textfield.keyboardType = UIKeyboardType.numberPad
+        textfield1.keyboardType = UIKeyboardType.numberPad
+        textfield2.keyboardType = UIKeyboardType.numberPad
+        textfield3.keyboardType = UIKeyboardType.numberPad
+        textfield4.keyboardType = UIKeyboardType.numberPad
+        textfield5.keyboardType = UIKeyboardType.numberPad
         scrollV.contentSize.height = 1150
 
         

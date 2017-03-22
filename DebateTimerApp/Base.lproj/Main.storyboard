@@ -888,6 +888,9 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                         <state key="normal" title="Continue">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="jO5-tJ-Jov" kind="show" id="fhH-5n-PC9"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="/5     Used of class time/Presented equally" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ss-9e-7CT">
                                         <rect key="frame" x="323" y="233" width="378" height="40"/>
@@ -989,6 +992,12 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                     <size key="freeformSize" width="1024" height="1150"/>
                     <connections>
                         <outlet property="scrollV1" destination="NjP-ok-uwz" id="1KR-HX-s2z"/>
+                        <outlet property="textfield" destination="wiF-oH-nBF" id="ViB-at-0qh"/>
+                        <outlet property="textfield1" destination="GwI-fq-cEB" id="hHi-ap-wH7"/>
+                        <outlet property="textfield2" destination="tgH-yY-ltr" id="scF-E2-lCz"/>
+                        <outlet property="textfield3" destination="3Y2-OJ-6WQ" id="Jwh-9m-80u"/>
+                        <outlet property="textfield4" destination="7Kh-0c-0Ks" id="zHX-ZW-UKR"/>
+                        <outlet property="textfield5" destination="jq7-nV-u2q" id="YU2-Yh-4Y3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3MX-vl-BOn" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1029,6 +1038,9 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                         <state key="normal" title="Continue">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="jO5-tJ-Jov" kind="show" id="2ql-I7-3wG"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Individual Evaluations - Affirmative" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jiR-gT-8Db">
                                         <rect key="frame" x="234" y="61" width="574" height="68"/>
@@ -1158,6 +1170,12 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                     <size key="freeformSize" width="1024" height="1100"/>
                     <connections>
                         <outlet property="scrollV" destination="4cE-iG-Ob0" id="f9G-dV-cjB"/>
+                        <outlet property="textfield" destination="Xy5-9b-ETt" id="PGX-iV-aKh"/>
+                        <outlet property="textfield1" destination="bh7-LB-cwm" id="YYc-g9-NSX"/>
+                        <outlet property="textfield2" destination="n5M-KI-kc5" id="LsL-e9-eCj"/>
+                        <outlet property="textfield3" destination="PsQ-Vf-Dje" id="flN-Qf-JCn"/>
+                        <outlet property="textfield4" destination="Nxq-9o-VRZ" id="dx8-uk-xuA"/>
+                        <outlet property="textfield5" destination="DSP-ya-XIR" id="LB1-rO-tqY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Esy-ok-Yq7" userLabel="First Responder" sceneMemberID="firstResponder"/>
