@@ -128,7 +128,4 @@ class IntermediaryMenu: UIViewController {
         roundCounter = roundCounter! + 1
         defaults.set(roundCounter, forKey: "roundCounter")
     }
-    
-       
-    
 }

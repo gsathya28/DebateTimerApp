@@ -195,9 +195,5 @@ class QOC: UIViewController {
         reset.isEnabled = true
     }
     
-    @IBAction func counterPrint(_ sender: UIButton) {
-        print(roundCounter ?? "Something went wrong")
-    }
-    
     
 }
