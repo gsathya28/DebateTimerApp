@@ -110,6 +110,11 @@ class IntermediaryMenu: UIViewController {
     @IBAction func b(_ sender: Any) {
     
     }
+    @IBAction func continue_Ind_Eval(_ sender: UIButton) {
+        let defaults = UserDefaults.standard
+        roundCounter = roundCounter! + 1
+        defaults.set(roundCounter, forKey: "roundCounter")
+    }
     
     @IBAction func continueQOCRound(_ sender: UIButton) {
         let defaults = UserDefaults.standard
