@@ -88,7 +88,10 @@ class IntermediaryMenu: UIViewController {
     }
     
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> master
     
 >>>>>>> master
 }

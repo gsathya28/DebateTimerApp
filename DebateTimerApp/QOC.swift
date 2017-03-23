@@ -171,7 +171,10 @@ class QOC: UIViewController {
     }
     
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> master
     
 >>>>>>> master
 }
