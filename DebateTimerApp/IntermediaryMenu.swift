@@ -23,6 +23,11 @@ class IntermediaryMenu: UIViewController {
     @IBOutlet weak var finishedLabel: UILabel!
     @IBOutlet weak var roundLabel: UILabel!
     
+    let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
+    var ArchiveURLCurrent: URL?
+    var currentDebate: debate?
+    var round: debateRound?
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -34,6 +39,13 @@ class IntermediaryMenu: UIViewController {
         continueQOC.isEnabled = false
         individualEval.isEnabled = false
         finishedLabel.isHidden = true
+        
+        let id = defaults.object(forKey: "current") as? String
+        ArchiveURLCurrent = DocumentsDirectory.appendingPathComponent(id!)
+        currentDebate = NSKeyedUnarchiver.unarchiveObject(withFile: (ArchiveURLCurrent?.path)!) as! debate?
+        round = currentDebate?.rounds[roundCounter!]
+        let time = round?.roundRawTime
+        print(String(describing: time))
         
         if(roundCounter! <= 1 || (roundCounter! > 2 && roundCounter! <= 6))
         {
@@ -117,9 +129,6 @@ class IntermediaryMenu: UIViewController {
         defaults.set(roundCounter, forKey: "roundCounter")
     }
     
-    @IBAction func counterPrint(_ sender: UIButton) {
-        print(roundCounter ?? "Something went wrong")
-    }
-    
+       
     
 }

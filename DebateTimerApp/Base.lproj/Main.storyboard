@@ -280,7 +280,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bYf-RB-nDQ">
                                 <rect key="frame" x="0.0" y="0.0" width="164" height="94"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -290,7 +289,6 @@
                                     <segue destination="4M5-4f-s3y" kind="unwind" unwindAction="unwindToNewDebateInputPageWith_sender:" id="asc-7K-FzV"/>
                                 </connections>
                             </button>
-
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="17" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AQE-Na-tAs">
                                 <rect key="frame" x="20" y="99" width="513" height="501"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -348,6 +346,9 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                 <state key="normal" title="Save">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="saveTime:" destination="gti-Af-EDU" eventType="touchUpInside" id="5x4-FN-fzx"/>
+                                </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="djN-3Y-GT9">
                                 <rect key="frame" x="0.0" y="581" width="649" height="187"/>
@@ -587,7 +588,6 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                     <segue destination="bUC-bl-A1T" kind="unwind" unwindAction="unwindToQOCWith_sender:" id="Ip9-CD-9bO"/>
                                 </connections>
                             </button>
-
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TrR-UV-cfs">
                                 <rect key="frame" x="32" y="135" width="360" height="240"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>

@@ -48,6 +48,7 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
     var currentDebate: debate?
     var roundCounter: Int?
     var round: debateRound?
+    var ArchiveURLCurrent: URL?
     @IBOutlet weak var rubricText: UILabel!
     
     // Load Stuff
@@ -58,15 +59,16 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
         
         let defaults = UserDefaults.standard
         let id = defaults.object(forKey: "current") as? String
-        let ArchiveURLCurrent = DocumentsDirectory.appendingPathComponent(id!)
+        ArchiveURLCurrent = DocumentsDirectory.appendingPathComponent(id!)
         
         roundCounter = defaults.object(forKey: "roundCounter") as? Int
         
-
-        currentDebate = NSKeyedUnarchiver.unarchiveObject(withFile: ArchiveURLCurrent.path) as! debate?
+       
+        currentDebate = NSKeyedUnarchiver.unarchiveObject(withFile: (ArchiveURLCurrent?.path)!) as! debate?
         
         round = currentDebate?.rounds[roundCounter!]
-
+        AffirmativeLabel.text = round?.roundName
+        
         if roundCounter != 0
         {
             back.isHidden = true
@@ -87,7 +89,6 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
                 start.backgroundColor = UIColor.red
                 reset.backgroundColor = UIColor.red
                 save.backgroundColor = UIColor.red
-                
             }
             
         }
@@ -192,7 +193,19 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
     }
     
     @IBAction func saveTime(_ sender: UIButton) {
-        
+        let myRow = pickerView1.selectedRow(inComponent: 0)
+        let score = pickerView(pickerView1, titleForRow: myRow, forComponent: 0)
+        print(String(describing: score))
+        let intScore = Int(score!)
+        round?.roundRawTime = rawTime
+        round?.roundPoints = intScore
+        currentDebate?.rounds[roundCounter!] = round!
+        let savedData = NSKeyedArchiver.archiveRootObject(currentDebate!, toFile: (ArchiveURLCurrent?.path)!)
+        if savedData
+        {
+            print("HAHAHAHAHAHA!")
+        }
+
     }
     
     @IBAction func unwindToOpenAffPageGUI(_sender: UIStoryboardSegue) {
