@@ -15,7 +15,12 @@ class QOC: UIViewController {
     @IBOutlet weak var Negative: UILabel!
     @IBOutlet weak var back: UIButton!
    
-    var roundCounter : Int?
+    let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
+    var currentDebate: debate?
+    var roundCounter: Int?
+    var round: debateRound?
+    var ArchiveURLCurrent: URL?
+
     
     var Afftimer = Timer()
     var Negtimer = Timer()
@@ -25,12 +30,14 @@ class QOC: UIViewController {
     var Affsecond = 0
     var Afftensecond = 0
     var Affminute = 0
+    var AffrawTime = 0
     
     var Negcentisecond = 0
     var Negdecisecond = 0
     var Negsecond = 0
     var Negtensecond = 0
     var Negminute = 0
+    var negRawTime = 0
     // This is different, I’m not exactly sure what this is for, looking back. I’ll look into this.
     var Affsavedcentisecond = 0
     var Negsavedcentisecond = 0
@@ -51,9 +58,21 @@ class QOC: UIViewController {
         Negative.transform = CGAffineTransform(rotationAngle: CGFloat.pi/2)
         
         let defaults = UserDefaults.standard
+        let id = defaults.object(forKey: "current") as? String
+        ArchiveURLCurrent = DocumentsDirectory.appendingPathComponent(id!)
+        
+        roundCounter = defaults.object(forKey: "roundCounter") as? Int
+        
+        
+        currentDebate = NSKeyedUnarchiver.unarchiveObject(withFile: (ArchiveURLCurrent?.path)!) as! debate?
+        
+        round = currentDebate?.rounds[roundCounter!]
         roundCounter = defaults.object(forKey: "roundCounter") as? Int
         
         print(String(describing: roundCounter))
+        
+        
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -109,6 +128,7 @@ class QOC: UIViewController {
     func Affaction()
     {
         Affcentisecond += 1
+        AffrawTime += 1
         
         if (Affcentisecond == 10)
         {
@@ -140,6 +160,7 @@ class QOC: UIViewController {
     func Negaction()
     {
         Negcentisecond += 1
+        negRawTime += 1
         
         if (Negcentisecond == 10)
         {
@@ -195,5 +216,9 @@ class QOC: UIViewController {
         reset.isEnabled = true
     }
     
+    @IBAction func QOCsave(_ sender: UIButton) {
+        
+        
+    }
     
 }

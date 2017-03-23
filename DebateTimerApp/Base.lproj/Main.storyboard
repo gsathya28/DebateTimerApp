@@ -543,6 +543,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Continue"/>
                                 <connections>
+                                    <action selector="QOCsave:" destination="erh-ok-Coz" eventType="touchUpInside" id="KHq-H2-MLm"/>
                                     <segue destination="l0r-Ki-8g6" kind="show" id="qm1-59-UhY"/>
                                 </connections>
                             </button>
