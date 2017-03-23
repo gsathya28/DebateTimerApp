@@ -87,4 +87,8 @@ class IntermediaryMenu: UIViewController {
         defaults.set(roundCounter, forKey: "roundCounter")
     }
     
+<<<<<<< HEAD
+=======
+    
+>>>>>>> master
 }

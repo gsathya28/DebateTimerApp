@@ -170,4 +170,8 @@ class QOC: UIViewController {
         reset.isEnabled = true
     }
     
+<<<<<<< HEAD
+=======
+    
+>>>>>>> master
 }
