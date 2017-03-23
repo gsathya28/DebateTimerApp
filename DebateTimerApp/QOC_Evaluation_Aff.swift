@@ -44,9 +44,8 @@ class QOC_Evaluation_Aff: UIViewController, UITextViewDelegate, UIPickerViewData
         return myTitle
     }
     
-    @IBAction func continueMenu(_ sender: UIButton) {
-        
+    @IBAction func unwindToQOCEvaluationAff(_sender: UIStoryboardSegue) {
     }
     
-
+    
 }

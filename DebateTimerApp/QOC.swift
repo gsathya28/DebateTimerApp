@@ -13,7 +13,9 @@ class QOC: UIViewController {
     //Initialize objects
     @IBOutlet weak var Affirmative: UILabel!
     @IBOutlet weak var Negative: UILabel!
+    @IBOutlet weak var back: UIButton!
    
+    var roundCounter : Int?
     
     var Afftimer = Timer()
     var Negtimer = Timer()
@@ -47,6 +49,11 @@ class QOC: UIViewController {
         
         Affirmative.transform = CGAffineTransform(rotationAngle: -(CGFloat.pi / 2))
         Negative.transform = CGAffineTransform(rotationAngle: CGFloat.pi/2)
+        
+        let defaults = UserDefaults.standard
+        roundCounter = defaults.object(forKey: "roundCounter") as? Int
+        
+        print(String(describing: roundCounter))
     }
     
     override func didReceiveMemoryWarning() {
@@ -56,6 +63,10 @@ class QOC: UIViewController {
     
     
     // This is the method that will run when the play button is activated. This is what I meant when you have to drag the button into the code as a button. I’ll go through each line one by one.
+    
+    @IBAction func unwindToQOC(_sender: UIStoryboardSegue) {
+        print(String(describing: roundCounter))
+    }
     
     @IBAction func startTimer(_ sender: UIButton) {
         
@@ -157,6 +168,20 @@ class QOC: UIViewController {
 
     }
     
+    @IBAction func back2menu(_ sender: UIButton) {
+        let defaults = UserDefaults.standard
+        roundCounter = defaults.object(forKey: "roundCounter") as? Int
+        roundCounter = roundCounter! - 1
+        defaults.set(roundCounter, forKey: "roundCounter")
+        
+    }
+    
+    @IBAction func a(_ sender: Any) {
+        let defaults = UserDefaults.standard
+        roundCounter = roundCounter! - 1
+        defaults.set(roundCounter, forKey: "roundCounter")
+    }
+    
     @IBAction func pauseTimer(_ sender: UIButton) {
         Afftimer.invalidate()
         Negtimer.invalidate()
@@ -170,11 +195,5 @@ class QOC: UIViewController {
         reset.isEnabled = true
     }
     
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> master
     
->>>>>>> master
 }
