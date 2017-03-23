@@ -257,6 +257,20 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
         return pickerData1[row]
     }
     
+    @IBAction func continueAutoSave(_ sender: UIButton) {
+        let myRow = pickerView1.selectedRow(inComponent: 0)
+        let score = pickerView(pickerView1, titleForRow: myRow, forComponent: 0)
+        print(String(describing: score))
+        let intScore = Int(score!)
+        round?.roundRawTime = rawTime
+        round?.roundPoints = intScore
+        currentDebate?.rounds[roundCounter!] = round!
+        let savedData = NSKeyedArchiver.archiveRootObject(currentDebate!, toFile: (ArchiveURLCurrent?.path)!)
+        if savedData
+        {
+            print("HAHAHAHAHAHA!")
+        }
+    }
     
     
 }
