@@ -7,11 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-<<<<<<< HEAD
 		100A44C51E8031120041EDED /* Indiv_Eval_NegViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100A44C41E8031120041EDED /* Indiv_Eval_NegViewController.swift */; };
 		101285991E269D6500F6DEE3 /* OpenStateNegGUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101285981E269D6500F6DEE3 /* OpenStateNegGUI.swift */; };
-=======
->>>>>>> master
 		10D9241B1E044E1B004D8AD5 /* TimerPageGUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D9241A1E044E1B004D8AD5 /* TimerPageGUI.swift */; };
 		311015B01E7B23330043224D /* Indiv_Eval_AffViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311015AF1E7B23330043224D /* Indiv_Eval_AffViewController.swift */; };
 		311C6A741E42481A00371B1D /* QOC_Evaluation_Aff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311C6A731E42481A00371B1D /* QOC_Evaluation_Aff.swift */; };
@@ -142,6 +139,7 @@
 				311C6A731E42481A00371B1D /* QOC_Evaluation_Aff.swift */,
 				319F0A1A1DF9C6DE00C65073 /* NewDebateInputPage.swift */,
 				10D9241A1E044E1B004D8AD5 /* TimerPageGUI.swift */,
+				101285981E269D6500F6DEE3 /* OpenStateNegGUI.swift */,
 				31A31BB91E312875008B21E9 /* QOC.swift */,
 				35ADAB571DF5D17F00ED8479 /* ViewController.swift */,
 			);
@@ -304,6 +302,7 @@
 				35ADAB581DF5D17F00ED8479 /* ViewController.swift in Sources */,
 				10D9241B1E044E1B004D8AD5 /* TimerPageGUI.swift in Sources */,
 				35ADAB8C1DF5D4A000ED8479 /* debateRound.swift in Sources */,
+				101285991E269D6500F6DEE3 /* OpenStateNegGUI.swift in Sources */,
 				353942D81E57642700051752 /* IntermediaryMenu.swift in Sources */,
 				311015B01E7B23330043224D /* Indiv_Eval_AffViewController.swift in Sources */,
 				311C6A741E42481A00371B1D /* QOC_Evaluation_Aff.swift in Sources */,
