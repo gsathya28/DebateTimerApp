@@ -12,12 +12,16 @@ class TableView_sortOf: UIViewController, UITableViewDelegate, UITableViewDataSo
 
     @IBOutlet weak var tableV1: UITableView!
     
-    //var documentList: [String] = ["lets" , "see" , "if" , "this" , "works"]
+    var documentList: [String] = ["lets" , "see" , "if" , "this" , "works"]
     
     let cellReuseIdendifier = "FileCell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableV1.register(FileCell.self, forCellReuseIdentifier: cellReuseIdendifier)
+        
+        tableV1.dataSource = self
+        tableV1.delegate = self
 
         // Do any additional setup after loading the view.
     }
@@ -26,10 +30,7 @@ class TableView_sortOf: UIViewController, UITableViewDelegate, UITableViewDataSo
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
         
-        tableV1.register(FileCell.self, forCellReuseIdentifier: cellReuseIdendifier)
-        
-        tableV1.dataSource = self
-        tableV1.delegate = self
+       
         // Do any additional setup after loading the view.
 
         
@@ -37,7 +38,7 @@ class TableView_sortOf: UIViewController, UITableViewDelegate, UITableViewDataSo
     
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return documentList.count
             //documentList.count
     }
     
@@ -46,10 +47,12 @@ class TableView_sortOf: UIViewController, UITableViewDelegate, UITableViewDataSo
         let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdendifier, for: indexPath as IndexPath) as! FileCell
         
         //documentList = getFileList()
-        
-        cell.labels["file"]?.Label.text = "hello"
-            //documentList[indexPath.row]
+        //for x in 0...documentList.count
+        cell.labels["file"]?.Label.text = documentList[indexPath.row]
+            //documentList[indexPath.row]\
         
         return cell
+            
     }
 }
+
