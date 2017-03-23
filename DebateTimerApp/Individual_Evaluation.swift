@@ -17,7 +17,6 @@ class Individual_Evaluation: UIViewController, UITextViewDelegate {
     
     var keyboardHeight: Int = 0
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         CommentsBoxNeg!.delegate = self
@@ -25,6 +24,7 @@ class Individual_Evaluation: UIViewController, UITextViewDelegate {
         Stu1CommentAff!.delegate = self
         Stu1CommentNeg.delegate = self
         NotificationCenter.default.addObserver(self, selector: #selector(Individual_Evaluation.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        
     }
     
     func keyboardWillShow(notification:NSNotification)
@@ -57,7 +57,4 @@ class Individual_Evaluation: UIViewController, UITextViewDelegate {
         roundCounter = roundCounter! + 1
         defaults.set(roundCounter, forKey: "roundCounter")
     }
-    @IBAction func unwindToIndividual(_sender: UIStoryboardSegue){
-    }
-    
 }
