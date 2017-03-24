@@ -100,6 +100,14 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
             }
         }
         
+        if(roundCounter! == 4 || roundCounter! == 6)
+        {
+            pause.backgroundColor = UIColor.red
+            start.backgroundColor = UIColor.red
+            reset.backgroundColor = UIColor.red
+            save.backgroundColor = UIColor.red
+        }
+        
         if(roundCounter! == 0)
         {
             Back2.isHidden = true
