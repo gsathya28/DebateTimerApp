@@ -21,7 +21,6 @@ class QOC: UIViewController {
     var round: debateRound?
     var ArchiveURLCurrent: URL?
 
-    
     var Afftimer = Timer()
     var Negtimer = Timer()
     // This is to keep track of each digit in the timer
@@ -217,8 +216,14 @@ class QOC: UIViewController {
     }
     
     @IBAction func QOCsave(_ sender: UIButton) {
-        
-        
+        round?.roundAffTime = AffrawTime
+        round?.roundNegTime = negRawTime
+        currentDebate?.rounds[roundCounter!] = round!
+        let savedData = NSKeyedArchiver.archiveRootObject(currentDebate!, toFile: (ArchiveURLCurrent?.path)!)
+        if savedData
+        {
+            print("HAHAHAHAHAHAHAHAHA!")
+        }
     }
     
 }
