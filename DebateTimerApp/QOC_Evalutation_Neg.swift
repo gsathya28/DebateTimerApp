@@ -67,6 +67,10 @@ class QOC_Evalutation_Neg: UIViewController, UITextViewDelegate, UIPickerViewDat
         let myRow = PickerView.selectedRow(inComponent: 0)
         let score = pickerView(PickerView, titleForRow: myRow, forComponent: 0)
         let intScore = Int(score!)
-        round?.roundPoints = intScore
+        round?.roundNegPoints = intScore
+        if (!((round!.roundAffPoints != nil)))
+        {
+            print("Alert goes here")
+        }
     }
 }
