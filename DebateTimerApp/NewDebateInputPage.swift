@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+var Speak3: Int?
 
 class NewDebateInputPage: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate
     {
@@ -16,6 +16,7 @@ class NewDebateInputPage: UIViewController, UIPickerViewDataSource, UIPickerView
     @IBOutlet weak var scrollView: UIScrollView!
 
     @IBOutlet weak var debateName: UITextField!
+    @IBOutlet weak var Speak3Neg: UITextField!
     
     @IBOutlet weak var speak1Aff: UITextField!
     @IBOutlet weak var speak2Aff: UITextField!
@@ -33,6 +34,15 @@ class NewDebateInputPage: UIViewController, UIPickerViewDataSource, UIPickerView
         // Do any additional setup after loading the view, typically from a nib.
         
         scrollView.contentSize.height = 1150
+        
+        let count = Speak3Neg.accessibilityElementCount()
+        if(count == 0)
+        {
+            Speak3 = 0
+        }
+        else{
+            Speak3 = 1
+        }
         
     }
     
