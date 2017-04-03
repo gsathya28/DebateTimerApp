@@ -11,8 +11,12 @@ import UIKit
 class debateRound: NSObject, NSCoding {
     var roundName: String?
     var roundType: String?
-    var roundrawTime: [Int]?
+    var roundRawTime: Int?
+    var roundAffTime: Int?
+    var roundNegTime: Int?
     var roundPoints: Int?
+    var roundAffPoints: Int?
+    var roundNegPoints: Int?
     var roundPointsPossible: Int?
     
     init(inName: String, inType: String, possPoints: Int)
@@ -21,7 +25,7 @@ class debateRound: NSObject, NSCoding {
         self.roundType = inType
         self.roundPointsPossible = possPoints
         self.roundPoints = 0
-        self.roundrawTime = [0]
+        self.roundRawTime = 0
     }
     
     required init(coder aDecoder: NSCoder) {
@@ -29,7 +33,11 @@ class debateRound: NSObject, NSCoding {
         roundType = (aDecoder.decodeObject(forKey: "type") as? String)!
         roundPointsPossible = aDecoder.decodeObject(forKey: "possPoints") as? Int
         roundPoints = aDecoder.decodeObject(forKey: "points") as? Int
-        roundrawTime = aDecoder.decodeObject(forKey: "rawTime") as? [Int]
+        roundRawTime = aDecoder.decodeObject(forKey: "rawTime") as? Int
+        roundAffTime = aDecoder.decodeObject(forKey: "affTime") as? Int
+        roundNegTime = aDecoder.decodeObject(forKey: "negTime") as? Int
+        roundAffPoints = aDecoder.decodeObject(forKey: "affQOCPoints") as? Int
+        roundNegPoints = aDecoder.decodeObject(forKey: "negQOCPoints") as? Int
     }
     
     func encode(with aCoder: NSCoder) {
@@ -37,7 +45,11 @@ class debateRound: NSObject, NSCoding {
         aCoder.encode(roundType, forKey: "type")
         aCoder.encode(roundPointsPossible, forKey: "possPoints")
         aCoder.encode(roundPoints, forKey: "points")
-        aCoder.encode(roundrawTime, forKey: "rawTime")
+        aCoder.encode(roundRawTime, forKey: "rawTime")
+        aCoder.encode(roundAffTime, forKey: "affTime")
+        aCoder.encode(roundNegTime, forKey: "negTime")
+        aCoder.encode(roundAffPoints, forKey: "affQOCPoints")
+        aCoder.encode(roundNegPoints, forKey: "negQOCPoints")
     }
 
     

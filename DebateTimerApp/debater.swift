@@ -13,8 +13,7 @@ class debater: NSObject, NSCoding {
     // MARK: Properties
     var name: String?
     var stance: String?
-    var debateScores: [String: Int]?
-    var debateTimes: [String: Int]?
+    var individualScore: Int?
     
     // MARK: Initializer
     init(inName: String, inStance: String)
@@ -25,16 +24,14 @@ class debater: NSObject, NSCoding {
     
     required init(coder aDecoder: NSCoder) {
         stance = aDecoder.decodeObject(forKey: "stance") as? String
-        debateScores = (aDecoder.decodeObject(forKey: "scores") as? [String: Int])!
-        debateTimes = aDecoder.decodeObject(forKey: "times") as? [String: Int]!
         name = (aDecoder.decodeObject(forKey: "name") as? String)!
+        individualScore = aDecoder.decodeObject(forKey: "individualScore") as? Int
     }
     
     func encode(with aCoder: NSCoder) {
         aCoder.encode(stance, forKey: "stance")
-        aCoder.encode(debateScores, forKey: "scores")
-        aCoder.encode(debateTimes, forKey: "times")
         aCoder.encode(name, forKey: "name")
+        aCoder.encode(individualScore, forKey: "individualScore")
     }
 
     

@@ -22,7 +22,8 @@ class NewDebateInputPage: UIViewController, UIPickerViewDataSource, UIPickerView
     @IBOutlet weak var speak1Neg: UITextField!
     @IBOutlet weak var speak2Neg: UITextField!
     
-   
+    let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
+    
     var pickerData = ["Hour 1", "Hour 2", "Hour 3", "Hour 4", "Hour 5", "Hour 6", "Hour 7"]
     
     override func viewDidLoad() {
@@ -64,31 +65,23 @@ class NewDebateInputPage: UIViewController, UIPickerViewDataSource, UIPickerView
              debateName.text]
         
         let Aff1 = debater(inName: enteredText[0]!, inStance: "Aff")
-        Aff1.debateScores = ["OpenAff" : 0, "QOC" : 0, "CloseAff" : 0, "RebAff" : 0, "Individual" : 0]
-        Aff1.debateTimes = ["OpenAff" : 0, "QOC" : 0, "CloseAff" : 0, "RebAff" : 0, "Individual" : 0]
-        
         let Aff2 = debater(inName: enteredText[1]!, inStance: "Aff")
-        Aff2.debateScores = ["OpenAff" : 0, "QOC" : 0, "CloseAff" : 0, "RebAff" : 0, "Individual" : 0]
-        Aff2.debateTimes = ["OpenAff" : 0, "QOC" : 0, "CloseAff" : 0, "RebAff" : 0, "Individual" : 0]
-        
         let Neg1 = debater(inName: enteredText[2]!, inStance: "Neg")
-        Neg1.debateScores = ["OpenAff" : 0, "QOC" : 0, "CloseAff" : 0, "RebAff" : 0, "Individual" : 0]
-        Neg1.debateTimes = ["OpenAff" : 0, "QOC" : 0, "CloseAff" : 0, "RebAff" : 0, "Individual" : 0]
-        
         let Neg2 = debater(inName: enteredText[3]!, inStance: "Neg")
-        Neg2.debateScores = ["OpenAff" : 0, "QOC" : 0, "CloseAff" : 0, "RebAff" : 0, "Individual" : 0]
-        Neg2.debateTimes = ["OpenAff" : 0, "QOC" : 0, "CloseAff" : 0, "RebAff" : 0, "Individual" : 0]
         
         let currentDebate = debate(inName: debateName.text!, Affspeaker1: Aff1, Affspeaker2: Aff2, Negspeaker1: Neg1, Negspeaker2: Neg2)
         
         let defaults = UserDefaults.standard
         defaults.set(debateName.text, forKey: "current")
         
-        let savedData = NSKeyedArchiver.archivedData(withRootObject: currentDebate)
-        defaults.set(savedData, forKey: debateName.text!)
+        let ArchiveURLCurrent = DocumentsDirectory.appendingPathComponent(debateName.text!)
         
+        let savedData = NSKeyedArchiver.archiveRootObject(currentDebate, toFile: ArchiveURLCurrent.path)
+        if savedData
+        {
+            print("HAHAHAHAHAHA!")
+        }
         defaults.set(0, forKey: "roundCounter")
-        defaults.set(0, forKey: "menuCounter")
     }
     
 }
