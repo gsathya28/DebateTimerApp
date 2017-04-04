@@ -14,10 +14,8 @@ class NewDebateInputPage: UIViewController, UIPickerViewDataSource, UIPickerView
     
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var scrollView: UIScrollView!
-
     @IBOutlet weak var debateName: UITextField!
     @IBOutlet weak var Speak3Neg: UITextField!
-    
     @IBOutlet weak var speak1Aff: UITextField!
     @IBOutlet weak var speak2Aff: UITextField!
     @IBOutlet weak var speak1Neg: UITextField!
@@ -34,16 +32,7 @@ class NewDebateInputPage: UIViewController, UIPickerViewDataSource, UIPickerView
         // Do any additional setup after loading the view, typically from a nib.
         
         scrollView.contentSize.height = 1150
-        
-        let count = Speak3Neg.accessibilityElementCount()
-        if(count == 0)
-        {
-            Speak3 = 0
-        }
-        else{
-            Speak3 = 1
-        }
-        
+
     }
     
     override func didReceiveMemoryWarning() {
@@ -92,6 +81,17 @@ class NewDebateInputPage: UIViewController, UIPickerViewDataSource, UIPickerView
             print("HAHAHAHAHAHA!")
         }
         defaults.set(0, forKey: "roundCounter")
+        
+        
+        if(Speak3Neg.text == "")
+        {
+            Speak3 = 0
+        }
+        else
+        {
+            Speak3 = 1
+        }
+        
     }
     
 }

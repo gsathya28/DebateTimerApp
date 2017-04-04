@@ -578,7 +578,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                         <viewControllerLayoutGuide type="bottom" id="fni-zu-bRc"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="F48-Wd-Cna">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1150"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dCH-Xj-kAC">
@@ -1202,6 +1202,9 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="1024" height="1150"/>
                     <connections>
+                        <outlet property="Label1" destination="NUi-Nx-AoZ" id="rnG-F2-Ssz"/>
+                        <outlet property="Label2" destination="ZjA-Lv-3ad" id="5ex-ek-d7g"/>
+                        <outlet property="Student3" destination="3DR-Ch-889" id="pej-EZ-Gg6"/>
                         <outlet property="scrollView" destination="5Ow-Nb-VoU" id="W2b-Sh-6xG"/>
                         <outlet property="textfield1" destination="qJ1-s2-0Qz" id="nZs-WV-f5m"/>
                         <outlet property="textfield2" destination="D3R-qk-Why" id="fO8-pj-ux5"/>
@@ -1384,7 +1387,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Vs6-I1-zta"/>
+        <segue reference="Waa-sS-xBm"/>
         <segue reference="bun-GC-Vrl"/>
     </inferredMetricsTieBreakers>
 </document>
