@@ -78,7 +78,7 @@ class Individual_Evaluation_Aff: UIViewController {
     */
     
     @IBAction func IndEvalSave(_ sender: UIButton) {
-        if (Speak3Aff == 0)
+        if (Speak3AffCount == 0)
         {
             
         }

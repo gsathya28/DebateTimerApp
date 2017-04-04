@@ -15,6 +15,9 @@ class Individual_Evaluation_Neg: UIViewController {
     @IBOutlet weak var textfield2: UITextField!
     @IBOutlet weak var textfield3: UITextField!
     @IBOutlet weak var textfield4: UITextField!
+    @IBOutlet weak var Label2: UILabel!
+    @IBOutlet weak var Label1: UILabel!
+    @IBOutlet weak var Student3: UILabel!
     @IBOutlet weak var textfield5: UITextField!
     @IBOutlet weak var textfield6: UITextField!
     
@@ -44,7 +47,14 @@ class Individual_Evaluation_Neg: UIViewController {
         
         scrollView.contentSize.height = 1150
         
-        // Do any additional setup after loading the view.
+        if(Speak3NegCount == 0)
+        {
+            Student3.isHidden = true
+            Label1.isHidden = true
+            Label2.isHidden = true
+            textfield5.isHidden = true
+            textfield6.isHidden = true
+        }
     }
 
     override func didReceiveMemoryWarning() {
