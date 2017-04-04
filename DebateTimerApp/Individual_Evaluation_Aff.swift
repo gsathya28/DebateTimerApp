@@ -51,7 +51,7 @@ class Individual_Evaluation_Aff: UIViewController {
         
         scrollView.contentSize.height = 1150
         
-        if(Speak3 == 0)
+        if(Speak3AffCount == 0)
         {
             Student3.isHidden = true
             Label1.isHidden = true
@@ -78,7 +78,14 @@ class Individual_Evaluation_Aff: UIViewController {
     */
     
     @IBAction func IndEvalSave(_ sender: UIButton) {
-        
+        if (Speak3Aff == 0)
+        {
+            
+        }
+        else
+        {
+            
+        }
     }
     
     

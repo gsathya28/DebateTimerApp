@@ -7,7 +7,8 @@
 //
 
 import UIKit
-var Speak3: Int?
+var Speak3AffCount: Int?
+var Speak3NegCount: Int?
 
 class NewDebateInputPage: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate
     {
@@ -18,6 +19,7 @@ class NewDebateInputPage: UIViewController, UIPickerViewDataSource, UIPickerView
     @IBOutlet weak var Speak3Neg: UITextField!
     @IBOutlet weak var speak1Aff: UITextField!
     @IBOutlet weak var speak2Aff: UITextField!
+    @IBOutlet weak var Speak3Aff: UITextField!
     @IBOutlet weak var speak1Neg: UITextField!
     @IBOutlet weak var speak2Neg: UITextField!
     
@@ -83,14 +85,24 @@ class NewDebateInputPage: UIViewController, UIPickerViewDataSource, UIPickerView
         defaults.set(0, forKey: "roundCounter")
         
         
-        if(Speak3Neg.text == "")
+        if(Speak3Aff.text == "")
         {
-            Speak3 = 0
+            Speak3AffCount = 0
         }
         else
         {
-            Speak3 = 1
+            Speak3AffCount = 1
         }
+        
+        if(Speak3Neg.text == "")
+        {
+            Speak3NegCount = 0
+        }
+        else
+        {
+            Speak3NegCount = 1
+        }
+
         
     }
     
