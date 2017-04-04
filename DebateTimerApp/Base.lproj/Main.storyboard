@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1421" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
@@ -390,7 +390,6 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                     <segue destination="4M5-4f-s3y" kind="unwind" unwindAction="unwindToNewDebateInputPageWith_sender:" id="8pM-yj-KyU"/>
                                 </connections>
                             </button>
-
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VeP-mX-Fq5">
                                 <rect key="frame" x="0.0" y="0.0" width="164" height="94"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -400,7 +399,6 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                     <segue destination="4M5-4f-s3y" kind="unwind" unwindAction="unwindToMenuWith_sender:" id="INf-FK-hlm"/>
                                 </connections>
                             </button>
-                            
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c3C-Op-6CA">
                                 <rect key="frame" x="814" y="671" width="187" height="77"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1017,7 +1015,7 @@ Delivery</string>
             </objects>
             <point key="canvasLocation" x="2610" y="950"/>
         </scene>
-        <!--View Controller-->
+        <!--Debate Data-->
         <scene sceneID="Ed7-du-j6o">
             <objects>
                 <viewController id="hek-Cu-m6s" customClass="DebateData" customModule="DebateTimerApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -1223,6 +1221,7 @@ Delivery</string>
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
+                                            <action selector="IndEvalSave:" destination="E9G-4f-QTb" eventType="touchUpInside" id="FOb-Wi-oN2"/>
                                             <segue destination="jO5-tJ-Jov" kind="show" id="zPx-1f-Q0i"/>
                                         </connections>
                                     </button>
@@ -1541,7 +1540,6 @@ Delivery</string>
                                     <segue destination="gti-Af-EDU" kind="show" id="eD5-ex-Dmw"/>
                                 </connections>
                             </button>
-
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SNr-HK-iwO">
                                 <rect key="frame" x="331" y="399" width="363" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1663,10 +1661,7 @@ Delivery</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="bun-GC-Vrl"/>
-        <segue reference="Waa-sS-xBm"/>
-        <segue reference="Vs6-I1-zta"/>
+        <segue reference="zPx-1f-Q0i"/>
         <segue reference="eD5-ex-Dmw"/>
-        <segue reference="d5g-fy-6v1"/>
     </inferredMetricsTieBreakers>
 </document>

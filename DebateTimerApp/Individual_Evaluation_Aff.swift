@@ -18,9 +18,24 @@ class Individual_Evaluation_Aff: UIViewController {
     @IBOutlet weak var textfield5: UITextField!
     @IBOutlet weak var textfield6: UITextField!
     
+    let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
+    var currentDebate: debate?
+    var roundCounter: Int?
+    var round: debateRound?
+    var ArchiveURLCurrent: URL?
+
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let defaults = UserDefaults.standard
+        let id = defaults.object(forKey: "current") as? String
+        ArchiveURLCurrent = DocumentsDirectory.appendingPathComponent(id!)
+        
+        roundCounter = defaults.object(forKey: "roundCounter") as? Int
+        
+        currentDebate = NSKeyedUnarchiver.unarchiveObject(withFile: (ArchiveURLCurrent?.path)!) as! debate?
         
         textfield1.keyboardType = UIKeyboardType.numberPad
         textfield2.keyboardType = UIKeyboardType.numberPad

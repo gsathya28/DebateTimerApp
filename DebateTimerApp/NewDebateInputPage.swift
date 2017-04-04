@@ -56,7 +56,7 @@ class NewDebateInputPage: UIViewController, UIPickerViewDataSource, UIPickerView
     }
     
     @IBAction func createDebate(_ sender: UIButton) {
-        // Enters in an arry whether the textboxes are entered
+        // Enters in an array whether the textboxes are entered
         let enteredText =
             [speak1Aff.text,
              speak2Aff.text,
