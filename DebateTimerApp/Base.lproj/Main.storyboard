@@ -248,6 +248,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="1024" height="1150"/>
                     <connections>
+                        <outlet property="Speak3Neg" destination="0Vx-di-hdM" id="xdQ-NV-sY7"/>
                         <outlet property="debateName" destination="CIa-5h-8s1" id="xBi-9j-wg0"/>
                         <outlet property="pickerView" destination="1GA-Ij-r0d" id="Prh-Zi-QTy"/>
                         <outlet property="scrollView" destination="uMa-Gz-ivU" id="mOz-qd-Cq3"/>
@@ -271,7 +272,7 @@
                         <viewControllerLayoutGuide type="bottom" id="lYm-b1-YVV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="U67-N3-4dD">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1150"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Opening Statement for Affirmative" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pP0-EG-xMW">
@@ -441,7 +442,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                         <viewControllerLayoutGuide type="bottom" id="Hlg-61-FVm"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ymh-Va-gmO">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1150"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qoa-Bh-UdL">
@@ -662,7 +663,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                         <viewControllerLayoutGuide type="bottom" id="CsL-xK-lDO"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="zVO-OF-KdM">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1150"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YCu-C0-geC">
@@ -738,6 +739,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
             </objects>
             <point key="canvasLocation" x="2610" y="-736"/>
         </scene>
+
         <!--Individual Evaluation-->
         <scene sceneID="ED3-UB-2mg">
             <objects>
@@ -1015,6 +1017,7 @@ Delivery</string>
             </objects>
             <point key="canvasLocation" x="2610" y="950"/>
         </scene>
+
         <!--Debate Data-->
         <scene sceneID="Ed7-du-j6o">
             <objects>
@@ -1024,7 +1027,7 @@ Delivery</string>
                         <viewControllerLayoutGuide type="bottom" id="4Ys-kA-oNE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ttm-zY-0fZ">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1150"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EKR-IT-HXn">
@@ -1479,6 +1482,9 @@ Delivery</string>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="1024" height="1150"/>
                     <connections>
+                        <outlet property="Label1" destination="NUi-Nx-AoZ" id="rnG-F2-Ssz"/>
+                        <outlet property="Label2" destination="ZjA-Lv-3ad" id="5ex-ek-d7g"/>
+                        <outlet property="Student3" destination="3DR-Ch-889" id="pej-EZ-Gg6"/>
                         <outlet property="scrollView" destination="5Ow-Nb-VoU" id="W2b-Sh-6xG"/>
                         <outlet property="textfield1" destination="qJ1-s2-0Qz" id="nZs-WV-f5m"/>
                         <outlet property="textfield2" destination="D3R-qk-Why" id="fO8-pj-ux5"/>
@@ -1509,7 +1515,7 @@ Delivery</string>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AWY-KX-CRT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2596" y="1231"/>
+            <point key="canvasLocation" x="2610" y="1904"/>
         </scene>
         <!--Intermediary Menu-->
         <scene sceneID="BVM-BB-y0b">
@@ -1520,7 +1526,7 @@ Delivery</string>
                         <viewControllerLayoutGuide type="bottom" id="V1P-6u-Kn6"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="3I2-Ni-4fA">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1150"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You are going to the next round. Continue?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QBz-HU-drM">
@@ -1663,5 +1669,7 @@ Delivery</string>
     <inferredMetricsTieBreakers>
         <segue reference="zPx-1f-Q0i"/>
         <segue reference="eD5-ex-Dmw"/>
+        <segue reference="Waa-sS-xBm"/>
+        <segue reference="bun-GC-Vrl"/>
     </inferredMetricsTieBreakers>
 </document>
