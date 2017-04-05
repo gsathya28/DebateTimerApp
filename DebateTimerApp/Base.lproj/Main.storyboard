@@ -1240,7 +1240,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AWY-KX-CRT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2610" y="1904"/>
+            <point key="canvasLocation" x="2610" y="1365"/>
         </scene>
         <!--Intermediary Menu-->
         <scene sceneID="BVM-BB-y0b">

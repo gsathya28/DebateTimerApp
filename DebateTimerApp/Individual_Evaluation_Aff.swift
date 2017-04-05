@@ -8,6 +8,10 @@
 
 import UIKit
 
+var EvalAffspeaker1: debater?
+var EvalAffspeaker2: debater?
+var EvalAffspeaker3: debater?
+
 class Individual_Evaluation_Aff: UIViewController {
 
     @IBOutlet weak var scrollView: UIScrollView!
@@ -78,13 +82,28 @@ class Individual_Evaluation_Aff: UIViewController {
     */
     
     @IBAction func IndEvalSave(_ sender: UIButton) {
-        if (Speak3AffCount == 0)
+        
+        EvalAffspeaker1 = (currentDebate?.affSpeakers[0])!
+        EvalAffspeaker2 = (currentDebate?.affSpeakers[1])!
+        EvalAffspeaker1?.classtimeScore = Int(textfield1.text!)
+        EvalAffspeaker2?.classtimeScore = Int(textfield3.text!)
+        EvalAffspeaker1?.deliveryScore = Int(textfield2.text!)
+        EvalAffspeaker2?.deliveryScore = Int(textfield4.text!)
+        currentDebate?.affSpeakers[0] = EvalAffspeaker1!
+        currentDebate?.affSpeakers[1] = EvalAffspeaker2!
+        
+        if (Speak3AffCount == 1)
         {
-            
+            EvalAffspeaker3 = currentDebate?.affSpeakers[2]
+            EvalAffspeaker3?.classtimeScore = Int(textfield5.text!)
+            EvalAffspeaker3?.deliveryScore = Int(textfield6.text!)
+            currentDebate?.affSpeakers[2] = EvalAffspeaker3!
         }
-        else
+        
+        let savedData = NSKeyedArchiver.archiveRootObject(currentDebate!, toFile: (ArchiveURLCurrent?.path)!)
+        if savedData
         {
-            
+            print("HAHAHAHAHAHA!")
         }
     }
     
