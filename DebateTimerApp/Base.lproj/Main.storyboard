@@ -1064,18 +1064,6 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3fj-G6-azw">
-                                        <rect key="frame" x="860" y="0.0" width="164" height="94"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                        <state key="normal" title="Continue">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="IndEvalSave:" destination="dnu-uX-vZu" eventType="touchUpInside" id="T1I-Mr-QEa"/>
-                                            <segue destination="jO5-tJ-Jov" kind="show" id="Waa-sS-xBm"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ka8-PG-vad">
                                         <rect key="frame" x="0.0" y="-1" width="164" height="94"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1192,6 +1180,18 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3fj-G6-azw">
+                                        <rect key="frame" x="852" y="8" width="164" height="94"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <state key="normal" title="Continue">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="IndEvalSave:" destination="dnu-uX-vZu" eventType="touchUpInside" id="J4Q-ug-HGg"/>
+                                            <segue destination="jO5-tJ-Jov" kind="show" id="Waa-sS-xBm"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </scrollView>
                         </subviews>
@@ -1392,7 +1392,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="zPx-1f-Q0i"/>
+        <segue reference="Waa-sS-xBm"/>
         <segue reference="bun-GC-Vrl"/>
     </inferredMetricsTieBreakers>
 </document>

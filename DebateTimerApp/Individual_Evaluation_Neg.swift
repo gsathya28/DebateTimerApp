@@ -8,6 +8,10 @@
 
 import UIKit
 
+var EvalNegspeaker1: debater?
+var EvalNegspeaker2: debater?
+var EvalNegspeaker3: debater?
+
 class Individual_Evaluation_Neg: UIViewController {
 
     @IBOutlet weak var scrollView: UIScrollView!

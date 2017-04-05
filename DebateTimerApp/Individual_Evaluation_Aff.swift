@@ -63,8 +63,19 @@ class Individual_Evaluation_Aff: UIViewController {
             textfield5.isHidden = true
             textfield6.isHidden = true
         }
+        
+        EvalAffspeaker1 = (currentDebate?.affSpeakers[0])!
+        EvalAffspeaker2 = (currentDebate?.affSpeakers[1])!
+        EvalAffspeaker1?.classtimeScore = Int(textfield1.text!)
+        EvalAffspeaker2?.classtimeScore = Int(textfield3.text!)
+        EvalAffspeaker1?.deliveryScore = Int(textfield2.text!)
+        EvalAffspeaker2?.deliveryScore = Int(textfield4.text!)
     }
+    
+    
 
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -81,14 +92,8 @@ class Individual_Evaluation_Aff: UIViewController {
     }
     */
     
-    @IBAction func IndEvalSave(_ sender: UIButton) {
+    @IBAction func IndEvalSave(_ sender: Any) {
         
-        EvalAffspeaker1 = (currentDebate?.affSpeakers[0])!
-        EvalAffspeaker2 = (currentDebate?.affSpeakers[1])!
-        EvalAffspeaker1?.classtimeScore = Int(textfield1.text!)
-        EvalAffspeaker2?.classtimeScore = Int(textfield3.text!)
-        EvalAffspeaker1?.deliveryScore = Int(textfield2.text!)
-        EvalAffspeaker2?.deliveryScore = Int(textfield4.text!)
         currentDebate?.affSpeakers[0] = EvalAffspeaker1!
         currentDebate?.affSpeakers[1] = EvalAffspeaker2!
         
@@ -100,7 +105,19 @@ class Individual_Evaluation_Aff: UIViewController {
             currentDebate?.affSpeakers[2] = EvalAffspeaker3!
         }
         
+        if (EvalAffspeaker1?.classtimeScore == nil || EvalAffspeaker1?.deliveryScore == nil || EvalAffspeaker2?.classtimeScore == nil || EvalAffspeaker2?.deliveryScore == nil)
+        {
+            print("Alert goes here!")
+        }
+
+        
+        if (EvalNegspeaker1?.classtimeScore == nil || EvalNegspeaker1?.deliveryScore == nil || EvalAffspeaker2?.classtimeScore == nil || EvalNegspeaker2?.deliveryScore == nil)
+        {
+            print("Alert goes here!")
+        }
+        
         let savedData = NSKeyedArchiver.archiveRootObject(currentDebate!, toFile: (ArchiveURLCurrent?.path)!)
+        
         if savedData
         {
             print("HAHAHAHAHAHA!")
