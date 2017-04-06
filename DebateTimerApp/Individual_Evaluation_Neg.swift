@@ -59,6 +59,13 @@ class Individual_Evaluation_Neg: UIViewController {
             textfield5.isHidden = true
             textfield6.isHidden = true
         }
+        
+        EvalNegspeaker1 = (currentDebate?.affSpeakers[0])!
+        EvalNegspeaker2 = (currentDebate?.affSpeakers[1])!
+        EvalNegspeaker1?.classtimeScore = Int(textfield1.text!)
+        EvalNegspeaker2?.classtimeScore = Int(textfield3.text!)
+        EvalNegspeaker1?.deliveryScore = Int(textfield2.text!)
+        EvalNegspeaker2?.deliveryScore = Int(textfield4.text!)
     }
 
     override func didReceiveMemoryWarning() {
@@ -79,6 +86,34 @@ class Individual_Evaluation_Neg: UIViewController {
     
     @IBAction func IndEvalSave(_ sender: UIButton) {
         
+        currentDebate?.negSpeakers[0] = EvalNegspeaker1!
+        currentDebate?.negSpeakers[1] = EvalNegspeaker2!
+        
+        if (Speak3AffCount == 1)
+        {
+            EvalNegspeaker3 = currentDebate?.negSpeakers[2]
+            EvalNegspeaker3?.classtimeScore = Int(textfield5.text!)
+            EvalNegspeaker3?.deliveryScore = Int(textfield6.text!)
+            currentDebate?.affSpeakers[2] = EvalNegspeaker3!
+        }
+        
+        if (EvalNegspeaker1?.classtimeScore == nil || EvalNegspeaker1?.deliveryScore == nil || EvalNegspeaker2?.classtimeScore == nil || EvalNegspeaker2?.deliveryScore == nil)
+        {
+            print("Alert goes here!")
+        }
+        
+        
+        if (EvalNegspeaker1?.classtimeScore == nil || EvalNegspeaker1?.deliveryScore == nil || EvalAffspeaker2?.classtimeScore == nil || EvalNegspeaker2?.deliveryScore == nil)
+        {
+            print("Alert goes here!")
+        }
+        
+        let savedData = NSKeyedArchiver.archiveRootObject(currentDebate!, toFile: (ArchiveURLCurrent?.path)!)
+        
+        if savedData
+        {
+            print("HAHAHAHAHAHA!")
+        }
     }
     
 
