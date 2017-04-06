@@ -78,10 +78,6 @@ class debate: NSObject, NSCoding {
             debateRound(inName: "CloseNeg", inType: "Closing", possPoints: 15)
         ]
     }
-
-
-
-    
     
     
     required init(coder aDecoder: NSCoder) {
@@ -96,6 +92,19 @@ class debate: NSObject, NSCoding {
         aCoder.encode(negSpeakers, forKey: "negSpeakers")
         aCoder.encode(rounds, forKey: "rounds")
         aCoder.encode(name, forKey: "name")
+    }
+    
+    func spitScoresArray() -> [String]
+    {
+        var scoresArray: [String] = []
+        for index in 1...(self.rounds.count)
+        {
+            if (index != 3)
+            {
+                scoresArray[index-1] = String(describing: self.rounds[index-1].roundPoints)
+            }
+        }
+        return scoresArray
     }
     
 }

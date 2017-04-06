@@ -104,7 +104,7 @@ class Individual_Evaluation_Aff: UIViewController {
             EvalAffspeaker3?.deliveryScore = Int(textfield6.text!)
             currentDebate?.affSpeakers[2] = EvalAffspeaker3!
         }
-        
+        /*
         if (EvalAffspeaker1?.classtimeScore == nil || EvalAffspeaker1?.deliveryScore == nil || EvalAffspeaker2?.classtimeScore == nil || EvalAffspeaker2?.deliveryScore == nil)
         {
             print("Alert goes here!")
@@ -115,7 +115,7 @@ class Individual_Evaluation_Aff: UIViewController {
         {
             print("Alert goes here!")
         }
-        
+        */
         let savedData = NSKeyedArchiver.archiveRootObject(currentDebate!, toFile: (ArchiveURLCurrent?.path)!)
         
         if savedData

@@ -96,7 +96,7 @@ class Individual_Evaluation_Neg: UIViewController {
             EvalNegspeaker3?.deliveryScore = Int(textfield6.text!)
             currentDebate?.affSpeakers[2] = EvalNegspeaker3!
         }
-        
+        /*
         if (EvalNegspeaker1?.classtimeScore == nil || EvalNegspeaker1?.deliveryScore == nil || EvalNegspeaker2?.classtimeScore == nil || EvalNegspeaker2?.deliveryScore == nil)
         {
             print("Alert goes here!")
@@ -107,7 +107,7 @@ class Individual_Evaluation_Neg: UIViewController {
         {
             print("Alert goes here!")
         }
-        
+        */
         let savedData = NSKeyedArchiver.archiveRootObject(currentDebate!, toFile: (ArchiveURLCurrent?.path)!)
         
         if savedData

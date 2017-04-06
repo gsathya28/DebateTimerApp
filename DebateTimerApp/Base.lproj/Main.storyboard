@@ -1310,7 +1310,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <state key="normal" title="Debate Data"/>
                                 <connections>
-                                    <segue destination="hek-Cu-m6s" kind="show" id="hni-n4-edg"/>
+                                    <segue destination="qA5-50-TYx" kind="show" id="c70-l5-pjC"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i7f-eX-Uyb">
@@ -1393,6 +1393,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="Waa-sS-xBm"/>
-        <segue reference="bun-GC-Vrl"/>
+        <segue reference="c70-l5-pjC"/>
+        <segue reference="eD5-ex-Dmw"/>
     </inferredMetricsTieBreakers>
 </document>
