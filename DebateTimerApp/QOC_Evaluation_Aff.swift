@@ -18,7 +18,6 @@ class QOC_Evaluation_Aff: UIViewController, UITextViewDelegate, UIPickerViewData
     
     var currentDebate: debate?
     var roundCounter: Int?
-    var round: debateRound?
     var ArchiveURLCurrent: URL?
     @IBOutlet weak var rubricText: UILabel!
     
@@ -37,7 +36,7 @@ class QOC_Evaluation_Aff: UIViewController, UITextViewDelegate, UIPickerViewData
         
         currentDebate = NSKeyedUnarchiver.unarchiveObject(withFile: (ArchiveURLCurrent?.path)!) as! debate?
         
-        round = currentDebate?.rounds[roundCounter!]
+        QOCround = currentDebate?.rounds[roundCounter!]
     }
 
     override func didReceiveMemoryWarning() {
@@ -71,12 +70,15 @@ class QOC_Evaluation_Aff: UIViewController, UITextViewDelegate, UIPickerViewData
         let myRow = PickerView.selectedRow(inComponent: 0)
         let score = pickerView(PickerView, titleForRow: myRow, forComponent: 0)
         let intScore = Int(score!)
-        round?.roundAffPoints = intScore
-        if (!((round!.roundNegPoints != nil)))
+        QOCround?.roundAffPoints = intScore
+        
+        if (!((QOCround!.roundNegPoints != nil)))
         {
             print("Alert goes here")
         }
-
+        
+        currentDebate?.rounds[2] = QOCround!
+        let savedData = NSKeyedArchiver.archiveRootObject(currentDebate!, toFile: (ArchiveURLCurrent?.path)!)
     }
     
     

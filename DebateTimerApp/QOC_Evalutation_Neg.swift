@@ -8,6 +8,8 @@
 
 import UIKit
 
+var QOCround: debateRound?
+
 class QOC_Evalutation_Neg: UIViewController, UITextViewDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
     
     @IBOutlet weak var PickerView: UIPickerView!
@@ -18,7 +20,6 @@ class QOC_Evalutation_Neg: UIViewController, UITextViewDelegate, UIPickerViewDat
     
     var currentDebate: debate?
     var roundCounter: Int?
-    var round: debateRound?
     var ArchiveURLCurrent: URL?
     @IBOutlet weak var rubricText: UILabel!
     
@@ -37,7 +38,7 @@ class QOC_Evalutation_Neg: UIViewController, UITextViewDelegate, UIPickerViewDat
         
         currentDebate = NSKeyedUnarchiver.unarchiveObject(withFile: (ArchiveURLCurrent?.path)!) as! debate?
         
-        round = currentDebate?.rounds[roundCounter!]
+        QOCround = currentDebate?.rounds[roundCounter!]
         
     }
 
@@ -67,10 +68,14 @@ class QOC_Evalutation_Neg: UIViewController, UITextViewDelegate, UIPickerViewDat
         let myRow = PickerView.selectedRow(inComponent: 0)
         let score = pickerView(PickerView, titleForRow: myRow, forComponent: 0)
         let intScore = Int(score!)
-        round?.roundNegPoints = intScore
-        if (!((round!.roundAffPoints != nil)))
+        QOCround?.roundNegPoints = intScore
+        
+        if (!((QOCround!.roundAffPoints != nil)))
         {
             print("Alert goes here")
         }
+
+        currentDebate?.rounds[2] = QOCround!
+        let savedData = NSKeyedArchiver.archiveRootObject(currentDebate!, toFile: (ArchiveURLCurrent?.path)!)
     }
 }
