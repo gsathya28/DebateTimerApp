@@ -271,7 +271,7 @@
                         <viewControllerLayoutGuide type="bottom" id="lYm-b1-YVV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="U67-N3-4dD">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1150"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Opening Statement for Affirmative" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pP0-EG-xMW">
@@ -1068,6 +1068,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                         </state>
                                         <connections>
                                             <action selector="IndEvalSave:" destination="dnu-uX-vZu" eventType="touchUpInside" id="T1I-Mr-QEa"/>
+                                            <action selector="continue:" destination="dnu-uX-vZu" eventType="touchUpInside" id="3X0-Gw-VO9"/>
                                             <segue destination="jO5-tJ-Jov" kind="show" id="Waa-sS-xBm"/>
                                         </connections>
                                     </button>
@@ -1202,6 +1203,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="1024" height="1150"/>
                     <connections>
+                        <outlet property="ContinueButton" destination="3fj-G6-azw" id="Hu2-G1-llo"/>
                         <outlet property="scrollView" destination="5Ow-Nb-VoU" id="W2b-Sh-6xG"/>
                         <outlet property="textfield1" destination="qJ1-s2-0Qz" id="nZs-WV-f5m"/>
                         <outlet property="textfield2" destination="D3R-qk-Why" id="fO8-pj-ux5"/>
@@ -1384,7 +1386,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="zPx-1f-Q0i"/>
-        <segue reference="eD5-ex-Dmw"/>
+        <segue reference="Waa-sS-xBm"/>
+        <segue reference="bun-GC-Vrl"/>
     </inferredMetricsTieBreakers>
 </document>

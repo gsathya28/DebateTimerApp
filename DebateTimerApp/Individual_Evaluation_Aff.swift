@@ -17,7 +17,7 @@ class Individual_Evaluation_Aff: UIViewController {
     @IBOutlet weak var textfield4: UITextField!
     @IBOutlet weak var textfield5: UITextField!
     @IBOutlet weak var textfield6: UITextField!
-    @IBOutlet weak var `continue`: UIButton!
+    @IBOutlet weak var ContinueButton: UIButton!
     
     let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
     var currentDebate: debate?
@@ -71,7 +71,7 @@ class Individual_Evaluation_Aff: UIViewController {
     
     @IBAction func showAlertButtonTapped(_ sender: UIButton) {
         // create the alert
-        let alert = UIAlertController(title: "UIAlertController", message: "Would you like to continue learning how to use iOS alerts?", preferredStyle: UIAlertControllerStyle.alert)
+        let alert = UIAlertController(title: "Incorrect score!", message: "A score you entered is not within the possible points limit.", preferredStyle: UIAlertControllerStyle.alert)
         
         // add the actions (buttons)
         alert.addAction(UIAlertAction(title: "Continue", style: UIAlertActionStyle.default, handler: nil))
@@ -79,6 +79,12 @@ class Individual_Evaluation_Aff: UIViewController {
         
         // show the alert
         self.present(alert, animated: true, completion: nil)
+    }
+    @IBAction func `continue`(_ sender: Any) {
+        if(textfield1.text == "" || textfield2.text == "" || textfield3.text == "" || textfield4.text == "" || textfield5.text == "" || textfield6.text == "")
+        {
+            showAlertButtonTapped(ContinueButton)
+        }
     }
     
 }
