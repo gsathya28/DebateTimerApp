@@ -24,8 +24,6 @@ class Individual_Evaluation_Aff: UIViewController {
     var roundCounter: Int?
     var round: debateRound?
     var ArchiveURLCurrent: URL?
-
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,7 +79,15 @@ class Individual_Evaluation_Aff: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     @IBAction func `continue`(_ sender: Any) {
-        if(textfield1.text == "" || textfield2.text == "" || textfield3.text == "" || textfield4.text == "" || textfield5.text == "" || textfield6.text == "")
+        
+        let text1: Int? = Int(textfield1.text!)
+        let text2: Int? = Int(textfield1.text!)
+        let text3: Int? = Int(textfield1.text!)
+        let text4: Int? = Int(textfield1.text!)
+        let text5: Int? = Int(textfield1.text!)
+        let text6: Int? = Int(textfield1.text!)
+
+        if(textfield1.text == "" || textfield2.text == "" || textfield3.text == "" || textfield4.text == "" || textfield5.text == "" || textfield6.text == "" || text1! > 5 || text2! > 5 || text3! > 5 || text4! > 5 || text5! > 5 || text6! > 5 || text1! < 0 || text2! < 0 || text3! < 0 || text4! < 0 || text5! < 0 || text6! < 0)
         {
             showAlertButtonTapped(ContinueButton)
         }
