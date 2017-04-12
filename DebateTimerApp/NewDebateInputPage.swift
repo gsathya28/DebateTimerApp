@@ -21,6 +21,7 @@ class NewDebateInputPage: UIViewController, UIPickerViewDataSource, UIPickerView
     @IBOutlet weak var speak2Aff: UITextField!
     @IBOutlet weak var speak1Neg: UITextField!
     @IBOutlet weak var speak2Neg: UITextField!
+    @IBOutlet weak var continueButton: UIButton!
     
     let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
     
@@ -83,5 +84,5 @@ class NewDebateInputPage: UIViewController, UIPickerViewDataSource, UIPickerView
         }
         defaults.set(0, forKey: "roundCounter")
     }
-    
+ 
 }

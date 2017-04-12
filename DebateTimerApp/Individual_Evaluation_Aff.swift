@@ -53,39 +53,43 @@ class Individual_Evaluation_Aff: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
+    
+   /* MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-    }
-    */
+    }*/
+    
     
     @IBAction func IndEvalSave(_ sender: UIButton) {
         
     }
     
+    @IBAction func unwindToIndividAff(_sender: UIStoryboardSegue) {
+    }
+    
     @IBAction func showAlertButtonTapped(_ sender: UIButton) {
         // create the alert
-        let alert = UIAlertController(title: "Incorrect score!", message: "A score you entered is not within the possible points limit.", preferredStyle: UIAlertControllerStyle.alert)
+        let alert = UIAlertController(title: "Entered Wrong", message: "Something was entered wrong", preferredStyle: UIAlertControllerStyle.alert)
         
-        // add the actions (buttons)
+        // add an action (button)
         alert.addAction(UIAlertAction(title: "Continue", style: UIAlertActionStyle.default, handler: nil))
         alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
         
         // show the alert
         self.present(alert, animated: true, completion: nil)
     }
-    @IBAction func `continue`(_ sender: Any) {
+    
+    @IBAction func showAlert(_ sender: Any) {
         
         let text1: Int? = Int(textfield1.text!)
-        let text2: Int? = Int(textfield1.text!)
-        let text3: Int? = Int(textfield1.text!)
-        let text4: Int? = Int(textfield1.text!)
-        let text5: Int? = Int(textfield1.text!)
-        let text6: Int? = Int(textfield1.text!)
+        let text2: Int? = Int(textfield2.text!)
+        let text3: Int? = Int(textfield3.text!)
+        let text4: Int? = Int(textfield4.text!)
+        let text5: Int? = Int(textfield5.text!)
+        let text6: Int? = Int(textfield6.text!)
 
         if(textfield1.text == "" || textfield2.text == "" || textfield3.text == "" || textfield4.text == "" || textfield5.text == "" || textfield6.text == "" || text1! > 5 || text2! > 5 || text3! > 5 || text4! > 5 || text5! > 5 || text6! > 5 || text1! < 0 || text2! < 0 || text3! < 0 || text4! < 0 || text5! < 0 || text6! < 0)
         {
