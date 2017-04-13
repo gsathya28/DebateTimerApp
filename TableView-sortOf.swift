@@ -12,9 +12,16 @@ class TableView_sortOf: UIViewController, UITableViewDelegate, UITableViewDataSo
 
     @IBOutlet weak var tableV1: UITableView!
     
-    var documentList: [String] = ["lets" , "see" , "if" , "this" , "works"]
+    var documentList: [String] = []
     
     let cellReuseIdendifier = "FileCell"
+    
+    let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
+    var currentDebate: debate?
+    var roundCounter: Int?
+    var round: debateRound?
+    var ArchiveURLCurrent: URL?
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +31,15 @@ class TableView_sortOf: UIViewController, UITableViewDelegate, UITableViewDataSo
         tableV1.delegate = self
 
         // Do any additional setup after loading the view.
+        let defaults = UserDefaults.standard
+        let id = defaults.object(forKey: "current") as? String
+        ArchiveURLCurrent = DocumentsDirectory.appendingPathComponent(id!)
+        
+        roundCounter = defaults.object(forKey: "roundCounter") as? Int
+        
+        currentDebate = NSKeyedUnarchiver.unarchiveObject(withFile: (ArchiveURLCurrent?.path)!) as! debate?
+        documentList = (currentDebate?.spitScoresArray())!
+        
     }
 
     override func didReceiveMemoryWarning() {

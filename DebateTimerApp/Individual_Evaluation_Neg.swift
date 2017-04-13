@@ -8,6 +8,10 @@
 
 import UIKit
 
+var EvalNegspeaker1: debater?
+var EvalNegspeaker2: debater?
+var EvalNegspeaker3: debater?
+
 class Individual_Evaluation_Neg: UIViewController {
 
     @IBOutlet weak var scrollView: UIScrollView!
@@ -15,6 +19,9 @@ class Individual_Evaluation_Neg: UIViewController {
     @IBOutlet weak var textfield2: UITextField!
     @IBOutlet weak var textfield3: UITextField!
     @IBOutlet weak var textfield4: UITextField!
+    @IBOutlet weak var Label2: UILabel!
+    @IBOutlet weak var Label1: UILabel!
+    @IBOutlet weak var Student3: UILabel!
     @IBOutlet weak var textfield5: UITextField!
     @IBOutlet weak var textfield6: UITextField!
     
@@ -44,7 +51,21 @@ class Individual_Evaluation_Neg: UIViewController {
         
         scrollView.contentSize.height = 1150
         
-        // Do any additional setup after loading the view.
+        if(Speak3NegCount == 0)
+        {
+            Student3.isHidden = true
+            Label1.isHidden = true
+            Label2.isHidden = true
+            textfield5.isHidden = true
+            textfield6.isHidden = true
+        }
+        
+        EvalNegspeaker1 = (currentDebate?.affSpeakers[0])!
+        EvalNegspeaker2 = (currentDebate?.affSpeakers[1])!
+        EvalNegspeaker1?.classtimeScore = Int(textfield1.text!)
+        EvalNegspeaker2?.classtimeScore = Int(textfield3.text!)
+        EvalNegspeaker1?.deliveryScore = Int(textfield2.text!)
+        EvalNegspeaker2?.deliveryScore = Int(textfield4.text!)
     }
 
     override func didReceiveMemoryWarning() {
@@ -65,6 +86,34 @@ class Individual_Evaluation_Neg: UIViewController {
     
     @IBAction func IndEvalSave(_ sender: UIButton) {
         
+        currentDebate?.negSpeakers[0] = EvalNegspeaker1!
+        currentDebate?.negSpeakers[1] = EvalNegspeaker2!
+        
+        if (Speak3AffCount == 1)
+        {
+            EvalNegspeaker3 = currentDebate?.negSpeakers[2]
+            EvalNegspeaker3?.classtimeScore = Int(textfield5.text!)
+            EvalNegspeaker3?.deliveryScore = Int(textfield6.text!)
+            currentDebate?.affSpeakers[2] = EvalNegspeaker3!
+        }
+        /*
+        if (EvalNegspeaker1?.classtimeScore == nil || EvalNegspeaker1?.deliveryScore == nil || EvalNegspeaker2?.classtimeScore == nil || EvalNegspeaker2?.deliveryScore == nil)
+        {
+            print("Alert goes here!")
+        }
+        
+        
+        if (EvalNegspeaker1?.classtimeScore == nil || EvalNegspeaker1?.deliveryScore == nil || EvalAffspeaker2?.classtimeScore == nil || EvalNegspeaker2?.deliveryScore == nil)
+        {
+            print("Alert goes here!")
+        }
+        */
+        let savedData = NSKeyedArchiver.archiveRootObject(currentDebate!, toFile: (ArchiveURLCurrent?.path)!)
+        
+        if savedData
+        {
+            print("HAHAHAHAHAHA!")
+        }
     }
     
 

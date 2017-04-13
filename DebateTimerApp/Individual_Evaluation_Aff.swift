@@ -8,6 +8,10 @@
 
 import UIKit
 
+var EvalAffspeaker1: debater?
+var EvalAffspeaker2: debater?
+var EvalAffspeaker3: debater?
+
 class Individual_Evaluation_Aff: UIViewController {
 
     @IBOutlet weak var scrollView: UIScrollView!
@@ -15,6 +19,11 @@ class Individual_Evaluation_Aff: UIViewController {
     @IBOutlet weak var textfield2: UITextField!
     @IBOutlet weak var textfield3: UITextField!
     @IBOutlet weak var textfield4: UITextField!
+   
+    @IBOutlet weak var Student3: UILabel!
+    @IBOutlet weak var Label1: UILabel!
+    @IBOutlet weak var Label2: UILabel!
+    
     @IBOutlet weak var textfield5: UITextField!
     @IBOutlet weak var textfield6: UITextField!
     
@@ -45,9 +54,28 @@ class Individual_Evaluation_Aff: UIViewController {
         textfield6.keyboardType = UIKeyboardType.numberPad
         
         scrollView.contentSize.height = 1150
-        // Do any additional setup after loading the view.
+        
+        if(Speak3AffCount == 0)
+        {
+            Student3.isHidden = true
+            Label1.isHidden = true
+            Label2.isHidden = true
+            textfield5.isHidden = true
+            textfield6.isHidden = true
+        }
+        
+        EvalAffspeaker1 = (currentDebate?.affSpeakers[0])!
+        EvalAffspeaker2 = (currentDebate?.affSpeakers[1])!
+        EvalAffspeaker1?.classtimeScore = Int(textfield1.text!)
+        EvalAffspeaker2?.classtimeScore = Int(textfield3.text!)
+        EvalAffspeaker1?.deliveryScore = Int(textfield2.text!)
+        EvalAffspeaker2?.deliveryScore = Int(textfield4.text!)
     }
+    
+    
 
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -64,8 +92,36 @@ class Individual_Evaluation_Aff: UIViewController {
     }
     */
     
-    @IBAction func IndEvalSave(_ sender: UIButton) {
+    @IBAction func IndEvalSave(_ sender: Any) {
         
+        currentDebate?.affSpeakers[0] = EvalAffspeaker1!
+        currentDebate?.affSpeakers[1] = EvalAffspeaker2!
+        
+        if (Speak3AffCount == 1)
+        {
+            EvalAffspeaker3 = currentDebate?.affSpeakers[2]
+            EvalAffspeaker3?.classtimeScore = Int(textfield5.text!)
+            EvalAffspeaker3?.deliveryScore = Int(textfield6.text!)
+            currentDebate?.affSpeakers[2] = EvalAffspeaker3!
+        }
+        /*
+        if (EvalAffspeaker1?.classtimeScore == nil || EvalAffspeaker1?.deliveryScore == nil || EvalAffspeaker2?.classtimeScore == nil || EvalAffspeaker2?.deliveryScore == nil)
+        {
+            print("Alert goes here!")
+        }
+
+        
+        if (EvalNegspeaker1?.classtimeScore == nil || EvalNegspeaker1?.deliveryScore == nil || EvalAffspeaker2?.classtimeScore == nil || EvalNegspeaker2?.deliveryScore == nil)
+        {
+            print("Alert goes here!")
+        }
+        */
+        let savedData = NSKeyedArchiver.archiveRootObject(currentDebate!, toFile: (ArchiveURLCurrent?.path)!)
+        
+        if savedData
+        {
+            print("HAHAHAHAHAHA!")
+        }
     }
     
     

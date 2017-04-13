@@ -54,16 +54,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TimerPageGUI.swift"
-            timestampString = "511890072.962818"
+            filePath = "DebateTimerApp/debate.swift"
+            timestampString = "513531719.529528"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "195"
-            endingLineNumber = "195"
-            landmarkName = "resetTimer(_:)"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
+            landmarkName = "spitScoresArray()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
