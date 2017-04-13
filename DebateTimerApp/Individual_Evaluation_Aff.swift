@@ -62,11 +62,7 @@ class Individual_Evaluation_Aff: UIViewController {
         // Pass the selected object to the new view controller.
     }*/
     
-    
-    @IBAction func IndEvalSave(_ sender: UIButton) {
-        
-    }
-    
+    //create the unwind segue function
     @IBAction func unwindToIndividAff(_sender: UIStoryboardSegue) {
     }
     
@@ -82,8 +78,9 @@ class Individual_Evaluation_Aff: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
-    @IBAction func showAlert(_ sender: Any) {
+    @IBAction func ShowAlertView(_ sender: Any) {
         
+        //convert textfields to integers
         let text1: Int? = Int(textfield1.text!)
         let text2: Int? = Int(textfield2.text!)
         let text3: Int? = Int(textfield3.text!)
@@ -91,10 +88,12 @@ class Individual_Evaluation_Aff: UIViewController {
         let text5: Int? = Int(textfield5.text!)
         let text6: Int? = Int(textfield6.text!)
 
+        //call the alert view method if textfield is blank or wrong
         if(textfield1.text == "" || textfield2.text == "" || textfield3.text == "" || textfield4.text == "" || textfield5.text == "" || textfield6.text == "" || text1! > 5 || text2! > 5 || text3! > 5 || text4! > 5 || text5! > 5 || text6! > 5 || text1! < 0 || text2! < 0 || text3! < 0 || text4! < 0 || text5! < 0 || text6! < 0)
         {
             showAlertButtonTapped(ContinueButton)
         }
     }
+    
     
 }

@@ -1076,8 +1076,8 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="showAlert:" destination="dnu-uX-vZu" eventType="touchUpInside" id="VWP-IP-VXG"/>
-                                            <segue destination="jO5-tJ-Jov" kind="show" id="Waa-sS-xBm"/>
+                                            <action selector="ShowAlertView:" destination="dnu-uX-vZu" eventType="touchUpInside" id="o2X-97-Ddy"/>
+                                            <segue destination="jO5-tJ-Jov" kind="show" identifier="AffToMenu" id="Waa-sS-xBm"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ka8-PG-vad">
@@ -1224,7 +1224,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lda-EB-ojo" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="SOA-aU-GTq" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3336.328125" y="966.40625"/>
+            <point key="canvasLocation" x="3312" y="1049"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="iDX-Yu-qbh">
@@ -1394,8 +1394,8 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="bun-GC-Vrl"/>
-        <segue reference="2Ng-oM-NjK"/>
         <segue reference="Waa-sS-xBm"/>
+        <segue reference="2Ng-oM-NjK"/>
+        <segue reference="bun-GC-Vrl"/>
     </inferredMetricsTieBreakers>
 </document>
