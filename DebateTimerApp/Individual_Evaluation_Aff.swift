@@ -66,7 +66,9 @@ class Individual_Evaluation_Aff: UIViewController {
     @IBAction func unwindToIndividAff(_sender: UIStoryboardSegue) {
     }
     
+    
     @IBAction func showAlertButtonTapped(_ sender: UIButton) {
+
         // create the alert
         let alert = UIAlertController(title: "Entered Wrong", message: "Something was entered wrong", preferredStyle: UIAlertControllerStyle.alert)
         
@@ -93,6 +95,10 @@ class Individual_Evaluation_Aff: UIViewController {
         {
             showAlertButtonTapped(ContinueButton)
         }
+    }
+    
+    @IBAction func segue(_ sender: Any) {
+        self.performSegue(withIdentifier: "AffToMenu", sender: nil)
     }
     
     

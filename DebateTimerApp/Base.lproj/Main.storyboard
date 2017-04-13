@@ -1077,6 +1077,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                         </state>
                                         <connections>
                                             <action selector="ShowAlertView:" destination="dnu-uX-vZu" eventType="touchUpInside" id="o2X-97-Ddy"/>
+                                            <action selector="showAlertButtonTapped:" destination="dnu-uX-vZu" eventType="touchUpInside" id="g29-FO-rme"/>
                                             <segue destination="jO5-tJ-Jov" kind="show" identifier="AffToMenu" id="Waa-sS-xBm"/>
                                         </connections>
                                     </button>
