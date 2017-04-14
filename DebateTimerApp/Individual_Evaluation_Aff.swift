@@ -73,7 +73,9 @@ class Individual_Evaluation_Aff: UIViewController {
         let alert = UIAlertController(title: "Entered Wrong", message: "Something was entered wrong", preferredStyle: UIAlertControllerStyle.alert)
         
         // add an action (button)
-        alert.addAction(UIAlertAction(title: "Continue", style: UIAlertActionStyle.default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Continue", style: UIAlertActionStyle.default, handler: { (action) in alert.dismiss(animated: true, completion: nil)
+            self.performSegue(withIdentifier: "AffToMenu", sender: nil)
+        }))
         alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
         
         // show the alert
