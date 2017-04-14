@@ -43,7 +43,12 @@ class IntermediaryMenu: UIViewController {
         let id = defaults.object(forKey: "current") as? String
         ArchiveURLCurrent = DocumentsDirectory.appendingPathComponent(id!)
         currentDebate = NSKeyedUnarchiver.unarchiveObject(withFile: (ArchiveURLCurrent?.path)!) as! debate?
-        round = currentDebate?.rounds[roundCounter!]
+        
+        if (roundCounter! < 7)
+        {
+            round = currentDebate?.rounds[roundCounter!]
+        }
+        
         let time = round?.roundRawTime
         print(String(describing: time))
         
@@ -119,9 +124,7 @@ class IntermediaryMenu: UIViewController {
         roundCounter = roundCounter! + 1
         defaults.set(roundCounter, forKey: "roundCounter")
     }
-    @IBAction func b(_ sender: Any) {
     
-    }
     @IBAction func continue_Ind_Eval(_ sender: UIButton) {
         let defaults = UserDefaults.standard
         roundCounter = roundCounter! + 1

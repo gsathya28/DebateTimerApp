@@ -273,7 +273,7 @@
                         <viewControllerLayoutGuide type="bottom" id="lYm-b1-YVV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="U67-N3-4dD">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1150"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Opening Statement for Affirmative" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pP0-EG-xMW">
@@ -1189,7 +1189,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                         </state>
                                         <connections>
                                             <action selector="IndEvalSave:" destination="dnu-uX-vZu" eventType="touchUpInside" id="J4Q-ug-HGg"/>
-                                            <segue destination="jO5-tJ-Jov" kind="show" id="Waa-sS-xBm"/>
+                                            <segue destination="jO5-tJ-Jov" kind="show" id="Cd6-LD-NDD"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1334,7 +1334,6 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
-                                    <action selector="b:" destination="jO5-tJ-Jov" eventType="touchUpInside" id="ox8-6V-2P0"/>
                                     <segue destination="Zrw-K8-pDX" kind="unwind" unwindAction="unwindToOpenAffPageGUIWith_sender:" id="jnc-gK-nbp"/>
                                 </connections>
                             </button>
@@ -1392,7 +1391,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Waa-sS-xBm"/>
+        <segue reference="Cd6-LD-NDD"/>
         <segue reference="c70-l5-pjC"/>
         <segue reference="eD5-ex-Dmw"/>
     </inferredMetricsTieBreakers>
