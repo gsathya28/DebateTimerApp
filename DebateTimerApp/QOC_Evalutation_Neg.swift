@@ -12,23 +12,27 @@ var QOCround: debateRound?
 
 class QOC_Evalutation_Neg: UIViewController, UITextViewDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
     
+    // Picker Data Variables
     @IBOutlet weak var PickerView: UIPickerView!
-
     var pickerData1 = ["0","1","2","3","4","5"]
     
+    // Debate Data Variables
     let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
-    
     var currentDebate: debate?
     var roundCounter: Int?
     var ArchiveURLCurrent: URL?
+    
+    // UI Label Properties
     @IBOutlet weak var rubricText: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Picker View Data Setup
         PickerView.delegate = self
         PickerView.dataSource = self
-        // Do any additional setup after loading the view.
         
+        // Load Data Variables
         let defaults = UserDefaults.standard
         let id = defaults.object(forKey: "current") as? String
         ArchiveURLCurrent = DocumentsDirectory.appendingPathComponent(id!)
