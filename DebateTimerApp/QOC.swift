@@ -10,37 +10,37 @@ import UIKit
 
 class QOC: UIViewController {
 
-    //Initialize objects
+    // UI Labels
     @IBOutlet weak var Affirmative: UILabel!
     @IBOutlet weak var Negative: UILabel!
     @IBOutlet weak var back: UIButton!
    
+    // Data Save Variables
     let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
     var currentDebate: debate?
     var roundCounter: Int?
     var round: debateRound?
     var ArchiveURLCurrent: URL?
-
+    
+    // Affirmative Timer Variables
     var Afftimer = Timer()
-    var Negtimer = Timer()
-    // This is to keep track of each digit in the timer
     var Affcentisecond = 0
     var Affdecisecond = 0
     var Affsecond = 0
     var Afftensecond = 0
     var Affminute = 0
     var AffrawTime = 0
+    var Affsavedcentisecond = 0
     
+    // Negative Timer Variables
+    var Negtimer = Timer()
     var Negcentisecond = 0
     var Negdecisecond = 0
     var Negsecond = 0
     var Negtensecond = 0
     var Negminute = 0
     var negRawTime = 0
-    // This is different, I’m not exactly sure what this is for, looking back. I’ll look into this.
-    var Affsavedcentisecond = 0
     var Negsavedcentisecond = 0
-    // These are the buttons Pause, Play and Reset: HOWEVER: THESE ARE OUTLETS. When you make this code. You’re going to have to drag the button twice. Once to make it into an outlet, another time to make it into a method (down below).
     
     //initialize buttons/labels for timers
     @IBOutlet weak var AffStart: UIButton!
@@ -69,9 +69,6 @@ class QOC: UIViewController {
         roundCounter = defaults.object(forKey: "roundCounter") as? Int
         
         print(String(describing: roundCounter))
-        
-        
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -80,12 +77,12 @@ class QOC: UIViewController {
     }
     
     
-    // This is the method that will run when the play button is activated. This is what I meant when you have to drag the button into the code as a button. I’ll go through each line one by one.
-    
+    // Unwind
     @IBAction func unwindToQOC(_sender: UIStoryboardSegue) {
         print(String(describing: roundCounter))
     }
     
+    // Timer Functions
     @IBAction func startTimer(_ sender: UIButton) {
         
         Affcentisecond = Affsavedcentisecond
@@ -188,6 +185,7 @@ class QOC: UIViewController {
 
     }
     
+    // Alter RoundCounter when going back
     @IBAction func back2menu(_ sender: UIButton) {
         let defaults = UserDefaults.standard
         roundCounter = defaults.object(forKey: "roundCounter") as? Int
@@ -202,6 +200,7 @@ class QOC: UIViewController {
         defaults.set(roundCounter, forKey: "roundCounter")
     }
     
+    // Pause Timer
     @IBAction func pauseTimer(_ sender: UIButton) {
         Afftimer.invalidate()
         Negtimer.invalidate()
@@ -215,6 +214,7 @@ class QOC: UIViewController {
         reset.isEnabled = true
     }
     
+    // Save
     @IBAction func QOCsave(_ sender: UIButton) {
         round?.roundAffTime = AffrawTime
         round?.roundNegTime = negRawTime
