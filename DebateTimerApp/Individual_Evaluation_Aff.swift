@@ -36,6 +36,7 @@ class Individual_Evaluation_Aff: UIViewController {
         
         currentDebate = NSKeyedUnarchiver.unarchiveObject(withFile: (ArchiveURLCurrent?.path)!) as! debate?
         
+        //Make the number keyboard be used on these textfields
         textfield1.keyboardType = UIKeyboardType.numberPad
         textfield2.keyboardType = UIKeyboardType.numberPad
         textfield3.keyboardType = UIKeyboardType.numberPad
@@ -43,6 +44,7 @@ class Individual_Evaluation_Aff: UIViewController {
         textfield5.keyboardType = UIKeyboardType.numberPad
         textfield6.keyboardType = UIKeyboardType.numberPad
         
+        //use scrollview
         scrollView.contentSize.height = 1150
         // Do any additional setup after loading the view.
     }
@@ -72,13 +74,13 @@ class Individual_Evaluation_Aff: UIViewController {
         // create the alert
         let alert = UIAlertController(title: "Entered Wrong", message: "Something was entered wrong", preferredStyle: UIAlertControllerStyle.alert)
         
-        // add an action (button)
+        // add action buttons
         alert.addAction(UIAlertAction(title: "Continue", style: UIAlertActionStyle.default, handler: { (action) in alert.dismiss(animated: true, completion: nil)
-            self.performSegue(withIdentifier: "AffToMenu", sender: nil)
+            self.performSegue(withIdentifier: "AffToMenu", sender: nil) //create segue when continue button is clicked
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
         
-        // show the alert
+        // show the alert view
         self.present(alert, animated: true, completion: nil)
     }
     
@@ -97,10 +99,6 @@ class Individual_Evaluation_Aff: UIViewController {
         {
             showAlertButtonTapped(ContinueButton)
         }
-    }
-    
-    @IBAction func segue(_ sender: Any) {
-        self.performSegue(withIdentifier: "AffToMenu", sender: nil)
     }
     
     
