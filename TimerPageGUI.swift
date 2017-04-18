@@ -282,11 +282,11 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
         round?.roundRawTime = rawTime
         round?.roundPoints = intScore
         currentDebate?.rounds[roundCounter!] = round!
-        let savedData = NSKeyedArchiver.archiveRootObject(currentDebate!, toFile: (ArchiveURLCurrent?.path)!)
+        /*let savedData = NSKeyedArchiver.archiveRootObject(currentDebate!, toFile: (ArchiveURLCurrent?.path)!)
         if savedData
         {
             print("HAHAHAHAHAHA!")
-        }
+        }*/
     }
     
     

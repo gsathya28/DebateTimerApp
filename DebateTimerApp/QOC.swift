@@ -219,11 +219,12 @@ class QOC: UIViewController {
         round?.roundAffTime = AffrawTime
         round?.roundNegTime = negRawTime
         currentDebate?.rounds[roundCounter!] = round!
-        let savedData = NSKeyedArchiver.archiveRootObject(currentDebate!, toFile: (ArchiveURLCurrent?.path)!)
+        /*let savedData = NSKeyedArchiver.archiveRootObject(currentDebate!, toFile: (ArchiveURLCurrent?.path)!)
         if savedData
         {
-           print("HAHAHAHAHAHAHAHAHA!")
-        }
+            print("HAHAHAHAHAHAHAHAHA!")
+        }*/
+
     }
     
 }

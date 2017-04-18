@@ -23,6 +23,7 @@ class NewDebateInputPage: UIViewController, UIPickerViewDataSource, UIPickerView
     @IBOutlet weak var Speak3Aff: UITextField!
     @IBOutlet weak var speak1Neg: UITextField!
     @IBOutlet weak var speak2Neg: UITextField!
+    @IBOutlet weak var continueButton: UIButton!
     
     // Data Save Directory
     let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
@@ -113,5 +114,5 @@ class NewDebateInputPage: UIViewController, UIPickerViewDataSource, UIPickerView
 
         
     }
-    
+ 
 }
