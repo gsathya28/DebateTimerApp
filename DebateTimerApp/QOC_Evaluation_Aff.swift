@@ -69,7 +69,6 @@ class QOC_Evaluation_Aff: UIViewController, UITextViewDelegate, UIPickerViewData
         let myRow = PickerView.selectedRow(inComponent: 0)
         let score = pickerView(PickerView, titleForRow: myRow, forComponent: 0)
         let intScore = Int(score!)
-
         QOCround?.roundAffPoints = intScore
         
         if (!((QOCround!.roundNegPoints != nil)))

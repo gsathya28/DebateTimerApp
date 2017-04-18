@@ -222,9 +222,9 @@ class QOC: UIViewController {
         /*let savedData = NSKeyedArchiver.archiveRootObject(currentDebate!, toFile: (ArchiveURLCurrent?.path)!)
         if savedData
         {
-
             print("HAHAHAHAHAHAHAHAHA!")
         }*/
+
     }
     
 }

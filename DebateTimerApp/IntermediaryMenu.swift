@@ -47,6 +47,9 @@ class IntermediaryMenu: UIViewController {
         individualEval.isEnabled = false
         finishedLabel.isHidden = true
         
+
+        // RoundCounter Checks - Do things based on Round Counter
+
         if (roundCounter! < 7)
         {
             round = currentDebate?.rounds[roundCounter!]
