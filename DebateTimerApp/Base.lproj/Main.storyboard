@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1421" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -64,14 +64,6 @@
                                 </state>
                                 <connections>
                                     <action selector="ContinueDebate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cEe-rm-gqG"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fjk-Fl-Qgh">
-                                <rect key="frame" x="721" y="244" width="259" height="461"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="dnu-uX-vZu" kind="show" id="2Ng-oM-NjK"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -281,7 +273,7 @@
                         <viewControllerLayoutGuide type="bottom" id="lYm-b1-YVV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="U67-N3-4dD">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1150"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Opening Statement for Affirmative" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pP0-EG-xMW">
@@ -451,7 +443,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                         <viewControllerLayoutGuide type="bottom" id="Hlg-61-FVm"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ymh-Va-gmO">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1150"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qoa-Bh-UdL">
@@ -672,7 +664,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                         <viewControllerLayoutGuide type="bottom" id="CsL-xK-lDO"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="zVO-OF-KdM">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1150"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YCu-C0-geC">
@@ -880,7 +872,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="1150"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cb0-iP-1Hf">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cb0-iP-1Hf">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="1103"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="/5     Used of class time/Presented equally" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j8C-pd-cJZ">
@@ -1062,7 +1054,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="1150"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Ow-Nb-VoU">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Ow-Nb-VoU">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="1101"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Individual Evaluations - Affirmative" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D9Y-1f-vDo">
@@ -1261,7 +1253,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                         <viewControllerLayoutGuide type="bottom" id="V1P-6u-Kn6"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="3I2-Ni-4fA">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1150"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You are going to the next round. Continue?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QBz-HU-drM">
@@ -1375,11 +1367,11 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                         <viewControllerLayoutGuide type="bottom" id="kCp-lU-QAt"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ZHu-J9-Ast">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1150"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gke-Q7-O3Z">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="1150"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
@@ -1401,9 +1393,8 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="eD5-ex-Dmw"/>
         <segue reference="zPx-1f-Q0i"/>
-        <segue reference="c70-l5-pjC"/>
-        <segue reference="2Ng-oM-NjK"/>
+        <segue reference="eD5-ex-Dmw"/>
+        <segue reference="ikD-ps-dYe"/>
     </inferredMetricsTieBreakers>
 </document>
