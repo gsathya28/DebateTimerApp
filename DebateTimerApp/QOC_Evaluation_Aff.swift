@@ -11,14 +11,13 @@ import UIKit
 class QOC_Evaluation_Aff: UIViewController, UITextViewDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
 
     @IBOutlet weak var PickerView: UIPickerView!
-
     var pickerData1 = ["0","1","2","3","4","5"]
     
     let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
-    
     var currentDebate: debate?
     var roundCounter: Int?
     var ArchiveURLCurrent: URL?
+    
     @IBOutlet weak var rubricText: UILabel!
     
     override func viewDidLoad() {

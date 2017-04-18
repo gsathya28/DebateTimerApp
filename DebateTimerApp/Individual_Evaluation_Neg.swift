@@ -14,6 +14,7 @@ var EvalNegspeaker3: debater?
 
 class Individual_Evaluation_Neg: UIViewController {
 
+    // MARK: Outlet Properties
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var textfield1: UITextField!
     @IBOutlet weak var textfield2: UITextField!
@@ -25,6 +26,8 @@ class Individual_Evaluation_Neg: UIViewController {
     @IBOutlet weak var textfield5: UITextField!
     @IBOutlet weak var textfield6: UITextField!
     
+    
+    // MARK: Saving Properties with Debate Objects
     let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
     var currentDebate: debate?
     var roundCounter: Int?
@@ -83,6 +86,8 @@ class Individual_Evaluation_Neg: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    // Saving Function for Ind Eval - Checks both for Negative and Affirmative
     
     @IBAction func IndEvalSave(_ sender: UIButton) {
         

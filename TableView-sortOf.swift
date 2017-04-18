@@ -9,13 +9,15 @@
 import UIKit
 
 class TableView_sortOf: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+    
+    // Table View Outlets
     @IBOutlet weak var tableV1: UITableView!
     
+    // Table View Function Data
     var documentList: [String] = []
-    
     let cellReuseIdendifier = "FileCell"
     
+    // Data Variables
     let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
     var currentDebate: debate?
     var roundCounter: Int?
@@ -52,7 +54,9 @@ class TableView_sortOf: UIViewController, UITableViewDelegate, UITableViewDataSo
         
     }
     
-
+    
+    // Required Table View Functions
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return documentList.count
             //documentList.count

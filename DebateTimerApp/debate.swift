@@ -9,11 +9,15 @@
 import UIKit
 
 class debate: NSObject, NSCoding {
+    
     // MARK: Properties
     var affSpeakers = [debater]()
     var negSpeakers = [debater]()
     var rounds = [debateRound]()
     var name: String?
+    
+    
+    // Initializers - based on the number of debaters
     
     init(inName: String, Affspeaker1: debater, Affspeaker2: debater, Negspeaker1: debater, Negspeaker2: debater)
     {
@@ -93,6 +97,9 @@ class debate: NSObject, NSCoding {
         aCoder.encode(rounds, forKey: "rounds")
         aCoder.encode(name, forKey: "name")
     }
+    
+    
+    // Function that spits out an array of Strings that will be displayed in Table View
     
     func spitScoresArray() -> [String]
     {
