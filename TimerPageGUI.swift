@@ -13,18 +13,23 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
     
     // Properties- Set the variables here
     
+    // UI Outlets
     @IBOutlet weak var Back2: UIButton!
     @IBOutlet weak var back: UIButton!
     @IBOutlet weak var CommentsBox: UITextView!
     @IBOutlet weak var pickerView1: UIPickerView!
+    @IBOutlet var continueSegue: UIButton!
+    @IBOutlet var counterlabel: UILabel!
+    @IBOutlet weak var AffirmativeLabel: UILabel!
+    
+    // Picker Data
     var pickerData1 = ["0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15"]
+    
+    // Keyboard
     var keyboardHeight: Int = 0
     
-    @IBOutlet var continueSegue: UIButton!
-    
-    @IBOutlet var counterlabel: UILabel!
+    // Timer Variables
     var timer = Timer()
-    // This is to keep track of each digit in the timer
     var centisecond = 0
     var decisecond = 0
     var second = 0
@@ -34,17 +39,14 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
     // This is different, I’m not exactly sure what this is for, looking back. I’ll look into this.
     var savedcentisecond = 0
     
-    // These are the buttons Pause, Play and Reset: HOWEVER: THESE ARE OUTLETS. When you make this code. You’re going to have to drag the button twice. Once to make it into an outlet, another time to make it into a method (down below).
-    
+    // UI Timer Outlets
     @IBOutlet var pause: UIButton!
     @IBOutlet var start: UIButton!
     @IBOutlet var reset: UIButton!
     @IBOutlet var save: UIButton!
     
+    // Data Save Variables
     let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
-    
-    @IBOutlet weak var AffirmativeLabel: UILabel!
-    
     var currentDebate: debate?
     var roundCounter: Int?
     var round: debateRound?
@@ -164,7 +166,7 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
         
     }
     
-    // This is the method that will run when the play button is activated. This is what I meant when you have to drag the button into the code as a button. I’ll go through each line one by one.
+   // Timer GUI Functions
     
     @IBAction func startTimer(_ sender: UIButton) {
         centisecond = savedcentisecond
@@ -200,6 +202,8 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
         pause.isEnabled = true
     }
     
+    // Save Time to Persistent Data
+    
     @IBAction func saveTime(_ sender: UIButton) {
         let myRow = pickerView1.selectedRow(inComponent: 0)
         let score = pickerView(pickerView1, titleForRow: myRow, forComponent: 0)
@@ -216,10 +220,12 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
 
     }
     
+    // Unwind Segue Prep
     @IBAction func unwindToOpenAffPageGUI(_sender: UIStoryboardSegue) {
         print(String(describing: roundCounter))
     }
 
+    // Timer Action Function
     
     func action()
     {
@@ -253,6 +259,8 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
         counterlabel.text = String(minute) + ":" + String(tensecond) + String(second) +  ":" + String(decisecond) + String(centisecond)
         
     }
+    
+    // Picker View Functions
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -265,6 +273,7 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
         return pickerData1[row]
     }
     
+    // Auto-Saves when Continue Button is pressed
     @IBAction func continueAutoSave(_ sender: UIButton) {
         let myRow = pickerView1.selectedRow(inComponent: 0)
         let score = pickerView(pickerView1, titleForRow: myRow, forComponent: 0)
