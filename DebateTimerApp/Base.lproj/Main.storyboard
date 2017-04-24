@@ -64,6 +64,7 @@
                                 </state>
                                 <connections>
                                     <action selector="ContinueDebate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cEe-rm-gqG"/>
+                                    <segue destination="pYl-6f-nCg" kind="show" id="53Q-f6-xlA"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -273,7 +274,7 @@
                         <viewControllerLayoutGuide type="bottom" id="lYm-b1-YVV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="U67-N3-4dD">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1150"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Opening Statement for Affirmative" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pP0-EG-xMW">
@@ -1394,10 +1395,28 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
             </objects>
             <point key="canvasLocation" x="-175.1953125" y="1009.375"/>
         </scene>
+        <!--Table View Controller-->
+        <scene sceneID="j5f-7j-AUy">
+            <objects>
+                <tableViewController id="pYl-6f-nCg" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="yv8-62-V5c">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="pYl-6f-nCg" id="3n9-h7-gQj"/>
+                            <outlet property="delegate" destination="pYl-6f-nCg" id="jtH-lH-imT"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u2f-3c-IdA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-175" y="1988"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="zPx-1f-Q0i"/>
-        <segue reference="c70-l5-pjC"/>
+        <segue reference="Vs6-I1-zta"/>
         <segue reference="eD5-ex-Dmw"/>
+        <segue reference="ikD-ps-dYe"/>
     </inferredMetricsTieBreakers>
 </document>
