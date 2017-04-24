@@ -273,7 +273,7 @@
                         <viewControllerLayoutGuide type="bottom" id="lYm-b1-YVV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="U67-N3-4dD">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1150"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Opening Statement for Affirmative" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pP0-EG-xMW">
@@ -1288,6 +1288,9 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <state key="normal" title="Main Menu"/>
+                                <connections>
+                                    <segue destination="Zrw-K8-pDX" kind="unwind" unwindAction="unwindToTitlePageWith_sender:" id="RMi-bT-cfT"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="The Debate is finished!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OBD-We-Gm6">
                                 <rect key="frame" x="196" y="143" width="631" height="90"/>
@@ -1394,7 +1397,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="zPx-1f-Q0i"/>
+        <segue reference="c70-l5-pjC"/>
         <segue reference="eD5-ex-Dmw"/>
-        <segue reference="ikD-ps-dYe"/>
     </inferredMetricsTieBreakers>
 </document>
