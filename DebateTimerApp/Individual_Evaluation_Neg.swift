@@ -25,6 +25,7 @@ class Individual_Evaluation_Neg: UIViewController {
     @IBOutlet weak var Student3: UILabel!
     @IBOutlet weak var textfield5: UITextField!
     @IBOutlet weak var textfield6: UITextField!
+    @IBOutlet weak var ContinueButton: UIButton!
     
     
     // MARK: Saving Properties with Debate Objects
@@ -88,38 +89,69 @@ class Individual_Evaluation_Neg: UIViewController {
     */
     
     // Saving Function for Ind Eval - Checks both for Negative and Affirmative
-    
-    @IBAction func IndEvalSave(_ sender: UIButton) {
         
-        currentDebate?.negSpeakers[0] = EvalNegspeaker1!
+    @IBAction func showAlertButtonTapped(_ sender: Any) {
+        // create the alert
+        let alert = UIAlertController(title: "Entered Wrong", message: "Something was entered wrong", preferredStyle: UIAlertControllerStyle.alert)
+        
+        // add action buttons
+        alert.addAction(UIAlertAction(title: "Continue", style: UIAlertActionStyle.default, handler: { (action) in alert.dismiss(animated: true, completion: nil)
+            self.performSegue(withIdentifier: "NegToMenu", sender: nil) //create segue when continue button is clicked
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
+        
+        // show the alert view
+        self.present(alert, animated: true, completion: nil)
+        
+    }
+    
+    
+    @IBAction func ShowAlertView(_ sender: Any) {
+        //convert textfields to integers
+        let text1: Int? = Int(textfield1.text!)
+        let text2: Int? = Int(textfield2.text!)
+        let text3: Int? = Int(textfield3.text!)
+        let text4: Int? = Int(textfield4.text!)
+        let text5: Int? = Int(textfield5.text!)
+        let text6: Int? = Int(textfield6.text!)
+        
+        //call the alert view method if textfield is blank or wrong
+        if(textfield1.text == "" || textfield2.text == "" || textfield3.text == "" || textfield4.text == "" || textfield5.text == "" || textfield6.text == "" || text1! > 5 || text2! > 5 || text3! > 5 || text4! > 5 || text5! > 5 || text6! > 5 || text1! < 0 || text2! < 0 || text3! < 0 || text4! < 0 || text5! < 0 || text6! < 0)
+        {
+            showAlertButtonTapped(ContinueButton)
+        }
+        
+        /*currentDebate?.negSpeakers[0] = EvalNegspeaker1!
         currentDebate?.negSpeakers[1] = EvalNegspeaker2!
         
+        // Individual Evaluation Save Function
+        
         if (Speak3AffCount == 1)
-        {
-            EvalNegspeaker3 = currentDebate?.negSpeakers[2]
-            EvalNegspeaker3?.classtimeScore = Int(textfield5.text!)
-            EvalNegspeaker3?.deliveryScore = Int(textfield6.text!)
-            currentDebate?.affSpeakers[2] = EvalNegspeaker3!
-        }
-        /*
-        if (EvalNegspeaker1?.classtimeScore == nil || EvalNegspeaker1?.deliveryScore == nil || EvalNegspeaker2?.classtimeScore == nil || EvalNegspeaker2?.deliveryScore == nil)
-        {
-            print("Alert goes here!")
-        }
-        
-        
-        if (EvalNegspeaker1?.classtimeScore == nil || EvalNegspeaker1?.deliveryScore == nil || EvalAffspeaker2?.classtimeScore == nil || EvalNegspeaker2?.deliveryScore == nil)
-        {
-            print("Alert goes here!")
-        }
-        */
+         {
+         EvalNegspeaker3 = currentDebate?.negSpeakers[2]
+         EvalNegspeaker3?.classtimeScore = Int(textfield5.text!)
+         EvalNegspeaker3?.deliveryScore = Int(textfield6.text!)
+         currentDebate?.affSpeakers[2] = EvalNegspeaker3!
+         }
+         
+         if (EvalNegspeaker1?.classtimeScore == nil || EvalNegspeaker1?.deliveryScore == nil || EvalNegspeaker2?.classtimeScore == nil || EvalNegspeaker2?.deliveryScore == nil)
+         {
+         print("Alert goes here!")
+         }
+         
+         
+         if (EvalNegspeaker1?.classtimeScore == nil || EvalNegspeaker1?.deliveryScore == nil || EvalAffspeaker2?.classtimeScore == nil || EvalNegspeaker2?.deliveryScore == nil)
+         {
+         print("Alert goes here!")
+         }
+         
         let savedData = NSKeyedArchiver.archiveRootObject(currentDebate!, toFile: (ArchiveURLCurrent?.path)!)
         
         if savedData
         {
             print("HAHAHAHAHAHA!")
-        }
+        }*/
+
     }
-    
 
 }
