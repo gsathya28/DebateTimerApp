@@ -114,8 +114,6 @@ class NewDebateInputPage: UIViewController, UIPickerViewDataSource, UIPickerView
         }
         
     }
-    
-
         
     @IBAction func showAlertButtonTapped(_ sender: Any) {
         // create the alert
