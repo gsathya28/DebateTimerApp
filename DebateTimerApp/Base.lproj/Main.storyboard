@@ -545,7 +545,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YCy-TK-96L">
-                                <rect key="frame" x="664" y="666" width="175" height="102"/>
+                                <rect key="frame" x="758" y="628" width="246" height="140"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Continue"/>
@@ -572,7 +572,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OPr-aZ-IjK" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="en9-GT-8HT" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2610" y="123"/>
+            <point key="canvasLocation" x="2609.765625" y="122.65625"/>
         </scene>
         <!--NEGATIVE-->
         <scene sceneID="wCL-7n-qMY">
@@ -1402,8 +1402,8 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ikD-ps-dYe"/>
-        <segue reference="bun-GC-Vrl"/>
-        <segue reference="zPx-1f-Q0i"/>
+        <segue reference="eD5-ex-Dmw"/>
+        <segue reference="Vs6-I1-zta"/>
+        <segue reference="c70-l5-pjC"/>
     </inferredMetricsTieBreakers>
 </document>
