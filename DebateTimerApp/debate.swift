@@ -106,15 +106,8 @@ class debate: NSObject, NSCoding {
         var scoresArray: [String] = []
         for index in 1...(self.rounds.count)
         {
-            if (index != 3)
-            {
-                
-                var ScoreString: String = String(describing: self.rounds[index-1].roundPoints)
-                let index = ScoreString.index(ScoreString.startIndex, offsetBy: 8)
-                ScoreString = ScoreString.substring(from: index)
-                scoresArray.append(ScoreString)
-                
-            }
+            let ScoreString: String = self.rounds[index-1].roundName!
+            scoresArray.append(ScoreString)
         }
         return scoresArray
     }

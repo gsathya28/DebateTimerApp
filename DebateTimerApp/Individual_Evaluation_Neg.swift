@@ -8,10 +8,6 @@
 
 import UIKit
 
-var EvalNegspeaker1: debater?
-var EvalNegspeaker2: debater?
-var EvalNegspeaker3: debater?
-
 class Individual_Evaluation_Neg: UIViewController {
 
     // MARK: Outlet Properties
@@ -28,11 +24,9 @@ class Individual_Evaluation_Neg: UIViewController {
     
     
     // MARK: Saving Properties with Debate Objects
-    let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
-    var currentDebate: debate?
+    
     var roundCounter: Int?
     var round: debateRound?
-    var ArchiveURLCurrent: URL?
     
     override func viewDidLoad() {
         super.viewDidLoad()

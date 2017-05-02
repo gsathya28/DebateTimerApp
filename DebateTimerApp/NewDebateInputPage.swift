@@ -7,8 +7,7 @@
 //
 
 import UIKit
-var Speak3AffCount: Int?
-var Speak3NegCount: Int?
+
 
 class NewDebateInputPage: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate
     {
