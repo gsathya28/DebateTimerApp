@@ -43,9 +43,9 @@ class PDFDataViewController: UIViewController, MFMailComposeViewControllerDelega
         let mailComposerVC = MFMailComposeViewController()
         mailComposerVC.mailComposeDelegate = self // Extremely important to set the --mailComposeDelegate-- property, NOT the --delegate-- property
         
-        mailComposerVC.setToRecipients(["someone@somewhere.com"])
-        mailComposerVC.setSubject("Sending you an in-app e-mail...")
-        mailComposerVC.setMessageBody("Sending e-mail in-app is not so bad!", isHTML: false)
+        mailComposerVC.setToRecipients(["ben@goffman.com, gsathya28@gmail.com"])
+        mailComposerVC.setSubject("PDF Test")
+        mailComposerVC.setMessageBody("I NEED THIS TO WORK!!!!", isHTML: false)
         
         return mailComposerVC
     }
