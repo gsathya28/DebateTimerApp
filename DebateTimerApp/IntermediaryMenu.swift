@@ -43,10 +43,13 @@ class IntermediaryMenu: UIViewController {
         let id = defaults.object(forKey: "current") as? String
         ArchiveURLCurrent = DocumentsDirectory.appendingPathComponent(id!)
         currentDebate = NSKeyedUnarchiver.unarchiveObject(withFile: (ArchiveURLCurrent?.path)!) as! debate?
-        round = currentDebate?.rounds[roundCounter!]
-        let time = round?.roundRawTime
-        print(String(describing: time))
         
+        if(roundCounter! < 7)
+        {
+            round = currentDebate?.rounds[roundCounter!]
+            let time = round?.roundRawTime
+            print(String(describing: time))
+        }
         if(roundCounter! <= 1 || (roundCounter! > 2 && roundCounter! <= 6))
         {
             back.isHidden = false
