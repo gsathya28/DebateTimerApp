@@ -47,17 +47,11 @@ class RoundDataTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LabelCell", for: indexPath)
         
-        let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
-        var ArchiveURLCurrent: URL?
-        let defaults = UserDefaults.standard
-        let id = defaults.object(forKey: "current") as? String
-        ArchiveURLCurrent = DocumentsDirectory.appendingPathComponent(id!)
-        currentDebate = NSKeyedUnarchiver.unarchiveObject(withFile: (ArchiveURLCurrent?.path)!) as! debate?
-        
-        let roundNameArray = currentDebate?.spitScoresArray()
+        loadCurrentDebate()
+        let roundNameArray = giveRoundArray()
         
         // Configure the cell...
-        cell.textLabel?.text = fruits[indexPath.row]
+        cell.textLabel?.text = roundNameArray[indexPath.row].roundName
 
         return cell
     }

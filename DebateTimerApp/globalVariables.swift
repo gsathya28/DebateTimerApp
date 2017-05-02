@@ -41,6 +41,11 @@ func loadCurrentDebate()
     currentDebate = NSKeyedUnarchiver.unarchiveObject(withFile: (ArchiveURLCurrent?.path)!) as! debate?
 }
 
+func giveRoundArray() -> [debateRound]
+{
+    return (currentDebate?.rounds)!
+}
+
 /*
 func configuredMailComposeViewController() -> MFMailComposeViewController {
     let emailController = MFMailComposeViewController()
