@@ -16,6 +16,8 @@ class RoundDataTableViewController: UITableViewController {
                   "Melon", "Nectarine", "Olive", "Orange", "Papaya", "Peach",
                   "Pear", "Pineapple", "Raspberry", "Strawberry"]
     
+    var roundNameArray: [debateRound]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,6 +26,10 @@ class RoundDataTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        loadCurrentDebate()
+        roundNameArray = giveRoundArray()
+        
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,26 +46,25 @@ class RoundDataTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return fruits.count
+        return (roundNameArray?.count)!
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "LabelCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FileCell", for: indexPath) as! FileCell
         
-        loadCurrentDebate()
-        let roundNameArray = giveRoundArray()
-        
+        let tableRound = roundNameArray?[indexPath.row]
         // Configure the cell...
-        cell.textLabel?.text = roundNameArray[indexPath.row].roundName
-
+        cell.roundNameText.text = tableRound?.roundName
+        cell.roundScoreText.text = "\(tableRound?.roundPoints)"
+        
         return cell
     }
-    /*
+    
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "Section \(section)"
     }
-    */
+ 
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
