@@ -14,13 +14,14 @@ class debateRound: NSObject, NSCoding {
     
     var roundName: String?
     var roundType: String?
-    var roundRawTime: Int?
-    var roundAffTime: Int?
-    var roundNegTime: Int?
-    var roundPoints: Int?
-    var roundAffPoints: Int?
-    var roundNegPoints: Int?
-    var roundPointsPossible: Int?
+    var roundRawTime: Int? = -1
+    var roundAffTime: Int? = -1
+    var roundNegTime: Int? = -1
+    var roundPoints: Int? = -1
+    var roundAffPoints: Int? = -1
+    var roundNegPoints: Int? = -1
+    var roundPointsPossible: Int? = -1
+    // var roundStarted: Bool = false
     
     // Initializers
     
@@ -29,8 +30,8 @@ class debateRound: NSObject, NSCoding {
         self.roundName = inName
         self.roundType = inType
         self.roundPointsPossible = possPoints
-        self.roundPoints = 0
-        self.roundRawTime = 0
+        self.roundPoints = -1
+        self.roundRawTime = -1
     }
     
     // Encoding Required Functions

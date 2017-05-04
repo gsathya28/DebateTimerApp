@@ -41,9 +41,32 @@ func loadCurrentDebate()
     currentDebate = NSKeyedUnarchiver.unarchiveObject(withFile: (ArchiveURLCurrent?.path)!) as! debate?
 }
 
-func giveRoundArray() -> [debateRound]
+func giveRoundArray(type: String) -> [debateRound]
 {
-    return (currentDebate?.rounds)!
+    var roundArray = [debateRound]()
+    for round in (currentDebate?.rounds)!
+    {
+        if (round.roundType == type || round.roundType == "Quest")
+        {
+            roundArray.append(round)
+        }
+    }
+    
+    return roundArray
+}
+
+func convertRawTime(rawTime: Int) -> String
+{
+    let minutes = rawTime / 6000
+    var remainder = rawTime % 6000
+    let tenseconds = remainder / 1000
+    remainder = remainder % 1000
+    let seconds = remainder / 100
+    remainder = remainder % 100
+    let deciseconds = remainder / 10
+    let centiseconds = remainder % 10
+    let finalString = "\(minutes):\(tenseconds)\(seconds):\(deciseconds)\(centiseconds)"
+    return finalString
 }
 
 /*

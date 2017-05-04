@@ -16,7 +16,8 @@ class RoundDataTableViewController: UITableViewController {
                   "Melon", "Nectarine", "Olive", "Orange", "Papaya", "Peach",
                   "Pear", "Pineapple", "Raspberry", "Strawberry"]
     
-    var roundNameArray: [debateRound]?
+    var affRoundArray: [debateRound]?
+    var negRoundArray: [debateRound]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +28,8 @@ class RoundDataTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         loadCurrentDebate()
-        roundNameArray = giveRoundArray()
+        affRoundArray = giveRoundArray(type: "Aff")
+        negRoundArray = giveRoundArray(type: "Neg")
         
 
     }
@@ -41,28 +43,74 @@ class RoundDataTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections (columns)
-        return 1
+        return 2
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return (roundNameArray?.count)!
+        return (affRoundArray?.count)!
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FileCell", for: indexPath) as! FileCell
-        
-        let tableRound = roundNameArray?[indexPath.row]
-        // Configure the cell...
-        cell.roundNameText.text = tableRound?.roundName
-        cell.roundScoreText.text = "\(tableRound?.roundPoints)"
-        
+
+        if ((indexPath.section == 0))
+        {
+            let tableRound = affRoundArray?[indexPath.row]
+            if (tableRound?.roundRawTime != -1 || tableRound?.roundAffTime != -1 || tableRound?.roundNegTime != -1)
+            {
+                cell.roundNameText.text = tableRound?.roundName
+                // Configure the cell...
+                cell.roundScoreText.text = "\((tableRound?.roundPoints)!) / \((tableRound?.roundPointsPossible)!)"
+                let tableRawTime = (tableRound?.roundRawTime)!
+                    
+                cell.roundTimeText.text = convertRawTime(rawTime: tableRawTime)
+                return cell
+            }
+            else
+            {
+                cell.roundNameText.text = tableRound?.roundName
+                cell.roundTimeText.text = "N/A"
+                cell.roundScoreText.text = "N/A"
+                return cell
+            }
+        }
+        else if (indexPath.section == 1)
+        {
+            let tableRound = negRoundArray?[indexPath.row]
+            if (tableRound?.roundRawTime != -1 || tableRound?.roundAffTime != -1 || tableRound?.roundNegTime != -1)
+            {
+                cell.roundNameText.text = tableRound?.roundName
+                // Configure the cell...
+                cell.roundScoreText.text = "\((tableRound?.roundPoints)!) / \((tableRound?.roundPointsPossible)!)"
+                let tableRawTime = (tableRound?.roundRawTime)!
+                
+                cell.roundTimeText.text = convertRawTime(rawTime: tableRawTime)
+                return cell
+            }
+            else
+            {
+                cell.roundNameText.text = tableRound?.roundName
+                cell.roundTimeText.text = "N/A"
+                cell.roundScoreText.text = "N/A"
+                return cell
+            }
+        }
         return cell
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Section \(section)"
+        if (section == 0)
+        {
+            return "Affirmative"
+        }
+        else if (section == 1)
+        {
+            return "Negative"
+        }
+        
+        return "----"
     }
  
     /*
