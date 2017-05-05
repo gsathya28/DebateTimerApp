@@ -23,6 +23,7 @@ class NewDebateInputPage: UIViewController, UIPickerViewDataSource, UIPickerView
     @IBOutlet weak var speak1Neg: UITextField!
     @IBOutlet weak var speak2Neg: UITextField!
     @IBOutlet weak var continueButton: UIButton!
+    @IBOutlet weak var DebateTopic: UITextField!
     
     // Data Save Directory
     let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
@@ -110,8 +111,30 @@ class NewDebateInputPage: UIViewController, UIPickerViewDataSource, UIPickerView
         {
             Speak3NegCount = 1
         }
-
         
+    }
+        
+    @IBAction func showAlertButtonTapped(_ sender: Any) {
+        // create the alert
+        let alert = UIAlertController(title: "Missing Information!", message: "You didn't enter the topic/speaker's name", preferredStyle: UIAlertControllerStyle.alert)
+        
+        // add action buttons
+        alert.addAction(UIAlertAction(title: "Continue", style: UIAlertActionStyle.default, handler: { (action) in alert.dismiss(animated: true, completion: nil)
+            self.performSegue(withIdentifier: "MenuToTimer", sender: nil) //create segue when continue button is clicked
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
+        
+        // show the alert view
+        self.present(alert, animated: true, completion: nil)
+    }
+        
+    @IBAction func ShowAlertView(_ sender: Any) {
+       
+        //call the alert view method if textfield is blank or wrong
+        if(speak1Aff.text == "" || speak2Aff.text == "" || Speak3Aff.text == "" || speak1Neg.text == "" || speak2Neg.text == "" || Speak3Neg.text == "" || DebateTopic.text == "" )
+        {
+            showAlertButtonTapped(continueButton)
+        }
     }
  
 }
