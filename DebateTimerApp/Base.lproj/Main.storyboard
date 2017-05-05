@@ -75,7 +75,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-175" y="123"/>
+            <point key="canvasLocation" x="-175.1953125" y="122.65625"/>
         </scene>
         <!--New Debate Input Page-->
         <scene sceneID="Olo-Ap-NMm">
@@ -114,8 +114,10 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                         <state key="normal" title="Continue"/>
                                         <connections>
+                                            <action selector="ShowAlertView:" destination="DZA-JW-AHI" eventType="touchUpInside" id="9kG-B3-LEd"/>
                                             <action selector="createDebate:" destination="DZA-JW-AHI" eventType="touchUpInside" id="2ub-Q8-E0v"/>
-                                            <segue destination="gti-Af-EDU" kind="show" id="bun-GC-Vrl"/>
+                                            <action selector="showAlertButtonTapped:" destination="DZA-JW-AHI" eventType="touchUpInside" id="i37-WF-kAr"/>
+                                            <segue destination="gti-Af-EDU" kind="show" identifier="MenuToTimer" id="bun-GC-Vrl"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Speaker 1:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9xq-oE-K2L">
@@ -248,6 +250,10 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="1024" height="1150"/>
                     <connections>
+                        <outlet property="DebateTopic" destination="CIa-5h-8s1" id="Z8K-Zk-hNv"/>
+                        <outlet property="Speak3Aff" destination="oN4-rE-TwC" id="qVv-JH-tAA"/>
+                        <outlet property="Speak3Neg" destination="0Vx-di-hdM" id="xdQ-NV-sY7"/>
+                        <outlet property="continueButton" destination="l4P-vv-Z62" id="UWU-Ca-QEc"/>
                         <outlet property="debateName" destination="CIa-5h-8s1" id="xBi-9j-wg0"/>
                         <outlet property="pickerView" destination="1GA-Ij-r0d" id="Prh-Zi-QTy"/>
                         <outlet property="scrollView" destination="uMa-Gz-ivU" id="mOz-qd-Cq3"/>
@@ -539,7 +545,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YCy-TK-96L">
-                                <rect key="frame" x="664" y="666" width="175" height="102"/>
+                                <rect key="frame" x="758" y="628" width="246" height="140"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Continue"/>
@@ -566,7 +572,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OPr-aZ-IjK" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="en9-GT-8HT" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2610" y="123"/>
+            <point key="canvasLocation" x="2609.765625" y="122.65625"/>
         </scene>
         <!--NEGATIVE-->
         <scene sceneID="wCL-7n-qMY">
@@ -985,8 +991,9 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="IndEvalSave:" destination="E9G-4f-QTb" eventType="touchUpInside" id="FOb-Wi-oN2"/>
-                                            <segue destination="jO5-tJ-Jov" kind="show" id="zPx-1f-Q0i"/>
+                                            <action selector="ShowAlertView:" destination="E9G-4f-QTb" eventType="touchUpInside" id="mdQ-ee-nt4"/>
+                                            <action selector="showAlertButtonTapped:" destination="E9G-4f-QTb" eventType="touchUpInside" id="Jtz-qS-Svl"/>
+                                            <segue destination="jO5-tJ-Jov" kind="show" identifier="NegToMenu" id="zPx-1f-Q0i"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Student 3 - (Name)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kft-b2-M4Z">
@@ -1064,6 +1071,10 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="1024" height="1150"/>
                     <connections>
+                        <outlet property="ContinueButton" destination="k1m-V2-LRL" id="C00-FG-QrV"/>
+                        <outlet property="Label1" destination="vy5-V8-oUG" id="1qY-MP-zA7"/>
+                        <outlet property="Label2" destination="WrK-ZJ-QvS" id="Swi-kL-7ez"/>
+                        <outlet property="Student3" destination="Kft-b2-M4Z" id="UGk-BA-xeT"/>
                         <outlet property="scrollView" destination="Cb0-iP-1Hf" id="PUQ-wQ-oGo"/>
                         <outlet property="textfield1" destination="33Y-En-K2v" id="jmx-tE-CQr"/>
                         <outlet property="textfield2" destination="v7l-OE-yAp" id="maz-UW-QMn"/>
@@ -1076,7 +1087,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BCW-v4-Lvl" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="9Sh-cP-GAA" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3324.609375" y="1903.90625"/>
+            <point key="canvasLocation" x="3294" y="2113"/>
         </scene>
         <!--Item 1-->
         <scene sceneID="4Ny-eR-hIm">
@@ -1108,8 +1119,9 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="IndEvalSave:" destination="dnu-uX-vZu" eventType="touchUpInside" id="T1I-Mr-QEa"/>
-                                            <segue destination="jO5-tJ-Jov" kind="show" id="Waa-sS-xBm"/>
+                                            <action selector="ShowAlertView:" destination="dnu-uX-vZu" eventType="touchUpInside" id="o2X-97-Ddy"/>
+                                            <action selector="showAlertButtonTapped:" destination="dnu-uX-vZu" eventType="touchUpInside" id="g29-FO-rme"/>
+                                            <segue destination="jO5-tJ-Jov" kind="show" identifier="AffToMenu" id="Waa-sS-xBm"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ka8-PG-vad">
@@ -1243,6 +1255,10 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="1024" height="1150"/>
                     <connections>
+                        <outlet property="ContinueButton" destination="3fj-G6-azw" id="Hu2-G1-llo"/>
+                        <outlet property="Label1" destination="NUi-Nx-AoZ" id="rnG-F2-Ssz"/>
+                        <outlet property="Label2" destination="ZjA-Lv-3ad" id="5ex-ek-d7g"/>
+                        <outlet property="Student3" destination="3DR-Ch-889" id="pej-EZ-Gg6"/>
                         <outlet property="scrollView" destination="5Ow-Nb-VoU" id="W2b-Sh-6xG"/>
                         <outlet property="textfield1" destination="qJ1-s2-0Qz" id="nZs-WV-f5m"/>
                         <outlet property="textfield2" destination="D3R-qk-Why" id="fO8-pj-ux5"/>
@@ -1255,7 +1271,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lda-EB-ojo" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="SOA-aU-GTq" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3336.328125" y="966.40625"/>
+            <point key="canvasLocation" x="3312" y="1049"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="iDX-Yu-qbh">
@@ -1273,7 +1289,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AWY-KX-CRT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2596" y="1231"/>
+            <point key="canvasLocation" x="2207" y="2189"/>
         </scene>
         <!--Intermediary Menu-->
         <scene sceneID="BVM-BB-y0b">
@@ -1346,7 +1362,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <state key="normal" title="Debate Data"/>
                                 <connections>
-                                    <segue destination="hek-Cu-m6s" kind="show" id="hni-n4-edg"/>
+                                    <segue destination="qA5-50-TYx" kind="show" id="c70-l5-pjC"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i7f-eX-Uyb">
@@ -1357,20 +1373,21 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                     <segue destination="Zrw-K8-pDX" kind="unwind" unwindAction="unwindToQOCEvaluationAffWith_sender:" id="t6L-dB-0Gh"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Zs-Wq-3UZ">
+                                <rect key="frame" x="460" y="638" width="104" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="b:" destination="jO5-tJ-Jov" eventType="touchUpInside" id="ox8-6V-2P0"/>
+                                    <segue destination="Zrw-K8-pDX" kind="unwind" unwindAction="unwindToOpenAffPageGUIWith_sender:" id="jnc-gK-nbp"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4P8-ii-vhf">
                                 <rect key="frame" x="460" y="638" width="104" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
-                                    <segue destination="Zrw-K8-pDX" kind="unwind" unwindAction="unwindToQOCEvaluationAffWith_sender:" id="aSt-yF-CDO"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Zs-Wq-3UZ">
-                                <rect key="frame" x="459" y="638" width="104" height="53"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Back"/>
-                                <connections>
-                                    <action selector="b:" destination="jO5-tJ-Jov" eventType="touchUpInside" id="ox8-6V-2P0"/>
+                                    <segue destination="Zrw-K8-pDX" kind="unwind" unwindAction="unwindToIndividAffWith_sender:" id="QsQ-dM-xBC"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1427,7 +1444,8 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Waa-sS-xBm"/>
         <segue reference="eD5-ex-Dmw"/>
+        <segue reference="Vs6-I1-zta"/>
+        <segue reference="c70-l5-pjC"/>
     </inferredMetricsTieBreakers>
 </document>

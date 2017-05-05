@@ -7,23 +7,29 @@
 //
 
 import UIKit
-
+var Speak3AffCount: Int?
+var Speak3NegCount: Int?
 
 class NewDebateInputPage: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate
     {
     
+    // UI Outlets
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var scrollView: UIScrollView!
-
     @IBOutlet weak var debateName: UITextField!
-    
+    @IBOutlet weak var Speak3Neg: UITextField!
     @IBOutlet weak var speak1Aff: UITextField!
     @IBOutlet weak var speak2Aff: UITextField!
+    @IBOutlet weak var Speak3Aff: UITextField!
     @IBOutlet weak var speak1Neg: UITextField!
     @IBOutlet weak var speak2Neg: UITextField!
+    @IBOutlet weak var continueButton: UIButton!
+    @IBOutlet weak var DebateTopic: UITextField!
     
+    // Data Save Directory
     let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
     
+    // Picker Data
     var pickerData = ["Hour 1", "Hour 2", "Hour 3", "Hour 4", "Hour 5", "Hour 6", "Hour 7"]
     
     override func viewDidLoad() {
@@ -33,7 +39,7 @@ class NewDebateInputPage: UIViewController, UIPickerViewDataSource, UIPickerView
         // Do any additional setup after loading the view, typically from a nib.
         
         scrollView.contentSize.height = 1150
-        
+
     }
     
     override func didReceiveMemoryWarning() {
@@ -41,6 +47,7 @@ class NewDebateInputPage: UIViewController, UIPickerViewDataSource, UIPickerView
         // Dispose of any resources that can be recreated.
     }
     
+    // Picker Functions
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -52,9 +59,13 @@ class NewDebateInputPage: UIViewController, UIPickerViewDataSource, UIPickerView
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return pickerData[row]
     }
+    
+    // Unwind Function Prep
     @IBAction func unwindToNewDebateInputPage(_sender: UIStoryboardSegue) {
     }
     
+    
+    // New Debate Creation
     @IBAction func createDebate(_ sender: UIButton) {
         // Enters in an array whether the textboxes are entered
         let enteredText =
@@ -82,6 +93,49 @@ class NewDebateInputPage: UIViewController, UIPickerViewDataSource, UIPickerView
             print("HAHAHAHAHAHA!")
         }
         defaults.set(0, forKey: "roundCounter")
+        
+        
+        if(Speak3Aff.text == "")
+        {
+            Speak3AffCount = 0
+        }
+        else
+        {
+            Speak3AffCount = 1
+        }
+        
+        if(Speak3Neg.text == "")
+        {
+            Speak3NegCount = 0
+        }
+        else
+        {
+            Speak3NegCount = 1
+        }
+        
     }
-    
+        
+    @IBAction func showAlertButtonTapped(_ sender: Any) {
+        // create the alert
+        let alert = UIAlertController(title: "Missing Information!", message: "You didn't enter the topic/speaker's name", preferredStyle: UIAlertControllerStyle.alert)
+        
+        // add action buttons
+        alert.addAction(UIAlertAction(title: "Continue", style: UIAlertActionStyle.default, handler: { (action) in alert.dismiss(animated: true, completion: nil)
+            self.performSegue(withIdentifier: "MenuToTimer", sender: nil) //create segue when continue button is clicked
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
+        
+        // show the alert view
+        self.present(alert, animated: true, completion: nil)
+    }
+        
+    @IBAction func ShowAlertView(_ sender: Any) {
+       
+        //call the alert view method if textfield is blank or wrong
+        if(speak1Aff.text == "" || speak2Aff.text == "" || Speak3Aff.text == "" || speak1Neg.text == "" || speak2Neg.text == "" || Speak3Neg.text == "" || DebateTopic.text == "" )
+        {
+            showAlertButtonTapped(continueButton)
+        }
+    }
+ 
 }

@@ -10,8 +10,7 @@ import UIKit
 
 class IntermediaryMenu: UIViewController {
 
-    var roundCounter: Int?
-    
+    // Button Properties
     @IBOutlet var continueRegular: UIButton!
     @IBOutlet var continueQOC: UIButton!
     @IBOutlet var individualEval: UIButton!
@@ -19,36 +18,40 @@ class IntermediaryMenu: UIViewController {
     @IBOutlet weak var back2: UIButton!
     @IBOutlet weak var back3: UIButton!
     
-    
+    // Label Properties
     @IBOutlet weak var finishedLabel: UILabel!
     @IBOutlet weak var roundLabel: UILabel!
     
+    // Data Variables
     let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
     var ArchiveURLCurrent: URL?
+    var roundCounter: Int?
     var currentDebate: debate?
     var round: debateRound?
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
+        // Load Data Variables
         let defaults = UserDefaults.standard
         roundCounter = defaults.object(forKey: "roundCounter") as? Int
         print(String(describing: roundCounter))
+        let id = defaults.object(forKey: "current") as? String
+        ArchiveURLCurrent = DocumentsDirectory.appendingPathComponent(id!)
+        currentDebate = NSKeyedUnarchiver.unarchiveObject(withFile: (ArchiveURLCurrent?.path)!) as! debate?
         
+        // Set up defaults
         continueRegular.isEnabled = true
         continueQOC.isEnabled = false
         individualEval.isEnabled = false
         finishedLabel.isHidden = true
         
-        let id = defaults.object(forKey: "current") as? String
-        ArchiveURLCurrent = DocumentsDirectory.appendingPathComponent(id!)
-        currentDebate = NSKeyedUnarchiver.unarchiveObject(withFile: (ArchiveURLCurrent?.path)!) as! debate?
-        
-        if(roundCounter! < 7)
+        // RoundCounter Checks - Do things based on Round Counter
+
+        if (roundCounter! < 7)
         {
             round = currentDebate?.rounds[roundCounter!]
-            let time = round?.roundRawTime
-            print(String(describing: time))
         }
         if(roundCounter! <= 1 || (roundCounter! > 2 && roundCounter! <= 6))
         {
@@ -74,7 +77,6 @@ class IntermediaryMenu: UIViewController {
             continueQOC.isEnabled = true
             
         }
-        
         if (roundCounter! == 6)
         {
             continueRegular.isEnabled = false
@@ -117,14 +119,13 @@ class IntermediaryMenu: UIViewController {
     }
     */
     
+    // Functions that manipulate the Round Counter when button is pressed
     @IBAction func continueRound(_ sender: UIButton) {
         let defaults = UserDefaults.standard
         roundCounter = roundCounter! + 1
         defaults.set(roundCounter, forKey: "roundCounter")
     }
-    @IBAction func b(_ sender: Any) {
     
-    }
     @IBAction func continue_Ind_Eval(_ sender: UIButton) {
         let defaults = UserDefaults.standard
         roundCounter = roundCounter! + 1

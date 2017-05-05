@@ -8,26 +8,31 @@
 
 import UIKit
 
+var QOCround: debateRound?
+
 class QOC_Evalutation_Neg: UIViewController, UITextViewDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
     
+    // Picker Data Variables
     @IBOutlet weak var PickerView: UIPickerView!
-
     var pickerData1 = ["0","1","2","3","4","5"]
     
+    // Debate Data Variables
     let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
-    
     var currentDebate: debate?
     var roundCounter: Int?
-    var round: debateRound?
     var ArchiveURLCurrent: URL?
+    
+    // UI Label Properties
     @IBOutlet weak var rubricText: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Picker View Data Setup
         PickerView.delegate = self
         PickerView.dataSource = self
-        // Do any additional setup after loading the view.
         
+        // Load Data Variables
         let defaults = UserDefaults.standard
         let id = defaults.object(forKey: "current") as? String
         ArchiveURLCurrent = DocumentsDirectory.appendingPathComponent(id!)
@@ -37,7 +42,7 @@ class QOC_Evalutation_Neg: UIViewController, UITextViewDelegate, UIPickerViewDat
         
         currentDebate = NSKeyedUnarchiver.unarchiveObject(withFile: (ArchiveURLCurrent?.path)!) as! debate?
         
-        round = currentDebate?.rounds[roundCounter!]
+        QOCround = currentDebate?.rounds[roundCounter!]
         
     }
 
@@ -67,10 +72,14 @@ class QOC_Evalutation_Neg: UIViewController, UITextViewDelegate, UIPickerViewDat
         let myRow = PickerView.selectedRow(inComponent: 0)
         let score = pickerView(PickerView, titleForRow: myRow, forComponent: 0)
         let intScore = Int(score!)
-        round?.roundNegPoints = intScore
-        if (!((round!.roundAffPoints != nil)))
+        QOCround?.roundNegPoints = intScore
+        
+        if (!((QOCround!.roundAffPoints != nil)))
         {
             print("Alert goes here")
         }
+
+        currentDebate?.rounds[2] = QOCround!
+        let savedData = NSKeyedArchiver.archiveRootObject(currentDebate!, toFile: (ArchiveURLCurrent?.path)!)
     }
 }

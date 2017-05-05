@@ -9,11 +9,15 @@
 import UIKit
 
 class debate: NSObject, NSCoding {
+    
     // MARK: Properties
     var affSpeakers = [debater]()
     var negSpeakers = [debater]()
     var rounds = [debateRound]()
     var name: String?
+    
+    
+    // Initializers - based on the number of debaters
     
     init(inName: String, Affspeaker1: debater, Affspeaker2: debater, Negspeaker1: debater, Negspeaker2: debater)
     {
@@ -78,10 +82,6 @@ class debate: NSObject, NSCoding {
             debateRound(inName: "CloseNeg", inType: "Closing", possPoints: 15)
         ]
     }
-
-
-
-    
     
     
     required init(coder aDecoder: NSCoder) {
@@ -96,6 +96,27 @@ class debate: NSObject, NSCoding {
         aCoder.encode(negSpeakers, forKey: "negSpeakers")
         aCoder.encode(rounds, forKey: "rounds")
         aCoder.encode(name, forKey: "name")
+    }
+    
+    
+    // Function that spits out an array of Strings that will be displayed in Table View
+    
+    func spitScoresArray() -> [String]
+    {
+        var scoresArray: [String] = []
+        for index in 1...(self.rounds.count)
+        {
+            if (index != 3)
+            {
+                
+                var ScoreString: String = String(describing: self.rounds[index-1].roundPoints)
+                let index = ScoreString.index(ScoreString.startIndex, offsetBy: 8)
+                ScoreString = ScoreString.substring(from: index)
+                scoresArray.append(ScoreString)
+                
+            }
+        }
+        return scoresArray
     }
     
 }
