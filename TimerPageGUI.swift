@@ -46,8 +46,11 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
     @IBOutlet var save: UIButton!
     
     // Data Save Variables
+    let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
+    var currentDebate: debate?
+    var roundCounter: Int?
     var round: debateRound?
-    
+    var ArchiveURLCurrent: URL?
     @IBOutlet weak var rubricText: UILabel!
     
     // Load Stuff
@@ -59,6 +62,7 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
         let defaults = UserDefaults.standard
         let id = defaults.object(forKey: "current") as? String
         ArchiveURLCurrent = DocumentsDirectory.appendingPathComponent(id!)
+        
         roundCounter = defaults.object(forKey: "roundCounter") as? Int
         
        
