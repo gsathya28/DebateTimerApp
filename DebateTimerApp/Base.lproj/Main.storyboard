@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1421" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -29,7 +29,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MIW-ny-vOm">
-                                <rect key="frame" x="350" y="198" width="325" height="123"/>
+                                <rect key="frame" x="350" y="196" width="325" height="123"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="45"/>
@@ -41,21 +41,8 @@
                                     <segue destination="DZA-JW-AHI" kind="show" id="TQC-FY-qUc"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QsZ-mF-tXg">
-                                <rect key="frame" x="350" y="600" width="325" height="123"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <state key="normal" title="Previous Debates">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="PreviousDebates:" destination="BYZ-38-t0r" eventType="touchUpInside" id="n9Q-s0-4KX"/>
-                                    <segue destination="qA5-50-TYx" kind="show" id="ikD-ps-dYe"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JNf-ka-7Jg">
-                                <rect key="frame" x="350" y="406" width="325" height="123"/>
+                                <rect key="frame" x="350" y="388" width="325" height="123"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.041046944600000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="42"/>
@@ -64,6 +51,19 @@
                                 </state>
                                 <connections>
                                     <action selector="ContinueDebate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cEe-rm-gqG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QsZ-mF-tXg">
+                                <rect key="frame" x="350" y="580" width="325" height="123"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <state key="normal" title="Previous Debates">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="PreviousDebates:" destination="BYZ-38-t0r" eventType="touchUpInside" id="n9Q-s0-4KX"/>
+                                    <segue destination="Wr2-0k-IwX" kind="show" id="ND6-Pi-Xhn"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -438,6 +438,62 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
             </objects>
             <point key="canvasLocation" x="1248" y="123"/>
         </scene>
+        <!--Round Data Table View Controller-->
+        <scene sceneID="Eea-b2-xdt">
+            <objects>
+                <tableViewController id="Wr2-0k-IwX" customClass="RoundDataTableViewController" customModule="DebateTimerApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="KMf-4G-Okc">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FileCell" id="bnF-Ju-esC" customClass="FileCell" customModule="DebateTimerApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="1024" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bnF-Ju-esC" id="XZH-rd-VtY">
+                                    <rect key="frame" x="0.0" y="0.0" width="1024" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="RoundName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IFv-zT-Bre">
+                                            <rect key="frame" x="54" y="11" width="284" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="RoundTime" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N3B-Cb-MrM">
+                                            <rect key="frame" x="622" y="11" width="111" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="RoundScore" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="92b-eY-u8P">
+                                            <rect key="frame" x="445" y="11" width="108" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="roundNameText" destination="IFv-zT-Bre" id="qIn-HN-Rd3"/>
+                                    <outlet property="roundScoreText" destination="92b-eY-u8P" id="o7R-7v-gYa"/>
+                                    <outlet property="roundTimeText" destination="N3B-Cb-MrM" id="Ugj-P4-2X9"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Wr2-0k-IwX" id="xLg-Bw-4MC"/>
+                            <outlet property="delegate" destination="Wr2-0k-IwX" id="Fmy-w1-1M6"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8f6-17-0Tu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-175.1953125" y="837.5"/>
+        </scene>
         <!--QOC-->
         <scene sceneID="qSN-Ko-rd6">
             <objects>
@@ -777,10 +833,6 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Save as PDF"/>
-                                <connections>
-                                    <action selector="createPDF:" destination="hek-Cu-m6s" eventType="touchUpInside" id="UHa-Fa-CUE"/>
-                                    <segue destination="TXW-pH-Z3b" kind="show" id="omr-Wi-UoD"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uAs-gn-hya">
                                 <rect key="frame" x="329" y="680" width="367" height="80"/>
@@ -805,6 +857,15 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KwR-4S-W8a">
+                                <rect key="frame" x="247" y="226" width="197" height="119"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Student 1">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bnN-K4-KzY">
                                 <rect key="frame" x="247" y="503" width="197" height="119"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -832,15 +893,6 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KwR-4S-W8a">
-                                <rect key="frame" x="247" y="226" width="197" height="119"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="Student 1">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -849,43 +901,6 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                 <exit id="Gx3-6A-Uu6" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1891" y="1027"/>
-        </scene>
-        <!--Data View Controller-->
-        <scene sceneID="sRk-x9-OrF">
-            <objects>
-                <viewController id="TXW-pH-Z3b" customClass="PDFDataViewController" customModule="DebateTimerApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="XfI-WV-rT8"/>
-                        <viewControllerLayoutGuide type="bottom" id="I1s-f4-aJ0"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="2jM-9u-rif">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KbO-Kf-grP">
-                                <rect key="frame" x="20" y="79" width="984" height="669"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </webView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PHc-pa-FxC">
-                                <rect key="frame" x="871" y="0.0" width="153" height="71"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="Send"/>
-                                <connections>
-                                    <action selector="SendEmail:" destination="TXW-pH-Z3b" eventType="touchUpInside" id="uBF-GI-ZhF"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <connections>
-                        <outlet property="webView" destination="KbO-Kf-grP" id="O61-j9-uwM"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="E8o-qE-Tkm" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1890.8203124999998" y="1727.34375"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="DzG-rI-Fz7">
@@ -917,7 +932,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="1150"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cb0-iP-1Hf">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cb0-iP-1Hf">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="1103"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="/5     Used of class time/Presented equally" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j8C-pd-cJZ">
@@ -1101,7 +1116,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="1150"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Ow-Nb-VoU">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Ow-Nb-VoU">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="1101"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Individual Evaluations - Affirmative" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D9Y-1f-vDo">
@@ -1336,7 +1351,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <state key="normal" title="Main Menu"/>
                                 <connections>
-                                    <segue destination="Zrw-K8-pDX" kind="unwind" unwindAction="unwindToTitlePageWith_sender:" id="5cj-Sx-YYB"/>
+                                    <segue destination="Zrw-K8-pDX" kind="unwind" unwindAction="unwindToTitlePageWith_sender:" id="RMi-bT-cfT"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="The Debate is finished!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OBD-We-Gm6">
@@ -1362,7 +1377,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <state key="normal" title="Debate Data"/>
                                 <connections>
-                                    <segue destination="qA5-50-TYx" kind="show" id="c70-l5-pjC"/>
+                                    <segue destination="Wr2-0k-IwX" kind="show" id="0gt-Wh-onG"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i7f-eX-Uyb">
@@ -1373,21 +1388,20 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                     <segue destination="Zrw-K8-pDX" kind="unwind" unwindAction="unwindToQOCEvaluationAffWith_sender:" id="t6L-dB-0Gh"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Zs-Wq-3UZ">
-                                <rect key="frame" x="460" y="638" width="104" height="53"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4P8-ii-vhf">
+                                <rect key="frame" x="459" y="638" width="104" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
-                                    <action selector="b:" destination="jO5-tJ-Jov" eventType="touchUpInside" id="ox8-6V-2P0"/>
-                                    <segue destination="Zrw-K8-pDX" kind="unwind" unwindAction="unwindToOpenAffPageGUIWith_sender:" id="jnc-gK-nbp"/>
+                                    <segue destination="Zrw-K8-pDX" kind="unwind" unwindAction="unwindToIndividAffWith_sender:" id="21Z-Ne-mK0"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4P8-ii-vhf">
-                                <rect key="frame" x="460" y="638" width="104" height="53"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Zs-Wq-3UZ">
+                                <rect key="frame" x="459" y="638" width="104" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
-                                    <segue destination="Zrw-K8-pDX" kind="unwind" unwindAction="unwindToIndividAffWith_sender:" id="QsQ-dM-xBC"/>
+                                    <segue destination="Zrw-K8-pDX" kind="unwind" unwindAction="unwindToOpenAffPageGUIWith_sender:" id="jnc-gK-nbp"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1409,43 +1423,10 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
             </objects>
             <point key="canvasLocation" x="1923.6328124999998" y="122.65625"/>
         </scene>
-        <!--Table View sort Of-->
-        <scene sceneID="L2E-n0-sZY">
-            <objects>
-                <viewController id="qA5-50-TYx" customClass="TableView_sortOf" customModule="DebateTimerApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="5fX-YH-jle"/>
-                        <viewControllerLayoutGuide type="bottom" id="kCp-lU-QAt"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ZHu-J9-Ast">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gke-Q7-O3Z">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="gke-Q7-O3Z" firstAttribute="centerX" secondItem="ZHu-J9-Ast" secondAttribute="centerX" id="CUw-Ub-1hT"/>
-                            <constraint firstItem="gke-Q7-O3Z" firstAttribute="centerY" secondItem="ZHu-J9-Ast" secondAttribute="centerY" id="hI9-q5-k54"/>
-                            <constraint firstItem="gke-Q7-O3Z" firstAttribute="width" secondItem="ZHu-J9-Ast" secondAttribute="width" id="wW0-V3-NqG"/>
-                            <constraint firstItem="gke-Q7-O3Z" firstAttribute="height" secondItem="ZHu-J9-Ast" secondAttribute="height" id="zrm-xS-BWN"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="tableV1" destination="gke-Q7-O3Z" id="2ZG-Ns-QCk"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="RJJ-Q1-6uZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-175.1953125" y="1009.375"/>
-        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="ND6-Pi-Xhn"/>
         <segue reference="eD5-ex-Dmw"/>
         <segue reference="Vs6-I1-zta"/>
-        <segue reference="c70-l5-pjC"/>
     </inferredMetricsTieBreakers>
 </document>
