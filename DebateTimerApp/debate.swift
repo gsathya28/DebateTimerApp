@@ -25,13 +25,13 @@ class debate: NSObject, NSCoding {
         self.affSpeakers = [Affspeaker1, Affspeaker2]
         self.negSpeakers = [Negspeaker1, Negspeaker2]
         self.rounds = [
-            debateRound(inName: "Opening Statement for Affirmative - Love ", inType: "Aff", possPoints: 15),
-            debateRound(inName: "Opening Statement for Negative", inType: "Neg", possPoints: 15),
-            debateRound(inName: "QOC", inType: "Quest", possPoints: 15),
-            debateRound(inName: "RebAff", inType: "Aff", possPoints: 15),
-            debateRound(inName: "RebNeg", inType: "Neg", possPoints: 15),
-            debateRound(inName: "CloseAff", inType: "Aff", possPoints: 15),
-            debateRound(inName: "CloseNeg", inType: "Neg", possPoints: 15)
+            debateRound(inName: "Opening Statement for Affirmative - Love ", inType: "Opener", possPoints: 15),
+            debateRound(inName: "Opening Statement for Negative", inType: "Opener", possPoints: 15),
+            debateRound(inName: "QOC", inType: "Question", possPoints: 15),
+            debateRound(inName: "RebAff", inType: "Rebuttal", possPoints: 15),
+            debateRound(inName: "RebNeg", inType: "Rebuttal", possPoints: 15),
+            debateRound(inName: "CloseAff", inType: "Closing", possPoints: 15),
+            debateRound(inName: "CloseNeg", inType: "Closing", possPoints: 15)
         ]
     }
     
@@ -106,8 +106,15 @@ class debate: NSObject, NSCoding {
         var scoresArray: [String] = []
         for index in 1...(self.rounds.count)
         {
-            let ScoreString: String = self.rounds[index-1].roundName!
-            scoresArray.append(ScoreString)
+            if (index != 3)
+            {
+                
+                var ScoreString: String = String(describing: self.rounds[index-1].roundPoints)
+                let index = ScoreString.index(ScoreString.startIndex, offsetBy: 8)
+                ScoreString = ScoreString.substring(from: index)
+                scoresArray.append(ScoreString)
+                
+            }
         }
         return scoresArray
     }

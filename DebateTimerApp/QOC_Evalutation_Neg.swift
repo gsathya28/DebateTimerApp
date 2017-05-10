@@ -17,6 +17,10 @@ class QOC_Evalutation_Neg: UIViewController, UITextViewDelegate, UIPickerViewDat
     var pickerData1 = ["0","1","2","3","4","5"]
     
     // Debate Data Variables
+    let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
+    var currentDebate: debate?
+    var roundCounter: Int?
+    var ArchiveURLCurrent: URL?
     
     // UI Label Properties
     @IBOutlet weak var rubricText: UILabel!

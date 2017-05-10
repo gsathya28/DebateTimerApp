@@ -23,6 +23,10 @@ class IntermediaryMenu: UIViewController {
     @IBOutlet weak var roundLabel: UILabel!
     
     // Data Variables
+    let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
+    var ArchiveURLCurrent: URL?
+    var roundCounter: Int?
+    var currentDebate: debate?
     var round: debateRound?
     
     override func viewDidLoad() {
@@ -43,7 +47,6 @@ class IntermediaryMenu: UIViewController {
         individualEval.isEnabled = false
         finishedLabel.isHidden = true
         
-
         // RoundCounter Checks - Do things based on Round Counter
 
         if (roundCounter! < 7)

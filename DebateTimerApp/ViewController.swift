@@ -7,9 +7,8 @@
 //
 
 import UIKit
-import MessageUI
 
-class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
+class ViewController: UIViewController {
     
     @IBOutlet var AppTitle: UILabel!
     
