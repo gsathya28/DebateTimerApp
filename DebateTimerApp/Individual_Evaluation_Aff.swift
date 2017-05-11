@@ -8,9 +8,6 @@
 
 import UIKit
 
-var EvalAffspeaker1: debater?
-var EvalAffspeaker2: debater?
-var EvalAffspeaker3: debater?
 
 class Individual_Evaluation_Aff: UIViewController {
     
