@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1421" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -51,7 +51,6 @@
                                 </state>
                                 <connections>
                                     <action selector="PreviousDebates:" destination="BYZ-38-t0r" eventType="touchUpInside" id="n9Q-s0-4KX"/>
-                                    <segue destination="qA5-50-TYx" kind="show" id="ikD-ps-dYe"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JNf-ka-7Jg">
@@ -917,7 +916,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="1150"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cb0-iP-1Hf">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cb0-iP-1Hf">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="1103"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="/5     Used of class time/Presented equally" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j8C-pd-cJZ">
@@ -1101,7 +1100,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="1150"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Ow-Nb-VoU">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Ow-Nb-VoU">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="1101"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Individual Evaluations - Affirmative" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D9Y-1f-vDo">
@@ -1289,7 +1288,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AWY-KX-CRT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2207" y="2189"/>
+            <point key="canvasLocation" x="2610" y="1636"/>
         </scene>
         <!--Intermediary Menu-->
         <scene sceneID="BVM-BB-y0b">
@@ -1361,9 +1360,6 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <state key="normal" title="Debate Data"/>
-                                <connections>
-                                    <segue destination="qA5-50-TYx" kind="show" id="c70-l5-pjC"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i7f-eX-Uyb">
                                 <rect key="frame" x="459" y="638" width="104" height="53"/>
@@ -1409,43 +1405,9 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
             </objects>
             <point key="canvasLocation" x="1923.6328124999998" y="122.65625"/>
         </scene>
-        <!--Table View sort Of-->
-        <scene sceneID="L2E-n0-sZY">
-            <objects>
-                <viewController id="qA5-50-TYx" customClass="TableView_sortOf" customModule="DebateTimerApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="5fX-YH-jle"/>
-                        <viewControllerLayoutGuide type="bottom" id="kCp-lU-QAt"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ZHu-J9-Ast">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gke-Q7-O3Z">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="gke-Q7-O3Z" firstAttribute="centerX" secondItem="ZHu-J9-Ast" secondAttribute="centerX" id="CUw-Ub-1hT"/>
-                            <constraint firstItem="gke-Q7-O3Z" firstAttribute="centerY" secondItem="ZHu-J9-Ast" secondAttribute="centerY" id="hI9-q5-k54"/>
-                            <constraint firstItem="gke-Q7-O3Z" firstAttribute="width" secondItem="ZHu-J9-Ast" secondAttribute="width" id="wW0-V3-NqG"/>
-                            <constraint firstItem="gke-Q7-O3Z" firstAttribute="height" secondItem="ZHu-J9-Ast" secondAttribute="height" id="zrm-xS-BWN"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="tableV1" destination="gke-Q7-O3Z" id="2ZG-Ns-QCk"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="RJJ-Q1-6uZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-175.1953125" y="1009.375"/>
-        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="eD5-ex-Dmw"/>
         <segue reference="Vs6-I1-zta"/>
-        <segue reference="c70-l5-pjC"/>
+        <segue reference="eD5-ex-Dmw"/>
     </inferredMetricsTieBreakers>
 </document>
