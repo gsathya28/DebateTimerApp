@@ -14,8 +14,13 @@ class PDFDataViewController: UIViewController, MFMailComposeViewControllerDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+        let filePath = "\(documentsPath)/file.pdf"
+        let url = NSURL(fileURLWithPath: filePath)
+        let urlRequest = NSURLRequest(url: url as URL)
+        webView.loadRequest(urlRequest as URLRequest)
         // Do any additional setup after loading the view.
+
     }
 
     override func didReceiveMemoryWarning() {
