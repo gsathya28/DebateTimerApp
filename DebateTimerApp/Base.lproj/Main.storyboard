@@ -934,6 +934,15 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                     <action selector="SendEmail:" destination="OFT-TI-lEp" eventType="touchUpInside" id="mAV-8C-46v"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wav-EK-Vhb">
+                                <rect key="frame" x="65" y="20" width="109" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="AEv-ow-Tze" kind="unwind" unwindAction="unwindToDebateDataWith_sender:" id="fLb-ac-Djf"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -942,6 +951,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bqj-3g-QN5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="AEv-ow-Tze" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1890.8203124999998" y="1775.78125"/>
         </scene>
