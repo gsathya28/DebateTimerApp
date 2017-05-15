@@ -29,6 +29,7 @@
 		35ADAB8A1DF5D48400ED8479 /* debate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35ADAB891DF5D48400ED8479 /* debate.swift */; };
 		35ADAB8C1DF5D4A000ED8479 /* debateRound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35ADAB8B1DF5D4A000ED8479 /* debateRound.swift */; };
 		35ADAB8E1DF5D4B800ED8479 /* debater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35ADAB8D1DF5D4B800ED8479 /* debater.swift */; };
+		35EC2ADD1EC4C2320096B66C /* PDFDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EC2ADC1EC4C2320096B66C /* PDFDataViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		35ADAB891DF5D48400ED8479 /* debate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = debate.swift; sourceTree = "<group>"; };
 		35ADAB8B1DF5D4A000ED8479 /* debateRound.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = debateRound.swift; sourceTree = "<group>"; };
 		35ADAB8D1DF5D4B800ED8479 /* debater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = debater.swift; sourceTree = "<group>"; };
+		35EC2ADC1EC4C2320096B66C /* PDFDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFDataViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 				35ADAB611DF5D17F00ED8479 /* Info.plist */,
 				35ADAB5E1DF5D17F00ED8479 /* LaunchScreen.storyboard */,
 				35ADAB591DF5D17F00ED8479 /* Main.storyboard */,
+				35EC2ADC1EC4C2320096B66C /* PDFDataViewController.swift */,
 				354E94051EB920D4003C54E6 /* FileCell.swift */,
 				359920311EAE589B00DEC2D6 /* RoundDataTableViewController.swift */,
 				351ACB7D1EB244EA0062D860 /* globalVariables.swift */,
@@ -312,6 +315,7 @@
 				31EFD0F11E845B7B0003814E /* Individual_Evaluation_Neg.swift in Sources */,
 				35ADAB8C1DF5D4A000ED8479 /* debateRound.swift in Sources */,
 				353942D81E57642700051752 /* IntermediaryMenu.swift in Sources */,
+				35EC2ADD1EC4C2320096B66C /* PDFDataViewController.swift in Sources */,
 				311C6A741E42481A00371B1D /* QOC_Evaluation_Aff.swift in Sources */,
 				359920321EAE589B00DEC2D6 /* RoundDataTableViewController.swift in Sources */,
 				319F0A1B1DF9C6DE00C65073 /* NewDebateInputPage.swift in Sources */,
