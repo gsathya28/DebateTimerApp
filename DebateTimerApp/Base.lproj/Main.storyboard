@@ -896,6 +896,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Save as PDF"/>
                                 <connections>
+                                    <action selector="makePDF:" destination="hek-Cu-m6s" eventType="touchUpInside" id="aPV-Tq-ysu"/>
                                     <segue destination="OFT-TI-lEp" kind="show" id="PfO-Yw-Tma"/>
                                 </connections>
                             </button>
