@@ -26,7 +26,7 @@ class DebateData: UIViewController {
     
     @IBAction func makePDF(_ sender: Any) {
         
-        let html = "<b>Hello <i>World!</i></b> <p>Generate PDF file from HTML in Swift</p>"
+        let html = "<table><tr><th> Round</th><th>Comments</th><th>Score</th><th>Time </th></tr></table>"
         let fmt = UIMarkupTextPrintFormatter(markupText: html)
         let render = UIPrintPageRenderer()
         render.addPrintFormatter(fmt, startingAtPageAt: 0)
