@@ -29,6 +29,7 @@
 		35ADAB8A1DF5D48400ED8479 /* debate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35ADAB891DF5D48400ED8479 /* debate.swift */; };
 		35ADAB8C1DF5D4A000ED8479 /* debateRound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35ADAB8B1DF5D4A000ED8479 /* debateRound.swift */; };
 		35ADAB8E1DF5D4B800ED8479 /* debater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35ADAB8D1DF5D4B800ED8479 /* debater.swift */; };
+		35F1292F1ECCA6B500B78BD0 /* PDFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F1292E1ECCA6B500B78BD0 /* PDFViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		35ADAB891DF5D48400ED8479 /* debate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = debate.swift; sourceTree = "<group>"; };
 		35ADAB8B1DF5D4A000ED8479 /* debateRound.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = debateRound.swift; sourceTree = "<group>"; };
 		35ADAB8D1DF5D4B800ED8479 /* debater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = debater.swift; sourceTree = "<group>"; };
+		35F1292E1ECCA6B500B78BD0 /* PDFViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 				35ADAB611DF5D17F00ED8479 /* Info.plist */,
 				35ADAB5E1DF5D17F00ED8479 /* LaunchScreen.storyboard */,
 				35ADAB591DF5D17F00ED8479 /* Main.storyboard */,
+				35F1292E1ECCA6B500B78BD0 /* PDFViewController.swift */,
 				354E94051EB920D4003C54E6 /* FileCell.swift */,
 				359920311EAE589B00DEC2D6 /* RoundDataTableViewController.swift */,
 				351ACB7D1EB244EA0062D860 /* globalVariables.swift */,
@@ -314,6 +317,7 @@
 				353942D81E57642700051752 /* IntermediaryMenu.swift in Sources */,
 				311C6A741E42481A00371B1D /* QOC_Evaluation_Aff.swift in Sources */,
 				359920321EAE589B00DEC2D6 /* RoundDataTableViewController.swift in Sources */,
+				35F1292F1ECCA6B500B78BD0 /* PDFViewController.swift in Sources */,
 				319F0A1B1DF9C6DE00C65073 /* NewDebateInputPage.swift in Sources */,
 				35ADAB561DF5D17F00ED8479 /* AppDelegate.swift in Sources */,
 				351ACB7E1EB244EA0062D860 /* globalVariables.swift in Sources */,
@@ -480,7 +484,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 7ABW74YQHK;
 				INFOPLIST_FILE = DebateTimerApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = FrenchFriesGroup.DebateTimerApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -496,7 +500,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 7ABW74YQHK;
 				INFOPLIST_FILE = DebateTimerApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = FrenchFriesGroup.DebateTimerApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
