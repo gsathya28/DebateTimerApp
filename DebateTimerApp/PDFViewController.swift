@@ -46,6 +46,8 @@ class PDFViewController: UIViewController, MFMailComposeViewControllerDelegate {
         mailComposerVC.setToRecipients(["ben@goffman.com, gsathya28@gmail.com"])
         mailComposerVC.setSubject("PDF Test")
         mailComposerVC.setMessageBody("I NEED THIS TO WORK!!!!", isHTML: false)
+        let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+        mailComposerVC.addAttachmentData(<#T##attachment: Data##Data#>, mimeType: "application/pdf", fileName: "\(documentsPath)/\(currentDebate?.name).pdf")
         
         return mailComposerVC
     }
