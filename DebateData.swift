@@ -45,8 +45,8 @@ class DebateData: UIViewController {
         
         // 4. Create PDF context and draw
         
-        let pdfData = NSMutableData()
-        UIGraphicsBeginPDFContextToData(pdfData, CGRect.zero, nil)
+        pdfData = NSMutableData()
+        UIGraphicsBeginPDFContextToData(pdfData as! NSMutableData, CGRect.zero, nil)
         
         for i in 1...render.numberOfPages {
             
@@ -61,7 +61,7 @@ class DebateData: UIViewController {
         
         let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
         
-        pdfData.write(toFile: "\(documentsPath)/file.pdf", atomically: true)
+        pdfData?.write(toFile: "\(documentsPath)/file.pdf", atomically: true)
     }
 
     

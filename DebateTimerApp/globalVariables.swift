@@ -29,7 +29,7 @@ var EvalAffspeaker3: debater?
 var EvalNegspeaker1: debater?
 var EvalNegspeaker2: debater?
 var EvalNegspeaker3: debater?
-
+var pdfData: NSData?
 
 func loadCurrentDebate()
 {
