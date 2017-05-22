@@ -27,7 +27,14 @@ class DebateData: UIViewController {
     
     @IBAction func createPDF(_ sender: Any) {
         
-        let html = "<b>Hello <i>World!</i></b> <p>Generate PDF file from HTML in Swift</p>"
+        /*
+        var html = "<table><tr><th> Round</th><th>Comments</th><th>Score</th><th>Time</th></tr>"
+        var array = giveRoundArray(type: "Aff")
+        html = htmlfunc(array: array , html: html)
+        array = giveRoundArray(type: "Neg")
+        html = html + "</table>"
+        
+        
         let fmt = UIMarkupTextPrintFormatter(markupText: html)
         
         // 2. Assign print formatter to UIPrintPageRenderer
@@ -61,8 +68,7 @@ class DebateData: UIViewController {
         
         let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
         
-        pdfData?.write(toFile: "\(documentsPath)/file.pdf", atomically: true)
+        pdfData?.write(toFile: "\(documentsPath)/file.pdf", atomically: true) */
     }
-
     
 }

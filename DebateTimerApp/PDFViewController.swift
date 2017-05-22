@@ -15,7 +15,56 @@ class PDFViewController: UIViewController, MFMailComposeViewControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        var html = "<h2>Affirmative</h2><br>"
+        html = html + "<table><tr><th> Round</th><th>Score</th><th>Comments</th><th>Time</th></tr>"
+        var array = giveRoundArray(type: "Aff")
+        html = htmlfunc(array: array , html: html)
+        html = html + "</table>"
+        
+        html = html + "<h2>Negative</h2><br><table><tr><th> Round</th><th>Score</th><th>Comments</th><th>Time</th></tr>"
+        array = giveRoundArray(type: "Neg")
+        html = htmlfunc(array: array, html: html)
+        html = html + "</table>"
+        
+        
+        
+        let fmt = UIMarkupTextPrintFormatter(markupText: html)
+        
+        // 2. Assign print formatter to UIPrintPageRenderer
+        
+        let render = UIPrintPageRenderer()
+        render.addPrintFormatter(fmt, startingAtPageAt: 0)
+        
+        // 3. Assign paperRect and printableRect
+        
+        let page = CGRect(x: 0, y: 0, width: 595.2, height: 841.8) // A4, 72 dpi
+        let printable = page.insetBy(dx: 0, dy: 0)
+        
+        render.setValue(NSValue(cgRect: page), forKey: "paperRect")
+        render.setValue(NSValue(cgRect: printable), forKey: "printableRect")
+        
+        // 4. Create PDF context and draw
+        
+        pdfData = NSMutableData()
+        UIGraphicsBeginPDFContextToData(pdfData as! NSMutableData, CGRect.zero, nil)
+        
+        for i in 1...render.numberOfPages {
+            
+            UIGraphicsBeginPDFPage();
+            let bounds = UIGraphicsGetPDFContextBounds()
+            render.drawPage(at: i - 1, in: bounds)
+        }
+        
+        UIGraphicsEndPDFContext();
+        
+        // 5. Save PDF file
+        
         let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+        
+        pdfData?.write(toFile: "\(documentsPath)/file.pdf", atomically: true)
+        
+        
         let filePath = "\(documentsPath)/file.pdf"
         let url = NSURL(fileURLWithPath: filePath)
         let urlRequest = NSURLRequest(url: url as URL)
@@ -85,7 +134,6 @@ class PDFViewController: UIViewController, MFMailComposeViewControllerDelegate {
 
         
         mailComposerVC.addAttachmentData(pdfData! as Data, mimeType: "application/pdf", fileName: "debate.pdf" )
-        
         return mailComposerVC
     }
     

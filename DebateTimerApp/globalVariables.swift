@@ -69,6 +69,35 @@ func convertRawTime(rawTime: Int) -> String
     return finalString
 }
 
+func htmlfunc (array: [debateRound] , html : String) -> String{
+    var html1 = ""
+    for round in array {
+        var rawTime: String = ""
+        var rawPoints: String = ""
+        
+        if (round.roundRawTime == -1)
+        {
+            rawTime = "N/A"
+        }
+        else
+        {
+            rawTime = convertRawTime(rawTime: round.roundRawTime!)
+        }
+        if (round.roundPoints == -1)
+        {
+            rawPoints = "N/A"
+        }
+        else{
+            rawPoints = "\(round.roundPoints!)/\(round.roundPointsPossible!)"
+        }
+        
+        html1 = html1 + "<tr></tr><td>\(round.roundName!)</td><td>\(rawTime)</td><td>insert Comments</td><td>\(rawPoints)</td>"
+        
+    }
+    return html + html1
+}
+
+
 /*
 func configuredMailComposeViewController() -> MFMailComposeViewController {
     let emailController = MFMailComposeViewController()

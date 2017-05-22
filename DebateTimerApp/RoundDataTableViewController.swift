@@ -109,6 +109,10 @@ class RoundDataTableViewController: UITableViewController {
         {
             return "Negative"
         }
+        else if (section == 2)
+        {
+            return "Individual Scores"
+        }
         
         return "----"
     }
