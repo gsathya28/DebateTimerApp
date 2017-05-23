@@ -16,17 +16,38 @@ class PDFViewController: UIViewController, MFMailComposeViewControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var html = "<h2>Affirmative</h2><br>"
+        var html = "<h3>Affirmative</h3><br>"
         html = html + "<table><tr><th> Round</th><th>Score</th><th>Comments</th><th>Time</th></tr>"
-        var array = giveRoundArray(type: "Aff")
-        html = htmlfunc(array: array , html: html)
+        let Affarray = giveRoundArray(type: "Aff")
+        html = htmlfunc(array: Affarray , html: html)
         html = html + "</table>"
         
-        html = html + "<h2>Negative</h2><br><table><tr><th> Round</th><th>Score</th><th>Comments</th><th>Time</th></tr>"
-        array = giveRoundArray(type: "Neg")
-        html = htmlfunc(array: array, html: html)
+        html = html + "<h3>Negative</h3><br><table><tr><th> Round</th><th>Score</th><th>Comments</th><th>Time</th></tr>"
+        let Negarray = giveRoundArray(type: "Neg")
+        html = htmlfunc(array: Negarray, html: html)
         html = html + "</table>"
         
+        html = html + "<h3>Individual Scores</h3><br><table><tr><th>Round Scores</th><th>Delivery Score</th><th>Classtime Score</th><th>Total Scores</th></tr>"
+        
+        for debater in (currentDebate?.affSpeakers)!
+        {
+            var roundTotal = 0
+            var roundPointsPossible = 0
+            for round in Affarray
+            {
+                roundPointsPossible = roundPointsPossible + round.roundPointsPossible!
+                if (round.roundType != "QOC")
+                {
+                    roundTotal = roundTotal + round.roundAffPoints!
+                }
+                else
+                {
+                    roundTotal = roundTotal + round.roundPoints!
+                }
+            }
+        
+            html = html + "<tr><td>\(debater.name!)</td><td>\(roundTotal)/\(roundPointsPossible)  +  </td><td>\(debater.deliveryScore!)/5</td><td>\(debater.classtimeScore)/5</td><td></td>\(roundTotal + debater.deliveryScore! + debater.classtimeScore!)/\(roundPointsPossible + 10)</tr>"
+        }
         
         
         let fmt = UIMarkupTextPrintFormatter(markupText: html)
