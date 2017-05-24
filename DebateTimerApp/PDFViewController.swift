@@ -27,12 +27,14 @@ class PDFViewController: UIViewController, MFMailComposeViewControllerDelegate {
         html = htmlfunc(array: Negarray, html: html)
         html = html + "</table>"
         
-        html = html + "<h3>Individual Scores</h3><br><table><tr><th>Round Scores</th><th>Delivery Score</th><th>Classtime Score</th><th>Total Scores</th></tr>"
+        html = html + "<h3>Individual Scores</h3><br><table><tr><th>Name</th><th>Round Scores</th><th>Delivery Score</th><th>Classtime Score</th><th>Total Scores</th></tr>"
         
         for debater in (currentDebate?.affSpeakers)!
         {
             var roundTotal = 0
             var roundPointsPossible = 0
+            var deliveryScore = "N/A"
+            var classtimeScore = "N/A"
             for round in Affarray
             {
                 roundPointsPossible = roundPointsPossible + round.roundPointsPossible!
@@ -45,8 +47,24 @@ class PDFViewController: UIViewController, MFMailComposeViewControllerDelegate {
                     roundTotal = roundTotal + round.roundPoints!
                 }
             }
-        
-            html = html + "<tr><td>\(debater.name!)</td><td>\(roundTotal)/\(roundPointsPossible)  +  </td><td>\(debater.deliveryScore!)/5</td><td>\(debater.classtimeScore)/5</td><td></td>\(roundTotal + debater.deliveryScore! + debater.classtimeScore!)/\(roundPointsPossible + 10)</tr>"
+            if ((debater.name == nil))
+            {
+                debater.name = "N/A"
+            }
+            if (debater.deliveryScore != nil)
+            {
+                deliveryScore = "\(debater.deliveryScore)"
+            }
+            if (debater.classtimeScore != nil)
+            {
+                classtimeScore = "\(debater.classtimeScore)"
+            }
+            
+            
+            html = html + "<tr><td>\(debater.name!)</td>"
+            html = html + "<td>\(roundTotal)/\(roundPointsPossible)  +  </td>"
+            html = html + "<td>\(deliveryScore)/5</td>"
+            html = html + "<td>\(classtimeScore)/5</td><td>\(roundTotal + /*debater.deliveryScore!*/ 0 + /*debater.classtimeScore!*/ 0)/\(roundPointsPossible + 10)</td></tr>"
         }
         
         
@@ -61,7 +79,6 @@ class PDFViewController: UIViewController, MFMailComposeViewControllerDelegate {
         
         let page = CGRect(x: 0, y: 0, width: 595.2, height: 841.8) // A4, 72 dpi
         let printable = page.insetBy(dx: 0, dy: 0)
-        
         render.setValue(NSValue(cgRect: page), forKey: "paperRect")
         render.setValue(NSValue(cgRect: printable), forKey: "printableRect")
         
@@ -109,6 +126,7 @@ class PDFViewController: UIViewController, MFMailComposeViewControllerDelegate {
             self.showSendMailErrorAlert()
         }
     }
+    
     func configuredMailComposeViewController() -> MFMailComposeViewController {
         let mailComposerVC = MFMailComposeViewController()
         mailComposerVC.mailComposeDelegate = self // Extremely important to set the --mailComposeDelegate-- property, NOT the --delegate-- property
