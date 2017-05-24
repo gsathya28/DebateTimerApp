@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -51,7 +51,6 @@
                                 </state>
                                 <connections>
                                     <action selector="PreviousDebates:" destination="BYZ-38-t0r" eventType="touchUpInside" id="n9Q-s0-4KX"/>
-                                    <segue destination="qA5-50-TYx" kind="show" id="ikD-ps-dYe"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JNf-ka-7Jg">
@@ -64,7 +63,7 @@
                                 </state>
                                 <connections>
                                     <action selector="ContinueDebate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cEe-rm-gqG"/>
-                                    <segue destination="pYl-6f-nCg" kind="show" id="53Q-f6-xlA"/>
+                                    <segue destination="qA5-50-TYx" kind="show" id="Mux-ng-6Ga"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1377,14 +1376,23 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gke-Q7-O3Z">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="G5P-5J-AYU">
+                                    <rect key="frame" x="0.0" y="0.0" width="1024" height="109"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                    <state key="normal" title="Back"/>
+                                    <connections>
+                                        <segue destination="Sd7-lN-pfg" kind="unwind" unwindAction="unwindToTitlePageWith_sender:" id="oPA-Wa-ZtR"/>
+                                    </connections>
+                                </button>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="gke-Q7-O3Z" firstAttribute="centerX" secondItem="ZHu-J9-Ast" secondAttribute="centerX" id="CUw-Ub-1hT"/>
                             <constraint firstItem="gke-Q7-O3Z" firstAttribute="centerY" secondItem="ZHu-J9-Ast" secondAttribute="centerY" id="hI9-q5-k54"/>
+                            <constraint firstItem="gke-Q7-O3Z" firstAttribute="height" secondItem="ZHu-J9-Ast" secondAttribute="height" id="kI5-XV-a4h"/>
                             <constraint firstItem="gke-Q7-O3Z" firstAttribute="width" secondItem="ZHu-J9-Ast" secondAttribute="width" id="wW0-V3-NqG"/>
-                            <constraint firstItem="gke-Q7-O3Z" firstAttribute="height" secondItem="ZHu-J9-Ast" secondAttribute="height" id="zrm-xS-BWN"/>
                         </constraints>
                     </view>
                     <connections>
@@ -1392,31 +1400,14 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RJJ-Q1-6uZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Sd7-lN-pfg" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-175.1953125" y="1009.375"/>
-        </scene>
-        <!--Table View Controller-->
-        <scene sceneID="j5f-7j-AUy">
-            <objects>
-                <tableViewController id="pYl-6f-nCg" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="yv8-62-V5c">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <connections>
-                            <outlet property="dataSource" destination="pYl-6f-nCg" id="3n9-h7-gQj"/>
-                            <outlet property="delegate" destination="pYl-6f-nCg" id="jtH-lH-imT"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="u2f-3c-IdA" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-175" y="1988"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="Vs6-I1-zta"/>
         <segue reference="eD5-ex-Dmw"/>
-        <segue reference="ikD-ps-dYe"/>
+        <segue reference="Mux-ng-6Ga"/>
     </inferredMetricsTieBreakers>
 </document>
