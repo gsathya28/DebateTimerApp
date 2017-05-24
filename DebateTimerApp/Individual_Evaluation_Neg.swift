@@ -110,11 +110,20 @@ class Individual_Evaluation_Neg: UIViewController {
         let text6: Int? = Int(textfield6.text!)
         
         //call the alert view method if textfield is blank or wrong
-        if(textfield1.text == "" || textfield2.text == "" || textfield3.text == "" || textfield4.text == "" || textfield5.text == "" || textfield6.text == "" || text1! > 5 || text2! > 5 || text3! > 5 || text4! > 5 || text5! > 5 || text6! > 5 || text1! < 0 || text2! < 0 || text3! < 0 || text4! < 0 || text5! < 0 || text6! < 0)
+        if(textfield6.isHidden == false)
         {
-            showAlertButtonTapped(ContinueButton)
+            if(textfield1.text == "" || textfield2.text == "" || textfield3.text == "" || textfield4.text == "" || textfield5.text == "" || textfield6.text == "" || text1! > 5 || text2! > 5 || text3! > 5 || text4! > 5 || text5! > 5 || text6! > 5 || text1! < 0 || text2! < 0 || text3! < 0 || text4! < 0 || text5! < 0 || text6! < 0)
+            {
+                showAlertButtonTapped(ContinueButton)
+            }
         }
-        
+        else
+        {
+            if(textfield1.text == "" || textfield2.text == "" || textfield3.text == "" || textfield4.text == "" || text1! > 5 || text2! > 5 || text3! > 5 || text4! > 5 || text1! < 0 || text2! < 0 || text3! < 0 || text4! < 0)
+            {
+                showAlertButtonTapped(ContinueButton)
+            }
+        }
         /*currentDebate?.negSpeakers[0] = EvalNegspeaker1!
         currentDebate?.negSpeakers[1] = EvalNegspeaker2!
         
