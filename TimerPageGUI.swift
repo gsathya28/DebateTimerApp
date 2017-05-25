@@ -78,7 +78,7 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
         
         if (roundCounter! < 2)
         {
-            rubricText.text = "Grading Rubric \n\nAre the arguments well supported with logical reasoning or evidence? \n\nDoes the case open and close effectively? Was each argument clearly stated? \n\nWere there 2-3 clearly defined contention statements? (2 points) \n\nWere there 3 supporting pieces of evidence for each contention? (3 pts) \n"
+            rubricText.text = "Grading Rubric \n\nAre the arguments well supported with logical reasoning or evidence? \n\nDoes the case open and close effectively? Was each argument clearly stated? \n\nWere there 2-3 clearly defined contention statements? (2 points) \n\nWere there 3 supporting pieces of evidence for each contention? (3 pts) \n HI!"
             
             
             if (roundCounter! == 1)
