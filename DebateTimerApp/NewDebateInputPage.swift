@@ -126,22 +126,46 @@ class NewDebateInputPage: UIViewController, UIPickerViewDataSource, UIPickerView
         
     @IBAction func showAlertButtonTapped(_ sender: Any) {
         // create the alert
-        let alert = UIAlertController(title: "Missing Information!", message: "You didn't enter the topic/speaker's name", preferredStyle: UIAlertControllerStyle.alert)
+        var alert: UIAlertController?
         
-        // add action buttons
-        alert.addAction(UIAlertAction(title: "Continue", style: UIAlertActionStyle.default, handler: { (action) in alert.dismiss(animated: true, completion: nil)
-            self.performSegue(withIdentifier: "MenuToTimer", sender: nil) //create segue when continue button is clicked
-        }))
-        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
+        if (DebateTopic.text == "")
+        {
+            alert = UIAlertController(title: "Missing Information!", message: "You didn't enter the debate name!", preferredStyle: UIAlertControllerStyle.alert)
+            
+            alert?.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
+            
+        }
+        else if (speak1Aff.text == "" || speak2Aff.text == "" || speak1Neg.text == "" || speak2Neg.text == "")
+        {
+            alert = UIAlertController(title: "Missing Information!", message: "You didn't enter the speaker names", preferredStyle: UIAlertControllerStyle.alert)
+            
+            alert?.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
+        }
+        else if(Speak3Aff.text == "" || Speak3Neg.text == "")
+        {
+            alert = UIAlertController(title: "Missing Information!", message: "You didn't enter the 3rd speaker names (Optional)", preferredStyle: UIAlertControllerStyle.alert)
+            
+            alert?.addAction(UIAlertAction(title: "Continue", style: UIAlertActionStyle.default, handler: { (action) in alert?.dismiss(animated: true, completion: nil)
+                self.performSegue(withIdentifier: "MenuToTimer", sender: nil) //create segue when continue button is clicked
+            }))
+            alert?.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
+            
+        }
+        else
+        {
+            alert = UIAlertController(title: "Missing Information!", message: "Something went wrong!", preferredStyle: UIAlertControllerStyle.alert)
+            
+            alert?.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
+        }
         
         // show the alert view
-        self.present(alert, animated: true, completion: nil)
+        self.present(alert!, animated: true, completion: nil)
     }
         
     @IBAction func ShowAlertView(_ sender: Any) {
        
         //call the alert view method if textfield is blank or wrong
-        if(speak1Aff.text == "" || speak2Aff.text == "" || speak1Neg.text == "" || speak2Neg.text == "" || DebateTopic.text == "" )
+        if(speak1Aff.text == "" || speak2Aff.text == "" || Speak3Aff.text == "" || speak1Neg.text == "" || speak2Neg.text == "" || Speak3Neg.text == "" || DebateTopic.text == "" )
         {
             showAlertButtonTapped(continueButton)
         }
