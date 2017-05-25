@@ -73,7 +73,7 @@ class QOC_Evaluation_Aff: UIViewController, UITextViewDelegate, UIPickerViewData
         }
         
         currentDebate?.rounds[2] = QOCround!
-        let savedData = NSKeyedArchiver.archiveRootObject(currentDebate!, toFile: (ArchiveURLCurrent?.path)!)
+        _ = NSKeyedArchiver.archiveRootObject(currentDebate!, toFile: (ArchiveURLCurrent?.path)!)
     }
     
     

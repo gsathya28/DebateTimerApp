@@ -56,13 +56,7 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
         pickerView1.delegate = self
         pickerView1.dataSource = self
         
-        let defaults = UserDefaults.standard
-        let id = defaults.object(forKey: "current") as? String
-        ArchiveURLCurrent = DocumentsDirectory.appendingPathComponent(id!)
-        roundCounter = defaults.object(forKey: "roundCounter") as? Int
-        
-       
-        currentDebate = NSKeyedUnarchiver.unarchiveObject(withFile: (ArchiveURLCurrent?.path)!) as! debate?
+        loadCurrentDebate()
         
         round = currentDebate?.rounds[roundCounter!]
         AffirmativeLabel.text = round?.roundName
@@ -278,10 +272,10 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
         round?.roundRawTime = rawTime
         round?.roundPoints = intScore
         currentDebate?.rounds[roundCounter!] = round!
-        /*let savedData = NSKeyedArchiver.archiveRootObject(currentDebate!, toFile: (ArchiveURLCurrent?.path)!)
+        let savedData = NSKeyedArchiver.archiveRootObject(currentDebate!, toFile: (ArchiveURLCurrent?.path)!)
         if savedData
         {
-            print("HAHAHAHAHAHA!")
-        }*/
+            print("Save Success!")
+        }
     }
 }
