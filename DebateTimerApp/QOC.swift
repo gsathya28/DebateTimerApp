@@ -224,7 +224,6 @@ class QOC: UIViewController {
         {
             print("HAHAHAHAHAHAHAHAHA!")
         }*/
-
     }
     
 }

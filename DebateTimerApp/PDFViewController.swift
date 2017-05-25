@@ -60,11 +60,48 @@ class PDFViewController: UIViewController, MFMailComposeViewControllerDelegate {
                 classtimeScore = "\(debater.classtimeScore)"
             }
             
+            html = html + "<tr><td>\(debater.name!)</td>"
+            html = html + "<td>\(roundTotal)/\(roundPointsPossible)  +  </td>"
+            html = html + "<td>\(deliveryScore)/5</td>"
+            html = html + "<td>\(classtimeScore)/5</td><td>\(roundTotal + /*debater.deliveryScore!*/ 0 + /*debater.classtimeScore!*/ 0)/\(roundPointsPossible + 10)</td></tr>"
+        }
+        
+        for debater in (currentDebate?.negSpeakers)!
+        {
+            var roundTotal = 0
+            var roundPointsPossible = 0
+            var deliveryScore = "N/A"
+            var classtimeScore = "N/A"
+            for round in Negarray
+            {
+                roundPointsPossible = roundPointsPossible + round.roundPointsPossible!
+                if (round.roundType != "QOC")
+                {
+                    roundTotal = roundTotal + round.roundAffPoints!
+                }
+                else
+                {
+                    roundTotal = roundTotal + round.roundPoints!
+                }
+            }
+            if ((debater.name == nil))
+            {
+                debater.name = "N/A"
+            }
+            if (debater.deliveryScore != nil)
+            {
+                deliveryScore = "\(debater.deliveryScore)"
+            }
+            if (debater.classtimeScore != nil)
+            {
+                classtimeScore = "\(debater.classtimeScore)"
+            }
             
             html = html + "<tr><td>\(debater.name!)</td>"
             html = html + "<td>\(roundTotal)/\(roundPointsPossible)  +  </td>"
             html = html + "<td>\(deliveryScore)/5</td>"
             html = html + "<td>\(classtimeScore)/5</td><td>\(roundTotal + /*debater.deliveryScore!*/ 0 + /*debater.classtimeScore!*/ 0)/\(roundPointsPossible + 10)</td></tr>"
+
         }
         
         

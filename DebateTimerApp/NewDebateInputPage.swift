@@ -79,38 +79,48 @@ class NewDebateInputPage: UIViewController, UIPickerViewDataSource, UIPickerView
         let Neg1 = debater(inName: enteredText[2]!, inStance: "Neg")
         let Neg2 = debater(inName: enteredText[3]!, inStance: "Neg")
         
-        let currentDebate = debate(inName: debateName.text!, Affspeaker1: Aff1, Affspeaker2: Aff2, Negspeaker1: Neg1, Negspeaker2: Neg2)
-        
         let defaults = UserDefaults.standard
         defaults.set(debateName.text, forKey: "current")
         
         let ArchiveURLCurrent = DocumentsDirectory.appendingPathComponent(debateName.text!)
         
-        let savedData = NSKeyedArchiver.archiveRootObject(currentDebate, toFile: ArchiveURLCurrent.path)
+        currentDebate = debate(inName: debateName.text!, Affspeaker1: Aff1, Affspeaker2: Aff2, Negspeaker1: Neg1, Negspeaker2: Neg2)
+        
+        if(Speak3Aff.text == "" && Speak3Neg.text == "")
+        {
+            Speak3AffCount = 0
+            Speak3NegCount = 0
+        }
+        else if (Speak3Neg.text == "")
+        {
+            Speak3AffCount = 1
+            Speak3NegCount = 0
+            let Aff3 = debater(inName: Speak3Aff.text!, inStance: "Aff")
+            currentDebate?.affSpeakers = [Aff1, Aff2, Aff3]
+        }
+        else if(Speak3Aff.text == "")
+        {
+            Speak3AffCount = 0
+            Speak3NegCount = 1
+            let Neg3 = debater(inName: Speak3Neg.text!, inStance: "Neg")
+            currentDebate?.negSpeakers = [Neg1, Neg2, Neg3]
+        }
+        else
+        {
+            Speak3AffCount = 1
+            Speak3NegCount = 1
+            let Aff3 = debater(inName: Speak3Aff.text!, inStance: "Aff")
+            let Neg3 = debater(inName: Speak3Neg.text!, inStance: "Neg")
+            currentDebate?.affSpeakers = [Aff1, Aff2, Aff3]
+            currentDebate?.negSpeakers = [Neg1, Neg2, Neg3]
+        }
+        
+        let savedData = NSKeyedArchiver.archiveRootObject(currentDebate!, toFile: ArchiveURLCurrent.path)
         if savedData
         {
             print("HAHAHAHAHAHA!")
         }
         defaults.set(0, forKey: "roundCounter")
-        
-        
-        if(Speak3Aff.text == "")
-        {
-            Speak3AffCount = 0
-        }
-        else
-        {
-            Speak3AffCount = 1
-        }
-        
-        if(Speak3Neg.text == "")
-        {
-            Speak3NegCount = 0
-        }
-        else
-        {
-            Speak3NegCount = 1
-        }
         
     }
         
@@ -131,7 +141,7 @@ class NewDebateInputPage: UIViewController, UIPickerViewDataSource, UIPickerView
     @IBAction func ShowAlertView(_ sender: Any) {
        
         //call the alert view method if textfield is blank or wrong
-        if(speak1Aff.text == "" || speak2Aff.text == "" || Speak3Aff.text == "" || speak1Neg.text == "" || speak2Neg.text == "" || Speak3Neg.text == "" || DebateTopic.text == "" )
+        if(speak1Aff.text == "" || speak2Aff.text == "" || speak1Neg.text == "" || speak2Neg.text == "" || DebateTopic.text == "" )
         {
             showAlertButtonTapped(continueButton)
         }
