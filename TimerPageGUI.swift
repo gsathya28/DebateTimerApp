@@ -46,11 +46,8 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
     @IBOutlet var save: UIButton!
     
     // Data Save Variables
-    let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
-    var currentDebate: debate?
-    var roundCounter: Int?
     var round: debateRound?
-    var ArchiveURLCurrent: URL?
+    
     @IBOutlet weak var rubricText: UILabel!
     
     // Load Stuff
@@ -59,14 +56,7 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
         pickerView1.delegate = self
         pickerView1.dataSource = self
         
-        let defaults = UserDefaults.standard
-        let id = defaults.object(forKey: "current") as? String
-        ArchiveURLCurrent = DocumentsDirectory.appendingPathComponent(id!)
-        
-        roundCounter = defaults.object(forKey: "roundCounter") as? Int
-        
-       
-        currentDebate = NSKeyedUnarchiver.unarchiveObject(withFile: (ArchiveURLCurrent?.path)!) as! debate?
+        loadCurrentDebate()
         
         round = currentDebate?.rounds[roundCounter!]
         AffirmativeLabel.text = round?.roundName
@@ -82,7 +72,7 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
         
         if (roundCounter! < 2)
         {
-            rubricText.text = "Grading Rubric \n\nAre the arguments well supported with logical reasoning or evidence? \n\nDoes the case open and close effectively? Was each argument clearly stated? \n\nWere there 2-3 clearly defined contention statements? (2 points) \n\nWere there 3 supporting pieces of evidence for each contention? (3 pts) \n HI!"
+            rubricText.text = "Grading Rubric \n\nAre the arguments well supported with logical reasoning or evidence? \n\nDoes the case open and close effectively? Was each argument clearly stated? \n\nWere there 2-3 clearly defined contention statements? (2 points) \n\nWere there 3 supporting pieces of evidence for each contention? (3 pts)"
             
             
             if (roundCounter! == 1)
@@ -222,7 +212,7 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
     
     // Unwind Segue Prep
     @IBAction func unwindToOpenAffPageGUI(_sender: UIStoryboardSegue) {
-        print(String(describing: roundCounter))
+        print("RoundCounter: \(roundCounter!)")
     }
 
     // Timer Action Function
@@ -282,12 +272,10 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
         round?.roundRawTime = rawTime
         round?.roundPoints = intScore
         currentDebate?.rounds[roundCounter!] = round!
-        /*let savedData = NSKeyedArchiver.archiveRootObject(currentDebate!, toFile: (ArchiveURLCurrent?.path)!)
+        let savedData = NSKeyedArchiver.archiveRootObject(currentDebate!, toFile: (ArchiveURLCurrent?.path)!)
         if savedData
         {
-            print("HAHAHAHAHAHA!")
-        }*/
+            print("Save Success!")
+        }
     }
-    
-    
 }

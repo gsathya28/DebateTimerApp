@@ -2,41 +2,29 @@
 //  FileCell.swift
 //  DebateTimerApp
 //
-//  Created by FLAUM, JACOB on 3/21/17.
+//  Created by GOVINDARAJAN, SATHYANARAYANAN on 5/2/17.
 //  Copyright © 2017 GOVINDARAJAN, SATHYANARAYANAN. All rights reserved.
 //
 
 import UIKit
 
 class FileCell: UITableViewCell {
+    
+    
+    @IBOutlet var roundNameText: UILabel!
+    @IBOutlet var roundScoreText: UILabel!
+    @IBOutlet var roundTimeText: UILabel!
+    
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
 
-    var labels: [String: (Label: UILabel, x: Int, y: Int, width: Int, height: Int)] = [
-        "file": (UILabel(), 40, 0, 300, 40),
-        ]
-    
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-        //Add elements as subview to the contentView
-        //self.contentView.addSubview(dataLabel)
-        for ( _ , value) in labels{
-            self.contentView.addSubview(value.Label)
-        }
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+
+        // Configure the view for the selected state
     }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
-        //Set element sizes
-        //dataLabel.frame = CGRect(x: 20, y: 0, width: 70, height: 30)
-        
-        for (_, val) in labels{
-            val.Label.frame = CGRect(x: val.x, y: val.y, width: val.width, height: val.height)
-        }
-    }
-    
+
 }

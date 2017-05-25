@@ -13,10 +13,6 @@ class QOC_Evaluation_Aff: UIViewController, UITextViewDelegate, UIPickerViewData
     @IBOutlet weak var PickerView: UIPickerView!
     var pickerData1 = ["0","1","2","3","4","5"]
     
-    let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
-    var currentDebate: debate?
-    var roundCounter: Int?
-    var ArchiveURLCurrent: URL?
     
     @IBOutlet weak var rubricText: UILabel!
     
@@ -77,7 +73,7 @@ class QOC_Evaluation_Aff: UIViewController, UITextViewDelegate, UIPickerViewData
         }
         
         currentDebate?.rounds[2] = QOCround!
-        let savedData = NSKeyedArchiver.archiveRootObject(currentDebate!, toFile: (ArchiveURLCurrent?.path)!)
+        _ = NSKeyedArchiver.archiveRootObject(currentDebate!, toFile: (ArchiveURLCurrent?.path)!)
     }
     
     

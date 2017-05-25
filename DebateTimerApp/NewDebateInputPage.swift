@@ -7,8 +7,7 @@
 //
 
 import UIKit
-var Speak3AffCount: Int?
-var Speak3NegCount: Int?
+
 
 class NewDebateInputPage: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate
     {
@@ -80,53 +79,97 @@ class NewDebateInputPage: UIViewController, UIPickerViewDataSource, UIPickerView
         let Neg1 = debater(inName: enteredText[2]!, inStance: "Neg")
         let Neg2 = debater(inName: enteredText[3]!, inStance: "Neg")
         
-        let currentDebate = debate(inName: debateName.text!, Affspeaker1: Aff1, Affspeaker2: Aff2, Negspeaker1: Neg1, Negspeaker2: Neg2)
-        
         let defaults = UserDefaults.standard
         defaults.set(debateName.text, forKey: "current")
         
         let ArchiveURLCurrent = DocumentsDirectory.appendingPathComponent(debateName.text!)
         
-        let savedData = NSKeyedArchiver.archiveRootObject(currentDebate, toFile: ArchiveURLCurrent.path)
-        if savedData
-        {
-            print("HAHAHAHAHAHA!")
-        }
-        defaults.set(0, forKey: "roundCounter")
+        currentDebate = debate(inName: debateName.text!, Affspeaker1: Aff1, Affspeaker2: Aff2, Negspeaker1: Neg1, Negspeaker2: Neg2)
         
-        
-        if(Speak3Aff.text == "")
+        if(Speak3Aff.text == "" && Speak3Neg.text == "")
         {
             Speak3AffCount = 0
+            Speak3NegCount = 0
+        }
+        else if (Speak3Neg.text == "")
+        {
+            Speak3AffCount = 1
+            Speak3NegCount = 0
+            let Aff3 = debater(inName: Speak3Aff.text!, inStance: "Aff")
+            currentDebate?.affSpeakers = [Aff1, Aff2, Aff3]
+        }
+        else if(Speak3Aff.text == "")
+        {
+            Speak3AffCount = 0
+            Speak3NegCount = 1
+            let Neg3 = debater(inName: Speak3Neg.text!, inStance: "Neg")
+            currentDebate?.negSpeakers = [Neg1, Neg2, Neg3]
         }
         else
         {
             Speak3AffCount = 1
+            Speak3NegCount = 1
+            let Aff3 = debater(inName: Speak3Aff.text!, inStance: "Aff")
+            let Neg3 = debater(inName: Speak3Neg.text!, inStance: "Neg")
+            currentDebate?.affSpeakers = [Aff1, Aff2, Aff3]
+            currentDebate?.negSpeakers = [Neg1, Neg2, Neg3]
         }
         
-        if(Speak3Neg.text == "")
+        let savedData = NSKeyedArchiver.archiveRootObject(currentDebate!, toFile: ArchiveURLCurrent.path)
+        if savedData
         {
-            Speak3NegCount = 0
+            print("Debate Saved!")
         }
-        else
+        defaults.set(0, forKey: "roundCounter")
+        
+        debateArray.append(currentDebate!)
+        let ArchiveURLDebateCurrent = DocumentsDirectory.appendingPathComponent("debateArray")
+        
+        let savedDebateData = NSKeyedArchiver.archiveRootObject(debateArray, toFile: ArchiveURLDebateCurrent.path)
+        
+        if savedDebateData
         {
-            Speak3NegCount = 1
+            print("Array saved")
         }
         
     }
-        
+    
     @IBAction func showAlertButtonTapped(_ sender: Any) {
         // create the alert
-        let alert = UIAlertController(title: "Missing Information!", message: "You didn't enter the topic/speaker's name", preferredStyle: UIAlertControllerStyle.alert)
+        var alert: UIAlertController?
         
-        // add action buttons
-        alert.addAction(UIAlertAction(title: "Continue", style: UIAlertActionStyle.default, handler: { (action) in alert.dismiss(animated: true, completion: nil)
-            self.performSegue(withIdentifier: "MenuToTimer", sender: nil) //create segue when continue button is clicked
-        }))
-        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
+        if (DebateTopic.text == "")
+        {
+            alert = UIAlertController(title: "Missing Information!", message: "You didn't enter the debate name!", preferredStyle: UIAlertControllerStyle.alert)
+            
+            alert?.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
+            
+        }
+        else if (speak1Aff.text == "" || speak2Aff.text == "" || speak1Neg.text == "" || speak2Neg.text == "")
+        {
+            alert = UIAlertController(title: "Missing Information!", message: "You didn't enter the speaker names", preferredStyle: UIAlertControllerStyle.alert)
+            
+            alert?.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
+        }
+        else if(Speak3Aff.text == "" || Speak3Neg.text == "")
+        {
+            alert = UIAlertController(title: "Missing Information!", message: "You didn't enter the 3rd speaker names (Optional)", preferredStyle: UIAlertControllerStyle.alert)
+            
+            alert?.addAction(UIAlertAction(title: "Continue", style: UIAlertActionStyle.default, handler: { (action) in alert?.dismiss(animated: true, completion: nil)
+                self.performSegue(withIdentifier: "MenuToTimer", sender: nil) //create segue when continue button is clicked
+            }))
+            alert?.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
+            
+        }
+        else
+        {
+            alert = UIAlertController(title: "Missing Information!", message: "Something went wrong!", preferredStyle: UIAlertControllerStyle.alert)
+            
+            alert?.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
+        }
         
         // show the alert view
-        self.present(alert, animated: true, completion: nil)
+        self.present(alert!, animated: true, completion: nil)
     }
         
     @IBAction func ShowAlertView(_ sender: Any) {

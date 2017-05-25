@@ -23,10 +23,6 @@ class IntermediaryMenu: UIViewController {
     @IBOutlet weak var roundLabel: UILabel!
     
     // Data Variables
-    let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
-    var ArchiveURLCurrent: URL?
-    var roundCounter: Int?
-    var currentDebate: debate?
     var round: debateRound?
     
     override func viewDidLoad() {
@@ -76,7 +72,6 @@ class IntermediaryMenu: UIViewController {
         {
             continueRegular.isEnabled = false
             continueQOC.isEnabled = true
-            
         }
         if (roundCounter! == 6)
         {
@@ -93,6 +88,12 @@ class IntermediaryMenu: UIViewController {
             individualEval.isEnabled = false
             roundLabel.isHidden = true
             finishedLabel.isHidden = false
+            currentDebate?.isFinished = true
+            let savedData = NSKeyedArchiver.archiveRootObject(currentDebate!, toFile: (ArchiveURLCurrent?.path)!)
+            if savedData
+            {
+                print("Finished Save Success!")
+            }
         }
         
         
@@ -109,7 +110,12 @@ class IntermediaryMenu: UIViewController {
         let defaults = UserDefaults.standard
         defaults.set(roundCounter, forKey: "roundCounter")
     }
+    
+    @IBAction func unwindToMenuFromDebateData(_sender: UIStoryboardSegue){
+        
+    }
 
+    
     /*
     // MARK: - Navigation
 

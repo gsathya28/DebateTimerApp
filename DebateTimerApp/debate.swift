@@ -15,7 +15,7 @@ class debate: NSObject, NSCoding {
     var negSpeakers = [debater]()
     var rounds = [debateRound]()
     var name: String?
-    
+    var isFinished: Bool = false
     
     // Initializers - based on the number of debaters
     
@@ -25,13 +25,13 @@ class debate: NSObject, NSCoding {
         self.affSpeakers = [Affspeaker1, Affspeaker2]
         self.negSpeakers = [Negspeaker1, Negspeaker2]
         self.rounds = [
-            debateRound(inName: "Opening Statement for Affirmative - Love ", inType: "Opener", possPoints: 15),
-            debateRound(inName: "Opening Statement for Negative", inType: "Opener", possPoints: 15),
-            debateRound(inName: "QOC", inType: "Question", possPoints: 15),
-            debateRound(inName: "RebAff", inType: "Rebuttal", possPoints: 15),
-            debateRound(inName: "RebNeg", inType: "Rebuttal", possPoints: 15),
-            debateRound(inName: "CloseAff", inType: "Closing", possPoints: 15),
-            debateRound(inName: "CloseNeg", inType: "Closing", possPoints: 15)
+            debateRound(inName: "Opening Statement for Affirmative", inType: "Aff", possPoints: 15),
+            debateRound(inName: "Opening Statement for Negative", inType: "Neg", possPoints: 15),
+            debateRound(inName: "Questions Of Clarification", inType: "Quest", possPoints: 15),
+            debateRound(inName: "Rebuttal Affirmative", inType: "Aff", possPoints: 15),
+            debateRound(inName: "Rebuttal Negative", inType: "Neg", possPoints: 15),
+            debateRound(inName: "Closing Statements Affirmative", inType: "Aff", possPoints: 15),
+            debateRound(inName: "Closing Statements Negative", inType: "Neg", possPoints: 15)
         ]
     }
     
@@ -41,13 +41,13 @@ class debate: NSObject, NSCoding {
         self.affSpeakers = [Affspeaker1, Affspeaker2, Affspeaker3]
         self.negSpeakers = [Negspeaker1, Negspeaker2]
         self.rounds = [
-            debateRound(inName: "Opening Statement for Affirmative - Love ", inType: "Opener", possPoints: 15),
-            debateRound(inName: "Opening Statement for Negative", inType: "Opener", possPoints: 15),
-            debateRound(inName: "QOC", inType: "Question", possPoints: 15),
-            debateRound(inName: "RebAff", inType: "Rebuttal", possPoints: 15),
-            debateRound(inName: "RebNeg", inType: "Rebuttal", possPoints: 15),
-            debateRound(inName: "CloseAff", inType: "Closing", possPoints: 15),
-            debateRound(inName: "CloseNeg", inType: "Closing", possPoints: 15)
+            debateRound(inName: "Opening Statement for Affirmative", inType: "Aff", possPoints: 15),
+            debateRound(inName: "Opening Statement for Negative", inType: "Neg", possPoints: 15),
+            debateRound(inName: "Questions Of Clarification", inType: "Quest", possPoints: 15),
+            debateRound(inName: "Rebuttal Affirmative", inType: "Aff", possPoints: 15),
+            debateRound(inName: "Rebuttal Negative", inType: "Neg", possPoints: 15),
+            debateRound(inName: "Closing Statements Affirmative", inType: "Aff", possPoints: 15),
+            debateRound(inName: "Closing Statements Negative", inType: "Neg", possPoints: 15)
         ]
     }
     
@@ -57,13 +57,13 @@ class debate: NSObject, NSCoding {
         self.affSpeakers = [Affspeaker1, Affspeaker2]
         self.negSpeakers = [Negspeaker1, Negspeaker2, NegSpeaker3]
         self.rounds = [
-            debateRound(inName: "Opening Statement for Affirmative - Love ", inType: "Opener", possPoints: 15),
-            debateRound(inName: "Opening Statement for Negative", inType: "Opener", possPoints: 15),
-            debateRound(inName: "QOC", inType: "Question", possPoints: 15),
-            debateRound(inName: "RebAff", inType: "Rebuttal", possPoints: 15),
-            debateRound(inName: "RebNeg", inType: "Rebuttal", possPoints: 15),
-            debateRound(inName: "CloseAff", inType: "Closing", possPoints: 15),
-            debateRound(inName: "CloseNeg", inType: "Closing", possPoints: 15)
+            debateRound(inName: "Opening Statement for Affirmative", inType: "Aff", possPoints: 15),
+            debateRound(inName: "Opening Statement for Negative", inType: "Neg", possPoints: 15),
+            debateRound(inName: "Questions Of Clarification", inType: "Quest", possPoints: 15),
+            debateRound(inName: "Rebuttal Affirmative", inType: "Aff", possPoints: 15),
+            debateRound(inName: "Rebuttal Negative", inType: "Neg", possPoints: 15),
+            debateRound(inName: "Closing Statements Affirmative", inType: "Aff", possPoints: 15),
+            debateRound(inName: "Closing Statements Negative", inType: "Neg", possPoints: 15)
         ]
     }
     
@@ -73,13 +73,13 @@ class debate: NSObject, NSCoding {
         self.affSpeakers = [Affspeaker1, Affspeaker2, Affspeaker3]
         self.negSpeakers = [Negspeaker1, Negspeaker2, Negspeaker3]
         self.rounds = [
-            debateRound(inName: "Opening Statement for Affirmative - Love ", inType: "Opener", possPoints: 15),
-            debateRound(inName: "Opening Statement for Negative", inType: "Opener", possPoints: 15),
-            debateRound(inName: "QOC", inType: "Question", possPoints: 15),
-            debateRound(inName: "RebAff", inType: "Rebuttal", possPoints: 15),
-            debateRound(inName: "RebNeg", inType: "Rebuttal", possPoints: 15),
-            debateRound(inName: "CloseAff", inType: "Closing", possPoints: 15),
-            debateRound(inName: "CloseNeg", inType: "Closing", possPoints: 15)
+            debateRound(inName: "Opening Statement for Affirmative", inType: "Aff", possPoints: 15),
+            debateRound(inName: "Opening Statement for Negative", inType: "Neg", possPoints: 15),
+            debateRound(inName: "Questions Of Clarification", inType: "Quest", possPoints: 15),
+            debateRound(inName: "Rebuttal Affirmative", inType: "Aff", possPoints: 15),
+            debateRound(inName: "Rebuttal Negative", inType: "Neg", possPoints: 15),
+            debateRound(inName: "Closing Statements Affirmative", inType: "Aff", possPoints: 15),
+            debateRound(inName: "Closing Statements Negative", inType: "Neg", possPoints: 15)
         ]
     }
     
@@ -106,15 +106,8 @@ class debate: NSObject, NSCoding {
         var scoresArray: [String] = []
         for index in 1...(self.rounds.count)
         {
-            if (index != 3)
-            {
-                
-                var ScoreString: String = String(describing: self.rounds[index-1].roundPoints)
-                let index = ScoreString.index(ScoreString.startIndex, offsetBy: 8)
-                ScoreString = ScoreString.substring(from: index)
-                scoresArray.append(ScoreString)
-                
-            }
+            let ScoreString: String = self.rounds[index-1].roundName!
+            scoresArray.append(ScoreString)
         }
         return scoresArray
     }

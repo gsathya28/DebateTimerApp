@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		106FBD3C1E8181E700ED8AED /* FileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106FBD3B1E8181E700ED8AED /* FileCell.swift */; };
-		10C302F21E7B2A0200C236D3 /* TableView-sortOf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C302F11E7B2A0200C236D3 /* TableView-sortOf.swift */; };
 		10D9241B1E044E1B004D8AD5 /* TimerPageGUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D9241A1E044E1B004D8AD5 /* TimerPageGUI.swift */; };
 		311C6A741E42481A00371B1D /* QOC_Evaluation_Aff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311C6A731E42481A00371B1D /* QOC_Evaluation_Aff.swift */; };
 		311C6A761E42494F00371B1D /* QOC_Evalutation_Neg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311C6A751E42494F00371B1D /* QOC_Evalutation_Neg.swift */; };
@@ -17,7 +15,10 @@
 		31A31BBA1E312875008B21E9 /* QOC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A31BB91E312875008B21E9 /* QOC.swift */; };
 		31EFD0EF1E845B300003814E /* Individual_Evaluation_Aff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EFD0EE1E845B300003814E /* Individual_Evaluation_Aff.swift */; };
 		31EFD0F11E845B7B0003814E /* Individual_Evaluation_Neg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EFD0F01E845B7B0003814E /* Individual_Evaluation_Neg.swift */; };
+		351ACB7E1EB244EA0062D860 /* globalVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351ACB7D1EB244EA0062D860 /* globalVariables.swift */; };
 		353942D81E57642700051752 /* IntermediaryMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353942D71E57642700051752 /* IntermediaryMenu.swift */; };
+		354E94061EB920D4003C54E6 /* FileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354E94051EB920D4003C54E6 /* FileCell.swift */; };
+		359920321EAE589B00DEC2D6 /* RoundDataTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359920311EAE589B00DEC2D6 /* RoundDataTableViewController.swift */; };
 		35ADAB561DF5D17F00ED8479 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35ADAB551DF5D17F00ED8479 /* AppDelegate.swift */; };
 		35ADAB581DF5D17F00ED8479 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35ADAB571DF5D17F00ED8479 /* ViewController.swift */; };
 		35ADAB5B1DF5D17F00ED8479 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35ADAB591DF5D17F00ED8479 /* Main.storyboard */; };
@@ -28,6 +29,7 @@
 		35ADAB8A1DF5D48400ED8479 /* debate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35ADAB891DF5D48400ED8479 /* debate.swift */; };
 		35ADAB8C1DF5D4A000ED8479 /* debateRound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35ADAB8B1DF5D4A000ED8479 /* debateRound.swift */; };
 		35ADAB8E1DF5D4B800ED8479 /* debater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35ADAB8D1DF5D4B800ED8479 /* debater.swift */; };
+		35F1292F1ECCA6B500B78BD0 /* PDFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F1292E1ECCA6B500B78BD0 /* PDFViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,8 +50,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		106FBD3B1E8181E700ED8AED /* FileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileCell.swift; sourceTree = "<group>"; };
-		10C302F11E7B2A0200C236D3 /* TableView-sortOf.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "TableView-sortOf.swift"; path = "../TableView-sortOf.swift"; sourceTree = "<group>"; };
 		10D9241A1E044E1B004D8AD5 /* TimerPageGUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimerPageGUI.swift; path = ../TimerPageGUI.swift; sourceTree = "<group>"; };
 		311C6A731E42481A00371B1D /* QOC_Evaluation_Aff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QOC_Evaluation_Aff.swift; sourceTree = "<group>"; };
 		311C6A751E42494F00371B1D /* QOC_Evalutation_Neg.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QOC_Evalutation_Neg.swift; sourceTree = "<group>"; };
@@ -58,7 +58,10 @@
 		31A31BB91E312875008B21E9 /* QOC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QOC.swift; sourceTree = "<group>"; };
 		31EFD0EE1E845B300003814E /* Individual_Evaluation_Aff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Individual_Evaluation_Aff.swift; sourceTree = "<group>"; };
 		31EFD0F01E845B7B0003814E /* Individual_Evaluation_Neg.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Individual_Evaluation_Neg.swift; sourceTree = "<group>"; };
+		351ACB7D1EB244EA0062D860 /* globalVariables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = globalVariables.swift; sourceTree = "<group>"; };
 		353942D71E57642700051752 /* IntermediaryMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntermediaryMenu.swift; sourceTree = "<group>"; };
+		354E94051EB920D4003C54E6 /* FileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileCell.swift; sourceTree = "<group>"; };
+		359920311EAE589B00DEC2D6 /* RoundDataTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundDataTableViewController.swift; sourceTree = "<group>"; };
 		35ADAB521DF5D17F00ED8479 /* DebateTimerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DebateTimerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35ADAB551DF5D17F00ED8479 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		35ADAB571DF5D17F00ED8479 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -75,6 +78,7 @@
 		35ADAB891DF5D48400ED8479 /* debate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = debate.swift; sourceTree = "<group>"; };
 		35ADAB8B1DF5D4A000ED8479 /* debateRound.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = debateRound.swift; sourceTree = "<group>"; };
 		35ADAB8D1DF5D4B800ED8479 /* debater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = debater.swift; sourceTree = "<group>"; };
+		35F1292E1ECCA6B500B78BD0 /* PDFViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,10 +138,12 @@
 				35ADAB611DF5D17F00ED8479 /* Info.plist */,
 				35ADAB5E1DF5D17F00ED8479 /* LaunchScreen.storyboard */,
 				35ADAB591DF5D17F00ED8479 /* Main.storyboard */,
+				35F1292E1ECCA6B500B78BD0 /* PDFViewController.swift */,
+				354E94051EB920D4003C54E6 /* FileCell.swift */,
+				359920311EAE589B00DEC2D6 /* RoundDataTableViewController.swift */,
+				351ACB7D1EB244EA0062D860 /* globalVariables.swift */,
 				31EFD0F01E845B7B0003814E /* Individual_Evaluation_Neg.swift */,
 				31EFD0EE1E845B300003814E /* Individual_Evaluation_Aff.swift */,
-				106FBD3B1E8181E700ED8AED /* FileCell.swift */,
-				10C302F11E7B2A0200C236D3 /* TableView-sortOf.swift */,
 				353942D71E57642700051752 /* IntermediaryMenu.swift */,
 				311C6A751E42494F00371B1D /* QOC_Evalutation_Neg.swift */,
 				311C6A731E42481A00371B1D /* QOC_Evaluation_Aff.swift */,
@@ -303,18 +309,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				35ADAB581DF5D17F00ED8479 /* ViewController.swift in Sources */,
+				354E94061EB920D4003C54E6 /* FileCell.swift in Sources */,
 				31EFD0EF1E845B300003814E /* Individual_Evaluation_Aff.swift in Sources */,
 				10D9241B1E044E1B004D8AD5 /* TimerPageGUI.swift in Sources */,
 				31EFD0F11E845B7B0003814E /* Individual_Evaluation_Neg.swift in Sources */,
 				35ADAB8C1DF5D4A000ED8479 /* debateRound.swift in Sources */,
 				353942D81E57642700051752 /* IntermediaryMenu.swift in Sources */,
 				311C6A741E42481A00371B1D /* QOC_Evaluation_Aff.swift in Sources */,
+				359920321EAE589B00DEC2D6 /* RoundDataTableViewController.swift in Sources */,
+				35F1292F1ECCA6B500B78BD0 /* PDFViewController.swift in Sources */,
 				319F0A1B1DF9C6DE00C65073 /* NewDebateInputPage.swift in Sources */,
 				35ADAB561DF5D17F00ED8479 /* AppDelegate.swift in Sources */,
-				106FBD3C1E8181E700ED8AED /* FileCell.swift in Sources */,
+				351ACB7E1EB244EA0062D860 /* globalVariables.swift in Sources */,
 				35ADAB8A1DF5D48400ED8479 /* debate.swift in Sources */,
 				3153C57B1E52594A00EE4F7D /* DebateData.swift in Sources */,
-				10C302F21E7B2A0200C236D3 /* TableView-sortOf.swift in Sources */,
 				311C6A761E42494F00371B1D /* QOC_Evalutation_Neg.swift in Sources */,
 				31A31BBA1E312875008B21E9 /* QOC.swift in Sources */,
 				35ADAB8E1DF5D4B800ED8479 /* debater.swift in Sources */,
@@ -474,9 +482,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 7ABW74YQHK;
+				DEVELOPMENT_TEAM = 5Q3A3L377W;
 				INFOPLIST_FILE = DebateTimerApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = FrenchFriesGroup.DebateTimerApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -490,9 +498,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 7ABW74YQHK;
+				DEVELOPMENT_TEAM = 5Q3A3L377W;
 				INFOPLIST_FILE = DebateTimerApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = FrenchFriesGroup.DebateTimerApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
