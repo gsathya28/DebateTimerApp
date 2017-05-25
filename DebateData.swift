@@ -26,9 +26,7 @@ class DebateData: UIViewController {
     
     @IBAction func makePDF(_ sender: Any) {
         
-        var html = "<!DOCTYPE html><html><head><style>table, th, td { border: 1px solid black;}</style><table><tr><th> Round</th><th>Comments</th><th>Score</th><th>Time </th></tr>"
-        html = htmlfunc(array: giveRoundArray(type: "Aff"), html: html)
-        html = htmlfunc(array: giveRoundArray(type: "Neg"), html: html)
+        let html = "<b>Hello <i>World!</i></b> <p>Generate PDF file from HTML in Swift</p>"
         let fmt = UIMarkupTextPrintFormatter(markupText: html)
         let render = UIPrintPageRenderer()
         render.addPrintFormatter(fmt, startingAtPageAt: 0)
@@ -55,14 +53,5 @@ class DebateData: UIViewController {
         
         pdfData.write(toFile: "\(documentsPath)/\(currentDebate?.name).pdf", atomically: true)
     }
-    //adds affirmative/negative array debate data to string html
-    func htmlfunc (array: [debateRound] , html : String) -> String{
-        var html1 = ""
-    for round in array {
-    html1 = html1 + "<tr></tr><td>round.roundname</td><td>/(round.roundRawTime) b</td><td>insert</td><td>\(round.roundPoints)/\(round.roundPointsPossible)</td>"
     
-}
-        return html + html1
-}
-
 }
