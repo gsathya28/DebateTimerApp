@@ -15,7 +15,7 @@ class debate: NSObject, NSCoding {
     var negSpeakers = [debater]()
     var rounds = [debateRound]()
     var name: String?
-    
+    var isFinished: Bool = false
     
     // Initializers - based on the number of debaters
     

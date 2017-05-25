@@ -31,6 +31,10 @@ var EvalNegspeaker2: debater?
 var EvalNegspeaker3: debater?
 var pdfData: NSData?
 
+// -----------
+
+var debateArray: [debate] = []
+
 func loadCurrentDebate()
 {
     let defaults = UserDefaults.standard

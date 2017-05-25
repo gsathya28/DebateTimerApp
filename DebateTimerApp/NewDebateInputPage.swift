@@ -118,12 +118,22 @@ class NewDebateInputPage: UIViewController, UIPickerViewDataSource, UIPickerView
         let savedData = NSKeyedArchiver.archiveRootObject(currentDebate!, toFile: ArchiveURLCurrent.path)
         if savedData
         {
-            print("HAHAHAHAHAHA!")
+            print("Debate Saved!")
         }
         defaults.set(0, forKey: "roundCounter")
         
-    }
+        debateArray.append(currentDebate!)
+        let ArchiveURLDebateCurrent = DocumentsDirectory.appendingPathComponent("debateArray")
         
+        let savedDebateData = NSKeyedArchiver.archiveRootObject(debateArray, toFile: ArchiveURLDebateCurrent.path)
+        
+        if savedDebateData
+        {
+            print("Array saved")
+        }
+        
+    }
+    
     @IBAction func showAlertButtonTapped(_ sender: Any) {
         // create the alert
         var alert: UIAlertController?

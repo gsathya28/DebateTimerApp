@@ -72,7 +72,6 @@ class IntermediaryMenu: UIViewController {
         {
             continueRegular.isEnabled = false
             continueQOC.isEnabled = true
-            
         }
         if (roundCounter! == 6)
         {
@@ -89,6 +88,12 @@ class IntermediaryMenu: UIViewController {
             individualEval.isEnabled = false
             roundLabel.isHidden = true
             finishedLabel.isHidden = false
+            currentDebate?.isFinished = true
+            let savedData = NSKeyedArchiver.archiveRootObject(currentDebate!, toFile: (ArchiveURLCurrent?.path)!)
+            if savedData
+            {
+                print("Finished Save Success!")
+            }
         }
         
         
