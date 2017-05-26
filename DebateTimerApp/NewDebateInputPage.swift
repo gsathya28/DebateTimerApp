@@ -123,6 +123,8 @@ class NewDebateInputPage: UIViewController, UIPickerViewDataSource, UIPickerView
         defaults.set(0, forKey: "roundCounter")
         
         debateArray.append(currentDebate!)
+        
+        // Really Important Save!
         let ArchiveURLDebateCurrent = DocumentsDirectory.appendingPathComponent("debateArray")
         
         let savedDebateData = NSKeyedArchiver.archiveRootObject(debateArray, toFile: ArchiveURLDebateCurrent.path)

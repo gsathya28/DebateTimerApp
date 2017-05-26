@@ -30,9 +30,25 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
     }
     
     @IBAction func ContinueDebate(_ sender: AnyObject) {
+        loadDebateArray()
+        for debate in debateArray
+        {
+            if (!(debate.isFinished))
+            {
+                unfinishedDebates.append(debate)
+            }
+        }
     }
     
     @IBAction func PreviousDebates(_ sender: AnyObject) {
+        loadDebateArray()
+        for debate in debateArray
+        {
+            if (debate.isFinished)
+            {
+                finishedDebates.append(debate)
+            }
+        }
     }
     
 }

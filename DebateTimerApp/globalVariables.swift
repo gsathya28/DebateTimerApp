@@ -34,6 +34,9 @@ var pdfData: NSData?
 // -----------
 
 var debateArray: [debate] = []
+var finishedDebates: [debate] = []
+var unfinishedDebates: [debate] = []
+// The path: let ArchiveURLDebateCurrent = DocumentsDirectory.appendingPathComponent("debateArray")
 
 func loadCurrentDebate()
 {
@@ -43,6 +46,12 @@ func loadCurrentDebate()
     let id = defaults.object(forKey: "current") as? String
     ArchiveURLCurrent = DocumentsDirectory.appendingPathComponent(id!)
     currentDebate = NSKeyedUnarchiver.unarchiveObject(withFile: (ArchiveURLCurrent?.path)!) as! debate?
+}
+
+func loadDebateArray()
+{
+    let ArchiveURLDebateCurrent = DocumentsDirectory.appendingPathComponent("debateArray")
+    debateArray = NSKeyedUnarchiver.unarchiveObject(withFile: ArchiveURLDebateCurrent.path) as! [debate]
 }
 
 func giveRoundArray(type: String) -> [debateRound]
