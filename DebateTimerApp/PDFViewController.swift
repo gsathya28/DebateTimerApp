@@ -17,12 +17,12 @@ class PDFViewController: UIViewController, MFMailComposeViewControllerDelegate {
         super.viewDidLoad()
         
         var html = "<h3>Affirmative</h3><br>"
-        html = html + "<table><tr><th> Round</th><th>Score</th><th>Comments</th><th>Time</th></tr>"
+        html = html + "<table><tr><th> Round</th><th>Time</th><th>Comments</th><th>Score</th></tr>"
         let Affarray = giveRoundArray(type: "Aff")
         html = htmlfunc(array: Affarray , html: html)
         html = html + "</table>"
         
-        html = html + "<h3>Negative</h3><br><table><tr><th> Round</th><th>Score</th><th>Comments</th><th>Time</th></tr>"
+        html = html + "<h3>Negative</h3><br><table><tr><th> Round</th><th>Time</th><th>Comments</th><th>Score</th></tr>"
         let Negarray = giveRoundArray(type: "Neg")
         html = htmlfunc(array: Negarray, html: html)
         html = html + "</table>"
