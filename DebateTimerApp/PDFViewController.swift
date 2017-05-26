@@ -172,7 +172,94 @@ class PDFViewController: UIViewController, MFMailComposeViewControllerDelegate {
         mailComposerVC.setSubject("Debates")
         mailComposerVC.setMessageBody("PDF summary of debate...", isHTML: false)
         
-        let html = "<b>Hello <i>World!</i></b> <p>Generate PDF file from HTML in Swift</p>"
+        var html = "<h3>Affirmative</h3><br>"
+        html = html + "<table><tr><th> Round</th><th>Score</th><th>Comments</th><th>Time</th></tr>"
+        let Affarray = giveRoundArray(type: "Aff")
+        html = htmlfunc(array: Affarray , html: html)
+        html = html + "</table>"
+        
+        html = html + "<h3>Negative</h3><br><table><tr><th> Round</th><th>Score</th><th>Comments</th><th>Time</th></tr>"
+        let Negarray = giveRoundArray(type: "Neg")
+        html = htmlfunc(array: Negarray, html: html)
+        html = html + "</table>"
+        
+        html = html + "<h3>Individual Scores</h3><br><table><tr><th>Name</th><th>Round Scores</th><th>Delivery Score</th><th>Classtime Score</th><th>Total Scores</th></tr>"
+        
+        for debater in (currentDebate?.affSpeakers)!
+        {
+            var roundTotal = 0
+            var roundPointsPossible = 0
+            var deliveryScore = "N/A"
+            var classtimeScore = "N/A"
+            for round in Affarray
+            {
+                roundPointsPossible = roundPointsPossible + round.roundPointsPossible!
+                if (round.roundType != "QOC")
+                {
+                    roundTotal = roundTotal + round.roundAffPoints!
+                }
+                else
+                {
+                    roundTotal = roundTotal + round.roundPoints!
+                }
+            }
+            if ((debater.name == nil))
+            {
+                debater.name = "N/A"
+            }
+            if (debater.deliveryScore != nil)
+            {
+                deliveryScore = "\(debater.deliveryScore)"
+            }
+            if (debater.classtimeScore != nil)
+            {
+                classtimeScore = "\(debater.classtimeScore)"
+            }
+            
+            html = html + "<tr><td>\(debater.name!)</td>"
+            html = html + "<td>\(roundTotal)/\(roundPointsPossible)  +  </td>"
+            html = html + "<td>\(deliveryScore)/5</td>"
+            html = html + "<td>\(classtimeScore)/5</td><td>\(roundTotal + /*debater.deliveryScore!*/ 0 + /*debater.classtimeScore!*/ 0)/\(roundPointsPossible + 10)</td></tr>"
+        }
+        
+        for debater in (currentDebate?.negSpeakers)!
+        {
+            var roundTotal = 0
+            var roundPointsPossible = 0
+            var deliveryScore = "N/A"
+            var classtimeScore = "N/A"
+            for round in Negarray
+            {
+                roundPointsPossible = roundPointsPossible + round.roundPointsPossible!
+                if (round.roundType != "QOC")
+                {
+                    roundTotal = roundTotal + round.roundAffPoints!
+                }
+                else
+                {
+                    roundTotal = roundTotal + round.roundPoints!
+                }
+            }
+            if ((debater.name == nil))
+            {
+                debater.name = "N/A"
+            }
+            if (debater.deliveryScore != nil)
+            {
+                deliveryScore = "\(debater.deliveryScore)"
+            }
+            if (debater.classtimeScore != nil)
+            {
+                classtimeScore = "\(debater.classtimeScore)"
+            }
+            
+            html = html + "<tr><td>\(debater.name!)</td>"
+            html = html + "<td>\(roundTotal)/\(roundPointsPossible)  +  </td>"
+            html = html + "<td>\(deliveryScore)/5</td>"
+            html = html + "<td>\(classtimeScore)/5</td><td>\(roundTotal + /*debater.deliveryScore!*/ 0 + /*debater.classtimeScore!*/ 0)/\(roundPointsPossible + 10)</td></tr>"
+            
+        }
+        
         let fmt = UIMarkupTextPrintFormatter(markupText: html)
         
         // 2. Assign print formatter to UIPrintPageRenderer
