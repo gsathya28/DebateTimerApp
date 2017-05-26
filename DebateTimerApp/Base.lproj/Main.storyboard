@@ -708,6 +708,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                     <tabBarItem key="tabBarItem" title="NEGATIVE" id="106-ld-B7Y"/>
                     <connections>
                         <outlet property="PickerView" destination="NxJ-CJ-8iQ" id="M6L-F7-OyD"/>
+                        <outlet property="commentsBox" destination="kJZ-SE-G7u" id="YHG-Rb-QNO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GgM-Lh-w7U" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -793,6 +794,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                     <tabBarItem key="tabBarItem" title="AFFIRMATIVE" id="Ywx-l2-yzj"/>
                     <connections>
                         <outlet property="PickerView" destination="Nbk-8X-wa9" id="ugT-VI-EPd"/>
+                        <outlet property="commentsBox" destination="X7q-aS-Tb5" id="vTe-SK-bcF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kjb-6C-1zZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1370,7 +1372,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Vs6-I1-zta"/>
+        <segue reference="Czm-Oh-EDZ"/>
         <segue reference="eD5-ex-Dmw"/>
     </inferredMetricsTieBreakers>
 </document>
