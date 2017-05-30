@@ -15,11 +15,12 @@ class QOC_Evalutation_Neg: UIViewController, UITextViewDelegate, UIPickerViewDat
     // Picker Data Variables
     @IBOutlet weak var PickerView: UIPickerView!
     var pickerData1 = ["0","1","2","3","4","5"]
-    
+    var keyboardHeight: Int = 0
     // Debate Data Variables
     
     // UI Label Properties
     @IBOutlet weak var rubricText: UILabel!
+    @IBOutlet weak var commentsBox: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +41,29 @@ class QOC_Evalutation_Neg: UIViewController, UITextViewDelegate, UIPickerViewDat
         
         QOCround = currentDebate?.rounds[roundCounter!]
         
+        commentsBox!.delegate = self
+        NotificationCenter.default.addObserver(self, selector: #selector(TimerPageGUI.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
     }
+    
+    func keyboardWillShow(notification:NSNotification)
+    {
+        let userInfo:NSDictionary = notification.userInfo! as NSDictionary
+        let keyboardFrame:NSValue = userInfo.value(forKey: UIKeyboardFrameEndUserInfoKey) as! NSValue
+        let keyboardRectangle = keyboardFrame.cgRectValue
+        self.keyboardHeight = Int(keyboardRectangle.height)
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView)
+    {
+        self.view.frame = self.view.frame.offsetBy(dx: 0, dy: -(CGFloat(keyboardHeight)))
+        textView.text = ""
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView)
+    {
+        self.view.frame = self.view.frame.offsetBy(dx: 0, dy: CGFloat(keyboardHeight))
+    }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
