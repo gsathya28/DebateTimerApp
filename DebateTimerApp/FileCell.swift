@@ -11,9 +11,8 @@ import UIKit
 class FileCell: UITableViewCell {
     
     
-    @IBOutlet var roundNameText: UILabel!
-    @IBOutlet var roundScoreText: UILabel!
-    @IBOutlet var roundTimeText: UILabel!
+    @IBOutlet var hourText: UILabel!
+    @IBOutlet var debateNameText: UILabel!
     
     
     override func awakeFromNib() {

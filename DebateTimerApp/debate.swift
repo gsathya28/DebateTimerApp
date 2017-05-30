@@ -16,10 +16,12 @@ class debate: NSObject, NSCoding {
     var rounds = [debateRound]()
     var name: String?
     var isFinished: Bool = false
+    var hour: Int?
+    var hourString: String?
     
     // Initializers - based on the number of debaters
     
-    init(inName: String, Affspeaker1: debater, Affspeaker2: debater, Negspeaker1: debater, Negspeaker2: debater)
+    init(inName: String, Affspeaker1: debater, Affspeaker2: debater, Negspeaker1: debater, Negspeaker2: debater, hourString: String)
     {
         name = inName
         self.affSpeakers = [Affspeaker1, Affspeaker2]
@@ -33,6 +35,9 @@ class debate: NSObject, NSCoding {
             debateRound(inName: "Closing Statements Affirmative", inType: "Aff", possPoints: 15),
             debateRound(inName: "Closing Statements Negative", inType: "Neg", possPoints: 15)
         ]
+        self.hourString = hourString
+        let numberString: String = (hourString.substring(from: hourString.endIndex))
+        self.hour = Int(numberString)
     }
     
     required init(coder aDecoder: NSCoder) {

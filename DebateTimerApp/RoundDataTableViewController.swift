@@ -43,7 +43,7 @@ class RoundDataTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections (columns)
-        return 2
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -54,67 +54,16 @@ class RoundDataTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FileCell", for: indexPath) as! FileCell
-
-        if ((indexPath.section == 0))
-        {
-            let tableRound = affRoundArray?[indexPath.row]
-            if (tableRound?.roundRawTime != -1 || tableRound?.roundAffTime != -1 || tableRound?.roundNegTime != -1)
-            {
-                cell.roundNameText.text = tableRound?.roundName
-                // Configure the cell...
-                cell.roundScoreText.text = "\((tableRound?.roundPoints)!) / \((tableRound?.roundPointsPossible)!)"
-                let tableRawTime = (tableRound?.roundRawTime)!
-                    
-                cell.roundTimeText.text = convertRawTime(rawTime: tableRawTime)
-                return cell
-            }
-            else
-            {
-                cell.roundNameText.text = tableRound?.roundName
-                cell.roundTimeText.text = "N/A"
-                cell.roundScoreText.text = "N/A"
-                return cell
-            }
-        }
-        else if (indexPath.section == 1)
-        {
-            let tableRound = negRoundArray?[indexPath.row]
-            if (tableRound?.roundRawTime != -1 || tableRound?.roundAffTime != -1 || tableRound?.roundNegTime != -1)
-            {
-                cell.roundNameText.text = tableRound?.roundName
-                // Configure the cell...
-                cell.roundScoreText.text = "\((tableRound?.roundPoints)!) / \((tableRound?.roundPointsPossible)!)"
-                let tableRawTime = (tableRound?.roundRawTime)!
-                
-                cell.roundTimeText.text = convertRawTime(rawTime: tableRawTime)
-                return cell
-            }
-            else
-            {
-                cell.roundNameText.text = tableRound?.roundName
-                cell.roundTimeText.text = "N/A"
-                cell.roundScoreText.text = "N/A"
-                return cell
-            }
-        }
+        
+        cell.debateNameText.text = finishedDebates[indexPath.row].name!
+        cell.hourText.text = finishedDebates[indexPath.row].hourString!
+        
+        
         return cell
-    }
+        }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if (section == 0)
-        {
-            return "Affirmative"
-        }
-        else if (section == 1)
-        {
-            return "Negative"
-        }
-        else if (section == 2)
-        {
-            return "Individual Scores"
-        }
-        
-        return "----"
+        return "Debates"
     }
  
     /*

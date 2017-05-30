@@ -84,7 +84,9 @@ class NewDebateInputPage: UIViewController, UIPickerViewDataSource, UIPickerView
         
         let ArchiveURLCurrent = DocumentsDirectory.appendingPathComponent(debateName.text!)
         
-        currentDebate = debate(inName: debateName.text!, Affspeaker1: Aff1, Affspeaker2: Aff2, Negspeaker1: Neg1, Negspeaker2: Neg2)
+        let selectedHourNumber = pickerView.selectedRow(inComponent: 1)
+        let hourString = pickerData[selectedHourNumber]
+        currentDebate = debate(inName: debateName.text!, Affspeaker1: Aff1, Affspeaker2: Aff2, Negspeaker1: Neg1, Negspeaker2: Neg2, hourString: hourString)
         
         if(Speak3Aff.text == "" && Speak3Neg.text == "")
         {
