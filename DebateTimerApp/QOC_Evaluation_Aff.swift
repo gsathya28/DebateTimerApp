@@ -14,6 +14,7 @@ class QOC_Evaluation_Aff: UIViewController, UITextViewDelegate, UIPickerViewData
     var pickerData1 = ["0","1","2","3","4","5"]
     var keyboardHeight: Int = 0
     @IBOutlet weak var commentsBox: UITextView!
+    @IBOutlet weak var continueButton: UIButton!
     
     @IBOutlet weak var rubricText: UILabel!
     
@@ -99,6 +100,21 @@ class QOC_Evaluation_Aff: UIViewController, UITextViewDelegate, UIPickerViewData
         _ = NSKeyedArchiver.archiveRootObject(currentDebate!, toFile: (ArchiveURLCurrent?.path)!)
     }
     
+    @IBAction func negGrading(_ sender: Any) {
+        // create the alert
+        let alert = UIAlertController(title: "Negative Side", message: "Did you grade the negative team?", preferredStyle: UIAlertControllerStyle.alert)
+        
+        // add action buttons
+        alert.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.default, handler: { (action) in alert.dismiss(animated: true, completion: nil)
+            self.performSegue(withIdentifier: "QOCtoMenu", sender: nil) //create segue when continue button is clicked
+        }))
+        alert.addAction(UIAlertAction(title: "No", style: UIAlertActionStyle.cancel, handler: nil))
+        
+        // show the alert view
+        self.present(alert, animated: true, completion: nil)
+    }
     
-    
+    func alertView() {
+        negGrading(continueButton)
+    }
 }

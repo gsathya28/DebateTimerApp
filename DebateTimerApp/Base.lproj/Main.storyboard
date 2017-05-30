@@ -785,7 +785,8 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                 </state>
                                 <connections>
                                     <action selector="EvalSave:" destination="nvc-rV-ZDs" eventType="touchUpInside" id="dzW-AI-ptF"/>
-                                    <segue destination="jO5-tJ-Jov" kind="show" id="U2Z-JP-mfG"/>
+                                    <action selector="negGrading:" destination="nvc-rV-ZDs" eventType="touchUpInside" id="UDX-yU-hg5"/>
+                                    <segue destination="jO5-tJ-Jov" kind="show" identifier="QOCtoMenu" id="U2Z-JP-mfG"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -795,6 +796,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                     <connections>
                         <outlet property="PickerView" destination="Nbk-8X-wa9" id="ugT-VI-EPd"/>
                         <outlet property="commentsBox" destination="X7q-aS-Tb5" id="vTe-SK-bcF"/>
+                        <outlet property="continueButton" destination="PwW-w3-7hl" id="MBH-Z9-Dtk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kjb-6C-1zZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1082,6 +1084,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                         </state>
                                         <connections>
                                             <action selector="ShowAlertView:" destination="dnu-uX-vZu" eventType="touchUpInside" id="o2X-97-Ddy"/>
+                                            <action selector="negGrading:" destination="dnu-uX-vZu" eventType="touchUpInside" id="x5W-12-EkK"/>
                                             <action selector="showAlertButtonTapped:" destination="dnu-uX-vZu" eventType="touchUpInside" id="g29-FO-rme"/>
                                             <segue destination="jO5-tJ-Jov" kind="show" identifier="AffToMenu" id="Waa-sS-xBm"/>
                                         </connections>
@@ -1375,6 +1378,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
         <segue reference="ND6-Pi-Xhn"/>
         <segue reference="Vs6-I1-zta"/>
         <segue reference="Czm-Oh-EDZ"/>
+        <segue reference="U2Z-JP-mfG"/>
         <segue reference="eD5-ex-Dmw"/>
     </inferredMetricsTieBreakers>
 </document>
