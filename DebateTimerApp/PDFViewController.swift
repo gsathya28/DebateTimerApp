@@ -51,11 +51,11 @@ class PDFViewController: UIViewController, MFMailComposeViewControllerDelegate {
             {
                 debater.name = "N/A"
             }
-            if (debater.deliveryScore != nil)
+            if (debater.deliveryScore != -1)
             {
                 deliveryScore = "\(debater.deliveryScore)/5"
             }
-            if (debater.classtimeScore != nil)
+            if (debater.classtimeScore != -1)
             {
                 classtimeScore = "\(debater.classtimeScore)/5"
             }
@@ -85,11 +85,11 @@ class PDFViewController: UIViewController, MFMailComposeViewControllerDelegate {
                 }
             }
             
-            if (debater.deliveryScore != nil)
+            if (debater.deliveryScore != -1)
             {
                 deliveryScore = "\(debater.deliveryScore)/5"
             }
-            if (debater.classtimeScore != nil)
+            if (debater.classtimeScore != -1)
             {
                 classtimeScore = "\(debater.classtimeScore)/5"
             }
@@ -241,11 +241,11 @@ class PDFViewController: UIViewController, MFMailComposeViewControllerDelegate {
             {
                 debater.name = "N/A"
             }
-            if (debater.deliveryScore != nil)
+            if (debater.deliveryScore != -1)
             {
                 deliveryScore = "\(debater.deliveryScore)"
             }
-            if (debater.classtimeScore != nil)
+            if (debater.classtimeScore != -1)
             {
                 classtimeScore = "\(debater.classtimeScore)"
             }

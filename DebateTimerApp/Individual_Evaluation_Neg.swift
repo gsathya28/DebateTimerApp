@@ -22,6 +22,7 @@ class Individual_Evaluation_Neg: UIViewController {
     @IBOutlet weak var textfield5: UITextField!
     @IBOutlet weak var textfield6: UITextField!
     @IBOutlet weak var ContinueButton: UIButton!
+    @IBOutlet weak var saveButton: UIButton!
     
     
     // MARK: Saving Properties with Debate Objects
@@ -64,6 +65,8 @@ class Individual_Evaluation_Neg: UIViewController {
         EvalNegspeaker2?.classtimeScore = Int(textfield3.text!)
         EvalNegspeaker1?.deliveryScore = Int(textfield2.text!)
         EvalNegspeaker2?.deliveryScore = Int(textfield4.text!)
+        
+        ContinueButton.isEnabled = false
     }
 
     override func didReceiveMemoryWarning() {
@@ -124,7 +127,10 @@ class Individual_Evaluation_Neg: UIViewController {
                 showAlertButtonTapped(ContinueButton)
             }
         }
-        /*currentDebate?.negSpeakers[0] = EvalNegspeaker1!
+    }
+    
+    @IBAction func indNegEvalSave(_ sender: Any) {
+        currentDebate?.negSpeakers[0] = EvalNegspeaker1!
         currentDebate?.negSpeakers[1] = EvalNegspeaker2!
         
         // Individual Evaluation Save Function
@@ -153,8 +159,8 @@ class Individual_Evaluation_Neg: UIViewController {
         if savedData
         {
             print("HAHAHAHAHAHA!")
-        }*/
-
+        }
+        ContinueButton.isEnabled = true
     }
 
 }

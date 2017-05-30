@@ -34,6 +34,7 @@ class Individual_Evaluation_Aff: UIViewController {
     var roundCounter: Int?
     var round: debateRound?
     var ArchiveURLCurrent: URL?
+    @IBOutlet weak var saveButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,6 +74,8 @@ class Individual_Evaluation_Aff: UIViewController {
         EvalAffspeaker2?.classtimeScore = Int(textfield3.text!)
         EvalAffspeaker1?.deliveryScore = Int(textfield2.text!)
         EvalAffspeaker2?.deliveryScore = Int(textfield4.text!)
+        
+        ContinueButton.isEnabled = false
     }
     
     override func didReceiveMemoryWarning() {
@@ -150,12 +153,17 @@ class Individual_Evaluation_Aff: UIViewController {
                 showAlertButtonTapped(ContinueButton)
             }
         }
-        
+    }
+    
+    //call the alert view
+    func alertView() {
         negGrading(ContinueButton)
+    }
+    
+    
         // Individual Evaluation Save Function
     
-   
-        /*
+    @IBAction func indEvalSave(_ sender: Any) {
         currentDebate?.affSpeakers[0] = EvalAffspeaker1!
         currentDebate?.affSpeakers[1] = EvalAffspeaker2!
         
@@ -166,7 +174,7 @@ class Individual_Evaluation_Aff: UIViewController {
             EvalAffspeaker3?.deliveryScore = Int(textfield6.text!)
             currentDebate?.affSpeakers[2] = EvalAffspeaker3!
         }
-        /*
+
         if (EvalAffspeaker1?.classtimeScore == nil || EvalAffspeaker1?.deliveryScore == nil || EvalAffspeaker2?.classtimeScore == nil || EvalAffspeaker2?.deliveryScore == nil)
         {
             print("Alert goes here!")
@@ -177,14 +185,15 @@ class Individual_Evaluation_Aff: UIViewController {
         {
             print("Alert goes here!")
         }
-        */
+
         let savedData = NSKeyedArchiver.archiveRootObject(currentDebate!, toFile: (ArchiveURLCurrent?.path)!)
         
         if savedData
         {
             print("HAHAHAHAHAHA!")
-
         }
-        */
+        ContinueButton.isEnabled = true
     }
+    
+    
 }
