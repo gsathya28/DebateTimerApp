@@ -97,7 +97,6 @@ class Individual_Evaluation_Aff: UIViewController {
 
     
     @IBAction func showAlertButtonTapped(_ sender: UIButton) {
-
         // create the alert
         let alert = UIAlertController(title: "Entered Wrong", message: "Something was entered wrong", preferredStyle: UIAlertControllerStyle.alert)
         
@@ -109,8 +108,22 @@ class Individual_Evaluation_Aff: UIViewController {
         
         // show the alert view
         self.present(alert, animated: true, completion: nil)
-        
     }
+    
+    @IBAction func negGrading(_ sender: Any) {
+        // create the alert
+        let alert = UIAlertController(title: "Negative Side", message: "Did you grade the negative team?", preferredStyle: UIAlertControllerStyle.alert)
+        
+        // add action buttons
+        alert.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.default, handler: { (action) in alert.dismiss(animated: true, completion: nil)
+            self.performSegue(withIdentifier: "AffToMenu", sender: nil) //create segue when continue button is clicked
+        }))
+        alert.addAction(UIAlertAction(title: "No", style: UIAlertActionStyle.cancel, handler: nil))
+        
+        // show the alert view
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     
     @IBAction func ShowAlertView(_ sender: Any) {
         
@@ -137,6 +150,8 @@ class Individual_Evaluation_Aff: UIViewController {
                 showAlertButtonTapped(ContinueButton)
             }
         }
+        
+        negGrading(ContinueButton)
         // Individual Evaluation Save Function
     
    
