@@ -82,9 +82,7 @@ class NewDebateInputPage: UIViewController, UIPickerViewDataSource, UIPickerView
         let defaults = UserDefaults.standard
         defaults.set(debateName.text, forKey: "current")
         
-        let ArchiveURLCurrent = DocumentsDirectory.appendingPathComponent(debateName.text!)
-        
-        let selectedHourNumber = pickerView.selectedRow(inComponent: 1)
+        let selectedHourNumber = pickerView.selectedRow(inComponent: 0)
         let hourString = pickerData[selectedHourNumber]
         currentDebate = debate(inName: debateName.text!, Affspeaker1: Aff1, Affspeaker2: Aff2, Negspeaker1: Neg1, Negspeaker2: Neg2, hourString: hourString)
         
@@ -117,6 +115,10 @@ class NewDebateInputPage: UIViewController, UIPickerViewDataSource, UIPickerView
             currentDebate?.negSpeakers = [Neg1, Neg2, Neg3]
         }
         
+        // Really Important Save!
+        
+        let ArchiveURLCurrent = DocumentsDirectory.appendingPathComponent(debateName.text!)
+        
         let savedData = NSKeyedArchiver.archiveRootObject(currentDebate!, toFile: ArchiveURLCurrent.path)
         if savedData
         {
@@ -125,17 +127,8 @@ class NewDebateInputPage: UIViewController, UIPickerViewDataSource, UIPickerView
         defaults.set(0, forKey: "roundCounter")
         
         debateArray.append(currentDebate!)
-        
-        // Really Important Save!
-        let ArchiveURLDebateCurrent = DocumentsDirectory.appendingPathComponent("debateArray")
-        
-        let savedDebateData = NSKeyedArchiver.archiveRootObject(debateArray, toFile: ArchiveURLDebateCurrent.path)
-        
-        if savedDebateData
-        {
-            print("Array saved")
-        }
-        
+        saveDebateArray()
+ 
     }
     
     @IBAction func showAlertButtonTapped(_ sender: Any) {

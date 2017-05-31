@@ -10,15 +10,6 @@ import UIKit
 
 class RoundDataTableViewController: UITableViewController {
     
-    var fruits = ["Apple", "Apricot", "Banana", "Blueberry", "Cantaloupe", "Cherry",
-                  "Clementine", "Coconut", "Cranberry", "Fig", "Grape", "Grapefruit",
-                  "Kiwi fruit", "Lemon", "Lime", "Lychee", "Mandarine", "Mango",
-                  "Melon", "Nectarine", "Olive", "Orange", "Papaya", "Peach",
-                  "Pear", "Pineapple", "Raspberry", "Strawberry"]
-    
-    var affRoundArray: [debateRound]?
-    var negRoundArray: [debateRound]?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,10 +18,7 @@ class RoundDataTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        loadCurrentDebate()
-        affRoundArray = giveRoundArray(type: "Aff")
-        negRoundArray = giveRoundArray(type: "Neg")
-        
+        loadDebateArray()
 
     }
 
@@ -48,7 +36,7 @@ class RoundDataTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return (affRoundArray?.count)!
+        return (finishedDebates.count)
     }
 
     
@@ -58,9 +46,9 @@ class RoundDataTableViewController: UITableViewController {
         cell.debateNameText.text = finishedDebates[indexPath.row].name!
         cell.hourText.text = finishedDebates[indexPath.row].hourString!
         
-        
         return cell
-        }
+    }
+    
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "Debates"
