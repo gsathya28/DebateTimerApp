@@ -38,7 +38,6 @@ class NewDebateInputPage: UIViewController, UIPickerViewDataSource, UIPickerView
         // Do any additional setup after loading the view, typically from a nib.
         
         scrollView.contentSize.height = 1150
-
     }
     
     override func didReceiveMemoryWarning() {

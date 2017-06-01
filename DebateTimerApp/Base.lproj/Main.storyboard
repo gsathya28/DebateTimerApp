@@ -277,7 +277,7 @@
                         <viewControllerLayoutGuide type="bottom" id="lYm-b1-YVV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="U67-N3-4dD">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1150"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Opening Statement for Affirmative" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pP0-EG-xMW">
@@ -415,6 +415,14 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                     <segue destination="jO5-tJ-Jov" kind="show" id="Vs6-I1-zta"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ex-XK-Yrr">
+                                <rect key="frame" x="782" y="0.0" width="219" height="137"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="pQ2-3N-55k" kind="show" id="n4U-Ev-77z"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -436,7 +444,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s6w-sH-9Ni" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="4M5-4f-s3y" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1248" y="123"/>
+            <point key="canvasLocation" x="1247.4609375" y="122.65625"/>
         </scene>
         <!--Round Data Table View Controller-->
         <scene sceneID="Eea-b2-xdt">
@@ -495,7 +503,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                         <viewControllerLayoutGuide type="bottom" id="Hlg-61-FVm"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ymh-Va-gmO">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1260"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qoa-Bh-UdL">
@@ -631,7 +639,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                         <viewControllerLayoutGuide type="bottom" id="fni-zu-bRc"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="F48-Wd-Cna">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1260"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dCH-Xj-kAC">
@@ -717,7 +725,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                         <viewControllerLayoutGuide type="bottom" id="CsL-xK-lDO"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="zVO-OF-KdM">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1260"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YCu-C0-geC">
@@ -805,7 +813,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                         <viewControllerLayoutGuide type="bottom" id="iq4-eQ-lkx"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="pXu-Hw-lbp">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1260"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0IE-rP-uED">
@@ -841,7 +849,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="evH-Xt-KDf" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="FfR-jq-pTB" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1924" y="1030"/>
+            <point key="canvasLocation" x="1924" y="1258"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="DzG-rI-Fz7">
@@ -870,11 +878,11 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                         <viewControllerLayoutGuide type="bottom" id="ZyW-cB-47W"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="YvU-qK-DYf">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1150"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1260"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cb0-iP-1Hf">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="1103"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cb0-iP-1Hf">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="1211"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="/5     Used of class time/Presented equally" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j8C-pd-cJZ">
                                         <rect key="frame" x="323" y="240" width="378" height="40"/>
@@ -1012,6 +1020,17 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="29O-bg-18t">
+                                        <rect key="frame" x="414" y="790" width="197" height="106"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                        <state key="normal" title="Save">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="indNegEvalSave:" destination="E9G-4f-QTb" eventType="touchUpInside" id="8fF-4D-eSD"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </scrollView>
                         </subviews>
@@ -1025,12 +1044,13 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 2" id="OZ9-Mp-vDd"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="1024" height="1150"/>
+                    <size key="freeformSize" width="1024" height="1260"/>
                     <connections>
                         <outlet property="ContinueButton" destination="k1m-V2-LRL" id="C00-FG-QrV"/>
                         <outlet property="Label1" destination="vy5-V8-oUG" id="1qY-MP-zA7"/>
                         <outlet property="Label2" destination="WrK-ZJ-QvS" id="Swi-kL-7ez"/>
                         <outlet property="Student3" destination="Kft-b2-M4Z" id="UGk-BA-xeT"/>
+                        <outlet property="saveButton" destination="29O-bg-18t" id="Tb7-hl-4jF"/>
                         <outlet property="scrollView" destination="Cb0-iP-1Hf" id="PUQ-wQ-oGo"/>
                         <outlet property="textfield1" destination="33Y-En-K2v" id="jmx-tE-CQr"/>
                         <outlet property="textfield2" destination="v7l-OE-yAp" id="maz-UW-QMn"/>
@@ -1043,7 +1063,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BCW-v4-Lvl" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="9Sh-cP-GAA" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3294" y="2113"/>
+            <point key="canvasLocation" x="3293.5546875" y="2112.5"/>
         </scene>
         <!--Item 1-->
         <scene sceneID="4Ny-eR-hIm">
@@ -1054,11 +1074,11 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                         <viewControllerLayoutGuide type="bottom" id="WQn-7w-XcC"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="qxw-tA-vbn">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1150"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1260"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Ow-Nb-VoU">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="1101"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Ow-Nb-VoU">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="1211"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Individual Evaluations - Affirmative" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D9Y-1f-vDo">
                                         <rect key="frame" x="225" y="63" width="574" height="68"/>
@@ -1197,6 +1217,17 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A8C-a9-GXl">
+                                        <rect key="frame" x="414" y="790" width="197" height="106"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                        <state key="normal" title="Save">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="indEvalSave:" destination="dnu-uX-vZu" eventType="touchUpInside" id="KH6-Gn-OKJ"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </scrollView>
                         </subviews>
@@ -1210,12 +1241,13 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="G1k-ae-n2M"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="1024" height="1150"/>
+                    <size key="freeformSize" width="1024" height="1260"/>
                     <connections>
                         <outlet property="ContinueButton" destination="3fj-G6-azw" id="Hu2-G1-llo"/>
                         <outlet property="Label1" destination="NUi-Nx-AoZ" id="rnG-F2-Ssz"/>
                         <outlet property="Label2" destination="ZjA-Lv-3ad" id="5ex-ek-d7g"/>
                         <outlet property="Student3" destination="3DR-Ch-889" id="pej-EZ-Gg6"/>
+                        <outlet property="saveButton" destination="A8C-a9-GXl" id="mWm-bs-de5"/>
                         <outlet property="scrollView" destination="5Ow-Nb-VoU" id="W2b-Sh-6xG"/>
                         <outlet property="textfield1" destination="qJ1-s2-0Qz" id="nZs-WV-f5m"/>
                         <outlet property="textfield2" destination="D3R-qk-Why" id="fO8-pj-ux5"/>
@@ -1228,7 +1260,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lda-EB-ojo" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="SOA-aU-GTq" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3312" y="1049"/>
+            <point key="canvasLocation" x="3311.71875" y="1048.4375"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="iDX-Yu-qbh">
@@ -1257,7 +1289,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                         <viewControllerLayoutGuide type="bottom" id="V1P-6u-Kn6"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="3I2-Ni-4fA">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1260"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You are going to the next round. Continue?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QBz-HU-drM">
@@ -1367,7 +1399,8 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="U2Z-JP-mfG"/>
-        <segue reference="eD5-ex-Dmw"/>
+        <segue reference="n4U-Ev-77z"/>
+        <segue reference="bun-GC-Vrl"/>
+        <segue reference="zPx-1f-Q0i"/>
     </inferredMetricsTieBreakers>
 </document>

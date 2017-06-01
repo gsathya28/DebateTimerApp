@@ -47,23 +47,19 @@ class PDFViewController: UIViewController, MFMailComposeViewControllerDelegate {
                     roundTotal = roundTotal + round.roundPoints!
                 }
             }
-            if ((debater.name == nil))
+            if (debater.deliveryScore != -1)
             {
-                debater.name = "N/A"
+                deliveryScore = "\(debater.deliveryScore!)/5"
             }
-            if (debater.deliveryScore != nil)
+            if (debater.classtimeScore != -1)
             {
-                deliveryScore = "\(debater.deliveryScore)/5"
-            }
-            if (debater.classtimeScore != nil)
-            {
-                classtimeScore = "\(debater.classtimeScore)/5"
+                classtimeScore = "\(debater.classtimeScore!)/5"
             }
             
             html = html + "<tr><td>\(debater.name!)</td>"
             html = html + "<td>\(roundTotal)/\(roundPointsPossible)  +  </td>"
             html = html + "<td>\(deliveryScore)</td>"
-            html = html + "<td>\(classtimeScore)</td><td>\(roundTotal + /*debater.deliveryScore!*/ 0 + /*debater.classtimeScore!*/ 0)/\(roundPointsPossible + 10)</td></tr>"
+            html = html + "<td>\(classtimeScore)</td><td>\(roundTotal + debater.deliveryScore! + debater.classtimeScore!)/\(roundPointsPossible + 10)</td></tr>"
         }
         
         for debater in (currentDebate?.negSpeakers)!
@@ -85,13 +81,13 @@ class PDFViewController: UIViewController, MFMailComposeViewControllerDelegate {
                 }
             }
             
-            if (debater.deliveryScore != nil)
+            if (debater.deliveryScore != -1)
             {
-                deliveryScore = "\(debater.deliveryScore)/5"
+                deliveryScore = "\(debater.deliveryScore!)/5"
             }
-            if (debater.classtimeScore != nil)
+            if (debater.classtimeScore != -1)
             {
-                classtimeScore = "\(debater.classtimeScore)/5"
+                classtimeScore = "\(debater.classtimeScore!)/5"
             }
             
             html = html + "<tr><td>\(debater.name!)</td>"
@@ -100,7 +96,6 @@ class PDFViewController: UIViewController, MFMailComposeViewControllerDelegate {
             html = html + "<td>\(classtimeScore)</td><td>\(roundTotal + /*debater.deliveryScore!*/ 0 + /*debater.classtimeScore!*/ 0)/\(roundPointsPossible + 10)</td></tr>"
 
         }
-        
         
         let fmt = UIMarkupTextPrintFormatter(markupText: html)
         
@@ -206,11 +201,11 @@ class PDFViewController: UIViewController, MFMailComposeViewControllerDelegate {
             }
             if (debater.deliveryScore != nil)
             {
-                deliveryScore = "\(debater.deliveryScore)"
+                deliveryScore = "\(debater.deliveryScore!)"
             }
             if (debater.classtimeScore != nil)
             {
-                classtimeScore = "\(debater.classtimeScore)"
+                classtimeScore = "\(debater.classtimeScore!)"
             }
             
             html = html + "<tr><td>\(debater.name!)</td>"
@@ -241,13 +236,13 @@ class PDFViewController: UIViewController, MFMailComposeViewControllerDelegate {
             {
                 debater.name = "N/A"
             }
-            if (debater.deliveryScore != nil)
+            if (debater.deliveryScore != -1)
             {
-                deliveryScore = "\(debater.deliveryScore)"
+                deliveryScore = "\(debater.deliveryScore!)"
             }
-            if (debater.classtimeScore != nil)
+            if (debater.classtimeScore != -1)
             {
-                classtimeScore = "\(debater.classtimeScore)"
+                classtimeScore = "\(debater.classtimeScore!)"
             }
             
             html = html + "<tr><td>\(debater.name!)</td>"
