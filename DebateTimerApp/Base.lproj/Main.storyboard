@@ -66,14 +66,6 @@
                                     <segue destination="Wr2-0k-IwX" kind="show" id="ND6-Pi-Xhn"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MPc-1n-BWa">
-                                <rect key="frame" x="706" y="141" width="261" height="577"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="pQ2-3N-55k" kind="show" id="3EU-k5-fet"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -423,6 +415,14 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                     <segue destination="jO5-tJ-Jov" kind="show" id="Vs6-I1-zta"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ex-XK-Yrr">
+                                <rect key="frame" x="782" y="0.0" width="219" height="137"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="pQ2-3N-55k" kind="show" id="n4U-Ev-77z"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -444,7 +444,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s6w-sH-9Ni" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="4M5-4f-s3y" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1248" y="123"/>
+            <point key="canvasLocation" x="1247.4609375" y="122.65625"/>
         </scene>
         <!--Round Data Table View Controller-->
         <scene sceneID="Eea-b2-xdt">
@@ -857,7 +857,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="evH-Xt-KDf" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="FfR-jq-pTB" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1924" y="1030"/>
+            <point key="canvasLocation" x="1924" y="1258"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="DzG-rI-Fz7">
@@ -963,7 +963,6 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="BlankAlert:" destination="E9G-4f-QTb" eventType="touchUpInside" id="XnN-6A-RNc"/>
                                             <action selector="ShowAlertView:" destination="E9G-4f-QTb" eventType="touchUpInside" id="mdQ-ee-nt4"/>
                                             <action selector="showAlertButtonTapped:" destination="E9G-4f-QTb" eventType="touchUpInside" id="Jtz-qS-Svl"/>
                                             <segue destination="jO5-tJ-Jov" kind="show" identifier="NegToMenu" id="zPx-1f-Q0i"/>
@@ -1104,7 +1103,6 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="BlankAlert:" destination="dnu-uX-vZu" eventType="touchUpInside" id="PL5-Z4-Q5L"/>
                                             <action selector="ShowAlertView:" destination="dnu-uX-vZu" eventType="touchUpInside" id="o2X-97-Ddy"/>
                                             <action selector="negGrading:" destination="dnu-uX-vZu" eventType="touchUpInside" id="x5W-12-EkK"/>
                                             <action selector="showAlertButtonTapped:" destination="dnu-uX-vZu" eventType="touchUpInside" id="g29-FO-rme"/>
@@ -1409,7 +1407,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="3EU-k5-fet"/>
+        <segue reference="n4U-Ev-77z"/>
         <segue reference="bun-GC-Vrl"/>
         <segue reference="zPx-1f-Q0i"/>
     </inferredMetricsTieBreakers>

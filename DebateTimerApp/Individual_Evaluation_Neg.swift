@@ -66,7 +66,6 @@ class Individual_Evaluation_Neg: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
     /*
     // MARK: - Navigation
 
@@ -91,10 +90,9 @@ class Individual_Evaluation_Neg: UIViewController {
         
         // show the alert view
         self.present(alert, animated: true, completion: nil)
-        
     }
     
-    @IBAction func BlankAlert(_ sender: Any) {
+    func BlankAlert(_ sender: Any) {
         // create the alert
         let alert = UIAlertController(title: "Missed score", message: "There is no score entered for one of the speakers", preferredStyle: UIAlertControllerStyle.alert)
         
@@ -113,29 +111,16 @@ class Individual_Evaluation_Neg: UIViewController {
         let text5: Int? = Int(textfield5.text!)
         let text6: Int? = Int(textfield6.text!)
         
-        //call the alert view method if textfield is blank or wrong
-        if(textfield6.isHidden == false)
-        {
-            if(textfield1.text == "" || textfield2.text == "" || textfield3.text == "" || textfield4.text == "" || textfield5.text == "" || textfield6.text == "" || text1! > 5 || text2! > 5 || text3! > 5 || text4! > 5 || text5! > 5 || text6! > 5 || text1! < 0 || text2! < 0 || text3! < 0 || text4! < 0 || text5! < 0 || text6! < 0)
-            {
-                showAlertButtonTapped(ContinueButton)
-            }
-        }
-        else
-        {
-            if(textfield1.text == "" || textfield2.text == "" || textfield3.text == "" || textfield4.text == "" || text1! > 5 || text2! > 5 || text3! > 5 || text4! > 5 || text1! < 0 || text2! < 0 || text3! < 0 || text4! < 0)
-            {
-                showAlertButtonTapped(ContinueButton)
-            }
-        }
-    }
-    
-    func showBlankAlert() {
+        //call the alert view method if textfield has number not between 0 and 5
         if(textfield6.isHidden == false)
         {
             if(textfield1.text == "" || textfield2.text == "" || textfield3.text == "" || textfield4.text == "" || textfield5.text == "" || textfield6.text == "")
             {
                 BlankAlert(ContinueButton)
+            }
+            else if(text1! > 5 || text2! > 5 || text3! > 5 || text4! > 5 || text5! > 5 || text6! > 5 || text1! < 0 || text2! < 0 || text3! < 0 || text4! < 0 || text5! < 0 || text6! < 0)
+            {
+                showAlertButtonTapped(ContinueButton)
             }
         }
         else
@@ -143,6 +128,10 @@ class Individual_Evaluation_Neg: UIViewController {
             if(textfield1.text == "" || textfield2.text == "" || textfield3.text == "" || textfield4.text == "")
             {
                 BlankAlert(ContinueButton)
+            }
+            else if(text1! > 5 || text2! > 5 || text3! > 5 || text4! > 5 || text1! < 0 || text2! < 0 || text3! < 0 || text4! < 0)
+            {
+                showAlertButtonTapped(ContinueButton)
             }
         }
     }
@@ -163,10 +152,10 @@ class Individual_Evaluation_Neg: UIViewController {
         
         if (Speak3AffCount == 1)
          {
-         EvalNegspeaker3 = currentDebate?.negSpeakers[2]
-         EvalNegspeaker3?.classtimeScore = Int(textfield5.text!)
-         EvalNegspeaker3?.deliveryScore = Int(textfield6.text!)
-         currentDebate?.affSpeakers[2] = EvalNegspeaker3!
+            EvalNegspeaker3 = currentDebate?.negSpeakers[2]
+            EvalNegspeaker3?.classtimeScore = Int(textfield5.text!)
+            EvalNegspeaker3?.deliveryScore = Int(textfield6.text!)
+            currentDebate?.negSpeakers[2] = EvalNegspeaker3!
          }
         
         let savedData = NSKeyedArchiver.archiveRootObject(currentDebate!, toFile: (ArchiveURLCurrent?.path)!)

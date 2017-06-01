@@ -47,10 +47,6 @@ class PDFViewController: UIViewController, MFMailComposeViewControllerDelegate {
                     roundTotal = roundTotal + round.roundPoints!
                 }
             }
-            if ((debater.name == nil))
-            {
-                debater.name = "N/A"
-            }
             if (debater.deliveryScore != -1)
             {
                 deliveryScore = "\(debater.deliveryScore!)/5"
@@ -63,7 +59,7 @@ class PDFViewController: UIViewController, MFMailComposeViewControllerDelegate {
             html = html + "<tr><td>\(debater.name!)</td>"
             html = html + "<td>\(roundTotal)/\(roundPointsPossible)  +  </td>"
             html = html + "<td>\(deliveryScore)</td>"
-            html = html + "<td>\(classtimeScore)</td><td>\(roundTotal + /*debater.deliveryScore!*/ 0 + /*debater.classtimeScore!*/ 0)/\(roundPointsPossible + 10)</td></tr>"
+            html = html + "<td>\(classtimeScore)</td><td>\(roundTotal + debater.deliveryScore! + debater.classtimeScore!)/\(roundPointsPossible + 10)</td></tr>"
         }
         
         for debater in (currentDebate?.negSpeakers)!
@@ -100,7 +96,6 @@ class PDFViewController: UIViewController, MFMailComposeViewControllerDelegate {
             html = html + "<td>\(classtimeScore)</td><td>\(roundTotal + /*debater.deliveryScore!*/ 0 + /*debater.classtimeScore!*/ 0)/\(roundPointsPossible + 10)</td></tr>"
 
         }
-        
         
         let fmt = UIMarkupTextPrintFormatter(markupText: html)
         
