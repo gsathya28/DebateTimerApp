@@ -58,14 +58,6 @@ class Individual_Evaluation_Neg: UIViewController {
             textfield5.isHidden = true
             textfield6.isHidden = true
         }
-        
-        EvalNegspeaker1 = (currentDebate?.affSpeakers[0])!
-        EvalNegspeaker2 = (currentDebate?.affSpeakers[1])!
-        EvalNegspeaker1?.classtimeScore = Int(textfield1.text!)
-        EvalNegspeaker2?.classtimeScore = Int(textfield3.text!)
-        EvalNegspeaker1?.deliveryScore = Int(textfield2.text!)
-        EvalNegspeaker2?.deliveryScore = Int(textfield4.text!)
-        
         ContinueButton.isEnabled = false
     }
 
@@ -130,6 +122,14 @@ class Individual_Evaluation_Neg: UIViewController {
     }
     
     @IBAction func indNegEvalSave(_ sender: Any) {
+        
+        EvalNegspeaker1 = (currentDebate?.affSpeakers[0])!
+        EvalNegspeaker2 = (currentDebate?.affSpeakers[1])!
+        EvalNegspeaker1?.classtimeScore = Int(textfield1.text!)
+        EvalNegspeaker2?.classtimeScore = Int(textfield3.text!)
+        EvalNegspeaker1?.deliveryScore = Int(textfield2.text!)
+        EvalNegspeaker2?.deliveryScore = Int(textfield4.text!)
+        
         currentDebate?.negSpeakers[0] = EvalNegspeaker1!
         currentDebate?.negSpeakers[1] = EvalNegspeaker2!
         

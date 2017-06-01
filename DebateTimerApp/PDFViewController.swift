@@ -53,11 +53,11 @@ class PDFViewController: UIViewController, MFMailComposeViewControllerDelegate {
             }
             if (debater.deliveryScore != -1)
             {
-                deliveryScore = "\(debater.deliveryScore)/5"
+                deliveryScore = "\(debater.deliveryScore!)/5"
             }
             if (debater.classtimeScore != -1)
             {
-                classtimeScore = "\(debater.classtimeScore)/5"
+                classtimeScore = "\(debater.classtimeScore!)/5"
             }
             
             html = html + "<tr><td>\(debater.name!)</td>"
@@ -87,11 +87,11 @@ class PDFViewController: UIViewController, MFMailComposeViewControllerDelegate {
             
             if (debater.deliveryScore != -1)
             {
-                deliveryScore = "\(debater.deliveryScore)/5"
+                deliveryScore = "\(debater.deliveryScore!)/5"
             }
             if (debater.classtimeScore != -1)
             {
-                classtimeScore = "\(debater.classtimeScore)/5"
+                classtimeScore = "\(debater.classtimeScore!)/5"
             }
             
             html = html + "<tr><td>\(debater.name!)</td>"
@@ -206,11 +206,11 @@ class PDFViewController: UIViewController, MFMailComposeViewControllerDelegate {
             }
             if (debater.deliveryScore != nil)
             {
-                deliveryScore = "\(debater.deliveryScore)"
+                deliveryScore = "\(debater.deliveryScore!)"
             }
             if (debater.classtimeScore != nil)
             {
-                classtimeScore = "\(debater.classtimeScore)"
+                classtimeScore = "\(debater.classtimeScore!)"
             }
             
             html = html + "<tr><td>\(debater.name!)</td>"
@@ -243,11 +243,11 @@ class PDFViewController: UIViewController, MFMailComposeViewControllerDelegate {
             }
             if (debater.deliveryScore != -1)
             {
-                deliveryScore = "\(debater.deliveryScore)"
+                deliveryScore = "\(debater.deliveryScore!)"
             }
             if (debater.classtimeScore != -1)
             {
-                classtimeScore = "\(debater.classtimeScore)"
+                classtimeScore = "\(debater.classtimeScore!)"
             }
             
             html = html + "<tr><td>\(debater.name!)</td>"
