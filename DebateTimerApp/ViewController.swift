@@ -16,6 +16,7 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -24,16 +25,16 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
     }
 
     @IBAction func unwindToTitlePage(_sender: UIStoryboardSegue) {
+        debateArray = loadDebateArray()
     }
     
     @IBAction func NewDebate(_ sender: AnyObject) {
     }
     
     @IBAction func ContinueDebate(_ sender: AnyObject) {
-        loadDebateArray()
         for debate in debateArray
         {
-            if (!(debate.isFinished))
+            if (!(debate.isFinished!))
             {
                 unfinishedDebates.append(debate)
             }
@@ -41,10 +42,9 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
     }
     
     @IBAction func PreviousDebates(_ sender: AnyObject) {
-        loadDebateArray()
         for debate in debateArray
         {
-            if (debate.isFinished)
+            if (debate.isFinished)!
             {
                 finishedDebates.append(debate)
             }

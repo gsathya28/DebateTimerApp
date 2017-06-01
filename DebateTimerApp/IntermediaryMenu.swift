@@ -89,11 +89,18 @@ class IntermediaryMenu: UIViewController {
             roundLabel.isHidden = true
             finishedLabel.isHidden = false
             currentDebate?.isFinished = true
+            debateArray[(currentDebate?.debateNumber)!] = currentDebate!
             let savedData = NSKeyedArchiver.archiveRootObject(currentDebate!, toFile: (ArchiveURLCurrent?.path)!)
             if savedData
             {
                 print("Finished Save Success!")
             }
+            if (saveDebateArray())
+            {
+                print("Saved Debate Array!")
+                print("isFinished: ", currentDebate?.isFinished)
+            }
+
         }
         
         

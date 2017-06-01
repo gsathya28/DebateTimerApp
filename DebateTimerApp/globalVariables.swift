@@ -38,6 +38,20 @@ var finishedDebates: [debate] = []
 var unfinishedDebates: [debate] = []
 // The path: let ArchiveURLDebateCurrent = DocumentsDirectory.appendingPathComponent("debateArray")
 
+
+func saveDebateArray() -> Bool
+{
+    let ArchiveURLDebateCurrent = DocumentsDirectory.appendingPathComponent("debateArray")
+    let savedArray = NSKeyedArchiver.archiveRootObject(debateArray, toFile: ArchiveURLDebateCurrent.path)
+    return savedArray
+}
+func loadDebateArray() -> [debate]
+{
+    let ArchiveURLDebateCurrent = DocumentsDirectory.appendingPathComponent("debateArray")
+    let debateArr = NSKeyedUnarchiver.unarchiveObject(withFile: ArchiveURLDebateCurrent.path) as! [debate]
+    return debateArr
+}
+
 func loadCurrentDebate()
 {
     let defaults = UserDefaults.standard
@@ -46,12 +60,6 @@ func loadCurrentDebate()
     let id = defaults.object(forKey: "current") as? String
     ArchiveURLCurrent = DocumentsDirectory.appendingPathComponent(id!)
     currentDebate = NSKeyedUnarchiver.unarchiveObject(withFile: (ArchiveURLCurrent?.path)!) as! debate?
-}
-
-func loadDebateArray()
-{
-    let ArchiveURLDebateCurrent = DocumentsDirectory.appendingPathComponent("debateArray")
-    debateArray = NSKeyedUnarchiver.unarchiveObject(withFile: ArchiveURLDebateCurrent.path) as! [debate]
 }
 
 func giveRoundArray(type: String) -> [debateRound]

@@ -57,6 +57,11 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
         pickerView1.dataSource = self
         
         loadCurrentDebate()
+        debateArray = loadDebateArray()
+        if (currentDebate?.name == debateArray[0].name)
+        {
+            print("Debate Array up to date")
+        }
         
         round = currentDebate?.rounds[roundCounter!]
         AffirmativeLabel.text = round?.roundName
@@ -207,7 +212,11 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
         {
             print("HAHAHAHAHAHA!")
         }
-
+        debateArray[(currentDebate?.debateNumber)!] = currentDebate!
+        if saveDebateArray()
+        {
+            print ("Saved Array in Timer Page")
+        }
     }
     
     // Unwind Segue Prep
@@ -272,10 +281,19 @@ class TimerPageGUI: UIViewController, UITextViewDelegate, UIPickerViewDataSource
         round?.roundRawTime = rawTime
         round?.roundPoints = intScore
         currentDebate?.rounds[roundCounter!] = round!
+        
+        debateArray[(currentDebate?.debateNumber)!] = currentDebate!
+        
         let savedData = NSKeyedArchiver.archiveRootObject(currentDebate!, toFile: (ArchiveURLCurrent?.path)!)
         if savedData
         {
             print("Save Success!")
         }
+        
+        if saveDebateArray()
+        {
+            print ("Saved Array in Timer Page")
+        }
+
     }
 }

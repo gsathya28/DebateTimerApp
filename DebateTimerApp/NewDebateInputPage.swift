@@ -116,6 +116,14 @@ class NewDebateInputPage: UIViewController, UIPickerViewDataSource, UIPickerView
         }
         
         // Really Important Save!
+        let placeNumber = debateArray.count
+        print("PlaceNumber: ", placeNumber)
+        currentDebate!.debateNumber = placeNumber
+        currentDebate!.isFinished = false
+        debateArray.append(currentDebate!)
+        
+        print(debateArray[0])
+        
         
         let ArchiveURLCurrent = DocumentsDirectory.appendingPathComponent(debateName.text!)
         
@@ -126,8 +134,10 @@ class NewDebateInputPage: UIViewController, UIPickerViewDataSource, UIPickerView
         }
         defaults.set(0, forKey: "roundCounter")
         
-        debateArray.append(currentDebate!)
-        saveDebateArray()
+        if (saveDebateArray())
+        {
+            print("Saved Debate Array!")
+        }
  
     }
     

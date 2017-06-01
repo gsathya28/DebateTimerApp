@@ -15,9 +15,11 @@ class debate: NSObject, NSCoding {
     var negSpeakers = [debater]()
     var rounds = [debateRound]()
     var name: String?
-    var isFinished: Bool = false
+    var isFinished: Bool?
     var hour: Int?
     var hourString: String?
+    
+    var debateNumber: Int?
     
     // Initializers - based on the number of debaters
     
@@ -45,6 +47,10 @@ class debate: NSObject, NSCoding {
         negSpeakers = aDecoder.decodeObject(forKey: "negSpeakers") as! [debater]
         rounds = aDecoder.decodeObject(forKey: "rounds") as! [debateRound]
         name = aDecoder.decodeObject(forKey: "name") as? String
+        hourString = aDecoder.decodeObject(forKey: "hourString") as? String
+        hour = aDecoder.decodeObject(forKey: "hour") as? Int
+        debateNumber = aDecoder.decodeObject(forKey: "debateNumber") as? Int
+        isFinished = aDecoder.decodeObject(forKey: "isFinished") as? Bool
     }
     
     func encode(with aCoder: NSCoder) {
@@ -52,6 +58,10 @@ class debate: NSObject, NSCoding {
         aCoder.encode(negSpeakers, forKey: "negSpeakers")
         aCoder.encode(rounds, forKey: "rounds")
         aCoder.encode(name, forKey: "name")
+        aCoder.encode(hourString, forKey: "hourString")
+        aCoder.encode(hour, forKey: "hour")
+        aCoder.encode(debateNumber, forKey: "debateNumber")
+        aCoder.encode(isFinished, forKey: "isFinished")
     }
     
     
