@@ -94,6 +94,15 @@ class Individual_Evaluation_Neg: UIViewController {
         
     }
     
+    @IBAction func BlankAlert(_ sender: Any) {
+        // create the alert
+        let alert = UIAlertController(title: "Missed score", message: "There is no score entered for one of the speakers", preferredStyle: UIAlertControllerStyle.alert)
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
+        
+        // show the alert view
+        self.present(alert, animated: true, completion: nil)
+    }
     
     @IBAction func ShowAlertView(_ sender: Any) {
         //convert textfields to integers
@@ -117,6 +126,23 @@ class Individual_Evaluation_Neg: UIViewController {
             if(textfield1.text == "" || textfield2.text == "" || textfield3.text == "" || textfield4.text == "" || text1! > 5 || text2! > 5 || text3! > 5 || text4! > 5 || text1! < 0 || text2! < 0 || text3! < 0 || text4! < 0)
             {
                 showAlertButtonTapped(ContinueButton)
+            }
+        }
+    }
+    
+    func showBlankAlert() {
+        if(textfield6.isHidden == false)
+        {
+            if(textfield1.text == "" || textfield2.text == "" || textfield3.text == "" || textfield4.text == "" || textfield5.text == "" || textfield6.text == "")
+            {
+                BlankAlert(ContinueButton)
+            }
+        }
+        else
+        {
+            if(textfield1.text == "" || textfield2.text == "" || textfield3.text == "" || textfield4.text == "")
+            {
+                BlankAlert(ContinueButton)
             }
         }
     }

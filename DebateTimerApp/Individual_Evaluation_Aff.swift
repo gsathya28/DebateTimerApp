@@ -119,6 +119,17 @@ class Individual_Evaluation_Aff: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
+    @IBAction func BlankAlert(_ sender: Any) {
+        // create the alert
+        let alert = UIAlertController(title: "Missed score", message: "There is no score entered for one of the speakers", preferredStyle: UIAlertControllerStyle.alert)
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
+        
+        // show the alert view
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    
     
     @IBAction func ShowAlertView(_ sender: Any) {
         
@@ -150,6 +161,23 @@ class Individual_Evaluation_Aff: UIViewController {
     //call the alert view
     func alertView() {
         negGrading(ContinueButton)
+    }
+    
+    func showBlankAlert() {
+        if(textfield6.isHidden == false)
+        {
+            if(textfield1.text == "" || textfield2.text == "" || textfield3.text == "" || textfield4.text == "" || textfield5.text == "" || textfield6.text == "")
+            {
+                BlankAlert(ContinueButton)
+            }
+        }
+        else
+        {
+            if(textfield1.text == "" || textfield2.text == "" || textfield3.text == "" || textfield4.text == "")
+            {
+                BlankAlert(ContinueButton)
+            }
+        }
     }
     
     // Individual Evaluation Save Function

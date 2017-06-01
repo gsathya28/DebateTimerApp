@@ -963,6 +963,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
+                                            <action selector="BlankAlert:" destination="E9G-4f-QTb" eventType="touchUpInside" id="XnN-6A-RNc"/>
                                             <action selector="ShowAlertView:" destination="E9G-4f-QTb" eventType="touchUpInside" id="mdQ-ee-nt4"/>
                                             <action selector="showAlertButtonTapped:" destination="E9G-4f-QTb" eventType="touchUpInside" id="Jtz-qS-Svl"/>
                                             <segue destination="jO5-tJ-Jov" kind="show" identifier="NegToMenu" id="zPx-1f-Q0i"/>
@@ -1103,6 +1104,7 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
+                                            <action selector="BlankAlert:" destination="dnu-uX-vZu" eventType="touchUpInside" id="PL5-Z4-Q5L"/>
                                             <action selector="ShowAlertView:" destination="dnu-uX-vZu" eventType="touchUpInside" id="o2X-97-Ddy"/>
                                             <action selector="negGrading:" destination="dnu-uX-vZu" eventType="touchUpInside" id="x5W-12-EkK"/>
                                             <action selector="showAlertButtonTapped:" destination="dnu-uX-vZu" eventType="touchUpInside" id="g29-FO-rme"/>
@@ -1407,8 +1409,8 @@ Were there 3 supporting pieces of evidence for each contention? (3 pts)</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Waa-sS-xBm"/>
         <segue reference="3EU-k5-fet"/>
         <segue reference="bun-GC-Vrl"/>
+        <segue reference="zPx-1f-Q0i"/>
     </inferredMetricsTieBreakers>
 </document>
